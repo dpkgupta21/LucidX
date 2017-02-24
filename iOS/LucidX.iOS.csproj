@@ -102,10 +102,32 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Logo.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\User.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Password.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Language.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Radio.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Logo.imageset\logo.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Language.imageset\language-icon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\User.imageset\user-icon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Password.imageset\password-icon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ButtonBG.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ButtonBG.imageset\button-bg.jpg" />
+    <ImageAsset Include="Resources\Images.xcassets\Background.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Background.imageset\app-bg.jpg" />
+    <ImageAsset Include="Resources\Images.xcassets\Background.imageset\iOS-Iphone5-SE%402x.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Utils\" />
+    <Folder Include="Resources\Images.xcassets\Logo.imageset\" />
+    <Folder Include="Resources\Images.xcassets\User.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Password.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Language.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Radio.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ButtonBG.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Background.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

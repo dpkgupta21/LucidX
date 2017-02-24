@@ -6,6 +6,8 @@ namespace LucidX.iOS.ViewControllers
 {
 	public partial class LoginVC : UIViewController
 	{
+		UIGestureRecognizer tapGesture;
+
 		public LoginVC() : base("LoginVC", null)
 		{
 		}
@@ -13,6 +15,11 @@ namespace LucidX.iOS.ViewControllers
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+			tapGesture = new UITapGestureRecognizer((obj) => {
+				this.View.EndEditing(true);
+			});
+			this.View.AddGestureRecognizer(tapGesture);
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
@@ -24,19 +31,16 @@ namespace LucidX.iOS.ViewControllers
 
 		partial void SignInClicked(Foundation.NSObject sender)
 		{
-
-
 			Login();
-
 		}
 
 		async void Login()
 		{
 			ElucidateAPIParams loginParams = new ElucidateAPIParams
 			{
-				userID = "jmathews@elucidate-software.com",
-				strPwd = "jeneby",
-				connectionName = "DEMOConneection"
+				userID = IBUsernameTxt.Text,
+				strPwd = IBPasswordTxt.Text,
+				connectionName = IBLanguageTxt.Text
 			};
 			var a = await WebServiceMethods.Login(loginParams);
 			object b = null;

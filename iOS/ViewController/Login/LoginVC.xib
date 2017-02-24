@@ -46,13 +46,16 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rap-yN-vG4">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="9MU-m0-DdJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teB-tV-XRK">
                                     <rect key="frame" x="50" y="176" width="314" height="384"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXQ-pv-Tv3">
                                             <rect key="frame" x="0.0" y="0.0" width="306" height="60"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pzg-gI-zB3">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="pzg-gI-zB3">
                                                     <rect key="frame" x="8" y="5" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="7PA-ZN-ou8">
@@ -108,7 +111,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZE-sY-pyy">
                                             <rect key="frame" x="8" y="90" width="298" height="44"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LvI-u4-GWq">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="LvI-u4-GWq">
                                                     <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="LvI-u4-GWq" secondAttribute="height" multiplier="1:1" id="1c9-39-n7C"/>
@@ -164,7 +167,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8y-w5-ndO">
                                             <rect key="frame" x="8" y="142" width="298" height="44"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7g1-nf-maZ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Password" translatesAutoresizingMaskIntoConstraints="NO" id="7g1-nf-maZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7g1-nf-maZ" secondAttribute="height" multiplier="1:1" id="ClR-yk-D0W"/>
@@ -220,7 +223,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sif-Ag-xnS">
                                             <rect key="frame" x="8" y="194" width="298" height="44"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3qk-Yc-XTg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Language" translatesAutoresizingMaskIntoConstraints="NO" id="3qk-Yc-XTg">
                                                     <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="3qk-Yc-XTg" secondAttribute="height" multiplier="1:1" id="Kff-eD-KWy"/>
@@ -366,13 +369,13 @@
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zih-DW-4rW">
                                             <rect key="frame" x="8" y="336" width="298" height="40"/>
-                                            <color key="backgroundColor" red="0.11372549019607843" green="0.68235294117647061" blue="0.91764705882352937" alpha="0.69886113556338025" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="QRT-eE-msY">
                                                     <variation key="heightClass=regular-widthClass=regular" constant="70"/>
                                                 </constraint>
                                             </constraints>
-                                            <state key="normal" title="SIGN IN">
+                                            <state key="normal" title="SIGN IN" backgroundImage="ButtonBG">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <variation key="heightClass=regular-widthClass=regular">
@@ -418,16 +421,20 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="9MU-m0-DdJ" firstAttribute="leading" secondItem="Rap-yN-vG4" secondAttribute="leading" id="8Cd-zA-5jI"/>
                                 <constraint firstAttribute="bottom" secondItem="bxm-nj-sBC" secondAttribute="bottom" constant="5" id="8Un-Oj-Z8M"/>
                                 <constraint firstItem="teB-tV-XRK" firstAttribute="leading" secondItem="Rap-yN-vG4" secondAttribute="leading" constant="50" id="BSF-gV-hRE">
                                     <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                 </constraint>
                                 <constraint firstItem="bxm-nj-sBC" firstAttribute="leading" secondItem="Rap-yN-vG4" secondAttribute="leading" constant="20" id="Hql-tU-c1z"/>
+                                <constraint firstAttribute="bottom" secondItem="9MU-m0-DdJ" secondAttribute="bottom" id="PUk-QX-oOG"/>
                                 <constraint firstAttribute="trailing" secondItem="teB-tV-XRK" secondAttribute="trailing" constant="50" id="Xom-gO-fxS">
                                     <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                 </constraint>
                                 <constraint firstItem="teB-tV-XRK" firstAttribute="centerY" secondItem="Rap-yN-vG4" secondAttribute="centerY" id="b8B-b0-Xli"/>
+                                <constraint firstItem="9MU-m0-DdJ" firstAttribute="top" secondItem="Rap-yN-vG4" secondAttribute="top" id="bP5-7d-wPQ"/>
                                 <constraint firstAttribute="trailing" secondItem="bxm-nj-sBC" secondAttribute="trailing" constant="20" id="d2m-Yx-9IG"/>
+                                <constraint firstAttribute="trailing" secondItem="9MU-m0-DdJ" secondAttribute="trailing" id="dsO-5B-gY6"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -440,7 +447,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.015686274509803921" green="0.13333333333333333" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Ihc-mG-mOp" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="2ff-de-eh6"/>
                 <constraint firstItem="Rap-yN-vG4" firstAttribute="width" secondItem="2" secondAttribute="width" id="4sd-gT-RED"/>
@@ -456,4 +463,12 @@
             <point key="canvasLocation" x="33" y="22"/>
         </view>
     </objects>
+    <resources>
+        <image name="Background" width="320" height="568"/>
+        <image name="ButtonBG" width="492" height="79"/>
+        <image name="Language" width="29" height="26"/>
+        <image name="Logo" width="105" height="107"/>
+        <image name="Password" width="29" height="26"/>
+        <image name="User" width="29" height="26"/>
+    </resources>
 </document>

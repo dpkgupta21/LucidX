@@ -6,8 +6,36 @@
 	<dict>
 		<key>output-files</key>
 		<array>
+			<string>/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/Assets.car</string>
 			<string>/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/partial-info.plist</string>
 		</array>
 	</dict>
+	<key>com.apple.actool.document.warnings</key>
+	<array>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+	</array>
 </dict>
 </plist>
