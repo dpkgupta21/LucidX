@@ -1,0 +1,11 @@
+/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/Xamarin.iOS,Version=v1.0.AssemblyAttribute.cs
+/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/optimized/
+/Users/DeepakGupta/Projects/LucidX/iOS/bin/iPhoneSimulator/Debug/LucidX.iOS.exe.mdb
+/Users/DeepakGupta/Projects/LucidX/iOS/bin/iPhoneSimulator/Debug/LucidX.iOS.exe
+/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/LucidX.iOS.exe
+/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/LucidX.iOS.exe.mdb
+/Users/DeepakGupta/Projects/LucidX/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.Abstractions.dll
+/Users/DeepakGupta/Projects/LucidX/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.dll

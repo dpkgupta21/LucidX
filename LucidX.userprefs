@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{9C0D831C-F1F4-4627-8740-6F6EA7DEF97B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController/Login/LoginVC.cs">
+    <Files>
+      <File FileName="iOS/AppDelegate.cs" Line="5" Column="17" />
+      <File FileName="LucidX/Constants/WebserviceConstants.cs" Line="5" Column="11" />
+      <File FileName="LucidX/RequestModels/ElucidateAPIParams.cs" Line="5" Column="17" />
+      <File FileName="LucidX/Utils/Utilities.cs" Line="9" Column="16" />
+      <File FileName="LucidX/Webservices/WebServiceMethods.cs" Line="19" Column="3" />
+      <File FileName="LucidX/Webservices/WebServiceHandler.cs" Line="76" Column="94" />
+      <File FileName="iOS/ViewController/Login/LoginVC.cs" Line="29" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/DeepakGupta/Projects/LucidX/iOS/ViewController/Login/LoginVC.cs" line="41" column="53" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.LucidX.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.EC48C08F-754A-49FC-8999-ECDE70741E15" />
+  <DisabledProjects>
+    <String>Droid/LucidX.Droid.csproj</String>
+  </DisabledProjects>
+</Properties>
