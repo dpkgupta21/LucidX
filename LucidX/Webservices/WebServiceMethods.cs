@@ -13,8 +13,10 @@ namespace LucidX
 		public async static Task<FinalResponse> Login(ElucidateAPIParams param) {
 			try
 			{
-				var response = await Webservices.WebServiceHandler.GetWebserviceResult(WebserviceConstants.LOGIN_URL, HttpMethod.Post, param);
-				return response as FinalResponse;
+				var response = await Webservices.WebServiceHandler.GetWebserviceResult(WebserviceConstants.LOGIN_URL,
+                    HttpMethod.Post, param);
+                //await Task.Delay(5000);
+                return response as FinalResponse;
 			}
 			catch (Exception ex){
 				return null;

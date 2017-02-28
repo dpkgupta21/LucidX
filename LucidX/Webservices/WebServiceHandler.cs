@@ -87,7 +87,7 @@ namespace LucidX.Webservices
                     if (Response.IsSuccessStatusCode)
                     {
                         // Deserialized Object by using Newtonsoft json api
-						ParseResponse = Utils.Utilities.LoadFromXMLString(ResponseContent.ToString());
+						ParseResponse = Utils.Utilities.LoadFromXMLString(ResponseContent.ToString(), typeof(FinalResponse));
 
                     }
                 }
