@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
-using System.Text;
+using System.Data;
 
 namespace LucidX.ResponseModels
 {
@@ -13,7 +12,8 @@ namespace LucidX.ResponseModels
         public string ErrorMessage { get; set; }
         public HttpStatusCode StatusCode { get; set; }
         public Object ResultDoc { get; set; }
-        
+        public DataSet ResultDs { get; set; }
+        public DataTable ResultDt { get; set; }
 
     }
 }

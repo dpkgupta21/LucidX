@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
@@ -10,9 +10,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Constants\WebserviceConstants.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\ElucidateAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\InboxEmailApiParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\MarkReadEmailApiParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\EmailCountsAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\LoginAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\FinalResponse.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\LoginResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\EmailResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\ResultDoc.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Webservices\WebServiceHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Webservices\WebServiceMethods.cs" />
@@ -20,7 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
-    <Folder Include="$(MSBuildThisFileDirectory)RequestModels\" />
     <Folder Include="$(MSBuildThisFileDirectory)ResponseModels\" />
     <Folder Include="$(MSBuildThisFileDirectory)Webservices\" />
     <Folder Include="$(MSBuildThisFileDirectory)Utils\" />

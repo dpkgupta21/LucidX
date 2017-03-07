@@ -14,10 +14,8 @@
 
 using System;
 using System.Text;
-using System.Diagnostics;
 using Plugin.Connectivity;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using LucidX.Constants;
 using System.Security.Cryptography;
 using LucidX.ResponseModels;
