@@ -14,6 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\MarkReadEmailApiParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\EmailCountsAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\LoginAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\EmailCountResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\FinalResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\EmailResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\ResultDoc.cs" />
@@ -23,7 +24,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ResponseModels\" />
     <Folder Include="$(MSBuildThisFileDirectory)Webservices\" />
     <Folder Include="$(MSBuildThisFileDirectory)Utils\" />
   </ItemGroup>

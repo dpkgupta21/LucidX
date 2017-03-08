@@ -12,10 +12,11 @@ using System.Reflection;
 namespace LucidX.Webservices
 {
     public class WebServiceMethods
-	{
-		public async static Task<FinalResponse> Login(string username, string password) {
-			try
-			{
+    {
+        public async static Task<FinalResponse> Login(string username, string password)
+        {
+            try
+            {
                 LoginAPIParams param = new LoginAPIParams
                 {
                     userID = username,
@@ -23,66 +24,69 @@ namespace LucidX.Webservices
                     connectionName = WebserviceConstants.CONNECTION_NAME
 
                 };
-               
-                FinalResponse response = await Webservices.WebServiceHandler.GetWebserviceResult(WebserviceConstants.LOGIN_URL,
+
+                FinalResponse response = await WebServiceHandler.GetWebserviceResult(WebserviceConstants.LOGIN_URL,
                     HttpMethod.Post, param) as FinalResponse;
                 return response;
-			}
-			catch (Exception ex){
-				return null;
-			}
-		}
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
         public async static Task<EmailCountResponse> EmailCount(string userId)
         {
             try
             {
-              
-                EmailCountsAPIParams param= new EmailCountsAPIParams
+                EmailCountsAPIParams param = new EmailCountsAPIParams
                 {
-                    intUserID = userId,                  
+                    intUserID = userId,
                     connectionName = WebserviceConstants.CONNECTION_NAME
-
                 };
 
-                var response = await Webservices.WebServiceHandler.GetWebserviceResult(WebserviceConstants.EMAIL_COUNT_URL,
+                var response = await WebServiceHandler.GetWebserviceResult(WebserviceConstants.EMAIL_COUNT_URL,
                     HttpMethod.Post, param) as FinalResponse;
 
-                DataSet resultIds = response.ResultDs;
+                EmailCountResponse emailCount = null;
 
-                Dictionary<string, int> countDictionary = new Dictionary<string, int>();
-
-                string key = null;
-                int value = 0;
-
-                foreach (DataTable dt in resultIds.Tables)
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    foreach (DataRow dr in dt.Rows)
+                    DataSet resultIds = response.ResultDs;
+
+                    Dictionary<string, int> countDictionary = new Dictionary<string, int>();
+
+                    string key = null;
+                    int value = 0;
+
+                    foreach (DataTable dt in resultIds.Tables)
                     {
-                        foreach (DataColumn dc in dt.Columns)
+                        foreach (DataRow dr in dt.Rows)
                         {
-                          
-                            if (dc.ColumnName == "eMailTypeName")
+                            foreach (DataColumn dc in dt.Columns)
                             {
-                                key = dr[dc].ToString();
+
+                                if (dc.ColumnName == "eMailTypeName")
+                                {
+                                    key = dr[dc].ToString();
+                                }
+                                if (dc.ColumnName == "Column1")
+                                {
+                                    value = Convert.ToInt32(dr[dc].ToString());
+                                }
                             }
-                            if (dc.ColumnName == "Column1")
-                            {
-                                value = Convert.ToInt32(dr[dc].ToString());
-                            }
+                            countDictionary.Add(key, value);
                         }
-                        countDictionary.Add(key, value);
                     }
+
+                    emailCount = new EmailCountResponse();
+                    emailCount.inboxCount = countDictionary["InBox"];
+                    emailCount.draftCount = countDictionary["Drafts"];
+                    emailCount.sentItemCount = countDictionary["Sent Items"];
+                    emailCount.trashCount = countDictionary["Trash"];
+                    emailCount.allocatedCount = countDictionary["Allocated"];
+
                 }
-
-                EmailCountResponse emailCount = new EmailCountResponse();
-                emailCount.inboxCount=countDictionary["InBox"];
-                emailCount.draftCount = countDictionary["Drafts"];
-                emailCount.sentItemCount = countDictionary["Sent Items"];
-                emailCount.trashCount = countDictionary["Trash"];
-                emailCount.allocatedCount = countDictionary["Allocated"];
-                
-
 
                 return emailCount;
             }
@@ -100,7 +104,7 @@ namespace LucidX.Webservices
                 MarkReadEmailApiParams param = new MarkReadEmailApiParams
                 {
                     mailId = mailId,
-                    read= true,
+                    read = true,
                     connectionName = WebserviceConstants.CONNECTION_NAME
 
                 };
@@ -120,48 +124,45 @@ namespace LucidX.Webservices
         {
             try
             {
-
                 InboxEmailApiParams param = new InboxEmailApiParams
                 {
                     mailCount = 10,
-                    mailTypeId= 1,
-                    filterIndex=0,
-                    filterEmail="",
-                    blnShowblank=false,
+                    mailTypeId = 1,
+                    filterIndex = 0,
+                    filterEmail = "",
+                    blnShowblank = false,
                     intUserID = userId,
                     connectionName = WebserviceConstants.CONNECTION_NAME
-
                 };
-
-
-                var response = await Webservices.WebServiceHandler.GetWebserviceResult(WebserviceConstants.SHOW_INBOX_EMAILS_URL,
+                var response = await WebServiceHandler.GetWebserviceResult(WebserviceConstants.SHOW_INBOX_EMAILS_URL,
                     HttpMethod.Post, param) as FinalResponse;
 
-                DataSet resultIds = response.ResultDs;
-
                 List<EmailResponse> emailList = null;
-                foreach (DataTable dt in resultIds.Tables)
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-
-                    emailList = (from DataRow dr in dt.Rows
-                                   select new EmailResponse()
-                                   {
-                                       MailId = Convert.ToInt32(dr["MailId"]),
-                                       DisplayDate = dr["DisplayDate"].ToString(),
-                                       myGroup = dr["myGroup"].ToString(),
-                                       Received = dr["Received"].ToString(),
-                                       FolderName = dr["FolderName"].ToString(),
-                                       AccountCode = dr["AccountCode"].ToString(),
-                                       Sender = dr["Sender"].ToString(),
-                                       SenderName = dr["SenderName"].ToString(),
-                                       Subject = dr["Subject"].ToString(),
-                                       eMailTypeId = Convert.ToInt32(dr["eMailTypeId"]),
-                                       Unread = Convert.ToBoolean(dr["Unread"]),
-                                       Important = Convert.ToBoolean(dr["Important"]),
-                                       Attachment = Convert.ToInt32(dr["Attachment"]),
-                                       SenderEmail = dr["SenderEmail"].ToString()
-                                   }).ToList();
-
+                    DataSet resultIds = response.ResultDs;
+                    foreach (DataTable dt in resultIds.Tables)
+                    {
+                        emailList = (from DataRow dr in dt.Rows
+                                     select new EmailResponse()
+                                     {
+                                         MailId = Convert.ToInt32(dr["MailId"]),
+                                         DisplayDate = dr["DisplayDate"].ToString(),
+                                         myGroup = dr["myGroup"].ToString(),
+                                         Received = dr["Received"].ToString(),
+                                         FolderName = dr["FolderName"].ToString(),
+                                         AccountCode = dr["AccountCode"].ToString(),
+                                         Sender = dr["Sender"].ToString(),
+                                         SenderName = dr["SenderName"].ToString(),
+                                         Subject = dr["Subject"].ToString(),
+                                         eMailTypeId = Convert.ToInt32(dr["eMailTypeId"]),
+                                         Unread = Convert.ToBoolean(dr["Unread"]),
+                                         Important = Convert.ToBoolean(dr["Important"]),
+                                         Attachment = Convert.ToInt32(dr["Attachment"]),
+                                         SenderEmail = dr["SenderEmail"].ToString()
+                                     }).ToList();
+                    }
                 }
 
                 return emailList;
@@ -172,6 +173,6 @@ namespace LucidX.Webservices
             }
         }
 
-     
+
     }
 }
