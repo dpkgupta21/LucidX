@@ -11,6 +11,8 @@
   <dimen name="divider_height">1dp</dimen>
   <dimen name="btn_rounded_corner_radius">4dp</dimen>
   <dimen name="text_padding">15dp</dimen>
+  <dimen name="drawer_width">100dp</dimen>
+  
 
   <!-- EDITTEXT -->
   <dimen name="et_padding">9dp</dimen>

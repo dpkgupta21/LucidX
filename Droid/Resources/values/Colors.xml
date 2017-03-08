@@ -3,7 +3,7 @@
 
   	
   	<color name="app_bg_color">#EEEEF0</color>
-  	<color name="ColorPrimary">#7846A7</color>
+  	<color name="ColorPrimary">#0e3153</color>
     <color name="ColorPrimaryDark">#693D94</color>
     <color name="white">#ffffff</color>
   	<color name="black">#000000</color>
@@ -15,6 +15,10 @@
   <color name="white_transparent_50">#80ffffff</color>
   <color name="divider_color">#818283</color>
   <color name="side_menu_icon_color">#555555</color>
+  <color name="confirm_number_lbl_color">#AC92CF</color>
+  <color name="register_confirm_number_lbl_color">#AE98C7</color>
+  <color name="right_reserved_lbl_color">#8179AA</color>
+  <color name="drawer_right_reserved_lbl_color">#625E83</color>
   
 
   <!-- EDITTEXT COLOR -->
@@ -26,11 +30,17 @@
 
   <!-- BUTTON COLOR -->
   <color name="btn_bg_color">#F91159</color>
-  <color name="drawer_bg_color">#1D1848</color>
+
   <color name="blue_color">#0000FF</color>
 
-  
+  <!-- LOGIN SCREEN COLOR -->
   <color name="login_lbl_color">#2D4159</color>
   <color name="btn_blue_color">#01AFEE</color>
+  
+  <!-- Drawer SCREEN COLOR -->
+  <color name="drawer_bg_color">#081a2c</color>
+  
+  <!-- Inbox SCREEN COLOR -->
+  <color name="drawer_bg_color">#081a2c</color>
 
 </resources>

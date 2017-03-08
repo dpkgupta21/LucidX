@@ -1,12 +1,26 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-	<!-- Side Menu options -->
+  <!-- Side Menu options -->
   <string-array name="language_entries">
     <item>English</item>
     <item>French</item>
   </string-array>
 
 
+  <!--NAVIGATION ICONS-->
+  <string-array name="menu_icon_array">
+    <item>inbox</item>
+    <item>draft</item>
+    <item>sent</item>
+    <item>delet</item>
+  </string-array>
+
+  <string-array name="menu_array">
+    <item>@string/menu_inbox</item>
+    <item>@string/menu_draft</item>
+    <item>@string/menu_sent</item>
+    <item>@string/menu_trash</item>
+  </string-array>
 
 </resources>
 
