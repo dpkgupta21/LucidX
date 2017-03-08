@@ -10,7 +10,7 @@ using LucidX.Droid.Source.Global;
 
 namespace LucidX.Droid.Source.Activities
 {
-    [Activity(Label = "LucidX", MainLauncher = true, Icon = "@mipmap/icon", Theme = "@style/AppTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "LucidX",  Icon = "@mipmap/icon", Theme = "@style/AppTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SplashScreenActivity : Activity
     {
         private Activity mActivity;

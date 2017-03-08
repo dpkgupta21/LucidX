@@ -18,54 +18,31 @@ namespace LucidX.Droid.Source.CustomViews
     /// <summary>
     /// Custom Button, provides customization of Andoird Widget Button
     /// </summary>
-    class CustomButton : Button
+    public class CustomButton : Button
     {
+        public Context context;
 
-        public CustomButton(Context context, IAttributeSet attrs, int defStyle): base(context, attrs, defStyle)
+        public CustomButton(Context context) : base(context)
         {
-
-            if (!IsInEditMode)
-            {
-                init(attrs);
-            }
+            this.context = context;
+            Initialize();
         }
 
-        public CustomButton(Context context, IAttributeSet attrs): base(context, attrs)
+        public CustomButton(Context context, IAttributeSet attrs) : base(context, attrs)
         {
-
-            if (!IsInEditMode)
-            {
-                init(attrs);
-            }
+            this.context = context;
+            Initialize();
         }
-
-        public CustomButton(Context context) :  base(context)
+        public CustomButton(Context context, IAttributeSet attrs, int defStyle) : base(context, attrs, defStyle)
         {
-
-            if (!IsInEditMode)
-            {
-                init(null);
-            }
+            this.context = context;
+            Initialize();
         }
-
-        /// <summary>
-        /// Initialization
-        /// </summary>
-        /// <param name="attrs">attributes given in layout file</param>
-        private void init(IAttributeSet attrs)
+        void Initialize()
         {
-            if (attrs != null)
-            {
-                TypedArray a = Context.ObtainStyledAttributes(attrs, Resource.Styleable.CustomButton);
-                String fontName = a.GetString(Resource.Styleable.CustomButton_buttonFontName);
-                if (fontName != null)
-                {
-                    Typeface myTypeface = Typeface.CreateFromAsset(Context.Assets, "Fonts/" + fontName);
-                    SetTypeface(myTypeface, TypefaceStyle.Normal);
-                }
-                a.Recycle();
-            }
+            Typeface tf = tf = Typeface.CreateFromAsset(Context.Assets, "Fonts/HelveticaNeueLTStd-Bd.otf");
+            SetTypeface(tf, 0);
         }
-
     }
+
 }

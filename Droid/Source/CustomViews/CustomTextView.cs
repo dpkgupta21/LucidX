@@ -19,51 +19,28 @@ namespace LucidX.Droid.Source.CustomViews
     /// </summary>
     public class CustomTextView : TextView
     {
-        public CustomTextView(Context context, IAttributeSet attrs, int defStyle): base(context, attrs, defStyle)
-        {           
-            if (!IsInEditMode)
-            {
-                init(attrs);
-            }
-        }
+        public Context context;
 
-        public CustomTextView(Context context, IAttributeSet attrs): base(context, attrs)
+        public CustomTextView(Context context) : base(context)
         {
-            
-            if (!IsInEditMode)
-            {
-                init(attrs);
-            }
-
+            this.context = context;
+            Initialize();
         }
 
-        public CustomTextView(Context context): base(context)
+        public CustomTextView(Context context, IAttributeSet attrs) : base(context, attrs)
         {
-           
-            if (!IsInEditMode)
-            {
-                init(null);
-            }
+            this.context = context;
+            Initialize();
         }
-
-        /// <summary>
-        /// Initialization
-        /// </summary>
-        /// <param name="attrs">attributes given in layout file</param>
-        private void init(IAttributeSet attrs)
+        public CustomTextView(Context context, IAttributeSet attrs, int defStyle) : base(context, attrs, defStyle)
         {
-            if (attrs != null)
-            {
-                TypedArray a = Context.ObtainStyledAttributes(attrs, Resource.Styleable.CustomTextView);
-                String fontName = a.GetString(Resource.Styleable.CustomTextView_textViewFontName);
-                if (fontName != null)
-                {
-                    Typeface myTypeface = Typeface.CreateFromAsset(Context.Assets, "Fonts/" + fontName);
-                    SetTypeface(myTypeface, TypefaceStyle.Normal);
-                }
-                a.Recycle();
-            }
+            this.context = context;
+            Initialize();
         }
-
+        void Initialize()
+        {
+            Typeface tf = tf = Typeface.CreateFromAsset(Context.Assets, "Fonts/HelveticaNeueLTStd-Bd.otf");
+            SetTypeface(tf, 0);
+        }
     }
 }

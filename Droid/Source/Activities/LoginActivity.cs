@@ -3,7 +3,6 @@ using Android.Widget;
 using Android.OS;
 using Android.Views;
 using LucidX.ResponseModels;
-using LucidX.RequestModels;
 using LucidX.Droid.Source.Utilities;
 using LucidX.Droid.Source.SharedPreference;
 using LucidX.Droid.Source.Global;
@@ -12,9 +11,8 @@ using Plugin.Connectivity;
 using LucidX.Droid.Source.CustomViews;
 using Android.Content;
 using System.Xml;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using LucidX.Webservices;
 
 namespace LucidX.Droid.Source.Activities
 {
@@ -23,7 +21,6 @@ namespace LucidX.Droid.Source.Activities
     {
         private string username;
         private string password;
-        private string connectionName= "DEMOConneection";
         private Activity mActivity;
         private SharedPreferencesManager mSharedPreferencesManager;
         private EditText edt_username;
@@ -57,7 +54,7 @@ namespace LucidX.Droid.Source.Activities
             edt_password = FindViewById<EditText>(Resource.Id.edt_password);
 
             username = mSharedPreferencesManager.GetString(ConstantsDroid.USERNAME_PREFERENCE, "");
-            password= mSharedPreferencesManager.GetString(ConstantsDroid.PASSWORD_PREFERENCE, "");
+            password = mSharedPreferencesManager.GetString(ConstantsDroid.PASSWORD_PREFERENCE, "");
 
             edt_username.Text = username;
             edt_password.Text = password;
@@ -88,57 +85,62 @@ namespace LucidX.Droid.Source.Activities
                 if (CrossConnectivity.Current.IsConnected)
                 {
 
-                    CustomProgressDialog.ShowProgDialog(mActivity, "Loading...");
+                    CustomProgressDialog.ShowProgDialog(mActivity, Resources.GetString(Resource.String.loading));
 
                     username = edt_username.Text;
                     password = edt_password.Text;
 
                     if (ValidateForm())
                     {
-                        ElucidateAPIParams param = new ElucidateAPIParams
-                        {
-                            userID = username,
-                            strPwd = password,
-                            connectionName = connectionName
-
-                        };
 
                         CheckBox chk_remember_me = FindViewById<CheckBox>(Resource.Id.chk_remember_me);
                         if (chk_remember_me.Checked)
                         {
                             mSharedPreferencesManager.PutString(ConstantsDroid.USERNAME_PREFERENCE, username);
                             mSharedPreferencesManager.PutString(ConstantsDroid.PASSWORD_PREFERENCE, password);
-                        }else
+                        }
+                        else
                         {
                             mSharedPreferencesManager.PutString(ConstantsDroid.USERNAME_PREFERENCE, "");
                             mSharedPreferencesManager.PutString(ConstantsDroid.PASSWORD_PREFERENCE, "");
                         }
 
                         //UtilityDroid.GetInstance().ShowToast(mActivity, "Before Print", ToastLength.Long);
-                        FinalResponse finalResponse = await WebServiceMethods.Login(param);
+
+                        FinalResponse finalResponse = await WebServiceMethods.Login(username, password);
                         //UtilityDroid.GetInstance().ShowToast(mActivity, "After Print"+ finalResponse.StatusCode, ToastLength.Long);
-                       
-                        var responseLst = finalResponse.ResultDoc as XmlNode[];
 
-                        bool isAuthenticate = false;
-                        isAuthenticate = Convert.ToBoolean(responseLst.FirstOrDefault(x => x.Name == "isAuthenticate").InnerText);
-
-
-                        if (isAuthenticate)
+                        if (finalResponse != null)
                         {
-                            CustomProgressDialog.HideProgressDialog();
-                            StartActivity(new Intent(this, typeof(HomeActivity)));
-                            OverridePendingTransition(Resource.Animation.animation_enter,
-                                        Resource.Animation.animation_leave);
-                            Finish();
+                            var responseLst = finalResponse.ResultDoc as XmlNode[];
+
+                            bool isAuthenticate = false;
+                            isAuthenticate = Convert.ToBoolean(responseLst.FirstOrDefault(x => x.Name == "isAuthenticate").InnerText);
+
+
+                            if (isAuthenticate)
+                            {
+                                CustomProgressDialog.HideProgressDialog();
+                                StartActivity(new Intent(this, typeof(HomeActivity)));
+                                OverridePendingTransition(Resource.Animation.animation_enter,
+                                            Resource.Animation.animation_leave);
+                                Finish();
+                            }
+                            else
+                            {
+                                CustomProgressDialog.HideProgressDialog();
+                                UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title),
+                                    Resources.GetString(Resource.String.alert_message_invalid_credentials),
+                                    Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
+
+                            }
                         }
                         else
                         {
                             CustomProgressDialog.HideProgressDialog();
-                            UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title), 
-                                Resources.GetString(Resource.String.alert_message_invalid_credentials),
-                                Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
-
+                            UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title),
+                  Resources.GetString(Resource.String.alert_message_invalid_credentials),
+                  Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
                         }
 
                     }
@@ -178,10 +180,7 @@ namespace LucidX.Droid.Source.Activities
             {
                 return false;
             }
-            else if (string.IsNullOrEmpty(connectionName))
-            {
-                return false;
-            }
+
             return true;
         }
 
