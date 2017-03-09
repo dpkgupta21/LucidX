@@ -8,15 +8,17 @@ using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Xml;
 
 namespace LucidX.Webservices
 {
     public class WebServiceMethods
     {
-        public async static Task<FinalResponse> Login(string username, string password)
+        public async static Task<LoginResponse> Login(string username, string password)
         {
             try
             {
+
                 LoginAPIParams param = new LoginAPIParams
                 {
                     userID = username,
@@ -27,7 +29,37 @@ namespace LucidX.Webservices
 
                 FinalResponse response = await WebServiceHandler.GetWebserviceResult(WebserviceConstants.LOGIN_URL,
                     HttpMethod.Post, param) as FinalResponse;
-                return response;
+                var responseLst = response.ResultDoc as XmlNode[];
+                bool isAuthenticate = false;
+                isAuthenticate = Convert.ToBoolean(responseLst.FirstOrDefault(x => x.Name == "isAuthenticate").InnerText);
+
+                LoginResponse loginInfo = null;
+                if (isAuthenticate)
+                {
+                    loginInfo = new LoginResponse();
+
+                    loginInfo.IsAuthenticate = isAuthenticate;
+                    XmlNode node = responseLst[4];
+
+                    for (int i = 0; i < node.ChildNodes.Count; i++)
+                    {
+                        XmlNode childNode = node.ChildNodes[i];
+                        if (i == 0)
+                        {
+                            loginInfo.UserId = childNode.InnerText.ToString();
+                        }
+                        else if (i == 1)
+                        {
+                            loginInfo.Name = childNode.InnerText.ToString();
+                        }
+                        else if (i == 6)
+                        {
+                            loginInfo.UserEmail = childNode.InnerText.ToString();
+                        }
+                    }
+                }
+
+                return loginInfo;
             }
             catch (Exception ex)
             {
@@ -41,7 +73,7 @@ namespace LucidX.Webservices
             {
                 EmailCountsAPIParams param = new EmailCountsAPIParams
                 {
-                    intUserID = userId,
+                    intUserID = "12013",
                     connectionName = WebserviceConstants.CONNECTION_NAME
                 };
 
