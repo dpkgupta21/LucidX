@@ -1,5 +1,6 @@
 
 using Android.Content;
+using Android.Graphics;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
@@ -11,9 +12,12 @@ namespace LucidX.Droid.Source.Adapters
 {
     public class InboxAdapter : RecyclerView.Adapter
     {
-        private List<EmailResponse> data;
+        private List<EmailResponse> emailList;
         public event EventHandler<int> ItemClick;
         private Context context;
+        private List<EmailResponse> filteredList;
+        public Filter filter;
+
         public class InboxViewHolder : RecyclerView.ViewHolder
         {
             public View viewMain;
@@ -38,7 +42,7 @@ namespace LucidX.Droid.Source.Adapters
 
         public InboxAdapter(Context context)
         {
-            this.context = context;
+            this.context = context;            
         }
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
@@ -53,30 +57,55 @@ namespace LucidX.Droid.Source.Adapters
 
             var holder = (InboxViewHolder)holderRaw;
             holder.viewMain.Tag = position;
-
-            EmailResponse dto = data[position];
+            DateTime dateTime = new DateTime();
+            EmailResponse dto = emailList[position];
             holder.txt_email_address.Text = dto.SenderEmail;
             holder.txt_email_detail.Text = dto.Subject;
+            if (dto.Attachment > 0)
+            {
+                holder.img_attachment_icon.Visibility = ViewStates.Visible;
+            }
+            else
+            {
+                holder.img_attachment_icon.Visibility = ViewStates.Gone;
+            }
+
+            if (dto.Unread)
+            {
+                holder.txt_email_address.SetTextColor(Color.Black);
+                holder.txt_email_detail.SetTextColor(Color.Black);
+                holder.txt_email_address.Typeface = Typeface.DefaultBold;
+                holder.txt_email_detail.Typeface = Typeface.DefaultBold;
+            }
+            else
+            {
+                holder.txt_email_address.SetTextColor(Color.Gray);
+                holder.txt_email_detail.SetTextColor(Color.Gray);
+                holder.txt_email_address.Typeface = Typeface.Default;
+                holder.txt_email_detail.Typeface = Typeface.Default;
+            }
         }
 
         public void SetData(List<EmailResponse> data)
         {
-            this.data = data;
+            emailList = data;
+            filteredList = new List<EmailResponse>();
+            filteredList=emailList;
         }
 
-      
+
 
         public override int ItemCount
         {
             get
             {
-                return data.Count;
+                return emailList.Count;
             }
         }
 
         public List<EmailResponse> GetData()
         {
-            return data;
+            return emailList;
         }
 
         void OnItemClickListener(int position)
@@ -87,6 +116,31 @@ namespace LucidX.Droid.Source.Adapters
             }
         }
 
-       
+
+        public void GetFilteredList(string text)
+        {
+            emailList.Clear();
+            if (text.Length == 0)
+            {
+                emailList= filteredList;
+            }
+            else
+            {
+                foreach (EmailResponse emailResponseDTO in filteredList)
+                {
+                    if (emailResponseDTO.SenderName.ToUpper()
+                            .Contains(text.ToUpper())||
+                            emailResponseDTO.SenderEmail.ToUpper()
+                            .Contains(text.ToUpper())||
+                            emailResponseDTO.Subject.ToUpper()
+                            .Contains(text.ToUpper()))
+                    {
+                        emailList.Add(emailResponseDTO);
+                    }
+                }
+            }
+
+            NotifyDataSetChanged();
+        }
     }
 }

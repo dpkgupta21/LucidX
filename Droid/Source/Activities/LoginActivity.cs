@@ -35,6 +35,7 @@ namespace LucidX.Droid.Source.Activities
 
             mActivity = this;
 
+
             /// Shared Preference manager
             mSharedPreferencesManager = UtilityDroid.GetInstance().
                        GetSharedPreferenceManagerWithEncriptionEnabled(mActivity.ApplicationContext);
@@ -107,19 +108,17 @@ namespace LucidX.Droid.Source.Activities
 
                         //UtilityDroid.GetInstance().ShowToast(mActivity, "Before Print", ToastLength.Long);
 
-                        FinalResponse finalResponse = await WebServiceMethods.Login(username, password);
+                        LoginResponse loginResponse = await WebServiceMethods.Login(username, password);
                         //UtilityDroid.GetInstance().ShowToast(mActivity, "After Print"+ finalResponse.StatusCode, ToastLength.Long);
 
-                        if (finalResponse != null)
+                        if (loginResponse != null)
                         {
-                            var responseLst = finalResponse.ResultDoc as XmlNode[];
-
-                            bool isAuthenticate = false;
-                            isAuthenticate = Convert.ToBoolean(responseLst.FirstOrDefault(x => x.Name == "isAuthenticate").InnerText);
 
 
-                            if (isAuthenticate)
+                            if (loginResponse.IsAuthenticate)
                             {
+                                mSharedPreferencesManager.PutLoginResponse(loginResponse);
+
                                 CustomProgressDialog.HideProgressDialog();
                                 StartActivity(new Intent(this, typeof(HomeActivity)));
                                 OverridePendingTransition(Resource.Animation.animation_enter,

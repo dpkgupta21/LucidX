@@ -56,7 +56,8 @@ namespace LucidX.Droid.Source.Global
         public static string USER_ID_PREFERENCE = "UserId";
         public static string NAME_PREFEREENCE = "Name";
         public static string EMAIL_ID_PREFERENCE = "EmailId";
-
+        public static string EMAIL_COUNT_OBJECT_PREFERENCE = "EmailCountObject";
+        public static string LOGIN_RESPONSE_OBJECT_PREFERENCE = "LoginResponseObject";
 
 
 

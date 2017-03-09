@@ -19,11 +19,13 @@ using Plugin.Connectivity;
 using LucidX.ResponseModels;
 using LucidX.Droid.Source.Utilities;
 using LucidX.Droid.Source.CustomViews;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace LucidX.Droid.Source.Activities
 {
 
-    [Activity(Label = "HomeActivity", MainLauncher = true, Theme = "@style/AppTheme", Icon = "@mipmap/icon",
+    [Activity(Label = "HomeActivity",  Theme = "@style/AppTheme", Icon = "@mipmap/icon",
         ScreenOrientation = ScreenOrientation.Portrait, WindowSoftInputMode = SoftInput.AdjustResize)]
     public class HomeActivity : AppCompatActivity, MenuAdapter.OnItemClickListener
     {
@@ -77,7 +79,7 @@ namespace LucidX.Droid.Source.Activities
         }
 
 
-        private async void GetEmailCounts()
+        private async Task GetEmailCounts()
         {
             try
             {
@@ -89,8 +91,8 @@ namespace LucidX.Droid.Source.Activities
 
                     if (emailCount != null)
                     {
-                        mAdapter.emailCount = emailCount;
-                        mAdapter.NotifyDataSetChanged();
+                        mSharedPreferencesManager.PutCountResponse(emailCount);
+                        
                     }
 
                 }
@@ -109,8 +111,16 @@ namespace LucidX.Droid.Source.Activities
         /// Setups the side menu.
         /// </summary>
         /// <returns>The side menu.</returns>
-        private void SetupSideMenu()
+        private async void SetupSideMenu()
         {
+            LoginResponse loginResponseObj = mSharedPreferencesManager.GetLoginResponse();
+
+            TextView txt_user_name = FindViewById<TextView>(Resource.Id.txt_user_name);
+            TextView txt_user_email = FindViewById<TextView>(Resource.Id.txt_user_email);
+
+            txt_user_name.Text = loginResponseObj.Name;
+            txt_user_email.Text = loginResponseObj.UserEmail;
+
             ListView menuListView = FindViewById<ListView>(Resource.Id.listview);
             mMenuNames = Resources.GetStringArray(Resource.Array.menu_array);
             mMenuIcons = Resources.GetStringArray(Resource.Array.menu_icon_array);
@@ -132,7 +142,7 @@ namespace LucidX.Droid.Source.Activities
             drawerToggle.DrawerIndicatorEnabled = true;
 
             // Call Email Count webservice
-            GetEmailCounts();
+            await GetEmailCounts();
         }
 
 
@@ -198,6 +208,10 @@ namespace LucidX.Droid.Source.Activities
             /// <param name="drawerView">The drawer view.</param>
             public override void OnDrawerOpened(View drawerView)
             {
+                EmailCountResponse response = owner.mSharedPreferencesManager.
+                    GetCountResponse();
+                owner.mAdapter.emailCount = response;
+                owner.mAdapter.NotifyDataSetChanged();
                 //owner.ActionBar.Title = owner.mDrawerTitle;
                 //owner.InvalidateOptionsMenu();
             }

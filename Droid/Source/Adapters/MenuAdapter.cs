@@ -39,7 +39,7 @@ namespace LucidX.Droid.Source.Adapters
             this.mNames = mNames;
             this.mIcons = mIcons;
             mListener = listener;
-            mActivity = listener as Activity;
+            this.mActivity = mActivity;
         }
 
        
@@ -75,9 +75,8 @@ namespace LucidX.Droid.Source.Adapters
                 holder = (ViewHolder)convertView.Tag;
             }
 
-            //var drawableImage = mActivity.Resources.GetDrawable(mActivity.Resources.GetIdentifier(mIcons[position], "drawable", mActivity.PackageName));
-
-            holder.img_icon.SetImageResource(Resource.Drawable.user_icon);
+            int id = mActivity.Resources.GetIdentifier(mIcons[position], "drawable", mActivity.PackageName);
+            holder.img_icon.SetImageResource(id);
             holder.txt_menu_name.Text = mNames[position];
             if (emailCount != null)
             {

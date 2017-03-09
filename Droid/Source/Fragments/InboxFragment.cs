@@ -15,6 +15,8 @@ using LucidX.Droid.Source.CustomViews;
 using LucidX.Webservices;
 using LucidX.Droid.Source.Utilities;
 using LucidX.Droid.Source.Global;
+using Android.Support.V4.View;
+using Android.Runtime;
 
 namespace LucidX.Droid.Source.Fragments
 {
@@ -60,7 +62,7 @@ namespace LucidX.Droid.Source.Fragments
         {
             // Use this to return your custom view for this Fragment
             view = inflater.Inflate(Resource.Layout.Fragment_Inbox, container, false);
-
+            HasOptionsMenu = true;
             mActivity = Activity;
 
             /// Shared Preference manager
@@ -70,6 +72,43 @@ namespace LucidX.Droid.Source.Fragments
             Init();
             return view;
         }
+
+        /// <summary>
+        /// Initializes the contents of the Activity's standard options menu
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <param name="inflater"></param>
+        public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
+        {
+            inflater.Inflate(Resource.Menu.search, menu);
+            try
+            {
+                var searchItem = menu.FindItem(Resource.Id.menu_search);
+
+                var searvView = MenuItemCompat.GetActionView(searchItem);
+                Android.Support.V7.Widget.SearchView searchView = searvView.JavaCast<Android.Support.V7.Widget.SearchView>();
+
+                searchView.QueryTextChange += (sender, args) =>
+                {
+                    string search = args.NewText;
+
+                    //if (string.IsNullOrEmpty(search))
+                    //{
+                    //    adapter.ResetSearch();
+                    //}
+                    //else
+                    //{
+                    //    adapter.filter.InvokeFilter(search);
+                    //}
+                };
+            }
+            catch (Exception e)
+            {
+                
+            }
+        }
+
+
 
         /// <summary>
         /// Method use to initialize resources.

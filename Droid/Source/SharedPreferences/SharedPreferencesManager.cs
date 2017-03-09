@@ -10,6 +10,9 @@ using Java.Security;
 using Java.IO;
 using Javax.Crypto.Spec;
 using Android.Util;
+using LucidX.ResponseModels;
+using Newtonsoft.Json;
+using LucidX.Droid.Source.Global;
 
 namespace LucidX.Droid.Source.SharedPreference
 {
@@ -563,5 +566,119 @@ namespace LucidX.Droid.Source.SharedPreference
             return _preferences.Contains(ToKey(key));
         }
 
+        /// <summary>
+        ///  Set a Email Count Response value in the mPreferences
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        public void PutCountResponse(EmailCountResponse countObj)
+        {
+            string key = ConstantsDroid.EMAIL_COUNT_OBJECT_PREFERENCE;
+            string value = JsonConvert.SerializeObject(countObj);           
+            if (value == null)
+            {
+                _editor.Remove(ToKey(key)).Commit();
+            }
+            else
+            {
+                string secureValueEncoded = ToValue(value);
+                _editor.PutString(ToKey(key), secureValueEncoded).Apply();
+            }
+        }
+
+        /// <summary>
+        ///  Set a Email Count Response value in the mPreferences
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        public void PutLoginResponse(LoginResponse loginObj)
+        {
+            string key = ConstantsDroid.LOGIN_RESPONSE_OBJECT_PREFERENCE;
+            string value = JsonConvert.SerializeObject(loginObj);
+            if (value == null)
+            {
+                _editor.Remove(ToKey(key)).Commit();
+            }
+            else
+            {
+                string secureValueEncoded = ToValue(value);
+                _editor.PutString(ToKey(key), secureValueEncoded).Apply();
+            }
+        }
+
+        /// <summary>
+        ///  Retrieve a Count Object from the mPreferences.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
+        public EmailCountResponse GetCountResponse()
+        {
+            string key = ConstantsDroid.EMAIL_COUNT_OBJECT_PREFERENCE;
+            EmailCountResponse response = null;
+            string value = null;
+            try
+            {
+               
+                if (_preferences.Contains(ToKey(key)))
+                {
+                    string securedEncodedValue = _preferences.GetString(ToKey(key), "");
+                    if (_encryptValues)
+                    { // If encryption is enabled for values then send decrypted value
+                        value = Decrypt(securedEncodedValue);
+                        response = JsonConvert.DeserializeObject<EmailCountResponse>(value);
+                        return response;
+                    }
+                    else
+                    {
+                        value = securedEncodedValue;
+                        response = JsonConvert.DeserializeObject<EmailCountResponse>(value);
+                        return response;
+                    }
+                }
+            }catch(System.Exception e)
+            {
+                return response;
+            }
+            return response;
+        }
+
+        /// <summary>
+        ///  Retrieve a Count Object from the mPreferences.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
+        public LoginResponse GetLoginResponse()
+        {
+            string key = ConstantsDroid.LOGIN_RESPONSE_OBJECT_PREFERENCE;
+            LoginResponse response = null;
+            string value = null;
+            try
+            {
+
+                if (_preferences.Contains(ToKey(key)))
+                {
+                    string securedEncodedValue = _preferences.GetString(ToKey(key), "");
+                    if (_encryptValues)
+                    { // If encryption is enabled for values then send decrypted value
+                        value = Decrypt(securedEncodedValue);
+                        response = JsonConvert.DeserializeObject<LoginResponse>(value);
+                        return response;
+                    }
+                    else
+                    {
+                        value = securedEncodedValue;
+                        response = JsonConvert.DeserializeObject<LoginResponse>(value);
+                        return response;
+                    }
+                }
+            }
+            catch (System.Exception e)
+            {
+                return response;
+            }
+            return response;
+        }
     }
 }
