@@ -19,13 +19,46 @@ namespace LucidX.iOS
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
-			// Override point for customization after application launch.
-			// If not required for your application you can safely delete this method
+
+			showLoginScreen();
+			return true;
+		}
+
+		/// <summary>
+		/// Gets AppDelegate shared instance.
+		/// </summary>
+		/// <returns>The shared instance.</returns>
+		public static AppDelegate GetSharedInstance()
+		{
+			return (AppDelegate)(UIApplication.SharedApplication.Delegate);
+		}
+
+		/// <summary>
+		/// Gets AppDelegate shared instance.
+		/// </summary>
+		/// <returns>The shared instance.</returns>
+		public static UIWindow GetMainWindow()
+		{
+			return UIApplication.SharedApplication.Delegate.GetWindow();
+		}
+
+		/// <summary>
+		/// Shows the login screen.
+		/// </summary>
+		public void showLoginScreen()
+		{
 			var loginvc = new LoginVC();
 			var win = UIApplication.SharedApplication.Delegate.GetWindow();
 			win.RootViewController = loginvc;
 			win.MakeKeyAndVisible();
-			return true;
+		}
+
+		/// <summary>
+		/// Shows the home screen.
+		/// </summary>
+		public void showHomeScreen()
+		{
+
 		}
 
 		public override void OnResignActivation(UIApplication application)

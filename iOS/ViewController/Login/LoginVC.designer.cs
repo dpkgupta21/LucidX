@@ -49,6 +49,9 @@ namespace LucidX.iOS.ViewControllers
 		UIKit.UIView IBPasswordVw { get; set; }
 
 		[Outlet]
+		UIKit.UIButton IBRemeberMeBtn { get; set; }
+
+		[Outlet]
 		UIKit.UIScrollView IBScrollVw { get; set; }
 
 		[Outlet]
@@ -72,14 +75,17 @@ namespace LucidX.iOS.ViewControllers
 		[Outlet]
 		UIKit.UILabel IBVersinonLbl { get; set; }
 
+		[Action ("IBRemembermeClicked:")]
+		partial void IBRemembermeClicked (Foundation.NSObject sender);
+
 		[Action ("SignInClicked:")]
 		partial void SignInClicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (IBScrollVw != null) {
-				IBScrollVw.Dispose ();
-				IBScrollVw = null;
+			if (IBRemeberMeBtn != null) {
+				IBRemeberMeBtn.Dispose ();
+				IBRemeberMeBtn = null;
 			}
 
 			if (IBContentVw != null) {
@@ -92,9 +98,24 @@ namespace LucidX.iOS.ViewControllers
 				IBCopyRightLbl = null;
 			}
 
-			if (IBLogoVw != null) {
-				IBLogoVw.Dispose ();
-				IBLogoVw = null;
+			if (IBLanguageImg != null) {
+				IBLanguageImg.Dispose ();
+				IBLanguageImg = null;
+			}
+
+			if (IBLanguageLbl != null) {
+				IBLanguageLbl.Dispose ();
+				IBLanguageLbl = null;
+			}
+
+			if (IBLanguageTxt != null) {
+				IBLanguageTxt.Dispose ();
+				IBLanguageTxt = null;
+			}
+
+			if (IBLanguageVw != null) {
+				IBLanguageVw.Dispose ();
+				IBLanguageVw = null;
 			}
 
 			if (IBLogoImg != null) {
@@ -102,39 +123,9 @@ namespace LucidX.iOS.ViewControllers
 				IBLogoImg = null;
 			}
 
-			if (IBVersinonLbl != null) {
-				IBVersinonLbl.Dispose ();
-				IBVersinonLbl = null;
-			}
-
-			if (IBTitleLbl != null) {
-				IBTitleLbl.Dispose ();
-				IBTitleLbl = null;
-			}
-
-			if (IBUsernameVw != null) {
-				IBUsernameVw.Dispose ();
-				IBUsernameVw = null;
-			}
-
-			if (IBUserImg != null) {
-				IBUserImg.Dispose ();
-				IBUserImg = null;
-			}
-
-			if (IBUsernameLbl != null) {
-				IBUsernameLbl.Dispose ();
-				IBUsernameLbl = null;
-			}
-
-			if (IBUsernameTxt != null) {
-				IBUsernameTxt.Dispose ();
-				IBUsernameTxt = null;
-			}
-
-			if (IBPasswordVw != null) {
-				IBPasswordVw.Dispose ();
-				IBPasswordVw = null;
+			if (IBLogoVw != null) {
+				IBLogoVw.Dispose ();
+				IBLogoVw = null;
 			}
 
 			if (IBPasswordImg != null) {
@@ -152,19 +143,14 @@ namespace LucidX.iOS.ViewControllers
 				IBPasswordTxt = null;
 			}
 
-			if (IBLanguageVw != null) {
-				IBLanguageVw.Dispose ();
-				IBLanguageVw = null;
+			if (IBPasswordVw != null) {
+				IBPasswordVw.Dispose ();
+				IBPasswordVw = null;
 			}
 
-			if (IBLanguageImg != null) {
-				IBLanguageImg.Dispose ();
-				IBLanguageImg = null;
-			}
-
-			if (IBLanguageLbl != null) {
-				IBLanguageLbl.Dispose ();
-				IBLanguageLbl = null;
+			if (IBScrollVw != null) {
+				IBScrollVw.Dispose ();
+				IBScrollVw = null;
 			}
 
 			if (IBSignInBtn != null) {
@@ -172,9 +158,34 @@ namespace LucidX.iOS.ViewControllers
 				IBSignInBtn = null;
 			}
 
-			if (IBLanguageTxt != null) {
-				IBLanguageTxt.Dispose ();
-				IBLanguageTxt = null;
+			if (IBTitleLbl != null) {
+				IBTitleLbl.Dispose ();
+				IBTitleLbl = null;
+			}
+
+			if (IBUserImg != null) {
+				IBUserImg.Dispose ();
+				IBUserImg = null;
+			}
+
+			if (IBUsernameLbl != null) {
+				IBUsernameLbl.Dispose ();
+				IBUsernameLbl = null;
+			}
+
+			if (IBUsernameTxt != null) {
+				IBUsernameTxt.Dispose ();
+				IBUsernameTxt = null;
+			}
+
+			if (IBUsernameVw != null) {
+				IBUsernameVw.Dispose ();
+				IBUsernameVw = null;
+			}
+
+			if (IBVersinonLbl != null) {
+				IBVersinonLbl.Dispose ();
+				IBVersinonLbl = null;
 			}
 		}
 	}
