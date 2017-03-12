@@ -14,8 +14,11 @@
             <connections>
                 <outlet property="IBContentVw" destination="teB-tV-XRK" id="b8y-Hg-RhA"/>
                 <outlet property="IBCopyRightLbl" destination="bxm-nj-sBC" id="R7e-Eo-2x2"/>
+                <outlet property="IBDoneBar" destination="cpS-NH-ovz" id="ghd-mg-kK0"/>
+                <outlet property="IBDoneBtn" destination="6Nb-20-UFB" id="wy7-Ii-zAl"/>
                 <outlet property="IBLanguageImg" destination="3qk-Yc-XTg" id="vE7-mr-Y63"/>
                 <outlet property="IBLanguageLbl" destination="hAu-NN-fwn" id="Fp4-xI-fxt"/>
+                <outlet property="IBLanguagePicker" destination="fPz-4m-Q6K" id="RmA-M4-3kr"/>
                 <outlet property="IBLanguageTxt" destination="uT0-mN-fGs" id="SEr-Px-SzE"/>
                 <outlet property="IBLanguageVw" destination="sif-Ag-xnS" id="TJL-vQ-SgQ"/>
                 <outlet property="IBLogoImg" destination="pzg-gI-zB3" id="axp-4U-IVG"/>
@@ -135,10 +138,13 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     </variation>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="-1" id="1C6-Qx-8qf"/>
+                                                    </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-Ok-khm">
                                                     <rect key="frame" x="0.0" y="38" width="259" height="1"/>
@@ -191,10 +197,13 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     </variation>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="-1" id="Tx6-m8-GAr"/>
+                                                    </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLX-Mp-GQU">
                                                     <rect key="frame" x="0.0" y="38" width="259" height="1"/>
@@ -247,10 +256,13 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     </variation>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="-1" id="qGN-rI-ENj"/>
+                                                    </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnL-ej-HUf">
                                                     <rect key="frame" x="0.0" y="38" width="259" height="1"/>
@@ -281,10 +293,12 @@
                                             <rect key="frame" x="8" y="245.5" width="259" height="30"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yC-BU-KUW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="30"/>
+                                                    <rect key="frame" x="0.0" y="5" width="121" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title=" Remember me" image="User">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <state key="selected" image="Password"/>
                                                     <connections>
                                                         <action selector="IBRemembermeClicked:" destination="-1" eventType="touchUpInside" id="ztO-8P-WTb"/>
                                                     </connections>
@@ -292,9 +306,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="3yC-BU-KUW" firstAttribute="top" secondItem="gMn-OJ-aDE" secondAttribute="top" id="03B-6c-o8Q"/>
+                                                <constraint firstItem="3yC-BU-KUW" firstAttribute="top" secondItem="gMn-OJ-aDE" secondAttribute="top" constant="5" id="03B-6c-o8Q"/>
                                                 <constraint firstItem="3yC-BU-KUW" firstAttribute="leading" secondItem="gMn-OJ-aDE" secondAttribute="leading" id="5GR-gW-orT"/>
-                                                <constraint firstAttribute="bottom" secondItem="3yC-BU-KUW" secondAttribute="bottom" id="Joq-wo-JzC"/>
+                                                <constraint firstAttribute="bottom" secondItem="3yC-BU-KUW" secondAttribute="bottom" constant="5" id="Joq-wo-JzC"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3yC-BU-KUW" secondAttribute="trailing" id="l26-g5-ilU"/>
                                                 <constraint firstAttribute="height" constant="30" id="vdw-14-EOL"/>
                                             </constraints>
@@ -394,6 +408,27 @@
             </constraints>
             <point key="canvasLocation" x="32.5" y="21.5"/>
         </view>
+        <pickerView contentMode="scaleToFill" id="fPz-4m-Q6K">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="33" y="542"/>
+        </pickerView>
+        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" id="cpS-NH-ovz">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <color key="backgroundColor" red="0.011138542555272579" green="0.17934626340866089" blue="0.37043473124504089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <items>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="6G8-JV-nnD"/>
+                <barButtonItem systemItem="done" id="6Nb-20-UFB">
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="IBDoneClicked:" destination="-1" id="K1U-ZO-Vpo"/>
+                    </connections>
+                </barButtonItem>
+            </items>
+            <color key="barTintColor" red="0.011138542560000001" green="0.17934626340000001" blue="0.37043473119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="28" y="740"/>
+        </toolbar>
     </objects>
     <resources>
         <image name="Background" width="320" height="568"/>

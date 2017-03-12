@@ -1,9 +1,14 @@
-/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/Plugin.Connectivity.dll
-/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.dll
-/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.Xml.dll
-/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/Plugin.Connectivity.Abstractions.dll
-/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.Net.Http.dll
-/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/Xamarin.iOS.dll
-/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.Core.dll
-/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/mscorlib.dll
-/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/LucidX.iOS.exe
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.Numerics.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.Core.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/Plugin.Connectivity.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/Xamarin.iOS.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/Plugin.Connectivity.Abstractions.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/Plugin.Settings.Abstractions.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/mscorlib.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.Net.Http.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/LucidX.iOS.exe
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/Plugin.Settings.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/MBProgressHUD.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.Data.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache/Link/System.Xml.dll

@@ -19,10 +19,19 @@ namespace LucidX.iOS.ViewControllers
 		UIKit.UILabel IBCopyRightLbl { get; set; }
 
 		[Outlet]
+		UIKit.UIToolbar IBDoneBar { get; set; }
+
+		[Outlet]
+		UIKit.UIBarButtonItem IBDoneBtn { get; set; }
+
+		[Outlet]
 		UIKit.UIImageView IBLanguageImg { get; set; }
 
 		[Outlet]
 		UIKit.UILabel IBLanguageLbl { get; set; }
+
+		[Outlet]
+		UIKit.UIPickerView IBLanguagePicker { get; set; }
 
 		[Outlet]
 		UIKit.UITextField IBLanguageTxt { get; set; }
@@ -75,6 +84,9 @@ namespace LucidX.iOS.ViewControllers
 		[Outlet]
 		UIKit.UILabel IBVersinonLbl { get; set; }
 
+		[Action ("IBDoneClicked:")]
+		partial void IBDoneClicked (Foundation.NSObject sender);
+
 		[Action ("IBRemembermeClicked:")]
 		partial void IBRemembermeClicked (Foundation.NSObject sender);
 
@@ -83,9 +95,19 @@ namespace LucidX.iOS.ViewControllers
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (IBRemeberMeBtn != null) {
-				IBRemeberMeBtn.Dispose ();
-				IBRemeberMeBtn = null;
+			if (IBLanguagePicker != null) {
+				IBLanguagePicker.Dispose ();
+				IBLanguagePicker = null;
+			}
+
+			if (IBDoneBar != null) {
+				IBDoneBar.Dispose ();
+				IBDoneBar = null;
+			}
+
+			if (IBDoneBtn != null) {
+				IBDoneBtn.Dispose ();
+				IBDoneBtn = null;
 			}
 
 			if (IBContentVw != null) {
@@ -146,6 +168,11 @@ namespace LucidX.iOS.ViewControllers
 			if (IBPasswordVw != null) {
 				IBPasswordVw.Dispose ();
 				IBPasswordVw = null;
+			}
+
+			if (IBRemeberMeBtn != null) {
+				IBRemeberMeBtn.Dispose ();
+				IBRemeberMeBtn = null;
 			}
 
 			if (IBScrollVw != null) {

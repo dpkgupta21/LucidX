@@ -107,6 +107,7 @@
     <Reference Include="MBProgressHUD">
       <HintPath>..\packages\mbprogresshud.0.9.2.0\lib\Xamarin.iOS\MBProgressHUD.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -116,7 +117,6 @@
     <ImageAsset Include="Resources\Images.xcassets\User.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Password.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Language.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\Radio.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Logo.imageset\logo.png" />
     <ImageAsset Include="Resources\Images.xcassets\Language.imageset\language-icon.png" />
     <ImageAsset Include="Resources\Images.xcassets\User.imageset\user-icon.png" />
@@ -126,6 +126,8 @@
     <ImageAsset Include="Resources\Images.xcassets\Background.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Background.imageset\app-bg.jpg" />
     <ImageAsset Include="Resources\Images.xcassets\Background.imageset\iOS-Iphone5-SE%402x.jpg" />
+    <ImageAsset Include="Resources\Images.xcassets\Radiooff.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\RadioOn.imageset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -134,14 +136,18 @@
     <Folder Include="Resources\Images.xcassets\User.imageset\" />
     <Folder Include="Resources\Images.xcassets\Password.imageset\" />
     <Folder Include="Resources\Images.xcassets\Language.imageset\" />
-    <Folder Include="Resources\Images.xcassets\Radio.imageset\" />
     <Folder Include="Resources\Images.xcassets\ButtonBG.imageset\" />
     <Folder Include="Resources\Images.xcassets\Background.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Radiooff.imageset\" />
+    <Folder Include="Resources\Images.xcassets\RadioOn.imageset\" />
+    <Folder Include="CustomCells\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="ViewController\Login\LoginVC.xib" />
+    <InterfaceDefinition Include="ViewController\Home\HomeVC.xib" />
+    <InterfaceDefinition Include="ViewController\Settings\SettingsVc.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -156,7 +162,20 @@
     <Compile Include="Utils\IosColorConstant.cs" />
     <Compile Include="Utils\LocalizedString.cs" />
     <Compile Include="Utils\Utility.cs" />
-    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Utils\Settings.cs" />
+    <Compile Include="PickerModels\PickerModel.cs" />
+    <Compile Include="ViewController\Home\HomeVC.cs" />
+    <Compile Include="ViewController\Home\HomeVC.designer.cs" />
+    <Compile Include="ViewController\Settings\SettingsVc.cs" />
+    <Compile Include="ViewController\Settings\SettingsVc.designer.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\fr.lproj\Localizable.strings" />
   </ItemGroup>
   <Import Project="..\LucidX\LucidX.projitems" Label="Shared" Condition="Exists('..\LucidX\LucidX.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -2,7 +2,7 @@
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 
-namespace LucidX.iOS.Helpers
+namespace IosUtils
 {
 	/// <summary>
 	/// This is the Settings static class that can be used in your Core solution or in any
@@ -65,7 +65,7 @@ namespace LucidX.iOS.Helpers
 			}
 		}
 
-		public static string CurrentLangusge
+		public static string CurrentLanguage
 		{
 			get
 			{
@@ -75,6 +75,13 @@ namespace LucidX.iOS.Helpers
 			{
 				AppSettings.AddOrUpdateValue(LanguageKey, value);
 			}
+		}
+
+
+		public static void RemoveLoginInfo() {
+			AppSettings.Remove(UserNameKey);
+			AppSettings.Remove(PasswordKey);
+			AppSettings.Remove(RemeberMeKey);
 		}
 
 	}

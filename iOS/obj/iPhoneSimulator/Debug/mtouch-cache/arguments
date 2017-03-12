@@ -1,25 +1,25 @@
-# Version: 10.3.1.7 (cycle8-xi: 8b53676)
-# [first argument, ignore] # /Library/Frameworks/Xamarin.iOS.framework/Versions/10.3.1.7/lib/mtouch/mtouch.exe
-/Library/Frameworks/Xamarin.iOS.framework/Versions/10.3.1.7/lib/mtouch/mtouch.exe \
+# Version: 10.4.0.123 (cycle9: 35d1ccd)
+# [first argument, ignore] # /Library/Frameworks/Xamarin.iOS.framework/Versions/10.4.0.123/lib/mtouch/mtouch.exe
+/Library/Frameworks/Xamarin.iOS.framework/Versions/10.4.0.123/lib/mtouch/mtouch.exe \
 	--cache \
-	/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-cache" \
 	--sim \
-	/Users/DeepakGupta/Projects/LucidX/iOS/bin/iPhoneSimulator/Debug/LucidX.iOS.app \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/LucidX.iOS.app" \
 	--executable \
 	LucidX.iOS \
 	--fastdev \
 	--debug \
 	--sdkroot \
-	/Applications/Xcode-beta.app/Contents/Developer \
+	/Applications/Xcode.app/Contents/Developer \
 	--sdk \
-	10.1 \
+	10.2 \
 	--targetver \
 	8.0 \
 	--http-message-handler=HttpClientHandler \
 	--tls-provider=default \
 	--abi=x86_64 \
 	--symbollist \
-	/Users/DeepakGupta/Projects/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-symbols.list \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/mtouch-symbols.list" \
 	--dsym=no \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
@@ -30,15 +30,23 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
 	-r \
-	/Users/DeepakGupta/Projects/LucidX/packages/Xam.Plugin.Connectivity.2.3.0/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/Xam.Plugin.Connectivity.2.3.0/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll" \
 	-r \
-	/Users/DeepakGupta/Projects/LucidX/packages/Xam.Plugin.Connectivity.2.3.0/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/Xam.Plugin.Connectivity.2.3.0/lib/Xamarin.iOS10/Plugin.Connectivity.dll" \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.Serialization.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Net.Http.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Net.dll \
+	-r \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/Xam.Plugins.Settings.2.5.4/lib/Xamarin.iOS10/Plugin.Settings.Abstractions.dll" \
+	-r \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/Xam.Plugins.Settings.2.5.4/lib/Xamarin.iOS10/Plugin.Settings.dll" \
+	-r \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/mbprogresshud.0.9.2.0/lib/Xamarin.iOS/MBProgressHUD.dll" \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Data.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
 	-r \
@@ -167,6 +175,12 @@
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Net.WebSockets.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.ObjectModel.dll \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Reflection.Emit.ILGeneration.dll \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Reflection.Emit.Lightweight.dll \
+	-r \
+	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Reflection.Emit.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Reflection.Extensions.dll \
 	-r \
@@ -298,9 +312,15 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
 	-r \
-	/Users/DeepakGupta/Projects/LucidX/packages/Xam.Plugin.Connectivity.2.3.0/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/Xam.Plugin.Connectivity.2.3.0/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll" \
 	-r \
-	/Users/DeepakGupta/Projects/LucidX/packages/Xam.Plugin.Connectivity.2.3.0/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/Xam.Plugin.Connectivity.2.3.0/lib/Xamarin.iOS10/Plugin.Connectivity.dll" \
+	-r \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/Xam.Plugins.Settings.2.5.4/lib/Xamarin.iOS10/Plugin.Settings.Abstractions.dll" \
+	-r \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/Xam.Plugins.Settings.2.5.4/lib/Xamarin.iOS10/Plugin.Settings.dll" \
+	-r \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/mbprogresshud.0.9.2.0/lib/Xamarin.iOS/MBProgressHUD.dll" \
 	--target-framework \
 	"Xamarin.iOS,v1.0" \
-	/Users/DeepakGupta/Projects/LucidX/iOS/bin/iPhoneSimulator/Debug//LucidX.iOS.exe \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug//LucidX.iOS.exe" \

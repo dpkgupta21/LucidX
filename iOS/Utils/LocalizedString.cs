@@ -39,7 +39,7 @@ namespace IosUtils
 		public string GetLocalizedString (string key,string comments) {
 
 			// Get the language code.
-			NSString languageCode = UserDefaultManger.sharedManager.CurrentLanguage;
+			NSString languageCode = new NSString(Settings.CurrentLanguage);
 
 			// Get the relevant language bundle.
 			var bundlePath = NSBundle.MainBundle.PathForResource( languageCode ,"lproj");
