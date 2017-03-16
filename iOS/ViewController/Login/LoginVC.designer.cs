@@ -7,7 +7,7 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace LucidX.iOS.ViewControllers
+namespace LucidX.iOS
 {
 	[Register ("LoginVC")]
 	partial class LoginVC
@@ -95,9 +95,14 @@ namespace LucidX.iOS.ViewControllers
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (IBLanguagePicker != null) {
-				IBLanguagePicker.Dispose ();
-				IBLanguagePicker = null;
+			if (IBContentVw != null) {
+				IBContentVw.Dispose ();
+				IBContentVw = null;
+			}
+
+			if (IBCopyRightLbl != null) {
+				IBCopyRightLbl.Dispose ();
+				IBCopyRightLbl = null;
 			}
 
 			if (IBDoneBar != null) {
@@ -110,16 +115,6 @@ namespace LucidX.iOS.ViewControllers
 				IBDoneBtn = null;
 			}
 
-			if (IBContentVw != null) {
-				IBContentVw.Dispose ();
-				IBContentVw = null;
-			}
-
-			if (IBCopyRightLbl != null) {
-				IBCopyRightLbl.Dispose ();
-				IBCopyRightLbl = null;
-			}
-
 			if (IBLanguageImg != null) {
 				IBLanguageImg.Dispose ();
 				IBLanguageImg = null;
@@ -128,6 +123,11 @@ namespace LucidX.iOS.ViewControllers
 			if (IBLanguageLbl != null) {
 				IBLanguageLbl.Dispose ();
 				IBLanguageLbl = null;
+			}
+
+			if (IBLanguagePicker != null) {
+				IBLanguagePicker.Dispose ();
+				IBLanguagePicker = null;
 			}
 
 			if (IBLanguageTxt != null) {

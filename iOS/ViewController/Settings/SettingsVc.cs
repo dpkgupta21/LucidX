@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using CoreGraphics;
 using Foundation;
 using UIKit;
 using Xamarin.SWRevealViewController;
 
-namespace WSI_NintaBlackBoxAlert_App.iOS
+namespace LucidX.iOS
 {
-	public partial class SettingsVc : UIViewController,IUITableViewDelegate,IUITableViewDataSource
+	public partial class SettingsVc : UIViewController
 	{
 		List<String> menu = new List<string>();
 
@@ -19,13 +20,7 @@ namespace WSI_NintaBlackBoxAlert_App.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			menu.Add("Change Phone Number");
-			IBCopyRightLbl.Text = StringConstants.Instance.SettingsCopyRightText;
-			IBMenuTbl.DataSource = this;
-			IBMenuTbl.Delegate = this;
-			IBMenuTbl.TableFooterView = new UIView();
-			IBMenuTbl.SeparatorStyle = UITableViewCellSeparatorStyle.None;
-			// Perform any additional setup after loading the view, typically from a nib.
+			configureView();
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -33,44 +28,65 @@ namespace WSI_NintaBlackBoxAlert_App.iOS
 			base.DidReceiveMemoryWarning();
 			// Release any cached data, images, etc that aren't in use.
 		}
+		#region HelperMethods
 
-		#region TableView Delegate and DataSource Methods
-
-		[Export("numberOfSectionsInTableView:")]
-		public nint NumberOfSections(UITableView tableView)
+		void configureView()
 		{
-			return 1;
+			IBProfileImg.Layer.CornerRadius = IBProfileImg.Frame.Width / 2;
+			IBTrashVw.Layer.ShadowColor = UIColor.FromRGBA(0, 0, 0, 0.5f).CGColor;
+			IBTrashVw.Layer.ShadowOffset = new CGSize(0,2);
+			IBTrashVw.Layer.MasksToBounds = false;
+			SetupLanguageStrings();
 		}
 
-		public nint RowsInSection(UITableView tableview, nint section)
+		void SetupLanguageStrings()
 		{
-			return menu.Count;
+			IBMailTitleLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSMailTitle", "");
+			IBInboxLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInbox", "");
+			IBDraftLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSDrafts", "");
+			IBSentLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSSent", "");
+			IBTrashLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSTrash", "");
+			IBCalendarLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSCalendra", "");
+			IBInvoiceLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInvoice", "");
 		}
 
-		public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+
+		#endregion
+
+		#region IBaction Methods
+
+		partial void IBCalendarClicked(Foundation.NSObject sender)
 		{
-			var cell = new UITableViewCell(UITableViewCellStyle.Default,"SettingCell");
-			cell.TextLabel.Text = menu[indexPath.Row];
-			cell.TextLabel.TextColor = UIColor.White;
-			cell.TextLabel.Font = UIFont.SystemFontOfSize(15,UIFontWeight.Light);
-			cell.ImageView.Image = UIImage.FromBundle("Phone");
-			cell.SelectionStyle = UITableViewCellSelectionStyle.None;
-			cell.BackgroundColor = UIColor.Clear;
-			return cell;
+			revealVC.RevealToggleAnimated(true);
 		}
 
-		[Export("tableView:didSelectRowAtIndexPath:")]
-		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
+		partial void IBDraftClicked(Foundation.NSObject sender)
 		{
-			revealVC.RightRevealToggleAnimated(true);
-			var vc = new NumberChangeVC();
-			(revealVC.FrontViewController as UINavigationController).PushViewController(vc, true);
+			revealVC.RevealToggleAnimated(true);
+		}
+
+		partial void IBInboxClicked(Foundation.NSObject sender)
+		{
+			revealVC.RevealToggleAnimated(true);
+		}
+
+		partial void IBInvoiceClicked(Foundation.NSObject sender)
+		{
+			revealVC.RevealToggleAnimated(true);
+		}
+
+		partial void IBSentClicked(Foundation.NSObject sender)
+		{
+			revealVC.RevealToggleAnimated(true);
+		}
+
+		partial void IBTrashClicked(Foundation.NSObject sender)
+		{
+			revealVC.RevealToggleAnimated(true);
 		}
 
 		#endregion
-		partial void CloseBtnClicked(Foundation.NSObject sender) {
-			revealVC.RevealToggleAnimated(true);
-		}
+
 	}
 }
 

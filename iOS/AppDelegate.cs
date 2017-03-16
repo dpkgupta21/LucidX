@@ -1,6 +1,7 @@
 ﻿using Foundation;
-using LucidX.iOS.ViewControllers;
+using LucidX.iOS;
 using UIKit;
+using Xamarin.SWRevealViewController;
 
 namespace LucidX.iOS
 {
@@ -19,6 +20,16 @@ namespace LucidX.iOS
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
+
+			var navdesign = UINavigationBar.Appearance;
+			navdesign.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
+			navdesign.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
+			navdesign.ShadowImage = new UIImage();
+			navdesign.TintColor = UIColor.White;
+			var textattributes = UINavigationBar.Appearance.GetTitleTextAttributes();
+			textattributes.TextColor = UIColor.White;
+			UINavigationBar.Appearance.SetTitleTextAttributes(textattributes);
+			UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
 
 			showLoginScreen();
 			return true;
@@ -58,7 +69,21 @@ namespace LucidX.iOS
 		/// </summary>
 		public void showHomeScreen()
 		{
+			var homeVC = new HomeVC();
+			var navVc = new UINavigationController(homeVC);
+			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
+			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
+			navVc.View.AddSubview(fixitVw);
 
+			var settingVC = new SettingsVc();
+			var NavDrawer = new SWRevealViewController();
+			NavDrawer.FrontViewController = navVc;
+			NavDrawer.RearViewController = settingVC;
+			NavDrawer.RearViewRevealOverdraw = 0.0f;
+			homeVC.revealVC = NavDrawer;
+			settingVC.revealVC = NavDrawer;
+			Window.RootViewController = NavDrawer;
+			Window.MakeKeyAndVisible();
 		}
 
 		public override void OnResignActivation(UIApplication application)

@@ -7,7 +7,7 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace WSI_NintaBlackBoxAlert_App.iOS
+namespace LucidX.iOS
 {
 	[Register ("SettingsVc")]
 	partial class SettingsVc

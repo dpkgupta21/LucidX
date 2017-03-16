@@ -11,11 +11,15 @@ void xamarin_register_assemblies_impl ()
 	guint32 exception_gchandle = 0;
 	xamarin_open_and_register ("MBProgressHUD.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
+	xamarin_open_and_register ("Xamarin.SWRevealViewController.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
 
 }
 
+void xamarin_create_classes_Xamarin_iOS();
 void xamarin_setup_impl ()
 {
+	xamarin_create_classes_Xamarin_iOS();
 	xamarin_gc_pump = TRUE;
 	xamarin_init_mono_debug = TRUE;
 	xamarin_executable_name = "LucidX.iOS.exe";

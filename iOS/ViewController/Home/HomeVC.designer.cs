@@ -7,7 +7,7 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace WSI_NintaBlackBoxAlert_App.iOS
+namespace LucidX.iOS
 {
 	[Register ("HomeVC")]
 	partial class HomeVC
@@ -32,16 +32,6 @@ namespace WSI_NintaBlackBoxAlert_App.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (IBContntTbl != null) {
-				IBContntTbl.Dispose ();
-				IBContntTbl = null;
-			}
-
-			if (IBSearchBar != null) {
-				IBSearchBar.Dispose ();
-				IBSearchBar = null;
-			}
-
 			if (IBCancelBtn != null) {
 				IBCancelBtn.Dispose ();
 				IBCancelBtn = null;
@@ -50,6 +40,16 @@ namespace WSI_NintaBlackBoxAlert_App.iOS
 			if (IBCancelWidth != null) {
 				IBCancelWidth.Dispose ();
 				IBCancelWidth = null;
+			}
+
+			if (IBContntTbl != null) {
+				IBContntTbl.Dispose ();
+				IBContntTbl = null;
+			}
+
+			if (IBSearchBar != null) {
+				IBSearchBar.Dispose ();
+				IBSearchBar = null;
 			}
 		}
 	}

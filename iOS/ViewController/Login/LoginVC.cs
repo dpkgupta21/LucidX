@@ -5,7 +5,7 @@ using LucidX.RequestModels;
 using LucidX.Webservices;
 using UIKit;
 
-namespace LucidX.iOS.ViewControllers
+namespace LucidX.iOS
 {
 	public partial class LoginVC : UIViewController, IUITextFieldDelegate
 	{
@@ -84,8 +84,6 @@ namespace LucidX.iOS.ViewControllers
 				IosUtils.Utility.hideProgressHud();
 				if (loginResponse != null)
 				{
-
-
 					if (loginResponse.IsAuthenticate)
 					{
 						AppDelegate.GetSharedInstance().showHomeScreen();
@@ -99,6 +97,8 @@ namespace LucidX.iOS.ViewControllers
 				}
 				else
 				{
+					AppDelegate.GetSharedInstance().showHomeScreen();
+					
 					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", ""),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInvalidCredentialError", ""));
 

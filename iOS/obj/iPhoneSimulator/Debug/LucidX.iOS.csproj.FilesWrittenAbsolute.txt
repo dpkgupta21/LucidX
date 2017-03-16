@@ -14,3 +14,4 @@
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/Plugin.Settings.Abstractions.dll
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/Plugin.Settings.dll
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/MBProgressHUD.dll
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/Xamarin.SWRevealViewController.dll
