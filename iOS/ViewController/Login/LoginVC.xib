@@ -293,12 +293,12 @@
                                             <rect key="frame" x="8" y="245.5" width="259" height="30"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yC-BU-KUW">
-                                                    <rect key="frame" x="0.0" y="5" width="121" height="20"/>
+                                                    <rect key="frame" x="0.0" y="5" width="117" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" title=" Remember me" image="User">
+                                                    <state key="normal" title=" Remember me" image="Radiooff">
                                                         <color key="titleColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="selected" image="Password"/>
+                                                    <state key="selected" image="RadioOn"/>
                                                     <connections>
                                                         <action selector="IBRemembermeClicked:" destination="-1" eventType="touchUpInside" id="ztO-8P-WTb"/>
                                                     </connections>
@@ -436,6 +436,8 @@
         <image name="Language" width="29" height="26"/>
         <image name="Logo" width="105" height="107"/>
         <image name="Password" width="29" height="26"/>
+        <image name="RadioOn" width="25" height="25"/>
+        <image name="Radiooff" width="25" height="25"/>
         <image name="User" width="29" height="26"/>
     </resources>
 </document>

@@ -13,7 +13,7 @@ using LucidX.Webservices;
 
 namespace Inbox
 {
-	public partial class InboxVC : UIViewController,IUITableViewDelegate,IUITableViewDataSource,IUISearchBarDelegate
+	public partial class InboxVC : UIViewController, IUITableViewDelegate, IUITableViewDataSource, IUISearchBarDelegate
 	{
 		public string number;
 		public SWRevealViewController revealVC;
@@ -44,7 +44,7 @@ namespace Inbox
 		{
 			this.EdgesForExtendedLayout = UIRectEdge.None;
 			this.NavigationItem.Title = "";
-			var menuBtn = new UIBarButtonItem(UIImage.FromBundle("User"),
+			var menuBtn = new UIBarButtonItem(UIImage.FromBundle("Menu"),
 											  UIBarButtonItemStyle.Plain,
 											  MenuClicked);
 			this.NavigationItem.LeftBarButtonItem = menuBtn;
@@ -53,14 +53,27 @@ namespace Inbox
 			IBContntTbl.TableFooterView = new UIView();
 		}
 
-		async void GetData() {
-			IosUtils.Utility.showProgressHud("");
-			mails = await WebServiceMethods.InboxEmails(IosUtils.Settings.UserId,1);
-			IBContntTbl.ReloadData();
-			IosUtils.Utility.hideProgressHud();
+		async void GetData()
+		{
+			if (IosUtils.Utility.IsReachable())
+			{
+				IosUtils.Utility.showProgressHud("");
+				var res = await WebServiceMethods.InboxEmails(IosUtils.Settings.UserId, 1);
+				if (res != null)
+				{
+					mails = res;
+				}
+				else
+				{
+
+				}
+				IBContntTbl.ReloadData();
+				IosUtils.Utility.hideProgressHud();
+			}
 		}
 
-		async void markRead(string mailId) {
+		async void markRead(string mailId)
+		{
 			await WebServiceMethods.MarkReadEmail(mailId);
 		}
 
@@ -133,7 +146,7 @@ namespace Inbox
 			IBContntTbl.ReloadData();
 			var detailsVC = new MailDetails.MailDetailsVC();
 			detailsVC.mail = mails[indexPath.Row];
-			this.NavigationController.PushViewController(detailsVC,true);
+			this.NavigationController.PushViewController(detailsVC, true);
 		}
 
 

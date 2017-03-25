@@ -9,9 +9,16 @@ namespace LucidX.iOS
 {
 	public partial class SettingsVc : UIViewController
 	{
-		string Selected="Inbox";
+		string Selected = "Inbox";
 
 		public SWRevealViewController revealVC;
+
+		Calendar.CalendarVC calendarVc;
+		Inbox.InboxVC inboxVc;
+		Drafts.DraftsVC draftVc;
+		Sent.SentVC sentVc;
+		Trash.TrashVC trashVc;
+		Invoice.InvoiceVC invoiceVc;
 
 		public SettingsVc() : base("SettingsVc", null)
 		{
@@ -44,12 +51,19 @@ namespace LucidX.iOS
 			GetCount();
 		}
 
-		async void GetCount() {
-			var res = await Webservices.WebServiceMethods.EmailCount(IosUtils.Settings.UserId);
-			IBInboxCountLbl.Text = res.inboxCount.ToString();
-			IBSentCountLbl.Text = res.sentItemCount.ToString();
-			IBDraftCountLbl.Text = res.draftCount.ToString();
-			IBTrashCountLbl.Text = res.trashCount.ToString();
+		async void GetCount()
+		{
+			if (IosUtils.Utility.IsReachable())
+			{
+				var res = await Webservices.WebServiceMethods.EmailCount(IosUtils.Settings.UserId);
+				if (res != null)
+				{
+					IBInboxCountLbl.Text = res.inboxCount.ToString();
+					IBSentCountLbl.Text = res.sentItemCount.ToString();
+					IBDraftCountLbl.Text = res.draftCount.ToString();
+					IBTrashCountLbl.Text = res.trashCount.ToString();
+				}
+			}
 		}
 
 
@@ -64,14 +78,15 @@ namespace LucidX.iOS
 			IBInvoiceLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInvoice", "");
 		}
 
-		void SetSelected(UIView vw) {
+		void SetSelected(UIView vw)
+		{
 			IBInboxVw.BackgroundColor = IBMailVw.BackgroundColor;
 			IBSentVw.BackgroundColor = IBMailVw.BackgroundColor;
 			IBDraftVw.BackgroundColor = IBMailVw.BackgroundColor;
 			IBTrashVw.BackgroundColor = IBMailVw.BackgroundColor;
 			IBCalendarVw.BackgroundColor = UIColor.Clear;
 			IBInvoiceVw.BackgroundColor = UIColor.Clear;
-			
+
 			vw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
 		}
 
@@ -81,9 +96,12 @@ namespace LucidX.iOS
 
 		partial void IBCalendarClicked(Foundation.NSObject sender)
 		{
-			var caledarvc = new Calendar.CalendarVC();
-			caledarvc.revealVC = revealVC;
-			var navVc = new UINavigationController(caledarvc);
+			if (calendarVc == null)
+			{
+				calendarVc = new Calendar.CalendarVC();
+				calendarVc.revealVC = revealVC;
+			}
+			var navVc = new UINavigationController(calendarVc);
 			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
 			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
 			navVc.View.AddSubview(fixitVw);
@@ -94,9 +112,12 @@ namespace LucidX.iOS
 
 		partial void IBDraftClicked(Foundation.NSObject sender)
 		{
-			var draftvc = new Drafts.DraftsVC();
-			draftvc.revealVC = revealVC;
-			var navVc = new UINavigationController(draftvc);
+			if (draftVc == null)
+			{
+				draftVc = new Drafts.DraftsVC();
+				draftVc.revealVC = revealVC;
+			}
+			var navVc = new UINavigationController(draftVc);
 			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
 			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
 			navVc.View.AddSubview(fixitVw);
@@ -107,8 +128,11 @@ namespace LucidX.iOS
 
 		partial void IBInboxClicked(Foundation.NSObject sender)
 		{
-			var inboxVc = new Inbox.InboxVC();
-			inboxVc.revealVC = revealVC;
+			if (inboxVc == null)
+			{
+				inboxVc = new Inbox.InboxVC();
+				inboxVc.revealVC = revealVC;
+			}
 			var navVc = new UINavigationController(inboxVc);
 			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
 			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
@@ -120,8 +144,11 @@ namespace LucidX.iOS
 
 		partial void IBInvoiceClicked(Foundation.NSObject sender)
 		{
-			var invoiceVc = new Invoice.InvoiceVC();
-			invoiceVc.revealVC = revealVC;
+			if (invoiceVc == null)
+			{
+				invoiceVc = new Invoice.InvoiceVC();
+				invoiceVc.revealVC = revealVC;
+			}
 			var navVc = new UINavigationController(invoiceVc);
 			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
 			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
@@ -133,9 +160,12 @@ namespace LucidX.iOS
 
 		partial void IBSentClicked(Foundation.NSObject sender)
 		{
-			var sentVC = new Sent.SentVC();
-			sentVC.revealVC = revealVC;
-			var navVc = new UINavigationController(sentVC);
+			if (sentVc == null)
+			{
+				sentVc = new Sent.SentVC();
+				sentVc.revealVC = revealVC;
+			}
+			var navVc = new UINavigationController(sentVc);
 			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
 			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
 			navVc.View.AddSubview(fixitVw);
@@ -146,8 +176,11 @@ namespace LucidX.iOS
 
 		partial void IBTrashClicked(Foundation.NSObject sender)
 		{
-			var trashVc = new Trash.TrashVC();
-			trashVc.revealVC = revealVC;
+			if (trashVc == null)
+			{
+				trashVc = new Trash.TrashVC();
+				trashVc.revealVC = revealVC;
+			}
 			var navVc = new UINavigationController(trashVc);
 			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
 			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;

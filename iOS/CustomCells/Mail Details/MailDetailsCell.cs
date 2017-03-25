@@ -48,5 +48,10 @@ namespace CustomCells
 			IBDateTimeLbl.TextColor = UIColor.Black;
 		}
 
+		partial void IBDeleteBtnClicked(Foundation.NSObject sender) { 
+		
+		
+		}
+
 	}
 }

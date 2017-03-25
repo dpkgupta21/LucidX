@@ -33,7 +33,7 @@ namespace Calendar
 		{
 			this.EdgesForExtendedLayout = UIRectEdge.None;
 			this.NavigationItem.Title = "";
-			var menuBtn = new UIBarButtonItem(UIImage.FromBundle("User"),
+			var menuBtn = new UIBarButtonItem(UIImage.FromBundle("Menu"),
 											  UIBarButtonItemStyle.Plain,
 											  MenuClicked);
 			this.NavigationItem.LeftBarButtonItem = menuBtn;

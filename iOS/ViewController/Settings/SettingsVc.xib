@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -158,13 +157,14 @@
                     <rect key="frame" x="0.0" y="130" width="320" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inbox" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuV-yh-d18">
-                            <rect key="frame" x="36" y="5" width="254" height="20"/>
+                            <rect key="frame" x="36" y="5" width="268" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vZ3-hU-Qx2">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inbox" translatesAutoresizingMaskIntoConstraints="NO" id="vZ3-hU-Qx2">
                             <rect key="frame" x="8" y="5" width="20" height="20"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="vZ3-hU-Qx2" secondAttribute="height" id="Ric-ch-QPY"/>
                             </constraints>
@@ -175,8 +175,8 @@
                                 <action selector="IBInboxClicked:" destination="-1" eventType="touchUpInside" id="0bC-r6-bkG"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tai-rQ-BXJ">
-                            <rect key="frame" x="298" y="5" width="14" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tai-rQ-BXJ">
+                            <rect key="frame" x="312" y="5" width="0.0" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -205,13 +205,14 @@
                     <rect key="frame" x="0.0" y="160" width="320" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEC-Yd-7BX">
-                            <rect key="frame" x="36" y="5" width="254" height="20"/>
+                            <rect key="frame" x="36" y="5" width="268" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FAJ-Ib-EEU">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Drafts" translatesAutoresizingMaskIntoConstraints="NO" id="FAJ-Ib-EEU">
                             <rect key="frame" x="8" y="5" width="20" height="20"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="FAJ-Ib-EEU" secondAttribute="height" id="xdw-uI-EKT"/>
                             </constraints>
@@ -222,8 +223,8 @@
                                 <action selector="IBDraftClicked:" destination="-1" eventType="touchUpInside" id="M1Q-uc-A6H"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxf-mq-zwY">
-                            <rect key="frame" x="298" y="5" width="14" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxf-mq-zwY">
+                            <rect key="frame" x="312" y="5" width="0.0" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -252,13 +253,14 @@
                     <rect key="frame" x="0.0" y="190" width="320" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8W-Xg-57h">
-                            <rect key="frame" x="36" y="5" width="254" height="20"/>
+                            <rect key="frame" x="36" y="5" width="268" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uxl-zf-p1u">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sent" translatesAutoresizingMaskIntoConstraints="NO" id="uxl-zf-p1u">
                             <rect key="frame" x="8" y="5" width="20" height="20"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="uxl-zf-p1u" secondAttribute="height" id="f89-So-mcJ"/>
                             </constraints>
@@ -269,8 +271,8 @@
                                 <action selector="IBSentClicked:" destination="-1" eventType="touchUpInside" id="cSy-dQ-pzb"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMx-JW-saG">
-                            <rect key="frame" x="298" y="5" width="14" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMx-JW-saG">
+                            <rect key="frame" x="312" y="5" width="0.0" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -299,13 +301,15 @@
                     <rect key="frame" x="0.0" y="220" width="320" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yp-SM-y98">
-                            <rect key="frame" x="36" y="5" width="254" height="20"/>
+                            <rect key="frame" x="36" y="5" width="268" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2JV-7E-w5K">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trash" translatesAutoresizingMaskIntoConstraints="NO" id="2JV-7E-w5K">
                             <rect key="frame" x="8" y="5" width="20" height="20"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="2JV-7E-w5K" secondAttribute="height" id="whV-Nh-Svx"/>
                             </constraints>
@@ -316,8 +320,8 @@
                                 <action selector="IBTrashClicked:" destination="-1" eventType="touchUpInside" id="KJg-Th-Oxh"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlh-1b-7TR">
-                            <rect key="frame" x="298" y="5" width="14" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlh-1b-7TR">
+                            <rect key="frame" x="312" y="5" width="0.0" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -351,7 +355,7 @@
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-E5-tdj">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-E5-tdj">
                             <rect key="frame" x="8" y="5" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="X4c-E5-tdj" secondAttribute="height" id="skk-AH-5Mg"/>
@@ -389,8 +393,9 @@
                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="syq-h7-AV0">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Invoice" translatesAutoresizingMaskIntoConstraints="NO" id="syq-h7-AV0">
                             <rect key="frame" x="8" y="5" width="20" height="20"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="syq-h7-AV0" secondAttribute="height" id="aa8-1a-TGf"/>
                             </constraints>
@@ -459,6 +464,12 @@
     </objects>
     <resources>
         <image name="Background" width="320" height="568"/>
+        <image name="Calendar" width="33" height="33"/>
+        <image name="Drafts" width="16" height="16"/>
+        <image name="Inbox" width="24" height="24"/>
+        <image name="Invoice" width="24" height="24"/>
+        <image name="Sent" width="24" height="24"/>
+        <image name="Trash" width="24" height="24"/>
         <image name="User" width="29" height="26"/>
     </resources>
 </document>

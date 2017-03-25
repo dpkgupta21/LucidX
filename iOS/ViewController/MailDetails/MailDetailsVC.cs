@@ -25,25 +25,31 @@ namespace MailDetails
 			// Release any cached data, images, etc that aren't in use.
 		}
 
-#region Helping Methods
+		#region Helping Methods
 
-		void ConfigureView() {
+		void ConfigureView()
+		{
 			IBNameLbl.Text = mail.SenderName;
 			IBSubjectLbl.Text = mail.Subject;
 			IBNameIconLbl.Text = mail.SenderName[0].ToString();
 			GetDetails();
 		}
 
-		async void GetDetails() {
-			IosUtils.Utility.showProgressHud("");
-			var desc = await WebServiceMethods.EmailDetail(mail.MailId,IosUtils.Settings.UserId);
-			if (desc != null) {
-				IBContnTxt.AttributedText = GetAttributedStringFromHtml(desc);
+		async void GetDetails()
+		{
+			if (IosUtils.Utility.IsReachable())
+			{
+				IosUtils.Utility.showProgressHud("");
+				var desc = await WebServiceMethods.EmailDetail(mail.MailId, IosUtils.Settings.UserId);
+				if (desc != null)
+				{
+					IBContnTxt.AttributedText = GetAttributedStringFromHtml(desc);
+				}
+				IosUtils.Utility.hideProgressHud();
 			}
-			IosUtils.Utility.hideProgressHud();
 		}
 
-#endregion
+		#endregion
 
 		/// <summary>
 		/// Gets the attributed string from html-string.
