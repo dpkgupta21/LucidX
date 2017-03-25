@@ -4,17 +4,24 @@ using System.Text;
 
 namespace LucidX.Constants
 {
-    class WebserviceConstants
+    public class WebserviceConstants
     {
         public const string CONNECTION_NAME = "DEMOConneection";
 
         public const string TOKEN = "CE708CEA-65A6-40D4-B51F-C05ED6B10D58";
         public const string URL = "http://elucidateapi.azurewebsites.net/api/";
 
+        public const int INBOX_EMAIL_TYPE_ID = 1;
+        public const int DRAFT_EMAIL_TYPE_ID = 2;
+        public const int SENT_EMAIL_TYPE_ID = 3;
+        public const int TRASH_EMAIL_TYPE_ID = 4;
+
+
         public const string LOGIN_URL = "ModValidationsSvc/IsAuthenticatedUser?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
         public const string EMAIL_COUNT_URL = "ModDataGridsSvc/ShowEmailCounts?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
         public const string MARK_READ_EMAIL_URL = "ModMailSvc/EMarkReadMail?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
         public const string SHOW_INBOX_EMAILS_URL = "ModDataGridsSvc/ShowEmails?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string EMAIL_DETAILS_URL = "ModMailSvc/EGetEmailDetails?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
 
     }
 }

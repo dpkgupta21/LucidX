@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LucidX.ResponseModels
+﻿namespace LucidX.ResponseModels
 {
     public class EmailResponse
     {
-        public int MailId { get; set; }
+        public string MailId { get; set; }
         public string DisplayDate { get; set; }
         public string myGroup { get; set; }
         public string Received { get; set; }

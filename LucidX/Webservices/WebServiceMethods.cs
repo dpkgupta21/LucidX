@@ -73,7 +73,7 @@ namespace LucidX.Webservices
             {
                 EmailCountsAPIParams param = new EmailCountsAPIParams
                 {
-                    intUserID = "12013",
+                    intUserID = userId,
                     connectionName = WebserviceConstants.CONNECTION_NAME
                 };
 
@@ -97,12 +97,11 @@ namespace LucidX.Webservices
                         {
                             foreach (DataColumn dc in dt.Columns)
                             {
-
                                 if (dc.ColumnName == "eMailTypeName")
                                 {
                                     key = dr[dc].ToString();
                                 }
-                                if (dc.ColumnName == "Column1")
+                                if (dc.ColumnName == "emailcount")
                                 {
                                     value = Convert.ToInt32(dr[dc].ToString());
                                 }
@@ -116,7 +115,7 @@ namespace LucidX.Webservices
                     emailCount.draftCount = countDictionary["Drafts"];
                     emailCount.sentItemCount = countDictionary["Sent Items"];
                     emailCount.trashCount = countDictionary["Trash"];
-                    emailCount.allocatedCount = countDictionary["Allocated"];
+                    
 
                 }
 
@@ -128,7 +127,7 @@ namespace LucidX.Webservices
             }
         }
 
-        public async static Task<FinalResponse> MarkReadEmail(string mailId)
+        public async static Task<bool> MarkReadEmail(string mailId)
         {
             try
             {
@@ -141,25 +140,32 @@ namespace LucidX.Webservices
 
                 };
 
-                var response = await Webservices.WebServiceHandler.GetWebserviceResult(WebserviceConstants.MARK_READ_EMAIL_URL,
+                FinalResponse response = await WebServiceHandler.GetWebserviceResult(WebserviceConstants.MARK_READ_EMAIL_URL,
                     HttpMethod.Post, param) as FinalResponse;
 
-                return response as FinalResponse;
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    return true;
+                }else
+                {
+                    return false;
+                }
+                
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
 
-        public async static Task<List<EmailResponse>> InboxEmails(string userId)
+        public async static Task<List<EmailResponse>> InboxEmails(string userId, int mailTypeId)
         {
             try
             {
                 InboxEmailApiParams param = new InboxEmailApiParams
                 {
                     mailCount = 10,
-                    mailTypeId = 1,
+                    mailTypeId = mailTypeId,
                     filterIndex = 0,
                     filterEmail = "",
                     blnShowblank = false,
@@ -179,7 +185,7 @@ namespace LucidX.Webservices
                         emailList = (from DataRow dr in dt.Rows
                                      select new EmailResponse()
                                      {
-                                         MailId = Convert.ToInt32(dr["MailId"]),
+                                         MailId = dr["MailId"].ToString(),
                                          DisplayDate = dr["DisplayDate"].ToString(),
                                          myGroup = dr["myGroup"].ToString(),
                                          Received = dr["Received"].ToString(),
@@ -206,5 +212,33 @@ namespace LucidX.Webservices
         }
 
 
+        public async static Task<string> EmailDetail(string mailId, string userId)
+        {
+            string emailDetail = null;
+            try
+            {
+
+                EmailDetailsAPIParams param = new EmailDetailsAPIParams
+                {
+                    MailID = mailId,
+                    uid = userId,
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+
+                };
+
+                var response = await WebServiceHandler.GetWebserviceResult(WebserviceConstants.EMAIL_DETAILS_URL,
+                    HttpMethod.Post, param) as FinalResponse;
+
+                var responseLst = response.ResultDoc as XmlNode[];
+                emailDetail = responseLst.FirstOrDefault(x => x.Name == "retValue").InnerText;
+
+
+                return emailDetail;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }
