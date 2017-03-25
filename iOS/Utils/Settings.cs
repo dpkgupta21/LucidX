@@ -25,9 +25,60 @@ namespace IosUtils
 		private const string UserNameKey = "username_key";
 		private const string PasswordKey = "password_key";
 		private const string LanguageKey = "language_key";
+		private const string IsLogedinKey = "login_key";
+		private const string UserIdKey = "userid_key";
+		private const string UserMailKey = "usermail_key";
+		private const string NameKey = "name_key";
 		
-
 		#endregion
+
+		public static bool IsLogedin
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(IsLogedinKey, false);
+			}
+			set
+			{
+				AppSettings.AddOrUpdateValue(IsLogedinKey, value);
+			}
+		}
+
+		public static string UserId
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(UserIdKey, string.Empty);
+			}
+			set
+			{
+				AppSettings.AddOrUpdateValue(UserIdKey, value);
+			}
+		}
+
+		public static string UserMail
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(UserMailKey, string.Empty);
+			}
+			set
+			{
+				AppSettings.AddOrUpdateValue(UserMailKey, value);
+			}
+		}
+
+		public static string Name
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(NameKey, string.Empty);
+			}
+			set
+			{
+				AppSettings.AddOrUpdateValue(NameKey, value);
+			}
+		}
 
 		public static bool IsRememberMeSelected
 		{

@@ -86,6 +86,10 @@ namespace LucidX.iOS
 				{
 					if (loginResponse.IsAuthenticate)
 					{
+						IosUtils.Settings.UserId = loginResponse.UserId;
+						IosUtils.Settings.IsLogedin = true;
+						IosUtils.Settings.Name = loginResponse.Name;
+						IosUtils.Settings.UserMail = loginResponse.UserEmail;
 						AppDelegate.GetSharedInstance().showHomeScreen();
 					}
 					else
@@ -97,8 +101,8 @@ namespace LucidX.iOS
 				}
 				else
 				{
-					AppDelegate.GetSharedInstance().showHomeScreen();
-					
+					//AppDelegate.GetSharedInstance().showHomeScreen();
+
 					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", ""),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInvalidCredentialError", ""));
 

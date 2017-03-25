@@ -1,5 +1,5 @@
 ﻿using System;
-
+using LucidX.ResponseModels;
 using Foundation;
 using UIKit;
 
@@ -15,10 +15,37 @@ namespace CustomCells
 			// Note: this .ctor should not contain any initialization logic.
 		}
 
-		public void ConfigureView() {
-			IBMailAddressLbl.Text = "abc@xyz.com";
-			IBDescLbl.Text = "fsfdf s g s";
-			IBDateTimeLbl.Text="8 dec\n 3:56 am";
+		public void ConfigureView(EmailResponse data)
+		{
+			this.SelectionStyle = UITableViewCellSelectionStyle.None;
+			IBMailAddressLbl.Text = data.SenderEmail;
+			IBDescLbl.Text = data.Subject;
+			IBDateTimeLbl.Text = data.DisplayDate;
+			IBTitleLbl.Text = data.SenderName[0].ToString();
+			if (data.Unread)
+			{
+				setUnRead();
+			}
+			else {
+				setRead();
+			}
+		}
+
+		void setRead() {
+			IBTitleLbl.BackgroundColor = UIColor.LightGray;
+			IBDescLbl.TextColor = UIColor.LightGray;
+			IBMailAddressLbl.TextColor = UIColor.LightGray;
+			IBDescLbl.TextColor = UIColor.LightGray;
+			IBDateTimeLbl.TextColor = UIColor.LightGray;
+		}
+
+		void setUnRead()
+		{
+			IBTitleLbl.BackgroundColor = IosUtils.IosColorConstant.ThemeProfileTextColor;
+			IBDescLbl.TextColor = UIColor.Black;
+			IBMailAddressLbl.TextColor = UIColor.Black;
+			IBDescLbl.TextColor = UIColor.Black;
+			IBDateTimeLbl.TextColor = UIColor.Black;
 		}
 
 	}

@@ -17,7 +17,7 @@ namespace IosUtils
 {
 	public class IosColorConstant
 	{
-		public static UIColor ThemeNavBlue = UIColor.FromRGB(230.0f / 255.0f, 101.0f / 255.0f, 31.0f / 255.0f);
+		public static UIColor ThemeNavBlue = UIColor.FromRGB(13.0f / 255.0f, 36.0f / 255.0f, 64.0f / 255.0f);
 		public static UIColor ThemeDarkBlue = UIColor.FromRGB(3.0f / 255.0f, 27.0f / 255.0f, 52.0f / 255.0f);
 		public static UIColor ThemeProfileTextColor = UIColor.FromRGB(30.0f / 255.0f, 179.0f / 255.0f, 240.0f / 255.0f);
 		public static UIColor ThemeGrayBackground = UIColor.FromRGB(240.0f / 255.0f, 240.0f / 255.0f, 242.0f / 255.0f);

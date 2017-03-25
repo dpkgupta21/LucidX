@@ -16,11 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="406" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
-                <rect key="frame" x="0.0" y="0.0" width="406" height="69.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="406" height="69.666666666666671"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-8V-Ga2">
-                        <rect key="frame" x="7.9999999999999964" y="7.9999999999999964" width="54.666666666666657" height="54.666666666666657"/>
+                        <rect key="frame" x="7.9999999999999964" y="9.9999999999999964" width="49.666666666666657" height="49.666666666666657"/>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.66666666669999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="AA6-8V-Ga2" secondAttribute="height" multiplier="1:1" id="5hw-dq-9TG"/>
@@ -33,24 +33,24 @@
                         </variation>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvx-wZ-fQ9">
-                        <rect key="frame" x="67.666666666666657" y="28" width="275.33333333333337" height="15"/>
+                        <rect key="frame" x="62.666666666666657" y="27.666666666666664" width="280.33333333333337" height="14.999999999999993"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhO-IT-JPy">
-                                <rect key="frame" x="0.0" y="5" width="275.33333333333331" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="0.0" y="4.9999999999999964" width="280.33333333333331" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnF-3O-89R">
-                                <rect key="frame" x="0.0" y="10" width="275.33333333333331" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="0.0" y="9.9999999999999964" width="280.33333333333331" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -88,7 +88,7 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="AA6-8V-Ga2" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" constant="8" id="5fT-bx-vhW"/>
+                    <constraint firstItem="AA6-8V-Ga2" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" constant="10" id="5fT-bx-vhW"/>
                     <constraint firstItem="ZgU-xr-TIO" firstAttribute="top" secondItem="J5W-PJ-qNP" secondAttribute="bottom" constant="5" id="8Lo-mg-8ZO"/>
                     <constraint firstItem="bvx-wZ-fQ9" firstAttribute="leading" secondItem="AA6-8V-Ga2" secondAttribute="trailing" constant="5" id="FjB-et-qOK"/>
                     <constraint firstItem="ZgU-xr-TIO" firstAttribute="width" secondItem="J5W-PJ-qNP" secondAttribute="width" id="GHV-l5-dCR"/>
@@ -99,7 +99,7 @@
                     <constraint firstItem="J5W-PJ-qNP" firstAttribute="leading" secondItem="bvx-wZ-fQ9" secondAttribute="trailing" constant="5" id="gaA-mS-6Ii"/>
                     <constraint firstAttribute="trailing" secondItem="ZgU-xr-TIO" secondAttribute="trailing" constant="8" id="ho3-0M-BSV"/>
                     <constraint firstAttribute="trailing" secondItem="J5W-PJ-qNP" secondAttribute="trailing" constant="8" id="liT-nd-8tL"/>
-                    <constraint firstAttribute="bottom" secondItem="AA6-8V-Ga2" secondAttribute="bottom" constant="7" id="ypQ-me-DFr"/>
+                    <constraint firstAttribute="bottom" secondItem="AA6-8V-Ga2" secondAttribute="bottom" constant="10" id="ypQ-me-DFr"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

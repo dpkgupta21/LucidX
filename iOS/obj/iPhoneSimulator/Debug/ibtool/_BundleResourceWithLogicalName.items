@@ -1,8 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/HomeVC.nib">
-      <LogicalName>HomeVC.nib</LogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/CalendarVC.nib">
+      <LogicalName>CalendarVC.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/DraftsVC.nib">
+      <LogicalName>DraftsVC.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/InboxVC.nib">
+      <LogicalName>InboxVC.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/InvoiceVC.nib">
+      <LogicalName>InvoiceVC.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib">
@@ -25,6 +37,10 @@
       <LogicalName>MailDetailsCell.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/MailDetailsVC.nib">
+      <LogicalName>MailDetailsVC.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib">
       <LogicalName>Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -37,8 +53,16 @@
       <LogicalName>Main.storyboardc/UIViewController-BYZ-38-t0r.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/SentVC.nib">
+      <LogicalName>SentVC.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/SettingsVc.nib">
       <LogicalName>SettingsVc.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/TrashVC.nib">
+      <LogicalName>TrashVC.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
   </ItemGroup>

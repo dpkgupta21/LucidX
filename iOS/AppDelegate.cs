@@ -30,8 +30,14 @@ namespace LucidX.iOS
 			textattributes.TextColor = UIColor.White;
 			UINavigationBar.Appearance.SetTitleTextAttributes(textattributes);
 			UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
-
-			showLoginScreen();
+			if (IosUtils.Settings.IsLogedin)
+			{
+				showHomeScreen();
+			}
+			else
+			{
+				showLoginScreen();
+			}
 			return true;
 		}
 
@@ -69,8 +75,8 @@ namespace LucidX.iOS
 		/// </summary>
 		public void showHomeScreen()
 		{
-			var homeVC = new HomeVC();
-			var navVc = new UINavigationController(homeVC);
+			var inboxVC = new Inbox.InboxVC();
+			var navVc = new UINavigationController(inboxVC);
 			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
 			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
 			navVc.View.AddSubview(fixitVw);
@@ -80,7 +86,7 @@ namespace LucidX.iOS
 			NavDrawer.FrontViewController = navVc;
 			NavDrawer.RearViewController = settingVC;
 			NavDrawer.RearViewRevealOverdraw = 0.0f;
-			homeVC.revealVC = NavDrawer;
+			inboxVC.revealVC = NavDrawer;
 			settingVC.revealVC = NavDrawer;
 			Window.RootViewController = NavDrawer;
 			Window.MakeKeyAndVisible();

@@ -145,14 +145,27 @@
     <Folder Include="Resources\Images.xcassets\RadioOn.imageset\" />
     <Folder Include="CustomCells\" />
     <Folder Include="CustomCells\Mail Details\" />
+    <Folder Include="ViewController\Inbox\" />
+    <Folder Include="ViewController\Sent\" />
+    <Folder Include="ViewController\Drafts\" />
+    <Folder Include="ViewController\Trash\" />
+    <Folder Include="ViewController\Calendar\" />
+    <Folder Include="ViewController\Invoice\" />
+    <Folder Include="ViewController\MailDetails\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="ViewController\Login\LoginVC.xib" />
-    <InterfaceDefinition Include="ViewController\Home\HomeVC.xib" />
     <InterfaceDefinition Include="ViewController\Settings\SettingsVc.xib" />
     <InterfaceDefinition Include="CustomCells\Mail Details\MailDetailsCell.xib" />
+    <InterfaceDefinition Include="ViewController\Inbox\InboxVC.xib" />
+    <InterfaceDefinition Include="ViewController\MailDetails\MailDetailsVC.xib" />
+    <InterfaceDefinition Include="ViewController\Calendar\CalendarVC.xib" />
+    <InterfaceDefinition Include="ViewController\Drafts\DraftsVC.xib" />
+    <InterfaceDefinition Include="ViewController\Invoice\InvoiceVC.xib" />
+    <InterfaceDefinition Include="ViewController\Sent\SentVC.xib" />
+    <InterfaceDefinition Include="ViewController\Trash\TrashVC.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -169,8 +182,6 @@
     <Compile Include="Utils\Utility.cs" />
     <Compile Include="Utils\Settings.cs" />
     <Compile Include="PickerModels\PickerModel.cs" />
-    <Compile Include="ViewController\Home\HomeVC.cs" />
-    <Compile Include="ViewController\Home\HomeVC.designer.cs" />
     <Compile Include="ViewController\Settings\SettingsVc.cs" />
     <Compile Include="ViewController\Settings\SettingsVc.designer.cs" />
     <Compile Include="ViewController.cs" />
@@ -182,6 +193,34 @@
       <DependentUpon>MailDetailsCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\IosFontSize.cs" />
+    <Compile Include="ViewController\Inbox\InboxVC.cs" />
+    <Compile Include="ViewController\Inbox\InboxVC.designer.cs">
+      <DependentUpon>InboxVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\MailDetails\MailDetailsVC.cs" />
+    <Compile Include="ViewController\MailDetails\MailDetailsVC.designer.cs">
+      <DependentUpon>MailDetailsVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Calendar\CalendarVC.cs" />
+    <Compile Include="ViewController\Calendar\CalendarVC.designer.cs">
+      <DependentUpon>CalendarVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Drafts\DraftsVC.cs" />
+    <Compile Include="ViewController\Drafts\DraftsVC.designer.cs">
+      <DependentUpon>DraftsVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Invoice\InvoiceVC.cs" />
+    <Compile Include="ViewController\Invoice\InvoiceVC.designer.cs">
+      <DependentUpon>InvoiceVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Sent\SentVC.cs" />
+    <Compile Include="ViewController\Sent\SentVC.designer.cs">
+      <DependentUpon>SentVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Trash\TrashVC.cs" />
+    <Compile Include="ViewController\Trash\TrashVC.designer.cs">
+      <DependentUpon>TrashVC.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
