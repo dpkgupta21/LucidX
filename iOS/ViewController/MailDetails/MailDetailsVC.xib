@@ -52,6 +52,9 @@
                             <state key="normal" title="Inbox">
                                 <color key="titleColor" red="0.01176470588" green="0.1058823529" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="InboxBtnClicked:" destination="-1" eventType="touchUpInside" id="sFX-02-csr"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,6 +99,9 @@
                         <constraint firstAttribute="width" secondItem="pHE-c2-6Ru" secondAttribute="height" id="mLi-O8-Drg"/>
                     </constraints>
                     <state key="normal" image="LineMenu"/>
+                    <connections>
+                        <action selector="MenuBtnClicked:" destination="-1" eventType="touchUpInside" id="rWF-ZG-8Zv"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qip-xp-hYv">
                     <rect key="frame" x="247" y="55" width="30" height="30"/>
@@ -104,8 +110,11 @@
                         <constraint firstAttribute="height" constant="30" id="jpk-hH-0mS"/>
                     </constraints>
                     <state key="normal" image="Reply"/>
+                    <connections>
+                        <action selector="ReplyBtnClicked:" destination="-1" eventType="touchUpInside" id="agg-qa-gDT"/>
+                    </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IqQ-z3-OuB">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IqQ-z3-OuB">
                     <rect key="frame" x="8" y="103" width="304" height="310"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -126,14 +135,23 @@
                             <state key="normal" image="Forward">
                                 <color key="titleColor" red="0.01176470588" green="0.1058823529" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="ForwardBtnClicked:" destination="-1" eventType="touchUpInside" id="Zky-n3-yQd"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbC-PT-2Wc">
                             <rect key="frame" x="112.5" y="5" width="95" height="24"/>
                             <state key="normal" image="ReplyAll"/>
+                            <connections>
+                                <action selector="ReplyAllBtnClicked:" destination="-1" eventType="touchUpInside" id="mNq-P1-beI"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTo-N1-Fsm">
                             <rect key="frame" x="8" y="5" width="94.5" height="24"/>
                             <state key="normal" image="Reply"/>
+                            <connections>
+                                <action selector="ReplyBtnClicked:" destination="-1" eventType="touchUpInside" id="8Fz-NH-Cgc"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forward" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzE-xL-gEn">
                             <rect key="frame" x="216" y="32" width="96" height="27"/>

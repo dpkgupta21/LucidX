@@ -27,6 +27,9 @@ namespace MailDetails
 
 		#region Helping Methods
 
+		/// <summary>
+		/// Configures the view.
+		/// </summary>
 		void ConfigureView()
 		{
 			IBNameLbl.Text = mail.SenderName;
@@ -35,6 +38,9 @@ namespace MailDetails
 			GetDetails();
 		}
 
+		/// <summary>
+		/// Gets the details of the mail.
+		/// </summary>
 		async void GetDetails()
 		{
 			if (IosUtils.Utility.IsReachable())
@@ -49,8 +55,6 @@ namespace MailDetails
 			}
 		}
 
-		#endregion
-
 		/// <summary>
 		/// Gets the attributed string from html-string.
 		/// </summary>
@@ -64,6 +68,35 @@ namespace MailDetails
 				ref error);
 			return attributedString;
 		}
+
+		#endregion
+
+
+
+		#region IBAction Methods
+
+		partial void ForwardBtnClicked(Foundation.NSObject sender)
+		{
+		}
+
+		partial void InboxBtnClicked(Foundation.NSObject sender)
+		{
+			this.NavigationController.PopViewController(true);
+		}
+
+		partial void MenuBtnClicked(Foundation.NSObject sender)
+		{
+		}
+
+		partial void ReplyAllBtnClicked(Foundation.NSObject sender)
+		{
+		}
+
+		partial void ReplyBtnClicked(Foundation.NSObject sender)
+		{
+		}
+
+		#endregion
 
 	}
 }

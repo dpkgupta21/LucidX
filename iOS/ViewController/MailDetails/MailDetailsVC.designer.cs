@@ -50,37 +50,32 @@ namespace MailDetails
 
 		[Outlet]
 		UIKit.UILabel IBSubjectLbl { get; set; }
+
+		[Action ("ForwardBtnClicked:")]
+		partial void ForwardBtnClicked (Foundation.NSObject sender);
+
+		[Action ("InboxBtnClicked:")]
+		partial void InboxBtnClicked (Foundation.NSObject sender);
+
+		[Action ("MenuBtnClicked:")]
+		partial void MenuBtnClicked (Foundation.NSObject sender);
+
+		[Action ("ReplyAllBtnClicked:")]
+		partial void ReplyAllBtnClicked (Foundation.NSObject sender);
+
+		[Action ("ReplyBtnClicked:")]
+		partial void ReplyBtnClicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (IBSubjectLbl != null) {
-				IBSubjectLbl.Dispose ();
-				IBSubjectLbl = null;
+			if (IBBtmReplyBtn != null) {
+				IBBtmReplyBtn.Dispose ();
+				IBBtmReplyBtn = null;
 			}
 
-			if (IBInboxbtn != null) {
-				IBInboxbtn.Dispose ();
-				IBInboxbtn = null;
-			}
-
-			if (IBNameIconLbl != null) {
-				IBNameIconLbl.Dispose ();
-				IBNameIconLbl = null;
-			}
-
-			if (IBNameLbl != null) {
-				IBNameLbl.Dispose ();
-				IBNameLbl = null;
-			}
-
-			if (IBMenuBtn != null) {
-				IBMenuBtn.Dispose ();
-				IBMenuBtn = null;
-			}
-
-			if (IBReplyBtn != null) {
-				IBReplyBtn.Dispose ();
-				IBReplyBtn = null;
+			if (IBBtmReplyLbl != null) {
+				IBBtmReplyLbl.Dispose ();
+				IBBtmReplyLbl = null;
 			}
 
 			if (IBContnTxt != null) {
@@ -93,19 +88,34 @@ namespace MailDetails
 				IBForwardBtn = null;
 			}
 
-			if (IBReplyAllBtn != null) {
-				IBReplyAllBtn.Dispose ();
-				IBReplyAllBtn = null;
-			}
-
-			if (IBBtmReplyBtn != null) {
-				IBBtmReplyBtn.Dispose ();
-				IBBtmReplyBtn = null;
-			}
-
 			if (IBForwardLbl != null) {
 				IBForwardLbl.Dispose ();
 				IBForwardLbl = null;
+			}
+
+			if (IBInboxbtn != null) {
+				IBInboxbtn.Dispose ();
+				IBInboxbtn = null;
+			}
+
+			if (IBMenuBtn != null) {
+				IBMenuBtn.Dispose ();
+				IBMenuBtn = null;
+			}
+
+			if (IBNameIconLbl != null) {
+				IBNameIconLbl.Dispose ();
+				IBNameIconLbl = null;
+			}
+
+			if (IBNameLbl != null) {
+				IBNameLbl.Dispose ();
+				IBNameLbl = null;
+			}
+
+			if (IBReplyAllBtn != null) {
+				IBReplyAllBtn.Dispose ();
+				IBReplyAllBtn = null;
 			}
 
 			if (IBReplyAllLbl != null) {
@@ -113,9 +123,14 @@ namespace MailDetails
 				IBReplyAllLbl = null;
 			}
 
-			if (IBBtmReplyLbl != null) {
-				IBBtmReplyLbl.Dispose ();
-				IBBtmReplyLbl = null;
+			if (IBReplyBtn != null) {
+				IBReplyBtn.Dispose ();
+				IBReplyBtn = null;
+			}
+
+			if (IBSubjectLbl != null) {
+				IBSubjectLbl.Dispose ();
+				IBSubjectLbl = null;
 			}
 		}
 	}

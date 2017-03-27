@@ -141,12 +141,15 @@ namespace Inbox
 		[Export("tableView:didSelectRowAtIndexPath:")]
 		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
-			mails[indexPath.Row].Unread = false;
-			markRead(mails[indexPath.Row].MailId);
-			IBContntTbl.ReloadData();
-			var detailsVC = new MailDetails.MailDetailsVC();
-			detailsVC.mail = mails[indexPath.Row];
-			this.NavigationController.PushViewController(detailsVC, true);
+			if (IosUtils.Utility.IsReachable())
+			{
+				mails[indexPath.Row].Unread = false;
+				markRead(mails[indexPath.Row].MailId);
+				IBContntTbl.ReloadData();
+				var detailsVC = new MailDetails.MailDetailsVC();
+				detailsVC.mail = mails[indexPath.Row];
+				this.NavigationController.PushViewController(detailsVC, true);
+			}
 		}
 
 

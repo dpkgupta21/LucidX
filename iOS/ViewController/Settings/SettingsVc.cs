@@ -9,12 +9,10 @@ namespace LucidX.iOS
 {
 	public partial class SettingsVc : UIViewController
 	{
-		string Selected = "Inbox";
-
 		public SWRevealViewController revealVC;
 
 		Calendar.CalendarVC calendarVc;
-		Inbox.InboxVC inboxVc;
+		public Inbox.InboxVC inboxVc;
 		Drafts.DraftsVC draftVc;
 		Sent.SentVC sentVc;
 		Trash.TrashVC trashVc;
@@ -53,15 +51,15 @@ namespace LucidX.iOS
 
 		async void GetCount()
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
 			{
 				var res = await Webservices.WebServiceMethods.EmailCount(IosUtils.Settings.UserId);
 				if (res != null)
 				{
-					IBInboxCountLbl.Text = res.inboxCount.ToString();
-					IBSentCountLbl.Text = res.sentItemCount.ToString();
-					IBDraftCountLbl.Text = res.draftCount.ToString();
-					IBTrashCountLbl.Text = res.trashCount.ToString();
+					IBInboxCountLbl.Text = res.inboxCount == 0 ? "" : res.inboxCount.ToString();
+					IBSentCountLbl.Text = res.sentItemCount == 0 ? "" : res.sentItemCount.ToString();
+					IBDraftCountLbl.Text = res.draftCount == 0 ? "" : res.draftCount.ToString();
+					IBTrashCountLbl.Text = res.trashCount == 0 ? "" : res.trashCount.ToString();
 				}
 			}
 		}
@@ -87,12 +85,12 @@ namespace LucidX.iOS
 			IBCalendarVw.BackgroundColor = UIColor.Clear;
 			IBInvoiceVw.BackgroundColor = UIColor.Clear;
 
-			vw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
+			vw.BackgroundColor = IosUtils.IosColorConstant.ThemeProfileTextColor;
 		}
 
 		#endregion
 
-		#region IBaction Methods
+		#region IBAction Methods
 
 		partial void IBCalendarClicked(Foundation.NSObject sender)
 		{

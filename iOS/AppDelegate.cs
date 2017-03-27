@@ -82,6 +82,7 @@ namespace LucidX.iOS
 			navVc.View.AddSubview(fixitVw);
 
 			var settingVC = new SettingsVc();
+			settingVC.inboxVc = inboxVC;
 			var NavDrawer = new SWRevealViewController();
 			NavDrawer.FrontViewController = navVc;
 			NavDrawer.RearViewController = settingVC;
