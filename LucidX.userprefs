@@ -1,5 +1,26 @@
 ﻿<Properties StartupConfiguration="{9C0D831C-F1F4-4627-8740-6F6EA7DEF97B}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="iOS/ViewController/Inbox/InboxVC.cs" Line="69" Column="42" />
+      <File FileName="iOS/ViewController/Login/LoginVC.cs" Line="222" Column="3" />
+      <File FileName="LucidX/Webservices/WebServiceMethods.cs" Line="34" Column="65" />
+      <File FileName="iOS/Utils/Utility.cs" Line="103" Column="46" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LucidX" expanded="True">
+            <Node name="LucidX" expanded="True" />
+            <Node name="LucidX.iOS" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="Images.xcassets" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
@@ -8,7 +29,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.LucidX.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.86675EF0-19D9-42BA-809D-EFB9D5EE0766" />
+  <MonoDevelop.Ide.ItemProperties.LucidX.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.58957263-115E-48A2-B2BB-C7E46C186600" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.LucidX HideGettingStarted="True" />
   <DisabledProjects>

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/TextviewSelector">
@@ -7,10 +8,10 @@
   <RelativeLayout
       android:id="@+id/relative"
       android:layout_width="match_parent"
-      android:padding="5dp"
-      android:layout_height="wrap_content">
+      android:layout_height="wrap_content"
+      android:padding="5dp">
 
-    <TextView
+    <LucidX.Droid.Source.CustomViews.CustomTextView
         android:id="@+id/txt_img_lbl"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -25,19 +26,19 @@
 
     <RelativeLayout
         android:id="@+id/relative_email"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/txt_img_lbl"
         android:layout_toLeftOf="@+id/txt_email_time"
-        android:layout_toRightOf="@+id/txt_img_lbl">
+        android:layout_toRightOf="@+id/txt_img_lbl"
+        android:paddingTop="3dp">
 
-      <TextView
+      <LucidX.Droid.Source.CustomViews.CustomTextView
           android:id="@+id/txt_email_address"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginLeft="10dp"
           android:maxLines="1"
-          android:paddingTop="3dp"
           android:text=""
           android:textColor="@color/black"
           android:textSize="16sp" />
@@ -46,12 +47,14 @@
           android:id="@+id/img_attachment_icon"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="1dp"
+          android:layout_alignParentRight="true"
+          android:layout_toLeftOf="@+id/txt_email_address"
           android:layout_toRightOf="@+id/txt_email_address"
+          android:paddingLeft="5dp"
           android:src="@drawable/attachment" />
     </RelativeLayout>
 
-    <TextView
+    <LucidX.Droid.Source.CustomViews.CustomTextView
         android:id="@+id/txt_email_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,7 +67,7 @@
         android:textColor="@color/black"
         android:textSize="16sp" />
 
-    <TextView
+    <LucidX.Droid.Source.CustomViews.CustomTextView
         android:id="@+id/txt_email_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,13 +79,7 @@
         android:textColor="@color/black"
         android:textSize="8sp" />
 
-    <ImageView
-        android:id="@+id/img_delete_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/txt_email_time"
-        android:src="@drawable/trash" />
+
   </RelativeLayout>
 
   <View

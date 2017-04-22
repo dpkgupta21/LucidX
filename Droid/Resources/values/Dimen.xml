@@ -31,4 +31,13 @@
   <dimen name="common_dialog_parent_container_padd">20dp</dimen>
   <dimen name="common_dialog_items_mar">32dp</dimen>
 
+
+  <!--Calendar Event details-->
+  <dimen name="event_text_size">22sp</dimen>
+  <dimen name="group_text_size">18sp</dimen>
+  <dimen name="run_child_text">18sp</dimen>
+
+  <!-- Spinner item text-->
+  <dimen name="spinner_item_text">17sp</dimen>
+  
 </resources>

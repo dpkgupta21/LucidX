@@ -17,10 +17,13 @@ using LucidX.Droid.Source.Utilities;
 using LucidX.Droid.Source.Global;
 using Android.Support.V4.View;
 using Android.Runtime;
+using Android.Content;
+using LucidX.Droid.Source.Activities;
+using Newtonsoft.Json;
 
 namespace LucidX.Droid.Source.Fragments
 {
-    public class InboxFragment : Fragment
+    public class InboxFragment : Fragment, View.IOnClickListener
     {
         #region "Constructor"
         public InboxFragment()
@@ -37,12 +40,19 @@ namespace LucidX.Droid.Source.Fragments
         private Android.App.Activity mActivity;
         private SharedPreferencesManager mSharedPreferencesManager;
 
+        // It is for inbox, Draft, Sent items and Trash
+        private int emailTypeId;
 
 
         #region "Functions"
-        public static Fragment GetInstance()
+        public static Fragment GetInstance(int emailTypeId, string toolbarTitle)
         {
             InboxFragment fragment = new InboxFragment();
+
+            Bundle b = new Bundle();
+            b.PutInt("emailTypeId", emailTypeId);
+            b.PutString("title", toolbarTitle);
+            fragment.Arguments = b;
             return fragment;
         }
 
@@ -54,16 +64,20 @@ namespace LucidX.Droid.Source.Fragments
         /// <summary>
         /// Returns fragment alert screen view
         /// </summary>
-        /// <param name="inflater"></param>
+        /// <param name="inflater"></param>-
         /// <param name="container"></param>
         /// <param name="savedInstanceState"></param>
         /// <returns></returns>
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             // Use this to return your custom view for this Fragment
-            view = inflater.Inflate(Resource.Layout.Fragment_Inbox, container, false);
+            view = inflater.Inflate(Resource.Layout.fragment_inbox, container, false);
             HasOptionsMenu = true;
             mActivity = Activity;
+
+          
+            string title = Arguments.GetString("title");
+            ((HomeActivity)mActivity).SetTitle(title);
 
             /// Shared Preference manager
             mSharedPreferencesManager = UtilityDroid.GetInstance().
@@ -104,7 +118,7 @@ namespace LucidX.Droid.Source.Fragments
             }
             catch (Exception e)
             {
-                
+
             }
         }
 
@@ -141,11 +155,11 @@ namespace LucidX.Droid.Source.Fragments
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
-
-            GetInboxList();
+            emailTypeId = Arguments.GetInt("emailTypeId");
+            GetInboxList(emailTypeId);
         }
 
-        private async void GetInboxList()
+        private async void GetInboxList(int emailTypeId)
         {
             try
             {
@@ -154,8 +168,8 @@ namespace LucidX.Droid.Source.Fragments
                 {
                     CustomProgressDialog.ShowProgDialog(mActivity, mActivity.Resources.GetString(Resource.String.loading));
 
-                    responseList = await WebServiceMethods.InboxEmails(mSharedPreferencesManager.
-                        GetString(ConstantsDroid.USER_ID_PREFERENCE, "12013"));
+                    responseList = await WebServiceMethods.InboxEmails(
+                        mSharedPreferencesManager.GetString(ConstantsDroid.USER_ID_PREFERENCE, ""), emailTypeId);
 
                     SetInboxList(responseList);
 
@@ -167,6 +181,8 @@ namespace LucidX.Droid.Source.Fragments
                         Resources.GetString(Resource.String.alert_message_no_network_connection),
                         Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
                 }
+
+                refresher.Refreshing= false;
             }
             catch (Exception ex)
             {
@@ -176,7 +192,7 @@ namespace LucidX.Droid.Source.Fragments
                    Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
             }
 
-           
+
         }
 
         /// <summary>
@@ -190,7 +206,7 @@ namespace LucidX.Droid.Source.Fragments
         async private void Refresher_Refresh(object sender, System.EventArgs e)
         {
             // LOADING YOUR DATA.
-            // GetCampaignList(RecordType.Next);
+            GetInboxList(emailTypeId);
 
         }
 
@@ -225,13 +241,40 @@ namespace LucidX.Droid.Source.Fragments
             }
         }
 
-        private void MAdapter_ItemClick(object sender, int e)
+        public void MAdapter_ItemClick(object sender, int position)
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<EmailResponse> emailListResponse = mAdapter.GetData();
+                EmailResponse emailResponseObj = emailListResponse[position];
+                if (emailResponseObj.Unread)
+                {
+                    emailResponseObj.Unread = false;
+                    emailListResponse[position] = emailResponseObj;
+                    mAdapter.emailList = emailListResponse;
+                    mAdapter.NotifyItemChanged(position);
+
+                    // Call webservice for update read flag
+                    WebServiceMethods.MarkReadEmail(emailResponseObj.MailId);
+                }
+
+                string emailResponseString = JsonConvert.SerializeObject(emailResponseObj);
+
+                Intent intent = new Intent(mActivity, typeof(EmailDetailActivity));
+                intent.PutExtra("emailResponseString", emailResponseString);
+                StartActivity(intent);             
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
 
+        public void OnClick(View v)
+        {
 
+        }
 
 
         #endregion

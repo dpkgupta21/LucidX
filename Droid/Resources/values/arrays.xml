@@ -6,21 +6,162 @@
     <item>French</item>
   </string-array>
 
+  
+  <!-- Spinner Users list -->
+  <string-array name="user_entries">
+    <item>Select User</item>
+    <item>Pankaj Gupta</item>
+    <item>Deepak Gupta</item>
+  </string-array>
 
+  <!-- Spinner Calendar type list -->
+  <string-array name="calendar_entries">
+    <item>General Calendar</item>
+    <item>CRM and Leads</item>
+    <item>Projects Management</item>
+    <item>Corporate Information</item>
+    <item>Accounting Calendar</item>
+    <item>HR Calendar</item>
+    <item>Personal Calendar</item>
+    <item>Systems Calendar</item>
+  </string-array>
+
+  <!-- Spinner Customer list -->
+  <string-array name="customer_entries">
+    <item>Pankaj Gupta</item>
+    <item>Deepak Gupta</item>
+    <item>Pankaj</item>
+    <item>Deepak</item>
+  </string-array>
+
+  <!-- Spinner Currency list -->
+  <string-array name="currency_entries">
+    <item>Select Currency</item>
+    <item>$</item>
+    <item>€</item>
+    <item>£</item>
+  </string-array>
+
+  
   <!--NAVIGATION ICONS-->
   <string-array name="menu_icon_array">
+    <item></item>
     <item>inbox</item>
     <item>draft</item>
     <item>sent</item>
     <item>delet</item>
+    <item></item>
+    <item></item>
+    <item>calendar</item>
+    <item>calendar</item>
+    <item></item>
+    <item></item>
+    <item>calendar</item>
+    <item>calendar</item>
+    <item>calendar</item>
+    <item>calendar</item>
+    <item>calendar</item>
+    <item></item>
+    <item></item>
+    <item>calendar</item>
+    <item>calendar</item>
+    <item>calendar</item>
+    <item>calendar</item>
+    <item></item>
+    <item>calendar</item>
   </string-array>
 
-  <string-array name="menu_array">
+
+<string-array name="group_menu_array">
+    <item>@string/menu_mail_lbl</item>
+    <item>@string/menu_calendar_lbl</item>
+    <item>@string/menu_order_lbl</item>
+    <item>@string/menu_notes_lbl</item>
+   <item>@string/menu_logout</item>
+  </string-array>
+     
+  
+    
+<string-array name="mail_child_menu_array">
     <item>@string/menu_inbox</item>
     <item>@string/menu_draft</item>
     <item>@string/menu_sent</item>
     <item>@string/menu_trash</item>
   </string-array>
+<string-array name="calendar_child_menu_array">
+    <item>@string/menu_calendar_list</item>
+    <item>@string/menu_calendar_add</item>
+  </string-array>
+  
+  <string-array name="order_child_menu_array">
+    <item>@string/menu_order_view</item>
+    <item>@string/menu_order_amend</item>
+    <item>@string/menu_order_create</item>
+    <item>@string/menu_order_convert</item>
+     <item>@string/menu_order_delete</item>
+  </string-array>
+    
+    <string-array name="notes_child_menu_array">
+    <item>@string/menu_notes_view</item>
+    <item>@string/menu_notes_amend</item>
+    <item>@string/menu_notes_create</item>
+    <item>@string/menu_notes_delete</item>
+  </string-array>
+    
+  <string-array name="menu_array">
+    <item></item>
+    <item>@string/menu_inbox</item>
+    <item>@string/menu_draft</item>
+    <item>@string/menu_sent</item>
+    <item>@string/menu_trash</item>
+    <item></item>
+    <item></item>
+    <item>@string/menu_calendar_list</item>
+    <item>@string/menu_calendar_add</item>
+    <item></item>
+    <item></item>
+    <item>@string/menu_order_view</item>
+    <item>@string/menu_order_amend</item>
+    <item>@string/menu_order_create</item>
+    <item>@string/menu_order_convert</item>
+     <item>@string/menu_order_delete</item>
+    <item></item>
+    <item></item>
+    <item>@string/menu_notes_view</item>
+    <item>@string/menu_notes_amend</item>
+    <item>@string/menu_notes_create</item>
+    <item>@string/menu_notes_delete</item>
+    <item></item>
+    <item>@string/menu_logout</item>
+  </string-array>
+
+  <string-array name="menu_label_array">
+    <item>@string/menu_mail_lbl</item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item>@string/menu_calendar_lbl</item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item>@string/menu_order_lbl</item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item>@string/menu_notes_lbl</item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item></item>
+    <item></item>
+  </string-array>
+
 
 </resources>
 

@@ -4,5 +4,6 @@
     <ProjectView>ShowAllFiles</ProjectView>
     <SelectedDevice>HUAWEI H60-L04</SelectedDevice>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
+    <DefaultDevice>AVD_for_Nexus_5_by_Google</DefaultDevice>
   </PropertyGroup>
 </Project>

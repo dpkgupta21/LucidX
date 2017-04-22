@@ -4,9 +4,8 @@ using Android.OS;
 using Android.Views;
 using LucidX.Droid.Source.SharedPreference;
 using LucidX.Droid.Source.Utilities;
-using LucidX.Constants;
+using LucidX.ResponseModels;
 using System;
-using LucidX.Droid.Source.Global;
 
 namespace LucidX.Droid.Source.Activities
 {
@@ -14,6 +13,9 @@ namespace LucidX.Droid.Source.Activities
     public class SplashScreenActivity : Activity
     {
         private Activity mActivity;
+
+        private SharedPreferencesManager mSharedPreferencesManager;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -23,24 +25,33 @@ namespace LucidX.Droid.Source.Activities
             SetContentView(Resource.Layout.activity_splash);
 
             mActivity = this;
+
+            /// Shared Preference manager
+            mSharedPreferencesManager = UtilityDroid.GetInstance().
+                       GetSharedPreferenceManagerWithEncriptionEnabled(mActivity.ApplicationContext);
+
         }
 
         protected override void OnResume()
         {
             base.OnResume();
 
-            /// Shared Preference manager
-            SharedPreferencesManager mSharedPreferencesManager = UtilityDroid.GetInstance().
-                       GetSharedPreferenceManagerWithEncriptionEnabled(mActivity.ApplicationContext);
-            string encryptToken = Utils.Utilities.GetEncryptedToken(WebserviceConstants.TOKEN);
-            mSharedPreferencesManager.PutString(ConstantsDroid.ENCRYPT_TOKEN_PREFERENCE, "");
-
             var handler = new Handler();
             Action myAction = () =>
             {
-                StartActivity(new Intent(this, typeof(LoginActivity)));
-                OverridePendingTransition(Resource.Animation.animation_enter,
-                            Resource.Animation.animation_leave);
+                LoginResponse loginResponse = mSharedPreferencesManager.GetLoginResponse();
+                if (loginResponse != null)
+                {
+                    StartActivity(new Intent(mActivity, typeof(HomeActivity)));
+                    OverridePendingTransition(Resource.Animation.animation_enter,
+                                Resource.Animation.animation_leave);
+                }
+                else
+                {
+                    StartActivity(new Intent(mActivity, typeof(LoginActivity)));
+                    OverridePendingTransition(Resource.Animation.animation_enter,
+                                Resource.Animation.animation_leave);
+                }
                 Finish();
             };
             handler.PostDelayed(myAction, 2000);

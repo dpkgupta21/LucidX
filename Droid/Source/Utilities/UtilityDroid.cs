@@ -91,7 +91,8 @@ namespace LucidX.Droid.Source.Utilities
         /// <param name="title">title of alert dialog</param>
         /// <param name="messsage">message to show alert dialog</param>
         /// <returns>Dialog</returns>
-        public Dialog ShowAlertDialog(Activity activity, string title, string messsage, string positivebtn, string negativeBtn)
+        public Dialog ShowAlertDialog(Activity activity, string title, string messsage, 
+            string positivebtn, string negativeBtn)
         {
             try
             {

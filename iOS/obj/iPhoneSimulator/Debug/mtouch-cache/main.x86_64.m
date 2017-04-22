@@ -9,6 +9,8 @@ void xamarin_register_modules_impl ()
 void xamarin_register_assemblies_impl ()
 {
 	guint32 exception_gchandle = 0;
+	xamarin_open_and_register ("TPKeyboardAvoiding.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("MBProgressHUD.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("Xamarin.SWRevealViewController.dll", &exception_gchandle);

@@ -18,7 +18,6 @@
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <AndroidTlsProvider></AndroidTlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,8 +40,14 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>False</DebugSymbols>
@@ -57,7 +62,13 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
@@ -83,7 +94,13 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <DebugSymbols>True</DebugSymbols>
@@ -97,10 +114,20 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Plugin.Connectivity, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xam.Plugin.Connectivity.2.3.0\lib\MonoAndroid10\Plugin.Connectivity.dll</HintPath>
       <Private>True</Private>
@@ -110,6 +137,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -143,32 +171,69 @@
       <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Android.Support.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.24.2.1\lib\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\Activities\ComposeEmailActivity.cs" />
+    <Compile Include="Source\Activities\AddNotesActivity.cs" />
+    <Compile Include="Source\Activities\AddOrderThirdActivity.cs" />
+    <Compile Include="Source\Activities\AddOrderSecondActivity.cs" />
+    <Compile Include="Source\Activities\AddOrderFirstActivity.cs" />
+    <Compile Include="Source\Activities\AddCalendarEventActivity.cs" />
+    <Compile Include="Source\Activities\EmailDetailActivity.cs" />
     <Compile Include="Source\Activities\HomeActivity.cs" />
     <Compile Include="Source\Activities\SplashScreenActivity.cs" />
     <Compile Include="Source\Activities\LoginActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Adapters\InboxAdapter.cs" />
+    <Compile Include="Source\Adapters\InfiniteScrollListener.cs" />
+    <Compile Include="Source\Adapters\AddOrderAdapter.cs" />
+    <Compile Include="Source\Adapters\SideMenuListExpandableAdapter.cs" />
+    <Compile Include="Source\Adapters\NotesListAdapter.cs" />
+    <Compile Include="Source\Adapters\OrderAdapter.cs" />
+    <Compile Include="Source\Adapters\MenuAdapter.cs" />
+    <Compile Include="Source\Adapters\CalendarListExpandableAdapter.cs" />
+    <Compile Include="Source\CustomSpinner\Adapter\SpinnerAdapter.cs" />
+    <Compile Include="Source\CustomSpinner\Model\SpinnerItemModel.cs" />
+    <Compile Include="Source\CustomViews\CustomCheckBox.cs" />
     <Compile Include="Source\CustomViews\CustomButton.cs" />
     <Compile Include="Source\CustomViews\CustomDialog.cs" />
     <Compile Include="Source\CustomViews\CustomEditText.cs" />
     <Compile Include="Source\CustomViews\CustomProgressDialog.cs" />
+    <Compile Include="Source\CustomViews\CustomRadioButton.cs" />
     <Compile Include="Source\CustomViews\CustomTextView.cs" />
+    <Compile Include="Source\CustomDialogFragment\Adapter\CheckboxDialogAdapter.cs" />
+    <Compile Include="Source\CustomDialogFragment\CustomDialogFrag.cs" />
+    <Compile Include="Source\Fragments\UserListDialogFrag.cs" />
+    <Compile Include="Source\Fragments\OrderAddDialogFrag.cs" />
+    <Compile Include="Source\Fragments\NotesListFragment.cs" />
+    <Compile Include="Source\Fragments\OrderListFragment.cs" />
+    <Compile Include="Source\Fragments\InboxFragment.cs" />
+    <Compile Include="Source\Fragments\CalendarFragment.cs" />
     <Compile Include="Source\Global\ConstantsDroid.cs" />
+    <Compile Include="Source\Models\ChildMenuModel.cs" />
+    <Compile Include="Source\Models\OrderAddModel.cs" />
+    <Compile Include="Source\Models\NotesListModel.cs" />
+    <Compile Include="Source\Models\OrderListModel.cs" />
+    <Compile Include="Source\Models\GroupMenuModel.cs" />
+    <Compile Include="Source\Models\UserListModel.cs" />
+    <Compile Include="Source\Models\SideMenuModel.cs" />
+    <Compile Include="Source\Picker\DatePickerFragment.cs" />
+    <Compile Include="Source\Picker\TimePickerFragment.cs" />
     <Compile Include="Source\SharedPreferences\SharedPreferencesManager.cs" />
     <Compile Include="Source\Utilities\HelpMe.cs" />
     <Compile Include="Source\Utilities\UtilityDroid.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Fonts\HelveticaNeueLTStd-Bd.otf" />
-    <AndroidAsset Include="Assets\Fonts\HelveticaNeueLTStd-Lt.otf" />
-    <AndroidAsset Include="Assets\Fonts\HelveticaNeueLTStd-Roman.otf" />
+    <AndroidAsset Include="Assets\Fonts\century-gothic.ttf" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml">
@@ -180,6 +245,74 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\custom_dialog_lay.axml" />
     <AndroidResource Include="Resources\layout\activity_home.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Drawer_Layout.axml" />
+    <AndroidResource Include="Resources\layout\fragment_inbox.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SidebarView.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\layout\Individual_Item_Email.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\item_menu_text.axml" />
+    <AndroidResource Include="Resources\layout\activity_email_detail.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\calendar_group_item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_calendar_expandable.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\calendar_child_item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\item_menu_seperator.axml" />
+    <AndroidResource Include="Resources\layout\dialog_list_fragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\dialog_list_individual_item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\custom_spinner_item.axml" />
+    <AndroidResource Include="Resources\layout\activity_add_calendar_event.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\item_menu_label.axml" />
+    <AndroidResource Include="Resources\layout\fragment_order_list.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\individual_item_order.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_add_first_order.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_add_second_order.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_add_third_order.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\individual_add_order.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\dialog_add_order_fragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_notes_list.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_add_notes.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\individual_item_notes.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\spinner_row_item_lay.axml" />
+    <AndroidResource Include="Resources\layout\activity_compose_email.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -281,6 +414,228 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\circle_shape.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\TextSelectorBg.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\TextviewSelector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\attachment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\delet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\draft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\inbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\sent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\attchment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\delet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\draft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\sent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\attachment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\delet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\draft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\inbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\new_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\new_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\new_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\search.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\inbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\reply_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\forward_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\forward_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\reply_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\forward_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\reply_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\delete.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\menu_calendar.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\edittextbg_boundary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\circle_white_shape.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\spinner_dropdown.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_blue_color_selector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_blue_color_selected.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\btn_blue_color_unselected.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\demo\demo.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\demo\demo.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jQuery-TE_v.1.4.0\jquery-te-1.4.0.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jQuery-TE_v.1.4.0\jquery-te-1.4.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jQuery-TE_v.1.4.0\jquery-te.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jQuery-TE_v.1.4.0\demo\demo.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jQuery-TE_v.1.4.0\demo\demo.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jQuery-TE_v.1.4.0\license\AUTHOR.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jQuery-TE_v.1.4.0\license\MIT-LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jQuery-TE_v.1.4.0\uncompressed\jquery-te-1.4.0.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\license\AUTHOR.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\license\MIT-LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\uncompressed\jquery-te-1.4.0.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jquery-te-1.4.0.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jquery-te-1.4.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jquery-te.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jQuery-TE_v.1.4.0\jquery.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\group_menu_view.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\child_submenu_view.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\dialog_rounded.xml" />
   </ItemGroup>
   <Import Project="..\LucidX\LucidX.projitems" Label="Shared" Condition="Exists('..\LucidX\LucidX.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

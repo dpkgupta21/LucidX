@@ -26,7 +26,7 @@ namespace IosUtils
 {
 	public class Utility
 	{
-		public static Double keyBoardHeight = 258;
+		public static Double keyBoardHeight = 270;
 		public static nfloat cornerRadious = 5.0f;
 
 		private static MTMBProgressHUD hud;// = ();
@@ -42,24 +42,11 @@ namespace IosUtils
 		/// <param name="theView">The view.</param>
 		public static void scrollViewToCenterOfScreen(UIScrollView scrollView, UIView theView)
 		{
-			var theViewY = theView.Center.Y;
-
 			var applicationFrame = UIScreen.MainScreen.ApplicationFrame;
 
-			var avaliableHeight = applicationFrame.Size.Height - Utility.keyBoardHeight - 150;
+			var avaliableHeight = applicationFrame.Size.Height - Utility.keyBoardHeight;
 
-			var y = theViewY - avaliableHeight / 2.0;
-
-
-			if (y < 0)
-			{
-				y = 0;
-			}
-
-			UIView.Animate(0.3, () =>
-			{
-				scrollView.SetContentOffset(new CGPoint(scrollView.ContentOffset.X, y), animated: true);
-			}, null);
+			scrollView.SetContentOffset(new CGPoint(scrollView.ContentOffset.X, avaliableHeight), animated: true);
 		}
 
 		/// <summary>
@@ -68,11 +55,8 @@ namespace IosUtils
 		/// <param name="scrollView">Scroll view.</param>
 		public static void scrollViewToZero(UIScrollView scrollView)
 		{
-			UIView.Animate(0.3, () =>
-			{
-				scrollView.SetContentOffset(new CGPoint(0, 0), true);
-				UIApplication.SharedApplication.KeyWindow.EndEditing(true);
-			}, null);
+			scrollView.SetContentOffset(new CGPoint(0, 0), true);
+			UIApplication.SharedApplication.KeyWindow.EndEditing(true);
 		}
 
 		/// <summary>
@@ -116,13 +100,14 @@ namespace IosUtils
 		/// </summary>
 		/// <param name="button">Button.</param>
 		/// <param name="justShadow">Just shadow.</param>
-		public static void addShadow (UIView button, bool justShadow = false)
+		public static void addShadow(UIView button, bool justShadow = false)
 		{
-			if (!justShadow) {
+			if (!justShadow)
+			{
 				button.Layer.CornerRadius = Utility.cornerRadious;
 			}
 			button.Layer.ShadowColor = UIColor.Black.CGColor;
-			button.Layer.ShadowOffset = new CGSize (5, 5);
+			button.Layer.ShadowOffset = new CGSize(5, 5);
 			button.Layer.MasksToBounds = false;
 			button.Layer.ShadowOpacity = 0.5f;
 		}
@@ -163,15 +148,16 @@ namespace IosUtils
 		/// Shows the toast message.
 		/// </summary>
 		/// <param name="msg">Message to display.</param>
-		public static void showToast (string msg) {
+		public static void showToast(string msg)
+		{
 			//show message for activation/deactivation hero mode
-			MTMBProgressHUD toast = new MTMBProgressHUD (AppDelegate.GetSharedInstance ().Window);
-			AppDelegate.GetMainWindow().AddSubview (toast);
+			MTMBProgressHUD toast = new MTMBProgressHUD(AppDelegate.GetSharedInstance().Window);
+			AppDelegate.GetMainWindow().AddSubview(toast);
 			toast.Mode = MBProgressHUDMode.Text;
-			toast.Show (true);
+			toast.Show(true);
 			toast.DetailsLabelText = msg;
 			toast.RemoveFromSuperViewOnHide = true;
-			toast.Hide (true, 1);
+			toast.Hide(true, 1);
 		}
 
 
@@ -180,14 +166,14 @@ namespace IosUtils
 		/// </summary>
 		/// <param name="title">Title.</param>
 		/// <param name="message">Message.</param>
-		public static void showAlertWithInfo(string title,string message)
+		public static void showAlertWithInfo(string title, string message)
 		{
 
 			var alertView = new UIAlertView(title,
 											message,
 											null,
 											LocalizedString.sharedInstance.GetLocalizedString("LSOkKey", ""));
-			
+
 			alertView.Show();
 		}
 
@@ -200,7 +186,7 @@ namespace IosUtils
 			{
 				Utility.showAlertWithInfo(LocalizedString.sharedInstance.GetLocalizedString("LSConnectionTitle", ""),
 											 LocalizedString.sharedInstance.GetLocalizedString("LSNoInternet", ""));
-				
+
 				return false;
 			}
 
@@ -211,10 +197,10 @@ namespace IosUtils
 		/// Converts NSDate to DateTime.
 		/// </summary>
 		/// <param name="date">The date.</param>
-		public static DateTime ConvertToDateTime (NSDate date)
+		public static DateTime ConvertToDateTime(NSDate date)
 		{
-			DateTime reference = new DateTime (2001, 1, 1, 0, 0, 0);
-			DateTime Date = reference.AddSeconds (date.SecondsSinceReferenceDate);
+			DateTime reference = new DateTime(2001, 1, 1, 0, 0, 0);
+			DateTime Date = reference.AddSeconds(date.SecondsSinceReferenceDate);
 			return Date;
 		}
 
@@ -223,21 +209,21 @@ namespace IosUtils
 		/// </summary>
 		/// <returns>The UI Color.</returns>
 		/// <param name="hexString">Hex string.</param>
-		public static UIColor ToUIColor (string hexString)
+		public static UIColor ToUIColor(string hexString)
 		{
-			hexString = hexString.Replace ("#", "");
+			hexString = hexString.Replace("#", "");
 
 			if (hexString.Length == 3)
 				hexString = hexString + hexString;
 
 			if (hexString.Length != 6)
-				throw new Exception ("Invalid hex string");
+				throw new Exception("Invalid hex string");
 
-			int red = Int32.Parse (hexString.Substring (0, 2), System.Globalization.NumberStyles.AllowHexSpecifier);
-			int green = Int32.Parse (hexString.Substring (2, 2), System.Globalization.NumberStyles.AllowHexSpecifier);
-			int blue = Int32.Parse (hexString.Substring (4, 2), System.Globalization.NumberStyles.AllowHexSpecifier);
+			int red = Int32.Parse(hexString.Substring(0, 2), System.Globalization.NumberStyles.AllowHexSpecifier);
+			int green = Int32.Parse(hexString.Substring(2, 2), System.Globalization.NumberStyles.AllowHexSpecifier);
+			int blue = Int32.Parse(hexString.Substring(4, 2), System.Globalization.NumberStyles.AllowHexSpecifier);
 
-			return UIColor.FromRGB (red, green, blue);
+			return UIColor.FromRGB(red, green, blue);
 		}
 
 	}

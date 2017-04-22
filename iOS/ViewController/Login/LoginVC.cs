@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Foundation;
+using LucidX.Constants;
 using LucidX.RequestModels;
 using LucidX.Webservices;
 using UIKit;
@@ -12,6 +13,8 @@ namespace LucidX.iOS
 		UIGestureRecognizer tapGesture;
 
 		List<string> languages = new List<string>() { "English", "French" };
+
+		string SelectedDataBase;
 
 		#region Life Cycle methods
 
@@ -126,6 +129,11 @@ namespace LucidX.iOS
 				result = false;
 				msg = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSBlankPassword", "");
 			}
+			else if (string.IsNullOrEmpty(SelectedDataBase))
+			{
+				result = false;
+				msg = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSBlankDataBase", "");
+			}
 			if (result)
 			{
 				Login();
@@ -143,7 +151,7 @@ namespace LucidX.iOS
 		public bool ShouldBeginEditing(UITextField textField)
 		{
 
-			IosUtils.Utility.scrollViewToCenterOfScreen(IBScrollVw, textField.Superview.Superview);
+			IosUtils.Utility.scrollViewToCenterOfScreen(IBScrollVw, this.View);
 			return true;
 		}
 
@@ -182,6 +190,32 @@ namespace LucidX.iOS
 			SetupLanguageString();
 			IosUtils.Utility.scrollViewToZero(IBScrollVw);
 			IBLanguageTxt.EndEditing(true);
+		}
+
+		partial void DatabaseSelectionChanged(Foundation.NSObject sender)
+		{
+			var btn = sender as UIButton;
+
+			IBSAASBtn.Selected = false;
+			IBDemoBtn.Selected = false;
+			IBLucidBtn.Selected = false;
+			IBHqBtn.Selected = false;
+
+			btn.Selected = true;
+			SelectedDataBase = WebserviceConstants.CONNECTION_NAME;
+			if (sender == IBSAASBtn) { 
+			
+			}else if (sender == IBDemoBtn)
+			{
+
+			}else if (sender == IBLucidBtn)
+			{
+
+			}else if (sender == IBHqBtn)
+			{
+
+			}
+
 		}
 
 		#endregion

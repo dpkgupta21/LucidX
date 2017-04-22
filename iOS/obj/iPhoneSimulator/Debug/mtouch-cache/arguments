@@ -51,6 +51,8 @@
 	-r \
 	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/Xamarin.SWRevealViewController.2.3.0/lib/Xamarin.iOS/Xamarin.SWRevealViewController.dll" \
 	-r \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/Components/TPKeyboardAvoiding-1.2.11.0/lib/ios-unified/TPKeyboardAvoiding.dll" \
+	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/Microsoft.Win32.Primitives.dll \
@@ -326,6 +328,8 @@
 	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/mbprogresshud.0.9.2.0/lib/Xamarin.iOS/MBProgressHUD.dll" \
 	-r \
 	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/packages/Xamarin.SWRevealViewController.2.3.0/lib/Xamarin.iOS/Xamarin.SWRevealViewController.dll" \
+	-r \
+	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/Components/TPKeyboardAvoiding-1.2.11.0/lib/ios-unified/TPKeyboardAvoiding.dll" \
 	--target-framework \
 	"Xamarin.iOS,v1.0" \
 	"/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug//LucidX.iOS.exe" \

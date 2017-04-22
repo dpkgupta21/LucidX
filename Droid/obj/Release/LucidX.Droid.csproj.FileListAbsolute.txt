@@ -1,0 +1,322 @@
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\LucidX.Droid.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\LucidX.Droid.pdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\com.educide.lucidx.apk
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\com.educide.lucidx-Signed.apk
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Newtonsoft.Json.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.Abstractions.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Animated.Vector.Drawable.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Compat.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Core.UI.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Core.Utils.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Fragment.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Media.Compat.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.v7.AppCompat.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.v7.RecyclerView.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Vector.Drawable.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Newtonsoft.Json.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.pdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.Abstractions.pdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.Abstractions.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.Abstractions.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\LucidX.Droid.dll
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\LucidX.Droid.pdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\android\bin\com.educide.lucidx.apk
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_splash.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\custom_dialog_lay.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_home.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\drawer_layout.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\fragment_alert_send.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\fragment_inbox.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\sidebarview.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\toolbar.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\individual_item_email.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\itemmenu.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_email_detail.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\calendar_group_item.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_run_list_expandable.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\calendar_child_item.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\itemseperator.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_login.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\values\strings.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\mipmap-hdpi\icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\mipmap-mdpi\icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\mipmap-xhdpi\icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\mipmap-xxhdpi\icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\mipmap-xxxhdpi\icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\background.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\values\arrays.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\values\colors.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\values\dimen.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\values\styles.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-hdpi\background.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-mdpi\background.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\background.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\background.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\background.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\logo.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\values\attrs.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\btn_color_selector.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\btn_color_selected.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\btn_color_unselected.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\edittextbg.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\anim\animation_enter.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\anim\animation_leave.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\password.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\values-fr\strings.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\user_icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\language.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\password.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\user_icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\language.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\user_icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\language.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\password.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\circle_shape.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\textselectorbg.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\textviewselector.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\attachment.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\delet.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\draft.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\inbox.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\invoice.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\refresh.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\search.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\sent.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\attchment.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\delet.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\draft.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\invoice.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\refresh.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\search.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\sent.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\attachment.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\delet.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\draft.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\inbox.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\invoice.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\refresh.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\search.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\sent.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\new_mail.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\calendar.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\trash.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\trash.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\new_mail.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\trash.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\calendar.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\new_mail.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\calendar.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\menu\search.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\inbox.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\reply_icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\forward_mail.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\more.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\forward_mail.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\more.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\reply_icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\forward_mail.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\more.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\reply_icon.png
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\menu\delete.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\menu\menu_calendar.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\edittextbg_boundary.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\R.cs.flag
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\uploadflags.txt
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Release\LucidX.Droid.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Release\LucidX.Droid.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\LucidX.Droid.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\LucidX.Droid.pdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\com.educide.lucidx.apk
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\com.educide.lucidx-Signed.apk
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Newtonsoft.Json.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.Abstractions.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Animated.Vector.Drawable.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Compat.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Core.UI.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Core.Utils.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Fragment.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Media.Compat.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.v7.AppCompat.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.v7.RecyclerView.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Xamarin.Android.Support.Vector.Drawable.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Newtonsoft.Json.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.pdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.Abstractions.pdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.Abstractions.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Plugin.Connectivity.Abstractions.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\LucidX.Droid.dll
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\LucidX.Droid.pdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\bin\com.educide.lucidx.apk
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_splash.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\custom_dialog_lay.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_home.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\drawer_layout.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\fragment_inbox.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\sidebarview.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\toolbar.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\individual_item_email.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\item_menu_text.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_email_detail.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\calendar_group_item.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\fragment_calendar_expandable.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\calendar_child_item.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\item_menu_seperator.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\dialog_list_fragment.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\dialog_list_individual_item.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\custom_spinner_item.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_add_calendar_event.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\item_menu_label.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\fragment_order_list.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\individual_item_order.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_add_first_order.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_add_second_order.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_add_third_order.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\individual_add_order.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\dialog_add_order_fragment.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\fragment_notes_list.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_add_notes.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\individual_item_notes.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\spinner_row_item_lay.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_login.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\values\strings.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\mipmap-hdpi\icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\mipmap-mdpi\icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\mipmap-xhdpi\icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\mipmap-xxhdpi\icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\mipmap-xxxhdpi\icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\background.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\values\arrays.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\values\colors.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\values\dimen.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\values\styles.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-hdpi\background.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-mdpi\background.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\background.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\background.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\background.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\logo.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\values\attrs.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\btn_color_selector.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\btn_color_selected.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\btn_color_unselected.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\edittextbg.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\anim\animation_enter.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\anim\animation_leave.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\password.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\values-fr\strings.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\user_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\language.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\password.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\user_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\language.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\user_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\language.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\password.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\circle_shape.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\textselectorbg.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\textviewselector.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\attachment.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\delet.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\draft.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\inbox.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\invoice.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\refresh.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\search.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\sent.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\attchment.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\delet.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\draft.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\invoice.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\refresh.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\search.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\sent.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\attachment.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\delet.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\draft.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\inbox.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\invoice.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\refresh.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\search.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\sent.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\new_mail.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\calendar.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\trash.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\trash.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\new_mail.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\trash.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\calendar.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\new_mail.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\calendar.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\menu\search.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\inbox.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\reply_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\forward_mail.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xhdpi\more.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\forward_mail.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\more.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxhdpi\reply_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\forward_mail.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\more.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable-xxxhdpi\reply_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\menu\delete.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\menu\menu_calendar.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\edittextbg_boundary.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\circle_white_shape.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\spinner_dropdown.9.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\btn_blue_color_selector.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\btn_blue_color_selected.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\btn_blue_color_unselected.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\R.cs.flag
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\uploadflags.txt
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\LucidX.Droid.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Java.Interop.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Microsoft.CSharp.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Mono.Android.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Mono.CSharp.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\Mono.Data.Tds.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\mscorlib.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.ComponentModel.Composition.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.Core.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.Data.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.IdentityModel.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.Net.Http.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.Numerics.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.Runtime.Serialization.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.Runtime.Serialization.Primitives.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.ServiceModel.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.ServiceModel.Internals.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.Transactions.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.Xml.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\System.Xml.Linq.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\Java.Interop.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\LucidX.Droid.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\Microsoft.CSharp.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\Mono.Android.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\Mono.CSharp.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\mscorlib.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\Plugin.Connectivity.Abstractions.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\Plugin.Connectivity.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\System.Core.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\System.Data.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\System.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\System.Net.Http.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\System.Numerics.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\System.Runtime.Serialization.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\System.Runtime.Serialization.Primitives.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\System.ServiceModel.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\System.Xml.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\android\assets\System.Xml.Linq.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\LucidX.Droid.csprojResolveAssemblyReference.cache
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\activity_compose_email.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\group_menu_view.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\layout\child_submenu_view.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\res\drawable\dialog_rounded.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Release\LucidX.Droid.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Release\LucidX.Droid.dll.mdb

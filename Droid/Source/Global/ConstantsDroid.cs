@@ -53,6 +53,7 @@ namespace LucidX.Droid.Source.Global
         public static string ENCRYPT_TOKEN_PREFERENCE = "EncryptToken";
         public static string USERNAME_PREFERENCE = "Username";
         public static string PASSWORD_PREFERENCE = "Password";
+        public static string DATABASE_PREFERENCE = "Database";
         public static string USER_ID_PREFERENCE = "UserId";
         public static string NAME_PREFEREENCE = "Name";
         public static string EMAIL_ID_PREFERENCE = "EmailId";

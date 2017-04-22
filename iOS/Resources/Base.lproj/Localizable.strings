@@ -47,6 +47,7 @@
 "LSCodeMatchErr" = "Code is not valid.";
 "LSBlankUsername" = "Please enter Username";
 "LSBlankPassword" = "Please enter Password";
+"LSBlankDataBase" = "Please select a DataBase";
 
 
 /* common strings */

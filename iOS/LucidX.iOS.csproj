@@ -111,6 +111,9 @@
     <Reference Include="Xamarin.SWRevealViewController">
       <HintPath>..\packages\Xamarin.SWRevealViewController.2.3.0\lib\Xamarin.iOS\Xamarin.SWRevealViewController.dll</HintPath>
     </Reference>
+    <Reference Include="TPKeyboardAvoiding">
+      <HintPath>..\Components\TPKeyboardAvoiding-1.2.11.0\lib\ios-unified\TPKeyboardAvoiding.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -179,6 +182,21 @@
     <ImageAsset Include="Resources\Images.xcassets\Drafts.imageset\draft%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\Drafts.imageset\draft%403x.png" />
     <ImageAsset Include="Resources\Images.xcassets\Invoice.imageset\Invoice.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Refresh.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Edit.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Edit.imageset\1491657837_new-24.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Edit.imageset\1491657834_new-24.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Edit.imageset\1491657827_new-24.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Refresh.imageset\1491657788_black_2_audio_simple_repeat_2.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Refresh.imageset\1491657783_black_2_audio_simple_repeat_2.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Refresh.imageset\1491657776_black_2_audio_simple_repeat_2.png" />
+    <ImageAsset Include="Resources\Images.xcassets\DataBaseUnSelected.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\DataBaseSelected.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\DataBaseUnSelected.imageset\radio.png" />
+    <ImageAsset Include="Resources\Images.xcassets\DataBaseSelected.imageset\database-active%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\DataBaseSelected.imageset\database-active%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\DataBaseUnSelected.imageset\radio%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\DataBaseUnSelected.imageset\radio%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -213,6 +231,10 @@
     <Folder Include="Resources\Images.xcassets\Drafts.imageset\" />
     <Folder Include="Resources\Images.xcassets\Invoice.imageset\" />
     <Folder Include="Resources\Images.xcassets\Calendar.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Refresh.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Edit.imageset\" />
+    <Folder Include="Resources\Images.xcassets\DataBaseUnSelected.imageset\" />
+    <Folder Include="Resources\Images.xcassets\DataBaseSelected.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -286,6 +308,12 @@
   <ItemGroup>
     <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
     <BundleResource Include="Resources\fr.lproj\Localizable.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="TPKeyboardAvoiding">
+      <Version>1.2.11.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="..\LucidX\LucidX.projitems" Label="Shared" Condition="Exists('..\LucidX\LucidX.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

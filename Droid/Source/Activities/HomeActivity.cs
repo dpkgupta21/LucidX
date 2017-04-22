@@ -1,10 +1,7 @@
 
 using Android.App;
-using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Android.Runtime;
-using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
@@ -19,17 +16,25 @@ using Plugin.Connectivity;
 using LucidX.ResponseModels;
 using LucidX.Droid.Source.Utilities;
 using LucidX.Droid.Source.CustomViews;
-using Newtonsoft.Json;
 using System.Threading.Tasks;
+using static Android.Widget.AdapterView;
+using LucidX.Constants;
+using System.Collections.Generic;
+using LucidX.Droid.Source.Models;
+using Android.Content;
+using Android.Graphics;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace LucidX.Droid.Source.Activities
 {
 
-    [Activity(Label = "HomeActivity",  Theme = "@style/AppTheme", Icon = "@mipmap/icon",
+    [Activity(Label = "HomeActivity", Theme = "@style/AppTheme", Icon = "@mipmap/icon",
         ScreenOrientation = ScreenOrientation.Portrait, WindowSoftInputMode = SoftInput.AdjustResize)]
-    public class HomeActivity : AppCompatActivity, MenuAdapter.OnItemClickListener
+    public class HomeActivity : AppCompatActivity, 
+        ExpandableListView.IOnChildClickListener, ExpandableListView.IOnGroupClickListener,
+        ExpandableListView.IOnGroupExpandListener
     {
-        private DrawerLayout _drawerLayout;
+        private DrawerLayout drawerLayout;
 
 
         /// <summary>
@@ -39,24 +44,26 @@ namespace LucidX.Droid.Source.Activities
         /// <summary>
         /// The toolbar
         /// </summary>
-        private Android.Support.V7.Widget.Toolbar toolbar;
+        private Toolbar toolbar;
 
-        private string[] mMenuNames, mMenuIcons;
-
-        private MenuAdapter mAdapter;
+        //private MenuAdapter mAdapter;
+        private SideMenuListExpandableAdapter mAdapter;
 
         private Activity mActivity;
 
         private SharedPreferencesManager mSharedPreferencesManager;
 
-        private EmailCountResponse emailCountDTO;
+        private RelativeLayout drawerList;
 
+        private List<GroupMenuModel> menuList;
+
+        private ExpandableListView menuListView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_home);
-            _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
 
             mActivity = this;
 
@@ -66,16 +73,59 @@ namespace LucidX.Droid.Source.Activities
 
 
             // Init toolbar
-            toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.app_bar);
+            toolbar = FindViewById<Toolbar>(Resource.Id.app_bar);
             SetSupportActionBar(toolbar);
-            SupportActionBar.SetTitle(Resource.String.menu_title);
+            SupportActionBar.SetTitle(Resource.String.inbox_title);
+
+
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetDisplayShowHomeEnabled(true);
 
             SetupSideMenu();
 
-            Android.Support.V4.App.Fragment fragment = InboxFragment.GetInstance();
-            addFrament(fragment, false);
+            bool isOrderListScreen = Intent.GetBooleanExtra("addOrder", false);
+
+            if (isOrderListScreen)
+            {
+                ShowScreen(0,0);
+                
+            }
+            else
+            {
+                Android.Support.V4.App.Fragment fragment = InboxFragment.GetInstance( WebserviceConstants.
+                    INBOX_EMAIL_TYPE_ID, GetString(Resource.String.inbox_title));
+                AddFrament(fragment, false);
+               // mAdapter.SetSelectedPosition(0);
+            }
+        }
+
+
+
+        public void SetTitle(string titleMsg)
+        {
+            SupportActionBar.Title = titleMsg;
+            ApplyFontForToolbarTitle(toolbar);
+        }
+
+
+        public void ApplyFontForToolbarTitle(Toolbar toolbar)
+        {
+
+            for (int i = 0; i < toolbar.ChildCount; i++)
+            {
+                View view = toolbar.GetChildAt(i);
+                if (view is TextView)
+                {
+                    TextView tv = (TextView)view;
+                    Typeface titleFont = Typeface.
+                       CreateFromAsset(mActivity.Assets, "Fonts/century-gothic.ttf");
+                    if (tv.Text.Equals(toolbar.Title))
+                    {
+                        tv.Typeface = titleFont;
+                        break;
+                    }
+                }
+            }
         }
 
 
@@ -85,16 +135,14 @@ namespace LucidX.Droid.Source.Activities
             {
                 if (CrossConnectivity.Current.IsConnected)
                 {
-                    
                     EmailCountResponse emailCount = await WebServiceMethods.
-                        EmailCount(mSharedPreferencesManager.GetString(ConstantsDroid.USER_ID_PREFERENCE, ""));
+                        EmailCount(mSharedPreferencesManager.GetString(
+                            ConstantsDroid.USER_ID_PREFERENCE, ""));
 
                     if (emailCount != null)
                     {
                         mSharedPreferencesManager.PutCountResponse(emailCount);
-                        
                     }
-
                 }
             }
             catch (Exception e)
@@ -115,26 +163,30 @@ namespace LucidX.Droid.Source.Activities
         {
             LoginResponse loginResponseObj = mSharedPreferencesManager.GetLoginResponse();
 
+            drawerList = FindViewById<RelativeLayout>(Resource.Id.left_drawer);
             TextView txt_user_name = FindViewById<TextView>(Resource.Id.txt_user_name);
             TextView txt_user_email = FindViewById<TextView>(Resource.Id.txt_user_email);
 
             txt_user_name.Text = loginResponseObj.Name;
             txt_user_email.Text = loginResponseObj.UserEmail;
 
-            ListView menuListView = FindViewById<ListView>(Resource.Id.listview);
-            mMenuNames = Resources.GetStringArray(Resource.Array.menu_array);
-            mMenuIcons = Resources.GetStringArray(Resource.Array.menu_icon_array);
+            menuListView = FindViewById<ExpandableListView>(Resource.Id.listview);
 
-            mAdapter = new MenuAdapter(mMenuNames, mMenuIcons, this, this);
+            menuListView.SetOnChildClickListener(this);
+            menuListView.SetOnGroupClickListener(this);
+            menuListView.SetOnGroupExpandListener(this);
+
+            menuList = GetExpandableMenuItem();
+            mAdapter = new SideMenuListExpandableAdapter( mActivity, menuList);
 
             // set up the drawer's list view with items and click listener
-            menuListView.Adapter = mAdapter;
+            menuListView.SetAdapter(mAdapter);
 
             drawerToggle = new MyActionBarDrawerToggle(this,
-                _drawerLayout, toolbar,
+                drawerLayout, toolbar,
                 Resource.String.open_drawer,
                 Resource.String.close_drawer);
-            _drawerLayout.AddDrawerListener(drawerToggle);
+            drawerLayout.AddDrawerListener(drawerToggle);
 
             SupportActionBar.SetDisplayShowHomeEnabled(true);
 
@@ -146,14 +198,88 @@ namespace LucidX.Droid.Source.Activities
         }
 
 
-        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
+        private List<SideMenuModel> GetSideMenuItem()
         {
-            Android.Support.V4.App.Fragment currentFragment = GetCurrentFragment();
-            if (currentFragment.GetType() == typeof(InboxFragment))
+            List<SideMenuModel> menuList = new List<SideMenuModel>();
+            string[] mMenuNames = Resources.GetStringArray(Resource.Array.menu_array);
+            string[] mMenuIcons = Resources.GetStringArray(Resource.Array.menu_icon_array);
+            string[] mMenuLabels = Resources.GetStringArray(Resource.Array.menu_label_array);
+
+            for (int i = 0; i < mMenuNames.Length; i++)
             {
-                //((AlertSendFragment)currentFragment).ResetAlertScreen("", false);
+                SideMenuModel menuModel = new SideMenuModel();
+                menuModel.menuName = mMenuNames[i];
+                menuModel.menuIcon = mMenuIcons[i];
+                menuModel.menuLabel = mMenuLabels[i];
+                if (string.IsNullOrEmpty(mMenuNames[i]) && string.IsNullOrEmpty(mMenuLabels[i]))
+                {
+                    menuModel.isMenuSeperator = true;
+                }
+                else
+                {
+                    menuModel.isMenuSeperator = false;
+                }
+                menuList.Add(menuModel);
             }
+            return menuList;
         }
+
+        private List<GroupMenuModel> GetExpandableMenuItem()
+        {
+            List<GroupMenuModel> menuList = new List<GroupMenuModel>();
+            string[] groupMenuNames = Resources.GetStringArray(Resource.Array.group_menu_array);
+           
+
+            for (int i = 0; i < groupMenuNames.Length; i++)
+            {
+                GroupMenuModel groupMenuModel = new GroupMenuModel();
+                groupMenuModel.menuName = groupMenuNames[i];
+                List<ChildMenuModel> childMenuList = new List<ChildMenuModel>();
+                string[] childMenuNames = null;
+                if (groupMenuNames[i].Equals(GetString(Resource.String.menu_mail_lbl)))
+                {
+                    childMenuNames = Resources.GetStringArray(Resource.Array.mail_child_menu_array);
+
+
+                }
+                else if (groupMenuNames[i].Equals(GetString(Resource.String.menu_calendar_lbl)))
+                {
+                    childMenuNames = Resources.GetStringArray(Resource.Array.calendar_child_menu_array);
+
+
+                }
+                else if (groupMenuNames[i].Equals(GetString(Resource.String.menu_order_lbl)))
+                {
+                    childMenuNames = Resources.GetStringArray(Resource.Array.order_child_menu_array);
+
+
+                }
+                else if (groupMenuNames[i].Equals(GetString(Resource.String.menu_notes_lbl)))
+                {
+                    childMenuNames = Resources.GetStringArray(Resource.Array.notes_child_menu_array);
+
+
+                }
+                else
+                {
+                    childMenuNames = new string[0];
+                }
+                if (childMenuNames != null)
+                {
+                    for (int j = 0; j < childMenuNames.Length; j++)
+                    {
+                        ChildMenuModel childMenuModel = new ChildMenuModel();
+                        childMenuModel.submenuName = childMenuNames[j];
+                        childMenuList.Add(childMenuModel);
+                    }
+                    groupMenuModel.submenuList = childMenuList;
+                }
+
+                menuList.Add(groupMenuModel);
+            }
+            return menuList;
+        }
+
 
         /// <summary>
         /// Get current visible fragment
@@ -212,8 +338,7 @@ namespace LucidX.Droid.Source.Activities
                     GetCountResponse();
                 owner.mAdapter.emailCount = response;
                 owner.mAdapter.NotifyDataSetChanged();
-                //owner.ActionBar.Title = owner.mDrawerTitle;
-                //owner.InvalidateOptionsMenu();
+
             }
         }
 
@@ -234,7 +359,7 @@ namespace LucidX.Droid.Source.Activities
             {
                 HomeActivity activity = null;
                 homeActivity.TryGetTarget(out activity);
-                
+
             }
 
         }
@@ -245,7 +370,7 @@ namespace LucidX.Droid.Source.Activities
         /// </summary>
         /// <param name="fragment">The fragment.</param>
         /// <param name="addBackstack">if set to <c>true</c> [add backstack].</param>
-        public void addFrament(Android.Support.V4.App.Fragment fragment, bool addBackstack)
+        public void AddFrament(Android.Support.V4.App.Fragment fragment, bool addBackstack)
         {
             var ft = SupportFragmentManager.BeginTransaction();
             if (addBackstack)
@@ -257,13 +382,187 @@ namespace LucidX.Droid.Source.Activities
             {
                 ft.Replace(Resource.Id.frame_container, fragment, fragment.Class.Name);
             }
-
             ft.Commit();
         }
 
-        public void OnClick(View view, int position)
+        
+
+        private void ShowScreen(int groupPosition, int childPosition)
         {
-            throw new NotImplementedException();
+
+
+            Intent intent = null;
+            Android.Support.V4.App.Fragment fragment = null;
+            ToogleDrawer();
+            switch (groupPosition)
+            {
+                // For Mail
+                case 0:
+                    switch (childPosition)
+                    {
+                        case 0:
+                            fragment = InboxFragment.GetInstance(
+                                WebserviceConstants.INBOX_EMAIL_TYPE_ID,
+                                GetString(Resource.String.inbox_title));
+                            AddFrament(fragment, false);
+                            break;
+                        case 1:
+                            fragment = InboxFragment.GetInstance(
+                                WebserviceConstants.DRAFT_EMAIL_TYPE_ID,
+                                GetString(Resource.String.draft_title));
+                            AddFrament(fragment, false);
+                            break;
+                        case 2:
+                            fragment = InboxFragment.GetInstance(
+                                WebserviceConstants.SENT_EMAIL_TYPE_ID,
+                                GetString(Resource.String.sent_title));
+                            AddFrament(fragment, false);
+                            break;
+                        case 3:
+                            fragment = InboxFragment.GetInstance(
+                                WebserviceConstants.TRASH_EMAIL_TYPE_ID,
+                                GetString(Resource.String.trash_title));
+                            AddFrament(fragment, false);
+                            break;
+                    }
+                    break;
+                // For Calendar
+                case 1:
+                    switch (childPosition)
+                    {
+                        //For Calendar Event Detail Screen     
+                        case 0:
+                            fragment = CalendarFragment.GetInstance();
+                            AddFrament(fragment, false);
+                            break;
+                        //For Add Event Screen     
+                        case 1:
+                            intent = new Intent(mActivity, typeof(AddCalendarEventActivity));
+                            intent.PutExtra("isAddEvent", true);
+                            StartActivity(intent);
+                            OverridePendingTransition(Resource.Animation.animation_enter,
+                                        Resource.Animation.animation_leave);
+                            break;
+
+                    }
+                    break;
+                //For Order
+                case 2:
+                    switch (childPosition)
+                    {
+                        //For Order list Screen     
+                        case 0:
+                            fragment = OrderListFragment.GetInstance();
+                            AddFrament(fragment, false);
+                            break;
+                        //For Order list Screen     
+                        case 1:
+                            fragment = OrderListFragment.GetInstance();
+                            AddFrament(fragment, false);
+                            break;
+                        //For Add Order Screen     
+                        case 2:
+                            StartActivity(new Intent(this, typeof(AddOrderFirstActivity)));
+                            OverridePendingTransition(Resource.Animation.animation_enter,
+                                        Resource.Animation.animation_leave);
+                            break;
+                        //For Order list Screen     
+                        case 3:
+                            fragment = OrderListFragment.GetInstance();
+                            AddFrament(fragment, false);
+                            break;
+                        //For Order list Screen     
+                        case 4:
+                            fragment = OrderListFragment.GetInstance();
+                            AddFrament(fragment, false);
+                            break;
+                    }
+                    break;
+                // For Notes
+                case 3:
+                    switch (childPosition)
+                    {
+                        //For Notes list Screen     
+                        case 0:
+                            fragment = NotesListFragment.GetInstance();
+                            AddFrament(fragment, false);
+                            break;
+                        //For Notes list Screen     
+                        case 1:
+                            fragment = NotesListFragment.GetInstance();
+                            AddFrament(fragment, false);
+
+                            break;
+                        //For Add Notes Screen     
+                        case 2:
+                            // Show Add Notes screen
+                            intent = new Intent(mActivity, typeof(AddNotesActivity));
+                            intent.PutExtra("isAddNote", true);
+                            StartActivity(intent);
+                            OverridePendingTransition(Resource.Animation.animation_enter,
+                                        Resource.Animation.animation_leave);
+                            break;
+                        //For Notes list Screen     
+                        case 3:
+                            fragment = NotesListFragment.GetInstance();
+                            AddFrament(fragment, false);
+
+                            break;
+                    }
+                    break;
+
+            }
+
+
+            //mAdapter.SetSelectedPosition(position);
+
+        }
+        /// <summary>
+        /// Toogles side menu bar.
+        /// </summary>
+        /// <returns>The drawer.</returns>
+        private void ToogleDrawer()
+        {
+            if (drawerLayout.IsDrawerOpen(drawerList))
+            {
+                drawerLayout.CloseDrawer(drawerList);
+            }
+            else
+            {
+                drawerLayout.OpenDrawer(drawerList);
+            }
+        }
+
+        public bool OnChildClick(ExpandableListView parent, View clickedView, 
+            int groupPosition, int childPosition, long id)
+        {
+            ShowScreen(groupPosition, childPosition);
+            mAdapter.selectedGroupPosition = groupPosition;
+            mAdapter.selectedChildPosition = childPosition;
+            mAdapter.NotifyDataSetChanged();
+            return false;
+        }
+
+        public bool OnGroupClick(ExpandableListView parent, View clickedView, int groupPosition, long id)
+        {
+            switch (groupPosition)
+            {
+                case 4:
+                    Finish();
+                    mSharedPreferencesManager.PutCountResponse(null);
+                    mSharedPreferencesManager.PutLoginResponse(null);
+                    StartActivity(typeof(LoginActivity));
+                    break;
+            }
+
+            return false;
+        }
+
+        public void OnGroupExpand(int groupPosition)
+        {
+            if (groupPosition != mAdapter.selectedGroupPosition)
+                menuListView.CollapseGroup(mAdapter.selectedGroupPosition);
+           
         }
     }
 }

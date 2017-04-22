@@ -12,7 +12,7 @@ namespace LucidX.Droid.Source.Adapters
 {
     public class InboxAdapter : RecyclerView.Adapter
     {
-        private List<EmailResponse> emailList;
+        public List<EmailResponse> emailList { get; set; }
         public event EventHandler<int> ItemClick;
         private Context context;
         private List<EmailResponse> filteredList;
@@ -21,12 +21,13 @@ namespace LucidX.Droid.Source.Adapters
         public class InboxViewHolder : RecyclerView.ViewHolder
         {
             public View viewMain;
+            public RelativeLayout relative_item;
             public TextView txt_email_address;
             public TextView txt_email_detail;
             public TextView txt_email_time;
             public TextView txt_img_lbl;
             public ImageView img_attachment_icon;
-            public ImageView img_delete_icon;
+
             public InboxViewHolder(View view, Action<int> itemClickListener) : base(view)
             {
                 viewMain = view;
@@ -35,8 +36,8 @@ namespace LucidX.Droid.Source.Adapters
                 txt_email_time = (TextView)view.FindViewById(Resource.Id.txt_email_time);
                 txt_img_lbl = (TextView)view.FindViewById(Resource.Id.txt_img_lbl);
                 img_attachment_icon = (ImageView)view.FindViewById(Resource.Id.img_attachment_icon);
-                img_delete_icon = (ImageView)view.FindViewById(Resource.Id.img_delete_icon);
-
+                relative_item = (RelativeLayout)view.FindViewById(Resource.Id.relative_item);
+                relative_item.Click += (sender, e) => itemClickListener(base.Position);
             }
         }
 
@@ -58,9 +59,12 @@ namespace LucidX.Droid.Source.Adapters
             var holder = (InboxViewHolder)holderRaw;
             holder.viewMain.Tag = position;
             DateTime dateTime = new DateTime();
+
             EmailResponse dto = emailList[position];
+
             holder.txt_email_address.Text = dto.SenderEmail;
             holder.txt_email_detail.Text = dto.Subject;
+
             if (dto.Attachment > 0)
             {
                 holder.img_attachment_icon.Visibility = ViewStates.Visible;
@@ -84,6 +88,8 @@ namespace LucidX.Droid.Source.Adapters
                 holder.txt_email_address.Typeface = Typeface.Default;
                 holder.txt_email_detail.Typeface = Typeface.Default;
             }
+          
+            holder.txt_img_lbl.Text = dto.SenderName.Substring(0, 1);
         }
 
         public void SetData(List<EmailResponse> data)
@@ -108,7 +114,7 @@ namespace LucidX.Droid.Source.Adapters
             return emailList;
         }
 
-        void OnItemClickListener(int position)
+        public void OnItemClickListener(int position)
         {
             if (ItemClick != null)
             {

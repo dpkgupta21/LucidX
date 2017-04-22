@@ -40,7 +40,7 @@ namespace LucidX.Droid.Source.CustomViews
         }
         void Initialize()
         {
-            Typeface tf = tf = Typeface.CreateFromAsset(Context.Assets, "Fonts/HelveticaNeueLTStd-Bd.otf");
+            Typeface tf = tf = Typeface.CreateFromAsset(Context.Assets, "Fonts/century-gothic.ttf");
             SetTypeface(tf, 0);
         }
     }

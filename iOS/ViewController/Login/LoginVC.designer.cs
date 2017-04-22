@@ -19,10 +19,16 @@ namespace LucidX.iOS
 		UIKit.UILabel IBCopyRightLbl { get; set; }
 
 		[Outlet]
+		UIKit.UIButton IBDemoBtn { get; set; }
+
+		[Outlet]
 		UIKit.UIToolbar IBDoneBar { get; set; }
 
 		[Outlet]
 		UIKit.UIBarButtonItem IBDoneBtn { get; set; }
+
+		[Outlet]
+		UIKit.UIButton IBHqBtn { get; set; }
 
 		[Outlet]
 		UIKit.UIImageView IBLanguageImg { get; set; }
@@ -46,6 +52,9 @@ namespace LucidX.iOS
 		UIKit.UIView IBLogoVw { get; set; }
 
 		[Outlet]
+		UIKit.UIButton IBLucidBtn { get; set; }
+
+		[Outlet]
 		UIKit.UIImageView IBPasswordImg { get; set; }
 
 		[Outlet]
@@ -61,7 +70,10 @@ namespace LucidX.iOS
 		UIKit.UIButton IBRemeberMeBtn { get; set; }
 
 		[Outlet]
-		UIKit.UIScrollView IBScrollVw { get; set; }
+		UIKit.UIButton IBSAASBtn { get; set; }
+
+		[Outlet]
+		TPKeyboardAvoiding.TPKeyboardAvoidingScrollView IBScrollVw { get; set; }
 
 		[Outlet]
 		UIKit.UIButton IBSignInBtn { get; set; }
@@ -84,6 +96,9 @@ namespace LucidX.iOS
 		[Outlet]
 		UIKit.UILabel IBVersinonLbl { get; set; }
 
+		[Action ("DatabaseSelectionChanged:")]
+		partial void DatabaseSelectionChanged (Foundation.NSObject sender);
+
 		[Action ("IBDoneClicked:")]
 		partial void IBDoneClicked (Foundation.NSObject sender);
 
@@ -95,6 +110,11 @@ namespace LucidX.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (IBScrollVw != null) {
+				IBScrollVw.Dispose ();
+				IBScrollVw = null;
+			}
+
 			if (IBContentVw != null) {
 				IBContentVw.Dispose ();
 				IBContentVw = null;
@@ -105,6 +125,11 @@ namespace LucidX.iOS
 				IBCopyRightLbl = null;
 			}
 
+			if (IBDemoBtn != null) {
+				IBDemoBtn.Dispose ();
+				IBDemoBtn = null;
+			}
+
 			if (IBDoneBar != null) {
 				IBDoneBar.Dispose ();
 				IBDoneBar = null;
@@ -113,6 +138,11 @@ namespace LucidX.iOS
 			if (IBDoneBtn != null) {
 				IBDoneBtn.Dispose ();
 				IBDoneBtn = null;
+			}
+
+			if (IBHqBtn != null) {
+				IBHqBtn.Dispose ();
+				IBHqBtn = null;
 			}
 
 			if (IBLanguageImg != null) {
@@ -150,6 +180,11 @@ namespace LucidX.iOS
 				IBLogoVw = null;
 			}
 
+			if (IBLucidBtn != null) {
+				IBLucidBtn.Dispose ();
+				IBLucidBtn = null;
+			}
+
 			if (IBPasswordImg != null) {
 				IBPasswordImg.Dispose ();
 				IBPasswordImg = null;
@@ -175,9 +210,9 @@ namespace LucidX.iOS
 				IBRemeberMeBtn = null;
 			}
 
-			if (IBScrollVw != null) {
-				IBScrollVw.Dispose ();
-				IBScrollVw = null;
+			if (IBSAASBtn != null) {
+				IBSAASBtn.Dispose ();
+				IBSAASBtn = null;
 			}
 
 			if (IBSignInBtn != null) {

@@ -48,9 +48,18 @@ namespace Inbox
 											  UIBarButtonItemStyle.Plain,
 											  MenuClicked);
 			this.NavigationItem.LeftBarButtonItem = menuBtn;
+			var createBtn = new UIBarButtonItem(UIImage.FromBundle("Edit"),
+											  UIBarButtonItemStyle.Plain,
+			                                    EditClicked);
+			var refreshBtn = new UIBarButtonItem(UIImage.FromBundle("Refresh"),
+											  UIBarButtonItemStyle.Plain,
+			                                     RefreshClicked);
+			this.NavigationItem.RightBarButtonItems = new UIBarButtonItem[] { createBtn, refreshBtn};
 			this.IBCancelWidth.Constant = 0;
 			IBContntTbl.RegisterNibForCellReuse(MailDetailsCell.Nib, MailDetailsCell.Key);
 			IBContntTbl.TableFooterView = new UIView();
+			this.NavigationItem.Title = "Inbox";
+			this.NavigationItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
 		}
 
 		async void GetData()
@@ -99,6 +108,16 @@ namespace Inbox
 		void MenuClicked(object sender, EventArgs e)
 		{
 			revealVC.RevealToggleAnimated(true);
+		}
+
+		void RefreshClicked(object sender, EventArgs e)
+		{
+			GetData();
+		}
+
+		void EditClicked(object sender, EventArgs e)
+		{
+			
 		}
 
 		partial void IBCancelClicked(Foundation.NSObject sender)
