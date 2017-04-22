@@ -53,6 +53,14 @@
       <LogicalName>Main.storyboardc/UIViewController-BYZ-38-t0r.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/MenuCell.nib">
+      <LogicalName>MenuCell.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/MenuHeader.nib">
+      <LogicalName>MenuHeader.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/SentVC.nib">
       <LogicalName>SentVC.nib</LogicalName>
       <Optimize>false</Optimize>

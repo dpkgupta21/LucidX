@@ -5,6 +5,10 @@
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/optimized/
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/optimized/Base.lproj/Localizable.strings
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/optimized/fr.lproj/Localizable.strings
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/LucidX.iOS.exe.mdb
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/LucidX.iOS.exe
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/LucidX.iOS.exe
+/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/LucidX.iOS.exe.mdb
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.Abstractions.dll
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.dll
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/Plugin.Settings.Abstractions.dll
@@ -12,7 +16,3 @@
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/MBProgressHUD.dll
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/Xamarin.SWRevealViewController.dll
 /Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/TPKeyboardAvoiding.dll
-/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/LucidX.iOS.exe.mdb
-/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/bin/iPhoneSimulator/Debug/LucidX.iOS.exe
-/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/LucidX.iOS.exe
-/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/LucidX.iOS.exe.mdb

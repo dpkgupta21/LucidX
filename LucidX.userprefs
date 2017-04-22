@@ -1,25 +1,12 @@
 ﻿<Properties StartupConfiguration="{9C0D831C-F1F4-4627-8740-6F6EA7DEF97B}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/CustomCells/MenuCell/MenuCell.cs">
     <Files>
-      <File FileName="iOS/ViewController/Inbox/InboxVC.cs" Line="69" Column="42" />
-      <File FileName="iOS/ViewController/Login/LoginVC.cs" Line="222" Column="3" />
-      <File FileName="LucidX/Webservices/WebServiceMethods.cs" Line="34" Column="65" />
-      <File FileName="iOS/Utils/Utility.cs" Line="103" Column="46" />
+      <File FileName="iOS/ViewController/Settings/SettingsVc.cs" Line="70" Column="94" />
+      <File FileName="iOS/CustomCells/MenuCell/MenuCell.cs" Line="22" Column="8" />
+      <File FileName="iOS/ViewController/Inbox/InboxVC.cs" Line="157" Column="34" />
+      <File FileName="iOS/Utils/IosFontSize.cs" Line="61" Column="1" />
+      <File FileName="iOS/AppDelegate.cs" Line="87" Column="76" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="LucidX" expanded="True">
-            <Node name="LucidX" expanded="True" />
-            <Node name="LucidX.iOS" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="Images.xcassets" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

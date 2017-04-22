@@ -84,6 +84,7 @@ namespace LucidX.iOS
 			var settingVC = new SettingsVc();
 			settingVC.inboxVc = inboxVC;
 			var NavDrawer = new SWRevealViewController();
+			NavDrawer.RearViewRevealWidth = UIScreen.MainScreen.Bounds.Width * 0.75f;
 			NavDrawer.FrontViewController = navVc;
 			NavDrawer.RearViewController = settingVC;
 			NavDrawer.RearViewRevealOverdraw = 0.0f;

@@ -1,4 +1,4 @@
-﻿// WARNING
+// WARNING
 //
 // This file has been generated automatically by Xamarin Studio from the outlets and
 // actions declared in your storyboard file.
@@ -11,11 +11,11 @@ using UIKit;
 
 namespace Calendar
 {
-	[Register("CalendarVC")]
-	partial class CalendarVC
-	{
-		void ReleaseDesignerOutlets()
-		{
-		}
-	}
+    [Register ("CalendarVC")]
+    partial class CalendarVC
+    {
+        void ReleaseDesignerOutlets ()
+        {
+        }
+    }
 }

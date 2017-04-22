@@ -1,61 +1,62 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio to store outlets and
-// actions made in the UI designer. If it is removed, they will be lost.
-// Manual changes to this file may not be handled correctly.
+// This file has been generated automatically by Xamarin Studio from the outlets and
+// actions declared in your storyboard file.
+// Manual changes to this file will not be maintained.
 //
 using Foundation;
+using System;
 using System.CodeDom.Compiler;
 
 namespace CustomCells
 {
-	[Register ("MailDetailsCell")]
-	partial class MailDetailsCell
-	{
-		[Outlet]
-		UIKit.UILabel IBDateTimeLbl { get; set; }
+    [Register ("MailDetailsCell")]
+    partial class MailDetailsCell
+    {
+        [Outlet]
+        UIKit.UILabel IBDateTimeLbl { get; set; }
 
-		[Outlet]
-		UIKit.UIButton IBDeleteBtn { get; set; }
 
-		[Outlet]
-		UIKit.UILabel IBDescLbl { get; set; }
+        [Outlet]
+        UIKit.UIButton IBDeleteBtn { get; set; }
 
-		[Outlet]
-		UIKit.UILabel IBMailAddressLbl { get; set; }
 
-		[Outlet]
-		UIKit.UILabel IBTitleLbl { get; set; }
+        [Outlet]
+        UIKit.UILabel IBDescLbl { get; set; }
 
-		[Action ("IBDeleteBtnClicked:")]
-		partial void IBDeleteBtnClicked (Foundation.NSObject sender);
-		
-		void ReleaseDesignerOutlets ()
-		{
-			if (IBTitleLbl != null) {
-				IBTitleLbl.Dispose ();
-				IBTitleLbl = null;
-			}
 
-			if (IBMailAddressLbl != null) {
-				IBMailAddressLbl.Dispose ();
-				IBMailAddressLbl = null;
-			}
+        [Outlet]
+        UIKit.UILabel IBMailAddressLbl { get; set; }
 
-			if (IBDescLbl != null) {
-				IBDescLbl.Dispose ();
-				IBDescLbl = null;
-			}
 
-			if (IBDateTimeLbl != null) {
-				IBDateTimeLbl.Dispose ();
-				IBDateTimeLbl = null;
-			}
+        [Outlet]
+        UIKit.UILabel IBTitleLbl { get; set; }
 
-			if (IBDeleteBtn != null) {
-				IBDeleteBtn.Dispose ();
-				IBDeleteBtn = null;
-			}
-		}
-	}
+
+        [Action ("IBDeleteBtnClicked:")]
+        partial void IBDeleteBtnClicked (Foundation.NSObject sender);
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (IBDateTimeLbl != null) {
+                IBDateTimeLbl.Dispose ();
+                IBDateTimeLbl = null;
+            }
+
+            if (IBDescLbl != null) {
+                IBDescLbl.Dispose ();
+                IBDescLbl = null;
+            }
+
+            if (IBMailAddressLbl != null) {
+                IBMailAddressLbl.Dispose ();
+                IBMailAddressLbl = null;
+            }
+
+            if (IBTitleLbl != null) {
+                IBTitleLbl.Dispose ();
+                IBTitleLbl = null;
+            }
+        }
+    }
 }

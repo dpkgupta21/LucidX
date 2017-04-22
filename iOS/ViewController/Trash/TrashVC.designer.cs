@@ -1,4 +1,4 @@
-﻿// WARNING
+// WARNING
 //
 // This file has been generated automatically by Xamarin Studio from the outlets and
 // actions declared in your storyboard file.
@@ -11,11 +11,11 @@ using UIKit;
 
 namespace Trash
 {
-	[Register("TrashVC")]
-	partial class TrashVC
-	{
-		void ReleaseDesignerOutlets()
-		{
-		}
-	}
+    [Register ("TrashVC")]
+    partial class TrashVC
+    {
+        void ReleaseDesignerOutlets ()
+        {
+        }
+    }
 }

@@ -4,10 +4,11 @@ using CoreGraphics;
 using Foundation;
 using UIKit;
 using Xamarin.SWRevealViewController;
+using LucidX.iOS.CustomCells;
 
 namespace LucidX.iOS
 {
-	public partial class SettingsVc : UIViewController
+	public partial class SettingsVc : UIViewController, IUITableViewDelegate, IUITableViewDataSource
 	{
 		public SWRevealViewController revealVC;
 
@@ -41,12 +42,12 @@ namespace LucidX.iOS
 			IBProfileImg.Layer.BorderWidth = 1;
 			IBProfileImg.Layer.BorderColor = UIColor.White.CGColor;
 			IBProfileImg.ClipsToBounds = true;
-			SetupLanguageStrings();
+			GetLaguageStrings();
 			IBNameLbl.Text = IosUtils.Settings.Name;
 			IBMailAddLbl.Text = IosUtils.Settings.UserMail;
-			IBMailAddLbl.AdjustsFontSizeToFitWidth = true;
-			SetSelected(IBInboxVw);
+			IBContntTbl.RegisterNibForCellReuse(MenuCell.Nib, MenuCell.Key);
 			GetCount();
+			IBContntTbl.EstimatedRowHeight = 50;
 		}
 
 		async void GetCount()
@@ -56,36 +57,42 @@ namespace LucidX.iOS
 				var res = await Webservices.WebServiceMethods.EmailCount(IosUtils.Settings.UserId);
 				if (res != null)
 				{
-					IBInboxCountLbl.Text = res.inboxCount == 0 ? "" : res.inboxCount.ToString();
-					IBSentCountLbl.Text = res.sentItemCount == 0 ? "" : res.sentItemCount.ToString();
-					IBDraftCountLbl.Text = res.draftCount == 0 ? "" : res.draftCount.ToString();
-					IBTrashCountLbl.Text = res.trashCount == 0 ? "" : res.trashCount.ToString();
 				}
 			}
 		}
 
 
-		void SetupLanguageStrings()
+		void GetLaguageStrings()
 		{
-			IBMailTitleLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSMailTitle", "");
-			IBInboxLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInbox", "");
-			IBDraftLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSDrafts", "");
-			IBSentLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSSent", "");
-			IBTrashLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSTrash", "");
-			IBCalendarLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSCalendar", "");
-			IBInvoiceLbl.Text = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInvoice", "");
-		}
+			SectionTitle.Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSMailTitle", ""));
+			SectionTitle.Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSCalendar", ""));
+			SectionTitle.Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Order", ""));
+			SectionTitle.Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Notes", ""));
+			SectionTitle.Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Logout", ""));
 
-		void SetSelected(UIView vw)
-		{
-			IBInboxVw.BackgroundColor = IBMailVw.BackgroundColor;
-			IBSentVw.BackgroundColor = IBMailVw.BackgroundColor;
-			IBDraftVw.BackgroundColor = IBMailVw.BackgroundColor;
-			IBTrashVw.BackgroundColor = IBMailVw.BackgroundColor;
-			IBCalendarVw.BackgroundColor = UIColor.Clear;
-			IBInvoiceVw.BackgroundColor = UIColor.Clear;
 
-			vw.BackgroundColor = IosUtils.IosColorConstant.ThemeProfileTextColor;
+			RowsTitle[0].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInbox", ""));
+			RowsTitle[0].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSDrafts", ""));
+			RowsTitle[0].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSSent", ""));
+			RowsTitle[0].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSTrash", ""));
+
+			RowsTitle[1].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("List", ""));
+			RowsTitle[1].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Add", ""));
+
+			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("View Order", ""));
+			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Amend Order", ""));
+			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Create Order", ""));
+			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Convert Order", ""));
+			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Delete Order", ""));
+
+			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("View Notes", ""));
+			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Amend Notes", ""));
+			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Create Notes", ""));
+			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Delete Notes", ""));
+
+			RowsTitle[4].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Delete Notes", ""));
+
+			IBContntTbl.ReloadData();
 		}
 
 		#endregion
@@ -104,89 +111,100 @@ namespace LucidX.iOS
 			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
 			navVc.View.AddSubview(fixitVw);
 			revealVC.FrontViewController = navVc;
-			SetSelected(IBCalendarVw);
 			revealVC.RevealToggleAnimated(true);
 		}
 
-		partial void IBDraftClicked(Foundation.NSObject sender)
+		#endregion
+
+
+		#region TableView Delegate and data source methods
+
+		List<int> RowsCount = new List<int> { 4, 2, 5, 4, 0 };
+		bool IsExpanded;
+		int SelectedSection;
+		List<string> SectionTitle = new List<string>();
+		List<List<string>> RowsTitle = new List<List<string>>() { new List<string>(),
+			new List<string> (),
+			new List<string> (),
+			new List<string> (),
+			new List<string> (),
+		};
+
+		[Export("numberOfSectionsInTableView:")]
+		public nint NumberOfSections(UITableView tableView)
 		{
-			if (draftVc == null)
-			{
-				draftVc = new Drafts.DraftsVC();
-				draftVc.revealVC = revealVC;
-			}
-			var navVc = new UINavigationController(draftVc);
-			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
-			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
-			navVc.View.AddSubview(fixitVw);
-			revealVC.FrontViewController = navVc;
-			SetSelected(IBDraftVw);
-			revealVC.RevealToggleAnimated(true);
+			return 5;
 		}
 
-		partial void IBInboxClicked(Foundation.NSObject sender)
+
+		[Export("tableView:viewForHeaderInSection:")]
+		public UIView GetViewForHeader(UITableView tableView, nint section)
 		{
-			if (inboxVc == null)
+			var header = MenuHeader.Create();
+			header.Frame = new CGRect(0, 0, tableView.Bounds.Width, 70);
+			if (section == SelectedSection)
 			{
-				inboxVc = new Inbox.InboxVC();
-				inboxVc.revealVC = revealVC;
+				header.Configure(SectionTitle[(int)section], (int)section, IsExpanded);
 			}
-			var navVc = new UINavigationController(inboxVc);
-			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
-			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
-			navVc.View.AddSubview(fixitVw);
-			revealVC.FrontViewController = navVc;
-			SetSelected(IBInboxVw);
-			revealVC.RevealToggleAnimated(true);
+			else
+			{
+				header.Configure(SectionTitle[(int)section], (int)section);
+			}
+
+			header.Clicked -= Header_Clicked;
+			header.Clicked += Header_Clicked;
+			return header;
 		}
 
-		partial void IBInvoiceClicked(Foundation.NSObject sender)
+		[Export("tableView:heightForHeaderInSection:")]
+		public nfloat GetHeightForHeader(UITableView tableView, nint section)
 		{
-			if (invoiceVc == null)
-			{
-				invoiceVc = new Invoice.InvoiceVC();
-				invoiceVc.revealVC = revealVC;
-			}
-			var navVc = new UINavigationController(invoiceVc);
-			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
-			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
-			navVc.View.AddSubview(fixitVw);
-			revealVC.FrontViewController = navVc;
-			SetSelected(IBInvoiceVw);
-			revealVC.RevealToggleAnimated(true);
+			return 50;
 		}
 
-		partial void IBSentClicked(Foundation.NSObject sender)
+		[Export("tableView:cellForRowAtIndexPath:")]
+		public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
-			if (sentVc == null)
-			{
-				sentVc = new Sent.SentVC();
-				sentVc.revealVC = revealVC;
-			}
-			var navVc = new UINavigationController(sentVc);
-			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
-			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
-			navVc.View.AddSubview(fixitVw);
-			revealVC.FrontViewController = navVc;
-			SetSelected(IBSentVw);
-			revealVC.RevealToggleAnimated(true);
+			var cell = tableView.DequeueReusableCell(MenuCell.Key) as MenuCell;
+			cell.ConfigureCell(RowsTitle[indexPath.Section][indexPath.Row], null, 0);
+			return cell;
 		}
 
-		partial void IBTrashClicked(Foundation.NSObject sender)
+		[Export("tableView:numberOfRowsInSection:")]
+		public nint RowsInSection(UITableView tableView, nint section)
 		{
-			if (trashVc == null)
+			if (section == SelectedSection)
 			{
-				trashVc = new Trash.TrashVC();
-				trashVc.revealVC = revealVC;
+				return IsExpanded ? RowsCount[(int)section] : 0;
 			}
-			var navVc = new UINavigationController(trashVc);
-			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
-			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
-			navVc.View.AddSubview(fixitVw);
-			revealVC.FrontViewController = navVc;
-			SetSelected(IBTrashVw);
-			revealVC.RevealToggleAnimated(true);
+			return 0;
 		}
+
+		[Export("tableView:heightForRowAtIndexPath:")]
+		public nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+		{
+			return UITableView.AutomaticDimension;
+		}
+
+		void Header_Clicked(object sender, bool e)
+		{
+			var vw = sender as MenuHeader;
+			IsExpanded = e;
+			SelectedSection = (int)vw.Tag;
+			UIView.Animate(0.5, () =>
+			{
+				this.IBContntTbl.ReloadData();
+			});
+		}
+
+		[Export("tableView:didSelectRowAtIndexPath:")]
+		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
+		{
+
+		}
+
+
+
 
 		#endregion
 

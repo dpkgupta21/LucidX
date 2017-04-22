@@ -49,10 +49,10 @@ namespace IosUtils
 	public class HeightConstants
 	{
 		public static nint CellHeight25 = (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) ? 50 : 25;
-		public static nint CellHeight35 = (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) ? 70 : 35;
-		public static nint CellHeight50 = (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) ? 100 : 50;
-		public static nint CellHeight60 = (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) ? 120 : 60;
-		public static nint CellHeight70 = (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) ? 120 : 70;
+		public static nint CellHeight35 = (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) ? 50 : 35;
+		public static nint CellHeight50 = (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) ? 70 : 50;
+		public static nint CellHeight60 = (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) ? 80 : 60;
+		public static nint CellHeight70 = (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) ? 100 : 70;
 		
 		public static nint CellHeight200 = (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) ? 400 : 200;
 	}
