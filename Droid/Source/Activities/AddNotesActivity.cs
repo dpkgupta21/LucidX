@@ -12,6 +12,11 @@ using System.Collections.Generic;
 using LucidX.Droid.Source.CustomSpinner.Model;
 using LucidX.Droid.Source.CustomSpinner.Adapter;
 using Android.Graphics;
+using LucidX.ResponseModels;
+using Newtonsoft.Json;
+using LucidX.Droid.Source.CustomViews;
+using Plugin.Connectivity;
+using LucidX.Webservices;
 
 namespace LucidX.Droid.Source.Activities
 {
@@ -26,12 +31,11 @@ namespace LucidX.Droid.Source.Activities
         private Android.Support.V7.Widget.Toolbar toolbar;
         private Activity mActivity;
         private SharedPreferencesManager mSharedPreferencesManager;
-        private bool isAddNote;
-
+        
         private TextView txt_start_date_val;
         private DateTime noteDateTime = DateTime.Now;
 
-        
+
         private TextView txt_calendar_type;
 
         private Spinner spin_account_code;
@@ -43,6 +47,11 @@ namespace LucidX.Droid.Source.Activities
         private SpinnerItemModel _selectedCurrentEntitysItem;
         private SpinnerAdapter _entitySpinnerAdapter;
         private List<SpinnerItemModel> _entitySpinnerItemModelList;
+
+        private bool isAddNote;
+        private CrmNotesResponse noteObj = null;
+        private string entityCode;
+        private string accountCode;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -60,6 +69,15 @@ namespace LucidX.Droid.Source.Activities
 
 
             isAddNote = Intent.GetBooleanExtra("isAddNote", false);
+            if (!isAddNote)
+            {
+                string noteObjString = Intent.GetStringExtra("noteObj");
+                noteObj = JsonConvert.DeserializeObject<CrmNotesResponse>(noteObjString);
+                entityCode = Intent.GetStringExtra("entityCode");
+                accountCode = Intent.GetStringExtra("accountCode");
+
+            }
+
             try
             {
                 Init();
@@ -74,11 +92,13 @@ namespace LucidX.Droid.Source.Activities
         {
             MenuInflater.Inflate(Resource.Menu.delete, menu);
 
-           
-            IMenuItem menuItem= menu.FindItem(Resource.Id.menu_delete);
-            if (isAddNote) {
+
+            IMenuItem menuItem = menu.FindItem(Resource.Id.menu_delete);
+            if (isAddNote)
+            {
                 menuItem.SetVisible(false);
-            } else
+            }
+            else
             {
                 menuItem.SetVisible(true);
             }
@@ -121,14 +141,20 @@ namespace LucidX.Droid.Source.Activities
 
             // Set Current Entity in Spinner
             InitEntitySpinnerValues();
-            SetEntitySpinnerAdapter();
-
+            
             // Set Account Code in Spinner
             InitAccountCodeSpinnerValues();
             SetAccountCodeSpinnerAdapter();
 
             // Initialize listener for spinner
             InitializeListeners();
+        }
+
+
+
+        private void SetNotesDetails()
+        {
+
         }
 
         private void SetToolbarTitle()
@@ -181,23 +207,44 @@ namespace LucidX.Droid.Source.Activities
         /// <summary>
         /// Init values for Current Entity spinner
         /// </summary>
-        private void InitEntitySpinnerValues()
+        private async void InitEntitySpinnerValues()
         {
-            List<string> entityItems = new List<string> { "Select Current Entity", "Entity1",
-                "Entity2", "Entity3"};
+            try
+            {
+                List<EntityCodesResponse> responseList = null;
+                if (CrossConnectivity.Current.IsConnected)
+                {
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                        mActivity.Resources.GetString(Resource.String.loading));
 
-            _entitySpinnerItemModelList = new List<SpinnerItemModel>();
+                    responseList = await WebServiceMethods.GetEntityCode();
 
-            for (int i = 0; i < entityItems.Count; i++)
-            {               
+                    CustomProgressDialog.HideProgressDialog();
+                }
+
+
+                _entitySpinnerItemModelList = new List<SpinnerItemModel>();
+
+                for (int i = 0; i < responseList.Count; i++)
+                {
+                    if(entityCode.Equals(responseList[i].CompCode + ""))
+                    {
+
+                    }
                     SpinnerItemModel item = new SpinnerItemModel
                     {
-                        Id = (i+1)+"",
-                        TEXT = entityItems[i]+"",
+                        Id = (i + 1) + "",
+                        TEXT = responseList[i].CompCode + "",
                         STATE = false
                     };
 
-                _entitySpinnerItemModelList.Add(item);              
+                    _entitySpinnerItemModelList.Add(item);
+                }
+                SetEntitySpinnerAdapter();
+            }
+            catch (Exception e)
+            {
+
             }
         }
 

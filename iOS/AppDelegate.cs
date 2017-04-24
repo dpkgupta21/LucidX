@@ -90,6 +90,7 @@ namespace LucidX.iOS
 			NavDrawer.RearViewRevealOverdraw = 0.0f;
 			inboxVC.revealVC = NavDrawer;
 			settingVC.revealVC = NavDrawer;
+			inboxVC.MailTypeId = 1;
 			Window.RootViewController = NavDrawer;
 			Window.MakeKeyAndVisible();
 		}

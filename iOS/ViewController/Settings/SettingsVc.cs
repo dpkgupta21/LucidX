@@ -14,10 +14,7 @@ namespace LucidX.iOS
 
 		Calendar.CalendarVC calendarVc;
 		public Inbox.InboxVC inboxVc;
-		Drafts.DraftsVC draftVc;
-		Sent.SentVC sentVc;
-		Trash.TrashVC trashVc;
-		Invoice.InvoiceVC invoiceVc;
+		public Notes.ViewNotesVC notesVC;
 
 		public SettingsVc() : base("SettingsVc", null)
 		{
@@ -99,20 +96,16 @@ namespace LucidX.iOS
 
 		#region IBAction Methods
 
-		partial void IBCalendarClicked(Foundation.NSObject sender)
+		void ShowVC(UIViewController VC)
 		{
-			if (calendarVc == null)
-			{
-				calendarVc = new Calendar.CalendarVC();
-				calendarVc.revealVC = revealVC;
-			}
-			var navVc = new UINavigationController(calendarVc);
+			var navVc = new UINavigationController(VC);
 			var fixitVw = new UIView(new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 20));
 			fixitVw.BackgroundColor = IosUtils.IosColorConstant.ThemeNavBlue;
 			navVc.View.AddSubview(fixitVw);
 			revealVC.FrontViewController = navVc;
 			revealVC.RevealToggleAnimated(true);
 		}
+
 
 		#endregion
 
@@ -200,6 +193,75 @@ namespace LucidX.iOS
 		[Export("tableView:didSelectRowAtIndexPath:")]
 		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
+
+			if (indexPath.Section == 0)
+			{
+				if (inboxVc == null)
+				{
+					inboxVc = new Inbox.InboxVC();
+					inboxVc.revealVC = revealVC;
+				}
+
+				//if (indexPath.Row == 0)
+				//{
+				//	inboxVc.MailTypeId = 1;
+				//}
+				//else if (indexPath.Row == 1)
+				//{
+				//	inboxVc.MailTypeId = 2;
+				//}
+				//else if (indexPath.Row == 2)
+				//{
+				//	inboxVc.
+				//}
+				//else if (indexPath.Row == 3)
+				//{
+
+				//}
+
+				ShowVC(inboxVc);
+				inboxVc.MailTypeId = indexPath.Row + 1;
+
+			}
+			else if (indexPath.Section == 1)
+			{
+
+			}
+			else if (indexPath.Section == 2)
+			{
+
+			}
+			else if (indexPath.Section == 3)
+			{
+				if (indexPath.Row == 0)
+				{
+					if (notesVC == null)
+					{
+						notesVC = new Notes.ViewNotesVC();
+						notesVC.revealVC = revealVC;
+					}
+					ShowVC(notesVC);
+
+				}
+				else if (indexPath.Row == 1)
+				{
+
+				}
+				else if (indexPath.Row == 2)
+				{
+
+				}
+				else if (indexPath.Row == 3)
+				{
+
+				}
+
+			}
+			else if (indexPath.Section == 4)
+			{
+
+
+			}
 
 		}
 

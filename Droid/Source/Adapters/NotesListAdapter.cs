@@ -2,15 +2,15 @@
 using Android.Widget;
 using Android.App;
 using Object = Java.Lang.Object;
-using LucidX.Droid.Source.Models;
 using System.Collections.Generic;
+using LucidX.ResponseModels;
 
 namespace LucidX.Droid.Source.Adapters
 {
-    public class NotesListAdapter : BaseAdapter<NotesListModel>
+    public class NotesListAdapter : BaseAdapter<CrmNotesResponse>
     {
         private LayoutInflater mLayoutInflater;
-        private List<NotesListModel> notesList;
+        private List<CrmNotesResponse> notesList;
         private Activity mActivity;
 
 
@@ -22,7 +22,7 @@ namespace LucidX.Droid.Source.Adapters
 
         }
 
-        public NotesListAdapter(List<NotesListModel> notesList, Activity mActivity)
+        public NotesListAdapter(List<CrmNotesResponse> notesList, Activity mActivity)
         {
             mLayoutInflater = (LayoutInflater)mActivity
                  .GetSystemService(Activity.LayoutInflaterService);
@@ -60,6 +60,10 @@ namespace LucidX.Droid.Source.Adapters
                 holder = (ViewHolder)convertView.Tag;
             }
 
+            holder.txt_notes.Text = notesList[position].NotesHeader;
+            holder.txt_notes_date.Text = notesList[position].CreatedDate.ToShortDateString();
+
+
             return convertView;
         }
 
@@ -71,7 +75,7 @@ namespace LucidX.Droid.Source.Adapters
             }
         }
 
-        public override NotesListModel this[int position]
+        public override CrmNotesResponse this[int position]
         {
             get
             {

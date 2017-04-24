@@ -22,6 +22,10 @@ namespace LucidX.Constants
         public const string MARK_READ_EMAIL_URL = "ModMailSvc/EMarkReadMail?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
         public const string SHOW_INBOX_EMAILS_URL = "ModDataGridsSvc/ShowEmails?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
         public const string EMAIL_DETAILS_URL = "ModMailSvc/EGetEmailDetails?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
-
+        public const string SHOW_NOTES_LIST_URL = "ModDataGridsSvc/ShowCrmNotesDirect?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string ADD_NOTES_URL = "ModDataGridsSvc/SaveCrmNotesDirect?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string DELETE_NOTES_URL = "ModDataGridsSvc/DeleteCrmNotesDirect?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string GET_ENTITY_CODES_URL = "ModDataGridsSvc/LoadAccounts?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string GET_ACCOUNT_CODES_URL = "ModDataGridsSvc/LoadAccountCodesByCompCode?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
     }
 }

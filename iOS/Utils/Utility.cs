@@ -65,7 +65,7 @@ namespace IosUtils
 		/// <param name="textField">Text field.</param>
 		public static void setLeftPadding(UITextField textField)
 		{
-			var paddingView = new UIView(new CGRect(0, 0, 10, textField.Frame.Size.Height));
+			var paddingView = new UIView(new CGRect(0, 0, 5, textField.Frame.Size.Height));
 			textField.LeftView = paddingView;
 			textField.LeftViewMode = UITextFieldViewMode.Always;
 		}

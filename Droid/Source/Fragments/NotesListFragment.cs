@@ -14,6 +14,12 @@ using LucidX.Droid.Source.Utilities;
 using LucidX.Droid.Source.Models;
 using LucidX.Droid.Source.CustomSpinner.Model;
 using LucidX.Droid.Source.CustomSpinner.Adapter;
+using LucidX.ResponseModels;
+using Plugin.Connectivity;
+using LucidX.Droid.Source.CustomViews;
+using LucidX.Webservices;
+using LucidX.Droid.Source.SharedPreference;
+using Newtonsoft.Json;
 
 namespace LucidX.Droid.Source.Fragments
 {
@@ -43,6 +49,7 @@ namespace LucidX.Droid.Source.Fragments
         private View view;
         private TextView txt_from_date;
         private TextView txt_to_date;
+        private TextView txt_no_notes;
 
         private Spinner spin_account_code;
         private SpinnerItemModel _selectedAccountCodeItem;
@@ -58,6 +65,9 @@ namespace LucidX.Droid.Source.Fragments
         private DateTime fromDateTime = DateTime.Now;
         private DateTime toDateTime = DateTime.Now;
 
+        private SharedPreferencesManager mSharedPreferencesManager;
+
+        private List<CrmNotesResponse> responseList = null;
         #region "Functions"
         public static Fragment GetInstance()
         {
@@ -79,10 +89,18 @@ namespace LucidX.Droid.Source.Fragments
 
             mActivity = Activity;
 
+            /// Shared Preference manager
+            mSharedPreferencesManager = UtilityDroid.GetInstance().
+                       GetSharedPreferenceManagerWithEncriptionEnabled(mActivity.ApplicationContext);
+
+
             spin_current_entity = view.FindViewById<Spinner>(
               Resource.Id.spin_current_entity);
             spin_account_code = view.FindViewById<Spinner>(
              Resource.Id.spin_account_code);
+
+            txt_no_notes = view.FindViewById<TextView>(
+             Resource.Id.txt_no_notes);
 
             txt_from_date = view.FindViewById<TextView>(
                 Resource.Id.txt_from_date);
@@ -96,38 +114,52 @@ namespace LucidX.Droid.Source.Fragments
 
             // Set Current Entity in Spinner
             InitEntitySpinnerValues();
-            SetEntitySpinnerAdapter();
-
-            // Set Account Code in Spinner
-            InitAccountCodeSpinnerValues();
-            SetAccountCodeSpinnerAdapter();
-
+                   
             // Initialize listener for spinner
             InitializeListeners();
 
             return view;
         }
 
+         
+        
         /// <summary>
         /// Init values for Current Entity spinner
         /// </summary>
-        private void InitEntitySpinnerValues()
+        private async void InitEntitySpinnerValues()
         {
-            List<string> entityItems = new List<string> { "Select Current Entity", "Entity1",
-                "Entity2", "Entity3"};
-
-            _entitySpinnerItemModelList = new List<SpinnerItemModel>();
-
-            for (int i = 0; i < entityItems.Count; i++)
-            {
-                SpinnerItemModel item = new SpinnerItemModel
+            try {
+                //List<string> entityItems = new List<string> { "Select Current Entity", "Entity1",
+                //    "Entity2", "Entity3"};
+                List<EntityCodesResponse> responseList = null;
+                if (CrossConnectivity.Current.IsConnected)
                 {
-                    Id = (i + 1) + "",
-                    TEXT = entityItems[i] + "",
-                    STATE = false
-                };
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                        mActivity.Resources.GetString(Resource.String.loading));
 
-                _entitySpinnerItemModelList.Add(item);
+                    responseList = await WebServiceMethods.GetEntityCode();
+
+                    CustomProgressDialog.HideProgressDialog();
+                }
+
+                _entitySpinnerItemModelList = new List<SpinnerItemModel>();
+
+                for (int i = 0; i < responseList.Count; i++)
+                {
+                    SpinnerItemModel item = new SpinnerItemModel
+                    {
+                        Id = (i + 1) + "",
+                        TEXT = responseList[i].CompCode + "",
+                        STATE = false
+                    };
+
+                    _entitySpinnerItemModelList.Add(item);
+                }
+
+                SetEntitySpinnerAdapter();
+            }catch(Exception e)
+            {
+
             }
         }
 
@@ -149,22 +181,39 @@ namespace LucidX.Droid.Source.Fragments
         /// <summary>
         /// Init values for Account Code spinner
         /// </summary>
-        private void InitAccountCodeSpinnerValues()
+        private async void InitAccountCodeSpinnerValues()
         {
-            List<string> accountCodeItems = new List<string> { "Select Account Code", "Account Code1",
-                "Account Code2", "Account Code2" };
-
-            _accountCodeSpinnerItemModelList = new List<SpinnerItemModel>();
-
-            for (int i = 0; i < accountCodeItems.Count; i++)
-            {
-                SpinnerItemModel item = new SpinnerItemModel
+            try {
+                //List<string> accountCodeItems = new List<string> { "Select Account Code", "Account Code1",
+                //    "Account Code2", "Account Code2" };
+                List<AccountCodesResponse> responseList = null;
+                if (CrossConnectivity.Current.IsConnected)
                 {
-                    Id = (i + 1) + "",
-                    TEXT = accountCodeItems[i] + "",
-                    STATE = false
-                };
-                _accountCodeSpinnerItemModelList.Add(item);
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                        mActivity.Resources.GetString(Resource.String.loading));
+
+                    responseList = await WebServiceMethods.GetAccountCodes(_selectedCurrentEntitysItem.TEXT);
+
+                    CustomProgressDialog.HideProgressDialog();
+                }
+
+                _accountCodeSpinnerItemModelList = new List<SpinnerItemModel>();
+
+                for (int i = 0; i < responseList.Count; i++)
+                {
+                    SpinnerItemModel item = new SpinnerItemModel
+                    {
+                        Id = (i + 1) + "",
+                        TEXT = responseList[i].AccountCode + "",
+                        STATE = false
+                    };
+                    _accountCodeSpinnerItemModelList.Add(item);
+                }
+
+                SetAccountCodeSpinnerAdapter();
+            }catch(Exception e)
+            {
+
             }
         }
 
@@ -201,6 +250,11 @@ namespace LucidX.Droid.Source.Fragments
                     }
                 }
                 _entitySpinnerAdapter.NotifyDataSetChanged();
+
+                // Set Account Code in Spinner
+                InitAccountCodeSpinnerValues();
+
+
             };
 
 
@@ -222,6 +276,8 @@ namespace LucidX.Droid.Source.Fragments
                     }
                 }
                 _accountCodeSpinnerAdapter.NotifyDataSetChanged();
+
+                GetCrmNotesList();
             };
         }
 
@@ -259,52 +315,82 @@ namespace LucidX.Droid.Source.Fragments
             base.OnActivityCreated(savedInstanceState);
 
             listView = view.FindViewById<ListView>(Resource.Id.listview_order);
-            InitailizeOrderListAdapter(GetNotesListModel());
             listView.ItemClick += ListView_ItemClick;
+           
         }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             int pos = e.Position;
-
+            CrmNotesResponse noteObj = responseList[pos];
+            string noteObjString = JsonConvert.SerializeObject(noteObj);
             Intent intent = new Intent(mActivity, typeof(AddNotesActivity));
             intent.PutExtra("isAddNote", false);
+            intent.PutExtra("noteObj", noteObjString);
+            intent.PutExtra("entityCode", _selectedCurrentEntitysItem.TEXT);
+            intent.PutExtra("accountCode", _selectedAccountCodeItem.TEXT);
+
             mActivity.StartActivity(intent);
             mActivity.OverridePendingTransition(Resource.Animation.animation_enter,
                         Resource.Animation.animation_leave);
         }
 
-        private List<NotesListModel> GetNotesListModel()
+        private async void GetCrmNotesList()
         {
-            List<NotesListModel> notesList = new List<NotesListModel>();
-            for (int i = 0; i < 5; i++)
+            try
             {
-                NotesListModel noteObj = new NotesListModel
+                
+                if (CrossConnectivity.Current.IsConnected)
                 {
-                    Notes = "Pankaj" + i,
-                    NotesDate = "2" + i + " March 2017",
-                    Cost = i + "000 $"
-                };
-                notesList.Add(noteObj);
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                        mActivity.Resources.GetString(Resource.String.loading));
+
+                    responseList = await WebServiceMethods.ShowNotes(_selectedCurrentEntitysItem.TEXT,
+                        _selectedAccountCodeItem.TEXT, false);
+
+                    InitailizeOrderListAdapter(responseList);
+
+                    CustomProgressDialog.HideProgressDialog();
+                }
+                else
+                {
+                    UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title),
+                        Resources.GetString(Resource.String.alert_message_no_network_connection),
+                        Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
+                }
             }
-            return notesList;
+            catch (Exception ex)
+            {
+                CustomProgressDialog.HideProgressDialog();
+                UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title),
+                   Resources.GetString(Resource.String.alert_message_error),
+                   Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
+            }
+
+
         }
+
+
 
         /// <summary>
         /// Sets Calendar event list in listview using adapter,
         /// In case of no events "No Events" will be displayed
         /// </summary>
         /// <param name="CalendarListObj">List of run</param>
-        private void InitailizeOrderListAdapter(List<NotesListModel> notesList)
+        private void InitailizeOrderListAdapter(List<CrmNotesResponse> notesList)
         {
             try
             {
                 if (notesList != null && notesList.Count > 0)
                 {
-
                     mAdapter = new NotesListAdapter(notesList, mActivity);
                     listView.Adapter = mAdapter;
-
+                    txt_no_notes.Visibility = ViewStates.Gone;
+                }
+                else
+                {
+                    txt_no_notes.Visibility = ViewStates.Visible;
+                    listView.Visibility = ViewStates.Gone;
                 }
             }
             catch (Exception e)

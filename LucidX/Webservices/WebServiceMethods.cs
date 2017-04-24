@@ -7,7 +7,6 @@ using System.Net.Http;
 using System.Data;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Xml;
 
 namespace LucidX.Webservices
@@ -240,5 +239,179 @@ namespace LucidX.Webservices
                 return null;
             }
         }
+
+
+        /// <summary>
+        /// Returns list of ShowNotes
+        /// </summary>
+        /// <param name="entityCode"></param>
+        /// <param name="accountCode"></param>
+        /// <param name="blnShowblank"></param>
+        /// <returns></returns>
+        public async static Task<List<CrmNotesResponse>> ShowNotes(string entityCode,
+            string accountCode,
+            bool blnShowblank)
+        {
+            try
+            {
+                CrmNotesAPIParams param = new CrmNotesAPIParams
+                {
+                    entityCode = entityCode,
+                    accountCode = accountCode,                
+                    blnShowblank = false,                
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+                };
+                var response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.SHOW_NOTES_LIST_URL, HttpMethod.Post, param) 
+                    as FinalResponse;
+
+                List<CrmNotesResponse> notesList = null;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    DataSet resultIds = response.ResultDs;
+                    foreach (DataTable dt in resultIds.Tables)
+                    {
+                        notesList = (from DataRow dr in dt.Rows
+                                     select new CrmNotesResponse()
+                                     {
+                                         NotesId = dr["NotesId"].ToString(),
+                                         CreatedDate = Convert.ToDateTime(dr["CreatedDate"].ToString()),
+                                         NotesHeader = dr["NotesHeader"].ToString(),
+                                         NotesSubject = dr["NotesSubject"].ToString(),
+                                         NotesDetail = dr["NotesDetail"].ToString(),
+                                         CreatedBy = dr["CreatedBy"].ToString(),
+                                         UserName = dr["UserName"].ToString(),
+                                         ImageType = dr["ImageType"].ToString(),
+                                         ActionTypeId = dr["ActionTypeId"].ToString(),
+                                         SendTo = dr["SendTo"].ToString(),
+                                         PrivacyId = dr["PrivacyId"].ToString(),
+                                         CreatedBy1 = dr["CreatedBy1"].ToString()
+                                         
+                                     }).ToList();
+                    }
+                }
+
+                return notesList;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Returns list of Entity codes
+        /// </summary>
+        /// <returns></returns>
+        public async static Task<List<EntityCodesResponse>> GetEntityCode()
+        {
+            try
+            {
+                EntityCodeAPIParams param = new EntityCodeAPIParams
+                {                
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+                };
+                var response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.GET_ENTITY_CODES_URL, HttpMethod.Post, param)
+                    as FinalResponse;
+
+                List<EntityCodesResponse> entityCodesList = null;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    DataSet resultIds = response.ResultDs;
+                    foreach (DataTable dt in resultIds.Tables)
+                    {
+                        entityCodesList = (from DataRow dr in dt.Rows
+                                     select new EntityCodesResponse()
+                                     {
+                                         CompCode = dr["CompCode"].ToString(),                                  
+                                         AccountCode = dr["AccountCode"].ToString(),                                        
+
+                                     }).ToList();
+                    }
+                }
+
+                return entityCodesList;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// Returns list of Account codes
+        /// </summary>
+        /// <param name="entityCode"></param>
+        /// <returns></returns>
+        public async static Task<List<AccountCodesResponse>> GetAccountCodes(string compCode)
+        {
+            try
+            {
+                AccountCodeAPIParams param = new AccountCodeAPIParams
+                {
+                    compCode = compCode,
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+                };
+                var response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.GET_ACCOUNT_CODES_URL, HttpMethod.Post, param)
+                    as FinalResponse;
+
+                List<AccountCodesResponse> accountCodesList = null;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    DataSet resultIds = response.ResultDs;
+                    foreach (DataTable dt in resultIds.Tables)
+                    {
+                        accountCodesList = (from DataRow dr in dt.Rows
+                                           select new AccountCodesResponse()
+                                           {                                            
+                                               AccountCode = dr["AccountCode"].ToString(),
+
+                                           }).ToList();
+                    }
+                }
+
+                return accountCodesList;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// Save Add notes
+        /// </summary>
+        /// <param name="addNotesApiParams"></param>
+        /// <returns></returns>
+        public async static Task<bool> AddCrmNotes(AddNotesAPIParams addNotesApiParams)
+        {
+            try
+            {          
+                FinalResponse response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.ADD_NOTES_URL,
+                    HttpMethod.Post, addNotesApiParams) as FinalResponse;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
     }
 }

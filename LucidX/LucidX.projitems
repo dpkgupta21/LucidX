@@ -10,11 +10,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Constants\WebserviceConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AccountCodeAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\EntityCodeAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\CrmNotesAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AddNotesAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\EmailDetailsAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\InboxEmailApiParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\MarkReadEmailApiParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\EmailCountsAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\LoginAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\AccountCodesResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\EntityCodesResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\CrmNotesResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\EventResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\EmailCountResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\CalendarEventResponse.cs" />

@@ -17,23 +17,45 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_height="wrap_content">
+        android:layout_marginRight="10dp">
+
+      <LucidX.Droid.Source.CustomViews.CustomTextView
+          android:id="@+id/txt_entity_code"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:hint="Entity Code"
+          android:maxLines="1"
+          android:textColor="@color/black"
+          android:textSize="18sp" />
 
       <Spinner
           android:id="@+id/spin_current_entity"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_marginTop="10dp"
+          android:layout_below="@id/txt_entity_code"
+          android:layout_marginTop="4dp"
           android:background="@drawable/spinner_dropdown" />
+
+      <LucidX.Droid.Source.CustomViews.CustomTextView
+          android:id="@+id/txt_account_code"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/spin_current_entity"
+          android:layout_marginTop="20dp"
+          android:hint="Account Code"
+          android:maxLines="1"
+          android:textColor="@color/black"
+          android:textSize="18sp" />
 
       <Spinner
           android:id="@+id/spin_account_code"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_below="@id/spin_current_entity"
-          android:layout_marginTop="20dp"
+          android:layout_below="@id/txt_account_code"
+          android:layout_marginTop="4dp"
           android:background="@drawable/spinner_dropdown" />
 
 
@@ -140,21 +162,21 @@
       android:weightSum="2">
 
     <LucidX.Droid.Source.CustomViews.CustomButton
-           android:id="@+id/btn_save"
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           android:layout_weight="1"
-           android:background="@drawable/btn_color_selector"
-           android:text="Save"
-           android:textColor="@color/black"
-           android:textSize="18sp" />
-    
+        android:id="@+id/btn_save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/btn_color_selector"
+        android:text="Save"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
     <LucidX.Droid.Source.CustomViews.CustomButton
         android:id="@+id/btn_cancel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_marginLeft="10dp"
+        android:layout_weight="1"
         android:background="@drawable/btn_color_selector"
         android:text="Cancel"
         android:textColor="@color/black"

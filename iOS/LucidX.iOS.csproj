@@ -211,13 +211,11 @@
     <Folder Include="Resources\Images.xcassets\RadioOn.imageset\" />
     <Folder Include="CustomCells\" />
     <Folder Include="CustomCells\Mail Details\" />
-    <Folder Include="ViewController\Inbox\" />
     <Folder Include="ViewController\Sent\" />
     <Folder Include="ViewController\Drafts\" />
     <Folder Include="ViewController\Trash\" />
     <Folder Include="ViewController\Calendar\" />
     <Folder Include="ViewController\Invoice\" />
-    <Folder Include="ViewController\MailDetails\" />
     <Folder Include="Resources\Images.xcassets\RememberMeOff.imageset\" />
     <Folder Include="Resources\Images.xcassets\RememberMeOn.imageset\" />
     <Folder Include="Resources\Images.xcassets\Menu.imageset\" />
@@ -237,6 +235,11 @@
     <Folder Include="Resources\Images.xcassets\DataBaseSelected.imageset\" />
     <Folder Include="CustomCells\MenuCell\" />
     <Folder Include="CustomCells\MenuHader\" />
+    <Folder Include="ViewController\Notes\" />
+    <Folder Include="ViewController\Mail\" />
+    <Folder Include="ViewController\Mail\Inbox\" />
+    <Folder Include="ViewController\Mail\MailDetails\" />
+    <Folder Include="CustomCells\NotesCell\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -244,8 +247,6 @@
     <InterfaceDefinition Include="ViewController\Login\LoginVC.xib" />
     <InterfaceDefinition Include="ViewController\Settings\SettingsVc.xib" />
     <InterfaceDefinition Include="CustomCells\Mail Details\MailDetailsCell.xib" />
-    <InterfaceDefinition Include="ViewController\Inbox\InboxVC.xib" />
-    <InterfaceDefinition Include="ViewController\MailDetails\MailDetailsVC.xib" />
     <InterfaceDefinition Include="ViewController\Calendar\CalendarVC.xib" />
     <InterfaceDefinition Include="ViewController\Drafts\DraftsVC.xib" />
     <InterfaceDefinition Include="ViewController\Invoice\InvoiceVC.xib" />
@@ -253,6 +254,10 @@
     <InterfaceDefinition Include="ViewController\Trash\TrashVC.xib" />
     <InterfaceDefinition Include="CustomCells\MenuCell\MenuCell.xib" />
     <InterfaceDefinition Include="CustomCells\MenuHader\MenuHeader.xib" />
+    <InterfaceDefinition Include="ViewController\Mail\Inbox\InboxVC.xib" />
+    <InterfaceDefinition Include="ViewController\Mail\MailDetails\MailDetailsVC.xib" />
+    <InterfaceDefinition Include="ViewController\Notes\ViewNotesVC.xib" />
+    <InterfaceDefinition Include="CustomCells\NotesCell\NotesCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -280,14 +285,6 @@
       <DependentUpon>MailDetailsCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\IosFontSize.cs" />
-    <Compile Include="ViewController\Inbox\InboxVC.cs" />
-    <Compile Include="ViewController\Inbox\InboxVC.designer.cs">
-      <DependentUpon>InboxVC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewController\MailDetails\MailDetailsVC.cs" />
-    <Compile Include="ViewController\MailDetails\MailDetailsVC.designer.cs">
-      <DependentUpon>MailDetailsVC.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewController\Calendar\CalendarVC.cs" />
     <Compile Include="ViewController\Calendar\CalendarVC.designer.cs">
       <DependentUpon>CalendarVC.cs</DependentUpon>
@@ -316,6 +313,24 @@
     <Compile Include="CustomCells\MenuHader\MenuHeader.designer.cs">
       <DependentUpon>MenuHeader.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewController\Mail\Inbox\InboxVC.cs" />
+    <Compile Include="ViewController\Mail\Inbox\InboxVC.designer.cs">
+      <DependentUpon>..\..\Inbox\InboxVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Mail\MailDetails\MailDetailsVC.cs" />
+    <Compile Include="ViewController\Mail\MailDetails\MailDetailsVC.designer.cs">
+      <DependentUpon>..\..\MailDetails\MailDetailsVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Notes\ViewNotesVC.cs" />
+    <Compile Include="ViewController\Notes\ViewNotesVC.designer.cs">
+      <DependentUpon>ViewNotesVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCells\NotesCell\NotesCell.cs" />
+    <Compile Include="CustomCells\NotesCell\NotesCell.designer.cs">
+      <DependentUpon>NotesCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickerModels\EntityPickerModel.cs" />
+    <Compile Include="PickerModels\AccountCodePickerModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
