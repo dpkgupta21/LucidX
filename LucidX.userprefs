@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{9C0D831C-F1F4-4627-8740-6F6EA7DEF97B}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController/Notes/ViewNotesVC.cs">
     <Files>
-      <File FileName="iOS/ViewController/Notes/ViewNotesVC.cs" Line="155" Column="4" />
+      <File FileName="iOS/ViewController/Notes/ViewNotesVC.cs" Line="157" Column="18" />
       <File FileName="LucidX/ResponseModels/CrmNotesResponse.cs" Line="5" Column="34" />
       <File FileName="iOS/ViewController/Mail/Inbox/InboxVC.cs" Line="147" Column="13" />
       <File FileName="iOS/Utils/Utility.cs" Line="68" Column="51" />

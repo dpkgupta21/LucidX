@@ -27,5 +27,11 @@ namespace LucidX.Constants
         public const string DELETE_NOTES_URL = "ModDataGridsSvc/DeleteCrmNotesDirect?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
         public const string GET_ENTITY_CODES_URL = "ModDataGridsSvc/LoadAccounts?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
         public const string GET_ACCOUNT_CODES_URL = "ModDataGridsSvc/LoadAccountCodesByCompCode?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string SHOW_REF_USERS_URL = "ModDataGridsSvc/ShowRefUsers?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string SHOW_NOTES_TYPES ="ModDataGridsSvc/ShowNotesTypes?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string GET_CALENDAR_EVENTS= "ModDataGridsSvc/ShowCrmNotes?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string SAVE_CALENDAR_EVENTS = "ModDataGridsSvc/SaveCrmNotes?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string DELETE_EVENTS_URL = "ModDataGridsSvc/DeleteCrmNotes?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+
     }
 }

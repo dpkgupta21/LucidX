@@ -6,7 +6,6 @@ namespace LucidX.ResponseModels
     {
         public string NotesId { get; set; }
         public DateTime CreatedDate { get; set; }
-        public string NotesHeader { get; set; }
         public string NotesSubject { get; set; }
         public string NotesDetail { get; set; }
         public string CreatedBy { get; set; }

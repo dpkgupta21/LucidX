@@ -114,7 +114,7 @@ namespace LucidX.Webservices
                     emailCount.draftCount = countDictionary["Drafts"];
                     emailCount.sentItemCount = countDictionary["Sent Items"];
                     emailCount.trashCount = countDictionary["Trash"];
-                    
+
 
                 }
 
@@ -145,11 +145,12 @@ namespace LucidX.Webservices
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     return true;
-                }else
+                }
+                else
                 {
                     return false;
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -249,20 +250,20 @@ namespace LucidX.Webservices
         /// <param name="blnShowblank"></param>
         /// <returns></returns>
         public async static Task<List<CrmNotesResponse>> ShowNotes(string entityCode,
-            string accountCode,
-            bool blnShowblank)
+            string accountCode, string startDate, string endDate)
         {
             try
             {
                 CrmNotesAPIParams param = new CrmNotesAPIParams
                 {
                     entityCode = entityCode,
-                    accountCode = accountCode,                
-                    blnShowblank = false,                
+                    accountCode = accountCode,
+                    startDate = startDate,
+                    endDate = endDate,
                     connectionName = WebserviceConstants.CONNECTION_NAME
                 };
                 var response = await WebServiceHandler.GetWebserviceResult(
-                    WebserviceConstants.SHOW_NOTES_LIST_URL, HttpMethod.Post, param) 
+                    WebserviceConstants.SHOW_NOTES_LIST_URL, HttpMethod.Post, param)
                     as FinalResponse;
 
                 List<CrmNotesResponse> notesList = null;
@@ -277,7 +278,6 @@ namespace LucidX.Webservices
                                      {
                                          NotesId = dr["NotesId"].ToString(),
                                          CreatedDate = Convert.ToDateTime(dr["CreatedDate"].ToString()),
-                                         NotesHeader = dr["NotesHeader"].ToString(),
                                          NotesSubject = dr["NotesSubject"].ToString(),
                                          NotesDetail = dr["NotesDetail"].ToString(),
                                          CreatedBy = dr["CreatedBy"].ToString(),
@@ -287,7 +287,7 @@ namespace LucidX.Webservices
                                          SendTo = dr["SendTo"].ToString(),
                                          PrivacyId = dr["PrivacyId"].ToString(),
                                          CreatedBy1 = dr["CreatedBy1"].ToString()
-                                         
+
                                      }).ToList();
                     }
                 }
@@ -309,7 +309,7 @@ namespace LucidX.Webservices
             try
             {
                 EntityCodeAPIParams param = new EntityCodeAPIParams
-                {                
+                {
                     connectionName = WebserviceConstants.CONNECTION_NAME
                 };
                 var response = await WebServiceHandler.GetWebserviceResult(
@@ -324,12 +324,10 @@ namespace LucidX.Webservices
                     foreach (DataTable dt in resultIds.Tables)
                     {
                         entityCodesList = (from DataRow dr in dt.Rows
-                                     select new EntityCodesResponse()
-                                     {
-                                         CompCode = dr["CompCode"].ToString(),                                  
-                                         AccountCode = dr["AccountCode"].ToString(),                                        
-
-                                     }).ToList();
+                                           select new EntityCodesResponse()
+                                           {
+                                               CompCode = dr["CompCode"].ToString(),
+                                           }).ToList();
                     }
                 }
 
@@ -368,11 +366,12 @@ namespace LucidX.Webservices
                     foreach (DataTable dt in resultIds.Tables)
                     {
                         accountCodesList = (from DataRow dr in dt.Rows
-                                           select new AccountCodesResponse()
-                                           {                                            
-                                               AccountCode = dr["AccountCode"].ToString(),
+                                            select new AccountCodesResponse()
+                                            {
+                                                AccountCode = dr["AccountCode"].ToString(),
+                                                AccountId = dr["AccountId"].ToString()
 
-                                           }).ToList();
+                                            }).ToList();
                     }
                 }
 
@@ -388,13 +387,49 @@ namespace LucidX.Webservices
         /// </summary>
         /// <param name="addNotesApiParams"></param>
         /// <returns></returns>
-        public async static Task<bool> AddCrmNotes(AddNotesAPIParams addNotesApiParams)
+        public async static Task<int> AddCrmNotes(AddNotesAPIParams addNotesApiParams)
         {
             try
-            {          
+            {
                 FinalResponse response = await WebServiceHandler.GetWebserviceResult(
                     WebserviceConstants.ADD_NOTES_URL,
                     HttpMethod.Post, addNotesApiParams) as FinalResponse;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    //int notesId = response.ResultDoc;
+                    return -1;
+                }
+                else
+                {
+                    return -1;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// Delete notes
+        /// </summary>
+        /// <param name="deleteNotesApiParams"></param>
+        /// <returns></returns>
+        public async static Task<bool> DeleteCrmNotes(string notesId)
+        {
+            try
+            {
+                DeleteNotesAPIParams deleteNotesApiParam = new DeleteNotesAPIParams
+                {
+                    notesId = notesId,
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+                };
+
+                FinalResponse response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.DELETE_NOTES_URL,
+                    HttpMethod.Post, deleteNotesApiParam) as FinalResponse;
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -412,6 +447,228 @@ namespace LucidX.Webservices
             }
         }
 
+        /// <summary>
+        /// Returns list of Reference Users
+        /// </summary>
 
+        /// <returns></returns>
+        public async static Task<List<RefUsersResponse>> ShowRefUsers()
+        {
+            try
+            {
+                RefUsersAPIParams param = new RefUsersAPIParams
+                {
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+                };
+                var response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.SHOW_REF_USERS_URL, HttpMethod.Post, param)
+                    as FinalResponse;
+
+                List<RefUsersResponse> refUsersList = null;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    DataSet resultIds = response.ResultDs;
+                    foreach (DataTable dt in resultIds.Tables)
+                    {
+                        refUsersList = (from DataRow dr in dt.Rows
+                                        select new RefUsersResponse()
+                                        {
+                                            UserID = dr["UserID"].ToString(),
+                                            UserName = dr["UserName"].ToString(),
+                                            UserTitle = dr["UserTitle"].ToString(),
+                                            UserEmail = dr["UserEmail"].ToString(),
+                                            UserPassword = dr["UserPassword"].ToString(),
+                                            RoleId = dr["RoleId"].ToString(),
+                                            UserStartPage = dr["UserStartPage"].ToString(),
+                                            AccountExpiry = dr["AccountExpiry"].ToString(),
+                                            CultureInfo = dr["CultureInfo"].ToString(),
+                                            TimeZoneUTC = dr["TimeZoneUTC"].ToString()
+
+                                        }).ToList();
+                    }
+                }
+
+                return refUsersList;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// Returns list of Notes type
+        /// </summary>
+
+        /// <returns></returns>
+        public async static Task<List<NotesTypeResponse>> ShowNotesType()
+        {
+            try
+            {
+                ShowNotesTypeAPIParams param = new ShowNotesTypeAPIParams
+                {
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+                };
+                var response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.SHOW_NOTES_TYPES, HttpMethod.Post, param)
+                    as FinalResponse;
+
+                List<NotesTypeResponse> notesTypeList = null;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    DataSet resultIds = response.ResultDs;
+                    foreach (DataTable dt in resultIds.Tables)
+                    {
+                        notesTypeList = (from DataRow dr in dt.Rows
+                                         select new NotesTypeResponse()
+                                         {
+                                             NotesTypeId = Convert.ToInt32(dr["NotesTypeId"].ToString()),
+                                             NotesTypeName = dr["NotesTypeName"].ToString().Trim(),
+                                             IsSystem = Convert.ToBoolean(dr["IsSystem"].ToString()),
+                                             eResourceNo = dr["eResourceNo"].ToString(),
+                                             IsSelected = dr["NotesTypeName"].ToString().Trim().
+                                                Equals("Systems Calendar") ? false : true
+                                         }).ToList();
+                    }
+                }
+
+                return notesTypeList;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// Returns list of Notes type
+        /// </summary>
+
+        /// <returns></returns>
+        public async static Task<List<CalendarEventResponse>> GetCalendarEvents(
+            string assignedTo,
+            string calendarType,
+            string startDate, string endDate)
+        {
+            try
+            {
+                CalendarEventsAPIParams param = new CalendarEventsAPIParams
+                {
+                    assignedTo = assignedTo,
+                    startDate = startDate,
+                    endDate = endDate,
+                    calendarType = calendarType,
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+                };
+                var response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.GET_CALENDAR_EVENTS, HttpMethod.Post, param)
+                    as FinalResponse;
+
+                List<CalendarEventResponse> eventResponseList = null;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    DataSet resultIds = response.ResultDs;
+                    foreach (DataTable dt in resultIds.Tables)
+                    {
+                        eventResponseList = (from DataRow dr in dt.Rows
+                                         select new CalendarEventResponse()
+                                         {
+                                             EntryId = dr["EntryId"].ToString(),
+                                             CompCode = dr["CompCode"].ToString(),
+                                             AccountCode = dr["AccountCode"].ToString(),
+                                             NotesTypeId = dr["NotesTypeId"].ToString(),
+                                             EntryTypeId =Convert.ToInt32( dr["EntryTypeId"].ToString()),
+                                             DateStart =Convert.ToDateTime( dr["DateStart"].ToString()),
+                                             DateEnd = Convert.ToDateTime(dr["DateEnd"].ToString()),
+                                             Subject = dr["Subject"].ToString(),
+                                             Details = dr["Details"].ToString(),
+                                             AssignedTo = dr["AssignedTo"].ToString(),
+                                             Completed = dr["Completed"].ToString(),
+                                             IsPublic = Convert.ToBoolean(dr["IsPublic"].ToString()),
+                                             AccountId = dr["Details"].ToString()
+
+                                         }).ToList();
+                    }
+                }
+
+                return eventResponseList;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Save Add Calendar Events
+        /// </summary>
+        /// <param name="addEventsApiParams"></param>
+        /// <returns></returns>
+        public async static Task<bool> AddCalendarEvents(AddCalendarEventsAPIParams addEventsApiParams)
+        {
+            try
+            {
+                FinalResponse response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.SAVE_CALENDAR_EVENTS,
+                    HttpMethod.Post, addEventsApiParams) as FinalResponse;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    //int notesId = response.ResultDoc;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+
+        /// <summary>
+        /// Delete notes
+        /// </summary>
+        /// <param name="deleteEventsApiParams"></param>
+        /// <returns></returns>
+        public async static Task<bool> DeleteEvents(string eventId)
+        {
+            try
+            {
+                DeleteEventsAPIParams deleteEventsApiParam = new DeleteEventsAPIParams
+                {
+                    entryId = eventId,
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+                };
+
+                FinalResponse response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.DELETE_EVENTS_URL,
+                    HttpMethod.Post, deleteEventsApiParam) as FinalResponse;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

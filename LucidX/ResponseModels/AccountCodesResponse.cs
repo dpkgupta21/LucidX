@@ -3,7 +3,10 @@
 namespace LucidX.ResponseModels
 {
     public class AccountCodesResponse
-    {      
+    {
         public string AccountCode { get; set; }
+
+        public string AccountId { get; set; }
+
     }
 }

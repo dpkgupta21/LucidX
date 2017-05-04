@@ -3,10 +3,10 @@
 namespace LucidX.RequestModels
 {
     [XmlRoot("ElucidateAPIParams")]
-    public class CrmNotesAPIParams
+    public class CalendarEventsAPIParams
     {
-        public string entityCode { get; set; }
-        public string accountCode { get; set; }
+        public string assignedTo { get; set; }
+        public string calendarType { get; set; }
         public string startDate { get; set; }
         public string endDate { get; set; }
         public string connectionName { get; set; }
