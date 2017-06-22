@@ -205,6 +205,18 @@ namespace IosUtils
 		}
 
 		/// <summary>
+		/// Converts to NSDate.
+		/// </summary>
+		/// <returns>The to NSDate.</returns>
+		/// <param name="date">Date.</param>
+		public static NSDate ConvertToNSDate(DateTime date)
+		{
+			if (date.Kind == DateTimeKind.Unspecified)
+				date = DateTime.SpecifyKind(date, DateTimeKind.Local);
+			return (NSDate)date;
+		}
+
+		/// <summary>
 		/// Convert hex to UIColor
 		/// </summary>
 		/// <returns>The UI Color.</returns>

@@ -18,10 +18,14 @@ namespace LucidX.iOS.CustomCells
 			// Note: this .ctor should not contain any initialization logic.
 		}
 
-		public void ConfigureCell(CrmNotesResponse model) {
+		public void ConfigureCell(CrmNotesResponse model)
+		{
 			Data = model;
-			IBDateLbl.Text = Data.CreatedDate.ToString("d");
-			IBNameLbl.Text = Data.CreatedBy;
+			IBDateTimeLbl.Text = Data.CreatedDate.ToString("dd-MMM");
+			IBNotesTitleLbl.Text = Data.NotesSubject;
+			IBTitleLbl.Text = Data.NotesSubject.ToCharArray()[0].ToString();
+			IBDescLbl.Text = Data.NotesDetail;
+			this.SelectionStyle = UITableViewCellSelectionStyle.None;
 		}
 
 	}

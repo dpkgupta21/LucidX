@@ -15,7 +15,9 @@ namespace LucidX.iOS
 		Calendar.CalendarVC calendarVc;
 		public Inbox.InboxVC inboxVc;
 		public Notes.ViewNotesVC notesVC;
+		bool isfirstTime;
 
+		NSIndexPath selectedIndex = NSIndexPath.FromRowSection(0, 0);
 		public SettingsVc() : base("SettingsVc", null)
 		{
 		}
@@ -23,13 +25,24 @@ namespace LucidX.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			configureView();
+			isfirstTime = true;
 		}
 
 		public override void DidReceiveMemoryWarning()
 		{
 			base.DidReceiveMemoryWarning();
 			// Release any cached data, images, etc that aren't in use.
+		}
+
+		public override void ViewDidAppear(bool animated)
+		{
+			base.ViewDidAppear(animated);
+			if (isfirstTime)
+			{
+				configureView();
+				isfirstTime = false;
+			}
+			IBContntTbl.ReloadData();
 		}
 		#region HelperMethods
 
@@ -126,7 +139,7 @@ namespace LucidX.iOS
 		[Export("numberOfSectionsInTableView:")]
 		public nint NumberOfSections(UITableView tableView)
 		{
-			return 5;
+			return SectionTitle.Count;
 		}
 
 
@@ -159,7 +172,7 @@ namespace LucidX.iOS
 		public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
 			var cell = tableView.DequeueReusableCell(MenuCell.Key) as MenuCell;
-			cell.ConfigureCell(RowsTitle[indexPath.Section][indexPath.Row], null, 0);
+			cell.ConfigureCell(RowsTitle[indexPath.Section][indexPath.Row], null, 0,indexPath == selectedIndex);
 			return cell;
 		}
 
@@ -193,7 +206,7 @@ namespace LucidX.iOS
 		[Export("tableView:didSelectRowAtIndexPath:")]
 		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
-
+			selectedIndex = indexPath;
 			if (indexPath.Section == 0)
 			{
 				if (inboxVc == null)
@@ -262,6 +275,7 @@ namespace LucidX.iOS
 
 
 			}
+
 
 		}
 

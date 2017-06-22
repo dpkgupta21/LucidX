@@ -11,9 +11,12 @@ namespace LucidX.iOS.PickerModels
 		UITextField txtField;
 		public List<EntityCodesResponse> lstDropDownData = new List<EntityCodesResponse>();
 
-		public EntityPickerModel(List<EntityCodesResponse> data, UITextField txt)
+		public EntityCodesResponse selectedModel;
+
+		public EntityPickerModel(List<EntityCodesResponse> data, UITextField txt,EntityCodesResponse current)
 		{
 			lstDropDownData.AddRange(data);
+			selectedModel = current;
 			txtField = txt;
 		}
 
@@ -40,8 +43,8 @@ namespace LucidX.iOS.PickerModels
 		{
 			if (lstDropDownData == null || lstDropDownData.Count == 0)
 				return;
-			var model = lstDropDownData[(int)row];
-			txtField.Text = model.CompCode;
+			selectedModel = lstDropDownData[(int)row];
+			txtField.Text = selectedModel.CompCode;
 		}
 	}
 }

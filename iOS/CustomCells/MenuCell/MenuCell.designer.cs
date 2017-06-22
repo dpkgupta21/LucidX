@@ -13,6 +13,9 @@ namespace LucidX.iOS.CustomCells
 	partial class MenuCell
 	{
 		[Outlet]
+		UIKit.UIView IBBackVw { get; set; }
+
+		[Outlet]
 		UIKit.UILabel IBCountLbl { get; set; }
 
 		[Outlet]
@@ -23,6 +26,11 @@ namespace LucidX.iOS.CustomCells
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (IBCountLbl != null) {
+				IBCountLbl.Dispose ();
+				IBCountLbl = null;
+			}
+
 			if (IBIconCell != null) {
 				IBIconCell.Dispose ();
 				IBIconCell = null;
@@ -33,9 +41,9 @@ namespace LucidX.iOS.CustomCells
 				IBTitleLbl = null;
 			}
 
-			if (IBCountLbl != null) {
-				IBCountLbl.Dispose ();
-				IBCountLbl = null;
+			if (IBBackVw != null) {
+				IBBackVw.Dispose ();
+				IBBackVw = null;
 			}
 		}
 	}

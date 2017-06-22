@@ -19,6 +19,9 @@ namespace LucidX.iOS.Notes
 		UIKit.UIPickerView IBAccountCodePicker { get; set; }
 
 		[Outlet]
+		UIKit.UILabel IBAccountCodeTitleLbl { get; set; }
+
+		[Outlet]
 		UIKit.UITextField IBAccountCodeTxt { get; set; }
 
 		[Outlet]
@@ -32,6 +35,12 @@ namespace LucidX.iOS.Notes
 
 		[Outlet]
 		UIKit.UIDatePicker IBDateTimePicker { get; set; }
+
+		[Outlet]
+		UIKit.UILabel IBEmptyLbl { get; set; }
+
+		[Outlet]
+		UIKit.UILabel IBEntityCodeTiltleLbl { get; set; }
 
 		[Outlet]
 		UIKit.UIToolbar IBEntityDoneBar { get; set; }
@@ -68,12 +77,75 @@ namespace LucidX.iOS.Notes
 
 		[Action ("IBEntityDoneClicked:")]
 		partial void IBEntityDoneClicked (Foundation.NSObject sender);
+
+		[Action ("IBSearchBtnClicked:")]
+		partial void IBSearchBtnClicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (IBEmptyLbl != null) {
+				IBEmptyLbl.Dispose ();
+				IBEmptyLbl = null;
+			}
+
+			if (IBEntityCodeTiltleLbl != null) {
+				IBEntityCodeTiltleLbl.Dispose ();
+				IBEntityCodeTiltleLbl = null;
+			}
+
+			if (IBAccountCodeTitleLbl != null) {
+				IBAccountCodeTitleLbl.Dispose ();
+				IBAccountCodeTitleLbl = null;
+			}
+
+			if (IBAccountCodeDoneBar != null) {
+				IBAccountCodeDoneBar.Dispose ();
+				IBAccountCodeDoneBar = null;
+			}
+
+			if (IBAccountCodePicker != null) {
+				IBAccountCodePicker.Dispose ();
+				IBAccountCodePicker = null;
+			}
+
 			if (IBAccountCodeTxt != null) {
 				IBAccountCodeTxt.Dispose ();
 				IBAccountCodeTxt = null;
+			}
+
+			if (IBaccountDoneBtn != null) {
+				IBaccountDoneBtn.Dispose ();
+				IBaccountDoneBtn = null;
+			}
+
+			if (IBDateTimeDoneBar != null) {
+				IBDateTimeDoneBar.Dispose ();
+				IBDateTimeDoneBar = null;
+			}
+
+			if (IBDateTimeDoneBtn != null) {
+				IBDateTimeDoneBtn.Dispose ();
+				IBDateTimeDoneBtn = null;
+			}
+
+			if (IBDateTimePicker != null) {
+				IBDateTimePicker.Dispose ();
+				IBDateTimePicker = null;
+			}
+
+			if (IBEntityDoneBar != null) {
+				IBEntityDoneBar.Dispose ();
+				IBEntityDoneBar = null;
+			}
+
+			if (IBEntityDoneBtn != null) {
+				IBEntityDoneBtn.Dispose ();
+				IBEntityDoneBtn = null;
+			}
+
+			if (IBEntityPicker != null) {
+				IBEntityPicker.Dispose ();
+				IBEntityPicker = null;
 			}
 
 			if (IBEntityTxt != null) {
@@ -104,51 +176,6 @@ namespace LucidX.iOS.Notes
 			if (IBToLbl != null) {
 				IBToLbl.Dispose ();
 				IBToLbl = null;
-			}
-
-			if (IBEntityPicker != null) {
-				IBEntityPicker.Dispose ();
-				IBEntityPicker = null;
-			}
-
-			if (IBAccountCodePicker != null) {
-				IBAccountCodePicker.Dispose ();
-				IBAccountCodePicker = null;
-			}
-
-			if (IBEntityDoneBar != null) {
-				IBEntityDoneBar.Dispose ();
-				IBEntityDoneBar = null;
-			}
-
-			if (IBAccountCodeDoneBar != null) {
-				IBAccountCodeDoneBar.Dispose ();
-				IBAccountCodeDoneBar = null;
-			}
-
-			if (IBDateTimePicker != null) {
-				IBDateTimePicker.Dispose ();
-				IBDateTimePicker = null;
-			}
-
-			if (IBDateTimeDoneBar != null) {
-				IBDateTimeDoneBar.Dispose ();
-				IBDateTimeDoneBar = null;
-			}
-
-			if (IBEntityDoneBtn != null) {
-				IBEntityDoneBtn.Dispose ();
-				IBEntityDoneBtn = null;
-			}
-
-			if (IBaccountDoneBtn != null) {
-				IBaccountDoneBtn.Dispose ();
-				IBaccountDoneBtn = null;
-			}
-
-			if (IBDateTimeDoneBtn != null) {
-				IBDateTimeDoneBtn.Dispose ();
-				IBDateTimeDoneBtn = null;
 			}
 		}
 	}

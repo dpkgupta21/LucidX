@@ -15,12 +15,13 @@ namespace LucidX.iOS.CustomCells
 			// Note: this .ctor should not contain any initialization logic.
 		}
 
-		public void ConfigureCell(string title, UIImage img, int count)
+		public void ConfigureCell(string title, UIImage img, int count, bool selected)
 		{
 
 			IBTitleLbl.Text = title;
 			IBIconCell.Image = img;
 			IBCountLbl.Text = count != 0 ? count.ToString() : "";
+			IBBackVw.BackgroundColor = selected ? IosUtils.IosColorConstant.ThemeNavBlue : IosUtils.IosColorConstant.ThemeDarkBlue;
 		}
 
 

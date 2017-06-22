@@ -5,6 +5,10 @@
       <LogicalName>CalendarVC.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/CreateNotesVC.nib">
+      <LogicalName>CreateNotesVC.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/DraftsVC.nib">
       <LogicalName>DraftsVC.nib</LogicalName>
       <Optimize>false</Optimize>

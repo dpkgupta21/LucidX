@@ -10,11 +10,12 @@ namespace LucidX.iOS.PickerModels
 		public string currentTextFieldValue;
 		UITextField txtField;
 		public List<AccountCodesResponse> lstDropDownData = new List<AccountCodesResponse>();
-
-		public AccountCodePickerModel(List<AccountCodesResponse> data, UITextField txt)
+		public AccountCodesResponse selectedModel;
+		public AccountCodePickerModel(List<AccountCodesResponse> data, UITextField txt,AccountCodesResponse currentModel)
 		{
 			lstDropDownData.AddRange(data);
 			txtField = txt;
+			selectedModel = currentModel;
 		}
 
 		public override nint GetComponentCount(UIPickerView pickerView)
@@ -40,8 +41,8 @@ namespace LucidX.iOS.PickerModels
 		{
 			if (lstDropDownData == null || lstDropDownData.Count == 0)
 				return;
-			var model = lstDropDownData[(int)row];
-			txtField.Text = model.AccountCode;
+			selectedModel = lstDropDownData[(int)row];
+			txtField.Text = selectedModel.AccountCode;
 		}
 
 	}

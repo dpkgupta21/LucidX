@@ -1,5 +1,4 @@
 ﻿using System;
-
 using UIKit;
 using Xamarin.SWRevealViewController;
 
@@ -10,7 +9,6 @@ namespace Calendar
 		public CalendarVC() : base("CalendarVC", null)
 		{
 		}
-
 		public SWRevealViewController revealVC;
 
 		public override void ViewDidLoad()

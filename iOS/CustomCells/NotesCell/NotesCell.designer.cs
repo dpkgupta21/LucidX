@@ -13,37 +13,37 @@ namespace LucidX.iOS.CustomCells
 	partial class NotesCell
 	{
 		[Outlet]
-		UIKit.UILabel IBDateLbl { get; set; }
+		UIKit.UILabel IBDateTimeLbl { get; set; }
 
 		[Outlet]
-		UIKit.UIButton IBEditBtn { get; set; }
+		UIKit.UILabel IBDescLbl { get; set; }
 
 		[Outlet]
-		UIKit.UILabel IBNameLbl { get; set; }
+		UIKit.UILabel IBNotesTitleLbl { get; set; }
 
 		[Outlet]
-		UIKit.UIButton IBViewBtn { get; set; }
+		UIKit.UILabel IBTitleLbl { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (IBDateLbl != null) {
-				IBDateLbl.Dispose ();
-				IBDateLbl = null;
+			if (IBDateTimeLbl != null) {
+				IBDateTimeLbl.Dispose ();
+				IBDateTimeLbl = null;
 			}
 
-			if (IBNameLbl != null) {
-				IBNameLbl.Dispose ();
-				IBNameLbl = null;
+			if (IBDescLbl != null) {
+				IBDescLbl.Dispose ();
+				IBDescLbl = null;
 			}
 
-			if (IBViewBtn != null) {
-				IBViewBtn.Dispose ();
-				IBViewBtn = null;
+			if (IBNotesTitleLbl != null) {
+				IBNotesTitleLbl.Dispose ();
+				IBNotesTitleLbl = null;
 			}
 
-			if (IBEditBtn != null) {
-				IBEditBtn.Dispose ();
-				IBEditBtn = null;
+			if (IBTitleLbl != null) {
+				IBTitleLbl.Dispose ();
+				IBTitleLbl = null;
 			}
 		}
 	}
