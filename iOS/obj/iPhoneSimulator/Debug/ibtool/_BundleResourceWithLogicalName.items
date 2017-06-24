@@ -5,6 +5,10 @@
       <LogicalName>CalendarVC.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/CreateCalendarEventVC.nib">
+      <LogicalName>CreateCalendarEventVC.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/CreateNotesVC.nib">
       <LogicalName>CreateNotesVC.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -63,6 +67,10 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/MenuHeader.nib">
       <LogicalName>MenuHeader.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/MultiSelectionDialog.nib">
+      <LogicalName>MultiSelectionDialog.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/NotesCell.nib">

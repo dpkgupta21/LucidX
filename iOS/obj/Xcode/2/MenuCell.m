@@ -9,6 +9,7 @@
 
 @implementation MenuCell
 
+@synthesize IBBackVw = _IBBackVw;
 @synthesize IBCountLbl = _IBCountLbl;
 @synthesize IBIconCell = _IBIconCell;
 @synthesize IBTitleLbl = _IBTitleLbl;

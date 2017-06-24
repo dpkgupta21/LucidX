@@ -24,13 +24,14 @@ using LucidX.Droid.Source.Models;
 using Android.Content;
 using Android.Graphics;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Runtime;
 
 namespace LucidX.Droid.Source.Activities
 {
 
     [Activity(Label = "HomeActivity", Theme = "@style/AppTheme", Icon = "@mipmap/icon",
         ScreenOrientation = ScreenOrientation.Portrait, WindowSoftInputMode = SoftInput.AdjustResize)]
-    public class HomeActivity : AppCompatActivity, 
+    public class HomeActivity : AppCompatActivity,
         ExpandableListView.IOnChildClickListener, ExpandableListView.IOnGroupClickListener,
         ExpandableListView.IOnGroupExpandListener
     {
@@ -87,15 +88,15 @@ namespace LucidX.Droid.Source.Activities
 
             if (isOrderListScreen)
             {
-                ShowScreen(0,0);
-                
+                ShowScreen(0, 0);
+
             }
             else
             {
-                Android.Support.V4.App.Fragment fragment = InboxFragment.GetInstance( WebserviceConstants.
+                Android.Support.V4.App.Fragment fragment = InboxFragment.GetInstance(WebserviceConstants.
                     INBOX_EMAIL_TYPE_ID, GetString(Resource.String.inbox_title));
                 AddFrament(fragment, false);
-               // mAdapter.SetSelectedPosition(0);
+                // mAdapter.SetSelectedPosition(0);
             }
         }
 
@@ -177,7 +178,7 @@ namespace LucidX.Droid.Source.Activities
             menuListView.SetOnGroupExpandListener(this);
 
             menuList = GetExpandableMenuItem();
-            mAdapter = new SideMenuListExpandableAdapter( mActivity, menuList);
+            mAdapter = new SideMenuListExpandableAdapter(mActivity, menuList);
 
             // set up the drawer's list view with items and click listener
             menuListView.SetAdapter(mAdapter);
@@ -228,7 +229,7 @@ namespace LucidX.Droid.Source.Activities
         {
             List<GroupMenuModel> menuList = new List<GroupMenuModel>();
             string[] groupMenuNames = Resources.GetStringArray(Resource.Array.group_menu_array);
-           
+
 
             for (int i = 0; i < groupMenuNames.Length; i++)
             {
@@ -372,6 +373,7 @@ namespace LucidX.Droid.Source.Activities
         /// <param name="addBackstack">if set to <c>true</c> [add backstack].</param>
         public void AddFrament(Android.Support.V4.App.Fragment fragment, bool addBackstack)
         {
+
             var ft = SupportFragmentManager.BeginTransaction();
             if (addBackstack)
             {
@@ -382,10 +384,14 @@ namespace LucidX.Droid.Source.Activities
             {
                 ft.Replace(Resource.Id.frame_container, fragment, fragment.Class.Name);
             }
-            ft.Commit();
+            ft.CommitAllowingStateLoss();
+
         }
 
-        
+        protected override void OnSaveInstanceState(Bundle outState)
+        {
+
+        }
 
         private void ShowScreen(int groupPosition, int childPosition)
         {
@@ -439,7 +445,7 @@ namespace LucidX.Droid.Source.Activities
                         case 1:
                             intent = new Intent(mActivity, typeof(AddCalendarEventActivity));
                             intent.PutExtra("isAddEvent", true);
-                            StartActivity(intent);
+                            StartActivityForResult(intent, ConstantsDroid.ADD_CALENDAR_EVENT_REQUEST_CODE);
                             OverridePendingTransition(Resource.Animation.animation_enter,
                                         Resource.Animation.animation_leave);
                             break;
@@ -498,7 +504,7 @@ namespace LucidX.Droid.Source.Activities
                             // Show Add Notes screen
                             intent = new Intent(mActivity, typeof(AddNotesActivity));
                             intent.PutExtra("isAddNote", true);
-                            StartActivity(intent);
+                            StartActivityForResult(intent, ConstantsDroid.ADD_NOTES_REQUEST_CODE);
                             OverridePendingTransition(Resource.Animation.animation_enter,
                                         Resource.Animation.animation_leave);
                             break;
@@ -527,13 +533,10 @@ namespace LucidX.Droid.Source.Activities
             {
                 drawerLayout.CloseDrawer(drawerList);
             }
-            else
-            {
-                drawerLayout.OpenDrawer(drawerList);
-            }
+            
         }
 
-        public bool OnChildClick(ExpandableListView parent, View clickedView, 
+        public bool OnChildClick(ExpandableListView parent, View clickedView,
             int groupPosition, int childPosition, long id)
         {
             ShowScreen(groupPosition, childPosition);
@@ -562,7 +565,46 @@ namespace LucidX.Droid.Source.Activities
         {
             if (groupPosition != mAdapter.selectedGroupPosition)
                 menuListView.CollapseGroup(mAdapter.selectedGroupPosition);
-           
+
+        }
+
+        protected override void OnActivityResult(int requestCode,
+            [GeneratedEnum] Result resultCode, Intent data)
+        {
+            if (resultCode == Result.Ok)
+            {
+                switch (requestCode)
+                {
+                    case ConstantsDroid.ADD_NOTES_REQUEST_CODE:
+
+                        ShowScreen(3, 0);
+                        break;
+
+                    case ConstantsDroid.NOTES_LIST_REQUEST_CODE:
+
+                        var frag = SupportFragmentManager.FindFragmentById(Resource.Id.frame_container);
+                        if (frag is NotesListFragment)
+                        {
+                            ((NotesListFragment)frag).CallViewNotesWebservice();
+                        }
+                        break;
+                    case ConstantsDroid.ADD_CALENDAR_EVENT_REQUEST_CODE:
+
+                        ShowScreen(1, 0);
+                        break;
+
+                    case ConstantsDroid.CALENDAR_LIST_REQUEST_CODE:
+
+                        var frag1 = SupportFragmentManager.FindFragmentById(Resource.Id.frame_container);
+                        if (frag1 is CalendarFragment)
+                        {
+                            ((CalendarFragment)frag1).CallCalendarEventsWebservice();
+                        }
+                        break;
+                }
+
+            }
+            base.OnActivityResult(requestCode, resultCode, data);
         }
     }
 }

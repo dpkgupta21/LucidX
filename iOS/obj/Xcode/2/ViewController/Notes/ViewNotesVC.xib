@@ -96,7 +96,7 @@
                         <constraint firstAttribute="height" constant="30" id="civ-S2-8ms"/>
                         <constraint firstAttribute="width" secondItem="m1D-Nm-mjG" secondAttribute="height" id="xcJ-f3-VEf"/>
                     </constraints>
-                    <state key="normal" image="Refresh"/>
+                    <state key="normal" image="Search"/>
                     <connections>
                         <action selector="IBSearchBtnClicked:" destination="-1" eventType="touchUpInside" id="fst-B0-bkc"/>
                     </connections>
@@ -123,10 +123,18 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bV0-ri-ORI">
+                    <rect key="frame" x="8" y="162" width="304" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="arV-nU-IyI"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="m1D-Nm-mjG" firstAttribute="top" secondItem="IVa-aS-Eot" secondAttribute="bottom" constant="8" id="2V8-dl-W8w"/>
+                <constraint firstItem="bV0-ri-ORI" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8" id="7uM-px-IJN"/>
                 <constraint firstItem="Iiq-Af-7eJ" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8" id="8Mk-PZ-Nbw"/>
                 <constraint firstItem="Lf1-lj-0cn" firstAttribute="top" secondItem="Iiq-Af-7eJ" secondAttribute="bottom" constant="4" id="9C3-ag-AZC"/>
                 <constraint firstItem="Aix-2k-cdN" firstAttribute="top" secondItem="IVa-aS-Eot" secondAttribute="bottom" constant="8" id="9Ju-3s-8xg"/>
@@ -146,6 +154,8 @@
                 <constraint firstAttribute="trailing" secondItem="IVa-aS-Eot" secondAttribute="trailing" constant="8" id="Z0I-jq-yJG"/>
                 <constraint firstItem="IVa-aS-Eot" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8" id="bxw-R8-wP7"/>
                 <constraint firstAttribute="trailing" secondItem="Lf1-lj-0cn" secondAttribute="trailing" constant="8" id="cZ7-IY-X3e"/>
+                <constraint firstAttribute="trailing" secondItem="bV0-ri-ORI" secondAttribute="trailing" constant="8" id="dn6-pz-Gyl"/>
+                <constraint firstItem="QpX-tC-yXL" firstAttribute="top" secondItem="bV0-ri-ORI" secondAttribute="bottom" constant="1" id="dwH-H0-nFV"/>
                 <constraint firstItem="Aix-2k-cdN" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8" id="fJr-Xr-Tlt"/>
                 <constraint firstItem="rLZ-q5-YSf" firstAttribute="height" secondItem="Aix-2k-cdN" secondAttribute="height" id="iXy-SN-OeB"/>
                 <constraint firstItem="5RX-cM-5Wb" firstAttribute="top" secondItem="Lf1-lj-0cn" secondAttribute="bottom" constant="5" id="lQv-Pj-qtN"/>
@@ -220,6 +230,6 @@
         </toolbar>
     </objects>
     <resources>
-        <image name="Refresh" width="24" height="24"/>
+        <image name="Search" width="32" height="32"/>
     </resources>
 </document>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -8,6 +9,9 @@ namespace LucidX.Utils
 {
     public class Utilities
     {
+        public const string CALENDAR_DATE_FORMAT = "yyyy-MM-dd";
+        public const string RECEIVED_DATE_FORMAT_FROM_WEBSERVICE = "yyyyMMdd";
+
         public class Utf8StringWriter : StringWriter
         {
             public override Encoding Encoding => Encoding.UTF8;
@@ -30,7 +34,7 @@ namespace LucidX.Utils
 
             using (StringReader sr = new StringReader(xmlText))
 
-            return ser.Deserialize(sr);
+                return ser.Deserialize(sr);
         }
 
 
@@ -54,6 +58,22 @@ namespace LucidX.Utils
             des = null;
             return encrypted;
         }
+
+        public static string DateIntoWebserviceFormat(DateTime dateTime)
+        {
+            return dateTime.ToString(CALENDAR_DATE_FORMAT);
+        }
+
+        public static DateTime FormatStringIntoDateTime(string dateString)
+        {
+            return DateTime.ParseExact(dateString, RECEIVED_DATE_FORMAT_FROM_WEBSERVICE, CultureInfo.InvariantCulture);
+        }
+
+        public static string ShowDateInFormat(string dateString)
+        {
+            return DateIntoWebserviceFormat(FormatStringIntoDateTime(dateString));
+        }
+
 
     }
 }

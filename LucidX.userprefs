@@ -1,27 +1,14 @@
 ﻿<Properties StartupConfiguration="{9C0D831C-F1F4-4627-8740-6F6EA7DEF97B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController/Notes/CreateNotesVC.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController/Settings/SettingsVc.cs">
     <Files>
-      <File FileName="iOS/ViewController/Notes/ViewNotesVC.cs" Line="34" Column="20" />
-      <File FileName="iOS/CustomCells/NotesCell/NotesCell.cs" Line="28" Column="61" />
-      <File FileName="iOS/ViewController/Settings/SettingsVc.cs" Line="89" Column="51" />
-      <File FileName="iOS/CustomCells/MenuCell/MenuCell.cs" Line="27" Column="3" />
-      <File FileName="iOS/ViewController/Notes/CreateNotesVC.cs" Line="16" Column="17" />
+      <File FileName="iOS/ViewController/Calendar/CalendarVC.cs" Line="192" Column="35" />
+      <File FileName="iOS/ViewController/Notes/ViewNotesVC.cs" Line="322" Column="4" />
+      <File FileName="LucidX/Webservices/WebServiceMethods.cs" Line="558" Column="60" />
+      <File FileName="iOS/CustomCells/NotesCell/NotesCell.cs" Line="40" Column="61" />
+      <File FileName="iOS/Resources/Base.lproj/Localizable.strings" Line="63" Column="12" />
+      <File FileName="iOS/ViewController/Calendar/CreateCalendarEventVC.cs" Line="5" Column="11" />
+      <File FileName="iOS/ViewController/Settings/SettingsVc.cs" Line="17" Column="8" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="LucidX" expanded="True">
-            <Node name="LucidX.iOS" expanded="True">
-              <Node name="ViewController" expanded="True">
-                <Node name="Notes" expanded="True">
-                  <Node name="CreateNotesVC.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -32,7 +19,4 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.LucidX.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.86675EF0-19D9-42BA-809D-EFB9D5EE0766" />
   <MultiItemStartupConfigurations />
-  <DisabledProjects>
-    <String>Droid/LucidX.Droid.csproj</String>
-  </DisabledProjects>
 </Properties>

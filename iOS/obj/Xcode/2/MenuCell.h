@@ -10,10 +10,13 @@
 
 
 @interface MenuCell : UITableViewCell {
+	UIView *_IBBackVw;
 	UILabel *_IBCountLbl;
 	UIImageView *_IBIconCell;
 	UILabel *_IBTitleLbl;
 }
+
+@property (nonatomic, retain) IBOutlet UIView *IBBackVw;
 
 @property (nonatomic, retain) IBOutlet UILabel *IBCountLbl;
 

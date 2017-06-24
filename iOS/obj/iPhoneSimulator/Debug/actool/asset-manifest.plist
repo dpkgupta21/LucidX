@@ -15,24 +15,24 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./DataBaseSelected.imageset/[universal][][][1x][][][][][][]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The file "database-active.png" for the image set "DataBaseSelected" does not exist.</string>
-			<key>type</key>
-			<string>Missing Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
 				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
 			</array>
 			<key>catalog</key>
 			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
 			<key>message</key>
 			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./DataBaseSelected.imageset/[universal][][][1x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "database-active.png" for the image set "DataBaseSelected" does not exist.</string>
 			<key>type</key>
 			<string>Missing Content</string>
 		</dict>

@@ -7,6 +7,7 @@ using Android.Widget;
 using LucidX.Droid.Source.CustomDialogFragment.Adapter;
 using LucidX.Droid.Source.Fragments;
 using LucidX.Droid.Source.Models;
+using LucidX.ResponseModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,14 @@ namespace LucidX.Droid.Source.CustomDialogFragment
         private Activity mActivity;
         private CheckboxDialogAdapter mAdapter;
 
-        public static CustomDialogFrag NewInstance()
+        public static CustomDialogFrag NewInstance(string notesType)
         {
             var fragment = new CustomDialogFrag();
+
+            Bundle bundle = new Bundle();
+            bundle.PutString("notesTypeObj", notesType);
+            fragment.Arguments = bundle;
+
             return fragment;
         }
 
@@ -33,8 +39,8 @@ namespace LucidX.Droid.Source.CustomDialogFragment
             mView = inflater.Inflate(Resource.Layout.dialog_list_fragment, container, false);
 
             mActivity = Activity;
-            
-            Dialog.SetTitle( Resource.String.select_calendar_type);
+
+            Dialog.SetTitle(Resource.String.select_calendar_type);
             Dialog.SetCancelable(false); //dismiss window on touch outside
 
             return mView;
@@ -47,53 +53,41 @@ namespace LucidX.Droid.Source.CustomDialogFragment
             Button btn_save = mView.FindViewById<Button>(Resource.Id.btn_save);
             btn_save.Click += Btn_save_Click;
 
+            string notesTypeString = Arguments.GetString("notesTypeObj");
+            List<NotesTypeResponse> _notesTypeResponse = JsonConvert.
+                DeserializeObject<List<NotesTypeResponse>>(notesTypeString);
             // Set Adapter
-            SetAdapter();
+            SetAdapter(_notesTypeResponse);
         }
 
         private void Btn_save_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
 
-                List<UserListModel> selectedUserList = mAdapter.userList.
-                    Where(x => x.IsSelected == true).ToList();
-                string selectedUserListObj = JsonConvert.SerializeObject(selectedUserList);
+                List<NotesTypeResponse> updatedNotesTypeList = mAdapter.notesTypeList;
+               
+                Fragment target = TargetFragment;
+                if (target is CalendarFragment) {                
+                    ((CalendarFragment)target).GetNotesTypeResult(updatedNotesTypeList);
+                }
 
-                // result back to calling class
-                Intent intent = new Intent();
-                intent.PutExtra("selectedUserListObj", selectedUserListObj);
-                     
                 Dismiss();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
 
             }
         }
 
-        private void SetAdapter()
+        private void SetAdapter(List<NotesTypeResponse> notesTypeResponse)
         {
             ListView listView = mView.FindViewById<ListView>(Resource.Id.listview);
 
             mAdapter = new CheckboxDialogAdapter
-                (GetUserListModel(), mActivity);
+                (notesTypeResponse, mActivity);
             listView.Adapter = mAdapter;
         }
-        private List<UserListModel> GetUserListModel()
-        {
-            string[] calendarTypes = Resources.GetStringArray(Resource.Array.calendar_entries);
-            List<UserListModel> userList = new List<UserListModel>();
-            for(int i = 0; i < calendarTypes.Count(); i++)
-            {
-                UserListModel userObj = new UserListModel
-                {
-                    UserName = calendarTypes[i]
-                };
-
-                userList.Add(userObj);
-            }
-
-            return userList;
-
-        }
+      
     }
 }

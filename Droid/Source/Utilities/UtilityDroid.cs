@@ -21,6 +21,12 @@ namespace LucidX.Droid.Source.Utilities
         /// </summary>
         private const string tag = "UtilityDroid";
 
+        public const string DATE_FORMAT = "MM/dd/yyyy";
+        public const string DISPLAY_DATE_FORMAT = "d-MMM";
+        public const string CALENDAR_DATE_FORMAT = "yyyy-MM-dd";
+        public const string DISPLAY_TIME_FORMAT = "HH:mm";
+        public const string DISPLAY_DATE_TIME_FORMAT = "d-MMM HH:mm";
+
         public static UtilityDroid utility;
 
         public static UtilityDroid GetInstance()

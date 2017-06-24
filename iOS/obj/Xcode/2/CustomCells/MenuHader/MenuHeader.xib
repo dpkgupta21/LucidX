@@ -25,8 +25,9 @@
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                     </variation>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQ7-8t-BS3">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideArrow" highlightedImage="DropArrow" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQ7-8t-BS3">
                     <rect key="frame" x="312" y="8" width="55" height="55"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="IQ7-8t-BS3" secondAttribute="height" id="tVS-MP-peZ"/>
                     </constraints>
@@ -70,4 +71,8 @@
             <point key="canvasLocation" x="-27.5" y="-334.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="DropArrow" width="32" height="22"/>
+        <image name="SideArrow" width="22" height="32"/>
+    </resources>
 </document>

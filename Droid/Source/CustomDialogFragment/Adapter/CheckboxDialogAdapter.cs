@@ -5,21 +5,22 @@ using Android.Views;
 using LucidX.Droid.Source.Models;
 using Android.Widget;
 using Object = Java.Lang.Object;
+using LucidX.ResponseModels;
 
 namespace LucidX.Droid.Source.CustomDialogFragment.Adapter
 {
-    public class CheckboxDialogAdapter : BaseAdapter<UserListModel>
+    public class CheckboxDialogAdapter : BaseAdapter<NotesTypeResponse>
     {
         private LayoutInflater mLayoutInflater;
-        public List<UserListModel> userList{ get; set; }
+        public List<NotesTypeResponse> notesTypeList { get; set; }
 
         private Activity mActivity;
 
-        public CheckboxDialogAdapter(List<UserListModel> userList, Activity mActivity)
+        public CheckboxDialogAdapter(List<NotesTypeResponse> notesTypeList, Activity mActivity)
         {
             mLayoutInflater = (LayoutInflater)mActivity
                  .GetSystemService(Activity.LayoutInflaterService);
-            this.userList = userList;
+            this.notesTypeList = notesTypeList;
             this.mActivity = mActivity;
         }
 
@@ -48,10 +49,10 @@ namespace LucidX.Droid.Source.CustomDialogFragment.Adapter
                 holder = (ViewHolder)convertView.Tag;
             }
 
-            holder.chk_user.Text = userList[position].UserName;
+            holder.chk_user.Text = notesTypeList[position].NotesTypeName;
             holder.chk_user.Tag = position;
             holder.chk_user.CheckedChange += Chk_user_CheckedChange;
-            holder.chk_user.Checked = userList[position].IsSelected;
+            holder.chk_user.Checked = notesTypeList[position].IsSelected;
             return convertView;
         }
 
@@ -59,7 +60,8 @@ namespace LucidX.Droid.Source.CustomDialogFragment.Adapter
         {
             CheckBox chkbox = (CheckBox)sender;
             int pos = Convert.ToInt32(chkbox.Tag);
-            userList[pos].IsSelected = chkbox.Checked;
+            notesTypeList[pos].IsSelected = chkbox.Checked;
+            NotifyDataSetChanged();
         }
 
         public override long GetItemId(int position)
@@ -72,15 +74,15 @@ namespace LucidX.Droid.Source.CustomDialogFragment.Adapter
         {
             get
             {
-                return userList.Count;
+                return notesTypeList.Count;
             }
         }
 
-        public override UserListModel this[int position]
+        public override NotesTypeResponse this[int position]
         {
             get
             {
-                return userList[position];
+                return notesTypeList[position];
             }
         }
     }

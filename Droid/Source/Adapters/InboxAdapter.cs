@@ -16,7 +16,6 @@ namespace LucidX.Droid.Source.Adapters
         public event EventHandler<int> ItemClick;
         private Context context;
         private List<EmailResponse> filteredList;
-        public Filter filter;
 
         public class InboxViewHolder : RecyclerView.ViewHolder
         {
@@ -43,7 +42,7 @@ namespace LucidX.Droid.Source.Adapters
 
         public InboxAdapter(Context context)
         {
-            this.context = context;            
+            this.context = context;
         }
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
@@ -55,48 +54,54 @@ namespace LucidX.Droid.Source.Adapters
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holderRaw, int position)
         {
-
-            var holder = (InboxViewHolder)holderRaw;
-            holder.viewMain.Tag = position;
-            DateTime dateTime = new DateTime();
-
-            EmailResponse dto = emailList[position];
-
-            holder.txt_email_address.Text = dto.SenderEmail;
-            holder.txt_email_detail.Text = dto.Subject;
-
-            if (dto.Attachment > 0)
+            try
             {
-                holder.img_attachment_icon.Visibility = ViewStates.Visible;
-            }
-            else
-            {
-                holder.img_attachment_icon.Visibility = ViewStates.Gone;
-            }
+                var holder = (InboxViewHolder)holderRaw;
+                holder.viewMain.Tag = position;
+                DateTime dateTime = new DateTime();
 
-            if (dto.Unread)
+                EmailResponse dto = emailList[position];
+
+                holder.txt_email_address.Text = dto.SenderEmail;
+                holder.txt_email_detail.Text = dto.Subject;
+
+                if (dto.Attachment > 0)
+                {
+                    holder.img_attachment_icon.Visibility = ViewStates.Visible;
+                }
+                else
+                {
+                    holder.img_attachment_icon.Visibility = ViewStates.Gone;
+                }
+
+                if (dto.Unread)
+                {
+                    holder.txt_email_address.SetTextColor(Color.Black);
+                    holder.txt_email_detail.SetTextColor(Color.Black);
+                    holder.txt_email_address.Typeface = Typeface.DefaultBold;
+                    holder.txt_email_detail.Typeface = Typeface.DefaultBold;
+                }
+                else
+                {
+                    holder.txt_email_address.SetTextColor(Color.Gray);
+                    holder.txt_email_detail.SetTextColor(Color.Gray);
+                    holder.txt_email_address.Typeface = Typeface.Default;
+                    holder.txt_email_detail.Typeface = Typeface.Default;
+                }
+
+                holder.txt_img_lbl.Text = string.IsNullOrEmpty(dto.SenderName) ? "" : dto.SenderName.Substring(0, 1);
+            }catch(Exception e)
             {
-                holder.txt_email_address.SetTextColor(Color.Black);
-                holder.txt_email_detail.SetTextColor(Color.Black);
-                holder.txt_email_address.Typeface = Typeface.DefaultBold;
-                holder.txt_email_detail.Typeface = Typeface.DefaultBold;
+
             }
-            else
-            {
-                holder.txt_email_address.SetTextColor(Color.Gray);
-                holder.txt_email_detail.SetTextColor(Color.Gray);
-                holder.txt_email_address.Typeface = Typeface.Default;
-                holder.txt_email_detail.Typeface = Typeface.Default;
-            }
-          
-            holder.txt_img_lbl.Text = dto.SenderName.Substring(0, 1);
         }
 
         public void SetData(List<EmailResponse> data)
         {
             emailList = data;
             filteredList = new List<EmailResponse>();
-            filteredList=emailList;
+            filteredList.AddRange(emailList);
+
         }
 
 
@@ -128,16 +133,16 @@ namespace LucidX.Droid.Source.Adapters
             emailList.Clear();
             if (text.Length == 0)
             {
-                emailList= filteredList;
+                emailList.AddRange(filteredList);
             }
             else
             {
                 foreach (EmailResponse emailResponseDTO in filteredList)
                 {
                     if (emailResponseDTO.SenderName.ToUpper()
-                            .Contains(text.ToUpper())||
+                            .Contains(text.ToUpper()) ||
                             emailResponseDTO.SenderEmail.ToUpper()
-                            .Contains(text.ToUpper())||
+                            .Contains(text.ToUpper()) ||
                             emailResponseDTO.Subject.ToUpper()
                             .Contains(text.ToUpper()))
                     {

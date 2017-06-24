@@ -17,6 +17,12 @@ using Newtonsoft.Json;
 using LucidX.Droid.Source.CustomViews;
 using Plugin.Connectivity;
 using LucidX.Webservices;
+using Android.Text;
+using LucidX.RequestModels;
+using LucidX.Droid.Source.Global;
+using LucidX.Constants;
+using System.Threading.Tasks;
+using Android.Content;
 
 namespace LucidX.Droid.Source.Activities
 {
@@ -31,27 +37,29 @@ namespace LucidX.Droid.Source.Activities
         private Android.Support.V7.Widget.Toolbar toolbar;
         private Activity mActivity;
         private SharedPreferencesManager mSharedPreferencesManager;
-        
-        private TextView txt_start_date_val;
-        private DateTime noteDateTime = DateTime.Now;
 
-
+        private EditText txt_notes_header_val;
+        private EditText txt_notes_val;
         private TextView txt_calendar_type;
+        private RadioGroup radio_group;
 
         private Spinner spin_account_code;
         private SpinnerItemModel _selectedAccountCodeItem;
         private SpinnerAdapter _accountCodeSpinnerAdapter;
         private List<SpinnerItemModel> _accountCodeSpinnerItemModelList;
+        private int _selectedAccountCodeItemPosition;
 
         private Spinner spin_current_entity;
         private SpinnerItemModel _selectedCurrentEntitysItem;
         private SpinnerAdapter _entitySpinnerAdapter;
         private List<SpinnerItemModel> _entitySpinnerItemModelList;
+        private int _selectedCurrentEntitysItemPosition;
 
         private bool isAddNote;
         private CrmNotesResponse noteObj = null;
         private string entityCode;
         private string accountCode;
+        private string privacyId;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -81,6 +89,10 @@ namespace LucidX.Droid.Source.Activities
             try
             {
                 Init();
+                if (!isAddNote)
+                {
+                    SetNotesDetails();
+                }
             }
             catch (Exception e)
             {
@@ -124,9 +136,9 @@ namespace LucidX.Droid.Source.Activities
 
             spin_current_entity = FindViewById<Spinner>(Resource.Id.spin_current_entity);
             spin_account_code = FindViewById<Spinner>(Resource.Id.spin_account_code);
+            txt_notes_val = FindViewById<EditText>(Resource.Id.txt_notes_val);
+            txt_notes_header_val = FindViewById<EditText>(Resource.Id.edt_notes_header_val);
 
-            txt_start_date_val = FindViewById<TextView>(Resource.Id.txt_start_date_val);
-            txt_start_date_val.Click += Txt_order_date_val_Click;
 
             Button btn_save = FindViewById<Button>(Resource.Id.btn_save);
             btn_save.Click += Btn_save_Click;
@@ -136,15 +148,12 @@ namespace LucidX.Droid.Source.Activities
 
             txt_calendar_type = FindViewById<TextView>(Resource.Id.txt_calendar_type);
 
-            RadioGroup radio_group = FindViewById<RadioGroup>(Resource.Id.radio_group);
+             radio_group = FindViewById<RadioGroup>(Resource.Id.radio_group);
+            ((RadioButton)radio_group.GetChildAt(0)).Checked = true;
             radio_group.CheckedChange += Radio_group_CheckedChange;
 
             // Set Current Entity in Spinner
             InitEntitySpinnerValues();
-            
-            // Set Account Code in Spinner
-            InitAccountCodeSpinnerValues();
-            SetAccountCodeSpinnerAdapter();
 
             // Initialize listener for spinner
             InitializeListeners();
@@ -154,7 +163,23 @@ namespace LucidX.Droid.Source.Activities
 
         private void SetNotesDetails()
         {
+            try
+            {
+                txt_notes_val.SetText(Html.FromHtml(noteObj.NotesDetail), TextView.BufferType.Spannable);
+                txt_notes_header_val.Text = noteObj.NotesSubject;
+                if (noteObj.PrivacyId.Equals("1"))
+                {
+                    ((RadioButton)radio_group.GetChildAt(0)).Checked = true;
+                }
+                else if (noteObj.PrivacyId.Equals("2"))
+                {
+                    ((RadioButton)radio_group.GetChildAt(1)).Checked = true;
+                }
+            }
+            catch (Exception)
+            {
 
+            }
         }
 
         private void SetToolbarTitle()
@@ -198,9 +223,15 @@ namespace LucidX.Droid.Source.Activities
             {
                 txt_calendar_type.Visibility = ViewStates.Visible;
             }
-            else
+            else if (selectedGroupId == Resource.Id.radio_btn_me_only)
+            {
+                privacyId = "2";
+                txt_calendar_type.Visibility = ViewStates.Gone;
+            }
+            else if (selectedGroupId == Resource.Id.radio_btn_public)
             {
                 txt_calendar_type.Visibility = ViewStates.Gone;
+                privacyId = "1";
             }
         }
 
@@ -227,16 +258,17 @@ namespace LucidX.Droid.Source.Activities
 
                 for (int i = 0; i < responseList.Count; i++)
                 {
-                    if(entityCode.Equals(responseList[i].CompCode + ""))
-                    {
 
-                    }
                     SpinnerItemModel item = new SpinnerItemModel
                     {
                         Id = (i + 1) + "",
                         TEXT = responseList[i].CompCode + "",
                         STATE = false
                     };
+                    if (entityCode != null && entityCode.Equals(responseList[i].CompCode + ""))
+                    {
+                        _selectedCurrentEntitysItemPosition = i;
+                    }
 
                     _entitySpinnerItemModelList.Add(item);
                 }
@@ -244,7 +276,7 @@ namespace LucidX.Droid.Source.Activities
             }
             catch (Exception e)
             {
-
+                CustomProgressDialog.HideProgressDialog();
             }
         }
 
@@ -259,6 +291,7 @@ namespace LucidX.Droid.Source.Activities
             _entitySpinnerAdapter = new SpinnerAdapter(mActivity, Resource.Layout.spinner_row_item_lay,
                    _entitySpinnerItemModelList);
             spin_current_entity.Adapter = _entitySpinnerAdapter;
+            spin_current_entity.SetSelection(_selectedCurrentEntitysItemPosition);
         }
 
 
@@ -266,22 +299,43 @@ namespace LucidX.Droid.Source.Activities
         /// <summary>
         /// Init values for Account Code spinner
         /// </summary>
-        private void InitAccountCodeSpinnerValues()
+        private async void InitAccountCodeSpinnerValues()
         {
-            List<string> accountCodeItems = new List<string> { "Select Account Code", "Account Code1",
-                "Account Code2", "Account Code2" };
-
-            _accountCodeSpinnerItemModelList = new List<SpinnerItemModel>();
-
-            for (int i = 0; i < accountCodeItems.Count; i++)
+            try
             {
-                SpinnerItemModel item = new SpinnerItemModel
+                List<AccountCodesResponse> responseList = null;
+                if (CrossConnectivity.Current.IsConnected)
                 {
-                    Id = (i + 1) + "",
-                    TEXT = accountCodeItems[i] + "",
-                    STATE = false
-                };
-                _accountCodeSpinnerItemModelList.Add(item);
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                        mActivity.Resources.GetString(Resource.String.loading));
+
+                    responseList = await WebServiceMethods.GetAccountCodes(_selectedCurrentEntitysItem.TEXT);
+
+                    CustomProgressDialog.HideProgressDialog();
+                }
+
+                _accountCodeSpinnerItemModelList = new List<SpinnerItemModel>();
+
+                for (int i = 0; i < responseList.Count; i++)
+                {
+                    SpinnerItemModel item = new SpinnerItemModel
+                    {
+                        Id = (i + 1) + "",
+                        TEXT = responseList[i].AccountCode + "",
+                        EXTRA_TEXT = responseList[i].AccountId,
+                        STATE = false
+                    };
+                    if (accountCode != null && accountCode.Equals(responseList[i].AccountCode + ""))
+                    {
+                        _selectedAccountCodeItemPosition = i;
+                    }
+                    _accountCodeSpinnerItemModelList.Add(item);
+                }
+                SetAccountCodeSpinnerAdapter();
+            }
+            catch (Exception e)
+            {
+                CustomProgressDialog.HideProgressDialog();
             }
         }
 
@@ -293,6 +347,7 @@ namespace LucidX.Droid.Source.Activities
             _accountCodeSpinnerAdapter = new SpinnerAdapter(mActivity, Resource.Layout.spinner_row_item_lay,
                    _accountCodeSpinnerItemModelList);
             spin_account_code.Adapter = _accountCodeSpinnerAdapter;
+            spin_account_code.SetSelection(_selectedAccountCodeItemPosition);
         }
 
 
@@ -318,6 +373,8 @@ namespace LucidX.Droid.Source.Activities
                     }
                 }
                 _entitySpinnerAdapter.NotifyDataSetChanged();
+
+                InitAccountCodeSpinnerValues();
             };
 
 
@@ -344,12 +401,67 @@ namespace LucidX.Droid.Source.Activities
 
         private void Btn_cancel_Click(object sender, EventArgs e)
         {
-            Finish();
+            CallBackScreen();
         }
 
-        private void Btn_save_Click(object sender, EventArgs e)
+        private async void Btn_save_Click(object sender, EventArgs e)
         {
-            Finish();
+            try
+            {
+                if (ValidateForm())
+                {
+                    if (CrossConnectivity.Current.IsConnected)
+                    {
+                        CustomProgressDialog.ShowProgDialog(mActivity,
+                            GetString(Resource.String.saving_message));
+
+
+                        AddNotesAPIParams addNotesParam = new AddNotesAPIParams
+                        {
+                            accountCode = _selectedAccountCodeItem.TEXT,
+                            entityCode = _selectedCurrentEntitysItem.TEXT,
+                            notesHeader = txt_notes_header_val.Text,
+                            notesDetail_Add = "",
+                            notesDetail = txt_notes_val.Text,
+                            userId = mSharedPreferencesManager.GetString(
+                                    ConstantsDroid.USER_ID_PREFERENCE, ""),
+                            privacyId = privacyId,
+                            actionTypeId = "3",
+                            sendTo = "",
+                            accountId = _selectedAccountCodeItem.EXTRA_TEXT,
+                            notesId =  (!isAddNote)? (noteObj.NotesId) : "0",
+                            connectionName = WebserviceConstants.CONNECTION_NAME
+                        };
+
+                        int notesId = await WebServiceMethods.AddCrmNotes(addNotesParam);
+                        CustomProgressDialog.HideProgressDialog();
+
+                        CallBackScreen();
+                    }
+                    else
+                    {
+                        UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
+                            Resources.GetString(Resource.String.error_alert_title),
+                            Resources.GetString(Resource.String.alert_message_no_network_connection),
+                            Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
+
+                    }
+                }
+                else
+                {
+                    UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
+                        Resources.GetString(Resource.String.error_alert_title),
+                        Resources.GetString(Resource.String.alert_message_fill_all_Details),
+                        Resources.GetString(Resource.String.alert_cancel_btn),
+                        Resources.GetString(Resource.String.alert_ok_btn));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CustomProgressDialog.HideProgressDialog();
+            }
+
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -357,52 +469,119 @@ namespace LucidX.Droid.Source.Activities
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    Finish();
+                    CallBackScreen();
                     break;
                 case Resource.Id.menu_delete:
-                    Finish();
+                    ShowAlertDialog(Resources.GetString(Resource.String.error_alert_title),
+                        GetString(Resource.String.alert_message_delete_notes_confirmation),
+                        GetString(Resource.String.alert_cancel_btn),
+                        GetString(Resource.String.alert_ok_btn)
+                        );
                     break;
 
             }
             return true;
         }
 
+        private void CallBackScreen()
+        {
+            Intent returnIntent = new Intent();
+            returnIntent.PutExtra("result", "AddNotes");
+            SetResult(Result.Ok, returnIntent);
+            Finish();
+        }
+        private async Task<bool> DeleteCRMNotes()
+        {
+            try
+            {
+                if (CrossConnectivity.Current.IsConnected)
+                {
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                           GetString(Resource.String.processing_message));
+                    bool isDelete = await WebServiceMethods.DeleteCrmNotes(noteObj.NotesId);
+                    CustomProgressDialog.HideProgressDialog();
+                    return isDelete;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CustomProgressDialog.HideProgressDialog();
+
+            }
+            return false;
+        }
 
         /// <summary>
-        /// Shows Date picker for start Date time
+        /// Show Alert Dialog
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Txt_order_date_val_Click(object sender, EventArgs e)
+        /// <param name="activity">Activity instance</param>
+        /// <param name="title">title of alert dialog</param>
+        /// <param name="messsage">message to show alert dialog</param>
+        /// <returns>Dialog</returns>
+        public Dialog ShowAlertDialog(string title, string messsage,
+            string positivebtn, string negativeBtn)
         {
-            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime date)
+            try
             {
-                try
-                {
-                    if (date.Date < DateTime.Now.Date)
-                    {
-                        UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
-                            Resources.GetString(Resource.String.error_alert_title),
-                            Resources.GetString(Resource.String.alert_message_not_less_than_current_date),
-                            Resources.GetString(Resource.String.alert_cancel_btn),
-                            Resources.GetString(Resource.String.alert_ok_btn));
-                    }
-                    else
-                    {
-                        noteDateTime = date;
-                        txt_start_date_val.Text = date.ToShortDateString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                }
-            }, noteDateTime);
-            frag.Show(FragmentManager, DatePickerFragment.TAG);
+
+                Dialog dialog = null;
+                dialog = new CustomDialog().CreateDialog(mActivity,
+                                title,
+                                messsage,
+                                negativeBtn, positivebtn,
+                                   new EventHandler(async delegate (Object o, EventArgs a)
+                                   {
+
+                                       if (dialog != null)
+                                       {
+                                           dialog.Dismiss();
+                                           dialog = null;
+                                       }
+                                       bool isDeleted = await DeleteCRMNotes();
+                                       if (isDeleted)
+                                       {
+
+                                           CallBackScreen();
+                                       }
+                                   }),
+                                 new EventHandler(delegate (Object o, EventArgs a)
+                                 {
+                                     if (dialog != null)
+                                     {
+                                         dialog.Dismiss();
+                                         dialog = null;
+                                     }
+                                 }),
+                              true, true);
+
+                dialog.SetCancelable(true);
+                dialog.Show();
+                return dialog;
+
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
 
+        private bool ValidateForm()
+        {
 
+            if (string.IsNullOrEmpty(txt_notes_header_val.Text))
+            {
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txt_notes_val.Text))
+            {
+                return false;
+            }
 
+            return true;
+        }
     }
 
 }

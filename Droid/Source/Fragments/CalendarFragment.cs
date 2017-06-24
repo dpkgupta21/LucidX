@@ -17,6 +17,12 @@ using LucidX.Droid.Source.CustomSpinner.Adapter;
 using LucidX.Droid.Source.Models;
 using Newtonsoft.Json;
 using LucidX.Droid.Source.CustomSpinner.Model;
+using Plugin.Connectivity;
+using LucidX.Droid.Source.CustomViews;
+using LucidX.Webservices;
+using LucidX.Droid.Source.Global;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace LucidX.Droid.Source.Fragments
 {
@@ -34,19 +40,19 @@ namespace LucidX.Droid.Source.Fragments
         /// </summary>
         private const string TAG = "CalendarFragment";
         /// <summary>
-        /// The expandable view
+        /// The list view
         /// </summary>
-        private ExpandableListView expandableListView;
+        private ListView listView;
 
         /// <summary>
-        /// The run list object
+        /// The Calendar event list object
         /// </summary>
-       // private List<CalendarEventResponse> calendarList;
+        private List<CalendarEventResponse> _calendarList;
 
         /// <summary>
         /// The run list adapter
         /// </summary>
-        private CalendarListExpandableAdapter calendarListAdapter;
+        private CalendarEventListAdapter mAdapter;
         /// <summary>
         /// The m activity
         /// </summary>
@@ -59,6 +65,10 @@ namespace LucidX.Droid.Source.Fragments
         private RelativeLayout relative_date_layout;
         private TextView txt_from_date;
         private TextView txt_to_date;
+        private TextView txt_no_events;
+        private TextView txt_calendar_type;
+        private TextView txt_user_calendar_val;
+
         private DateTime fromDateTime = DateTime.Now;
         private DateTime toDateTime = DateTime.Now;
 
@@ -68,6 +78,8 @@ namespace LucidX.Droid.Source.Fragments
         private SpinnerItemModel _selectedUsersItem;
         private SpinnerAdapter _userSpinnerAdapter;
         private List<SpinnerItemModel> _userSpinnerItemModelList;
+
+        private List<NotesTypeResponse> _notesTypeList;
 
         #region "Functions"
         public static Fragment GetInstance()
@@ -96,7 +108,10 @@ namespace LucidX.Droid.Source.Fragments
                Resource.Id.relative_date_layout);
             relative_selected_layout = view.FindViewById<RelativeLayout>(
              Resource.Id.relative_selected_layout);
-
+            txt_no_events = view.FindViewById<TextView>(
+             Resource.Id.txt_no_events);
+            txt_user_calendar_val = view.FindViewById<TextView>(
+             Resource.Id.txt_user_calendar_val);
             ImageView img_search = view.FindViewById<ImageView>(
                Resource.Id.img_search);
             img_search.Click += Img_search_Click;
@@ -105,7 +120,7 @@ namespace LucidX.Droid.Source.Fragments
                Resource.Id.img_return);
             img_return.Click += Img_return_Click;
 
-            TextView txt_calendar_type = view.FindViewById<TextView>(
+            txt_calendar_type = view.FindViewById<TextView>(
                 Resource.Id.txt_calendar_type);
             txt_calendar_type.Click += Txt_calendar_type_Click;
 
@@ -117,6 +132,16 @@ namespace LucidX.Droid.Source.Fragments
                 Resource.Id.txt_to_date);
             txt_to_date.Click += Edt_to_date_Click;
 
+            DateTime now = DateTime.Now;
+
+            DateTime startDate = new DateTime(now.Year, now.Month, 1);
+            string startDateString = startDate.ToString(UtilityDroid.CALENDAR_DATE_FORMAT);
+            txt_from_date.Text = startDateString.Replace("-", "/");
+
+            DateTime endDate = startDate.AddMonths(1).AddDays(-1);
+            string endDateString = endDate.ToString(UtilityDroid.CALENDAR_DATE_FORMAT);
+            txt_to_date.Text = endDateString.Replace("-", "/");
+
             spin_users = view.FindViewById<Spinner>(
               Resource.Id.spin_users);
 
@@ -124,32 +149,103 @@ namespace LucidX.Droid.Source.Fragments
 
             // Set users in spinner
             InitUserSpinnerValues();
-            SetUserSpinnerAdapter();
 
-            // Initialize listener for spinner
-            InitializeListeners();
-         
+            //GetNotesTypes();
             return view;
         }
+
+        private void Img_search_Click(object sender, EventArgs e)
+        {
+            if (ValidateForm())
+            {
+                relative_selected_layout.Visibility = ViewStates.Visible;
+                linear_user_and_type.Visibility = ViewStates.Gone;
+                relative_date_layout.Visibility = ViewStates.Gone;
+                txt_user_calendar_val.Text = _selectedUsersItem.TEXT;
+
+                // Call webservice for get calendar events
+                CallCalendarEventsWebservice();
+            }
+            else
+            {
+                UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
+                    Resources.GetString(Resource.String.error_alert_title),
+                    Resources.GetString(Resource.String.alert_message_fill_all_Details),
+                    Resources.GetString(Resource.String.alert_cancel_btn),
+                    Resources.GetString(Resource.String.alert_ok_btn));
+            }
+
+        }
+
+
+
+
+        ///// <summary>
+        ///// Init values for User spinner
+        ///// </summary>
+        //private async void GetNotesTypes()
+        //{
+        //    try
+        //    {
+
+        //        if (CrossConnectivity.Current.IsConnected)
+        //        {
+        //            CustomProgressDialog.ShowProgDialog(mActivity,
+        //                mActivity.Resources.GetString(Resource.String.loading));
+
+
+        //            CustomProgressDialog.HideProgressDialog();
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        CustomProgressDialog.HideProgressDialog();
+        //    }
+        //}
 
         /// <summary>
         /// Init values for User spinner
         /// </summary>
-        private void InitUserSpinnerValues()
+        private async void InitUserSpinnerValues()
         {
-            string[] items = Resources.GetStringArray(Resource.Array.user_entries);
-
-            _userSpinnerItemModelList = new List<SpinnerItemModel>();
-
-            for (int i = 0; i < items.Length; i++)
+            try
             {
-                SpinnerItemModel item = new SpinnerItemModel
+
+                List<RefUsersResponse> responseList = null;
+                if (CrossConnectivity.Current.IsConnected)
                 {
-                    Id = (i + 1) + "",
-                    TEXT = items[i] + "",
-                    STATE = false
-                };
-                _userSpinnerItemModelList.Add(item);
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                        mActivity.Resources.GetString(Resource.String.loading));
+
+                    responseList = await WebServiceMethods.ShowRefUsers();
+
+                    _notesTypeList = await WebServiceMethods.ShowNotesType();
+
+                    GetNotesTypeResult(_notesTypeList);
+
+                    CustomProgressDialog.HideProgressDialog();
+                }
+
+                _userSpinnerItemModelList = new List<SpinnerItemModel>();
+
+                for (int i = 0; i < responseList.Count; i++)
+                {
+                    SpinnerItemModel item = new SpinnerItemModel
+                    {
+                        Id = (i + 1) + "",
+                        TEXT = responseList[i].UserName,
+                        STATE = false,
+                        EXTRA_TEXT = responseList[i].UserID
+                    };
+                    _userSpinnerItemModelList.Add(item);
+                }
+                SetUserSpinnerAdapter();
+
+
+            }
+            catch (Exception e)
+            {
+                CustomProgressDialog.HideProgressDialog();
             }
         }
 
@@ -161,12 +257,15 @@ namespace LucidX.Droid.Source.Fragments
             _userSpinnerAdapter = new SpinnerAdapter(mActivity, Resource.Layout.spinner_row_item_lay,
                    _userSpinnerItemModelList);
             spin_users.Adapter = _userSpinnerAdapter;
+
+            // Initialize listener for spinner
+            InitializeListeners();
         }
 
 
 
         private void InitializeListeners()
-        {        
+        {
             // User Spinner
             spin_users.ItemSelected += (sender, args) =>
             {
@@ -185,6 +284,8 @@ namespace LucidX.Droid.Source.Fragments
                     }
                 }
                 _userSpinnerAdapter.NotifyDataSetChanged();
+
+                CallCalendarEventsWebservice();
             };
         }
 
@@ -215,7 +316,7 @@ namespace LucidX.Droid.Source.Fragments
                     // Show Add event screen
                     Intent intent = new Intent(mActivity, typeof(AddCalendarEventActivity));
                     intent.PutExtra("isAddEvent", true);
-                    StartActivity(intent);
+                    mActivity.StartActivityForResult(intent, ConstantsDroid.CALENDAR_LIST_REQUEST_CODE);
                     mActivity.OverridePendingTransition(Resource.Animation.animation_enter,
                                 Resource.Animation.animation_leave);
                     break;
@@ -227,82 +328,86 @@ namespace LucidX.Droid.Source.Fragments
         {
             base.OnActivityCreated(savedInstanceState);
 
-
-            expandableListView = view.FindViewById<ExpandableListView>(Resource.Id.expandable_list_view);
-
-            expandableListView.GroupClick += (object pobjSender,
-                ExpandableListView.GroupClickEventArgs pArgs) =>
-            {
-
-            };
-
-            InitailizeCalendarListExpandableAdapter(GetCalendarResponse());
+            listView = view.FindViewById<ListView>(Resource.Id.listview);
+            listView.ItemClick += ListView_ItemClick;
         }
 
 
-        public override void OnActivityResult(int requestCode, int resultCode, Intent data)
+        public void CallCalendarEventsWebservice()
         {
-            if (requestCode == CALENDAR_TYPE_DIALOG_REQUEST_CODE)
+            try
             {
-
-                string selectedUserListObj = data.GetStringExtra("selectedUserListObj");
-                List<UserListModel> selectedUserList = null;
-
-                if (!string.IsNullOrEmpty(selectedUserListObj))
+                if (CrossConnectivity.Current.IsConnected)
                 {
-                    selectedUserList = JsonConvert.DeserializeObject<List<UserListModel>>
-                        (selectedUserListObj);
+                    GetCalendarEventsList();
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
 
-                    if (selectedUserList != null && selectedUserList.Count != 0)
+        private bool ValidateForm()
+        {
+            if (string.IsNullOrEmpty(txt_calendar_type.Text))
+            {
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txt_from_date.Text))
+            {
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txt_to_date.Text))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+
+        private async void GetCalendarEventsList()
+        {
+            try
+            {
+                if (CrossConnectivity.Current.IsConnected)
+                {
+
+                    List<NotesTypeResponse> selectedNotesList = _notesTypeList.Where(x => x.IsSelected == true).ToList();
+                    string calendarTypeString = "";
+                    foreach (NotesTypeResponse notesType in selectedNotesList)
                     {
-                        TextView txt_calendar_type_val = view.FindViewById<TextView>(
-                            Resource.Id.txt_calendar_type_val);
-                        txt_calendar_type_val.Text = "Journal (" + selectedUserList.Count + ")";
+                        calendarTypeString += notesType.NotesTypeId + ",";
                     }
+                    string calendarType = calendarTypeString.Substring(0, calendarTypeString.Length - 1);
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                        mActivity.Resources.GetString(Resource.String.loading));
+
+                    _calendarList = await WebServiceMethods.GetCalendarEvents(_selectedUsersItem.EXTRA_TEXT,
+                        calendarType, txt_from_date.Text, txt_to_date.Text);
+
+
+
+                    InitailizeCalendarEventListAdapter(_calendarList);
+
+                    CustomProgressDialog.HideProgressDialog();
+                }
+                else
+                {
+                    UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title),
+                        Resources.GetString(Resource.String.alert_message_no_network_connection),
+                        Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
                 }
             }
-
-        }
-
-        private List<UserListModel> GetUserListModel()
-        {
-            List<UserListModel> userList = new List<UserListModel>();
-            for (int i = 0; i < 5; i++)
+            catch (Exception ex)
             {
-                UserListModel userObj = new UserListModel
-                {
-                    UserName = "Deepak " + i
-                };
-            }
-            return userList;
-        }
-        private List<CalendarEventResponse> GetCalendarResponse()
-        {
-            List<CalendarEventResponse> calendarList = new List<CalendarEventResponse>();
-
-            for (int i = 0; i < 5; i++)
-            {
-                CalendarEventResponse calendarObj = new CalendarEventResponse();
-                calendarObj.DisplayDate = (i + 5) + " Dec 2017";
-
-                List<EventResponse> eventList = new List<EventResponse>();
-                for (int j = 0; j < 2; j++)
-                {
-                    EventResponse eventObj = new EventResponse()
-                    {
-                        EventName = "Deepak",
-                        EventDetail = "Has a meeting",
-                        EventDateTime = "10:06 PM"
-
-                    };
-                    eventList.Add(eventObj);
-                }
-                calendarObj.EventListResponse = eventList;
-                calendarList.Add(calendarObj);
-
+                CustomProgressDialog.HideProgressDialog();
+                UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title),
+                   Resources.GetString(Resource.String.alert_message_error),
+                   Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
             }
 
-            return calendarList;
+
         }
 
         /// <summary>
@@ -310,53 +415,44 @@ namespace LucidX.Droid.Source.Fragments
         /// In case of no events "No Events" will be displayed
         /// </summary>
         /// <param name="CalendarListObj">List of run</param>
-        private void InitailizeCalendarListExpandableAdapter(List<CalendarEventResponse> CalendarListObj)
+        private void InitailizeCalendarEventListAdapter(List<CalendarEventResponse> eventsList)
         {
             try
             {
-                if (CalendarListObj != null && CalendarListObj.Count > 0)
+                if (eventsList != null && eventsList.Count > 0)
                 {
-                    if (calendarListAdapter == null)
-                    {
-                        calendarListAdapter = new CalendarListExpandableAdapter(mActivity, CalendarListObj);
-                        expandableListView.SetAdapter(calendarListAdapter);
-                    }
-                    else
-                    {
-                        calendarListAdapter.SetCalendarList(CalendarListObj);
-                        calendarListAdapter.NotifyDataSetChanged();
-                    }
-                    expandableListView.ExpandGroup(0);
+                    listView.Visibility = ViewStates.Visible;
+                    txt_no_events.Visibility = ViewStates.Gone;
+                    mAdapter = new CalendarEventListAdapter(eventsList, mActivity);
+                    listView.Adapter = mAdapter;
                 }
-
+                else
+                {
+                    txt_no_events.Visibility = ViewStates.Visible;
+                    listView.Visibility = ViewStates.Gone;
+                }
             }
             catch (Exception e)
             {
             }
-
         }
 
 
-        /// <summary>
-        /// Handles the ChildClick event of the ListView control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="ExpandableListView.ChildClickEventArgs"/> instance containing the event data.</param>
-        private void ListView_ChildClick(object sender, ExpandableListView.ChildClickEventArgs e)
+        private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            try
-            {
-                int groupPosition = e.GroupPosition;
-                int childPosition = e.ChildPosition;
+            int pos = e.Position;
+            CalendarEventResponse eventObj = _calendarList[pos];
+            string eventObjString = JsonConvert.SerializeObject(eventObj);
+            Intent intent = new Intent(mActivity, typeof(AddCalendarEventActivity));
+            intent.PutExtra("isAddEvent", false);
+            intent.PutExtra("eventObj", eventObjString);
 
 
-                Intent intent = new Intent(mActivity, typeof(HomeActivity));
-                StartActivity(intent);
-            }
-            catch (Exception ex)
-            {
-            }
+            mActivity.StartActivityForResult(intent, ConstantsDroid.CALENDAR_LIST_REQUEST_CODE);
+            mActivity.OverridePendingTransition(Resource.Animation.animation_enter,
+                        Resource.Animation.animation_leave);
         }
+
 
         private void Img_return_Click(object sender, EventArgs e)
         {
@@ -365,12 +461,7 @@ namespace LucidX.Droid.Source.Fragments
             relative_date_layout.Visibility = ViewStates.Visible;
         }
 
-        private void Img_search_Click(object sender, EventArgs e)
-        {
-            relative_selected_layout.Visibility = ViewStates.Visible;
-            linear_user_and_type.Visibility = ViewStates.Gone;
-            relative_date_layout.Visibility = ViewStates.Gone;
-        }
+
         private void Txt_calendar_type_Click(object sender, EventArgs e)
         {
             FragmentTransaction fragmentTransaction = FragmentManager.BeginTransaction();
@@ -381,11 +472,29 @@ namespace LucidX.Droid.Source.Fragments
                 fragmentTransaction.Remove(fragmentPrev);
 
             fragmentTransaction.AddToBackStack(null);
+
+            string notesTypeString = JsonConvert.SerializeObject(_notesTypeList);
             //create and show the dialog
-            CustomDialogFrag dialogFragment = CustomDialogFrag.NewInstance();
+            CustomDialogFrag dialogFragment = CustomDialogFrag.NewInstance(notesTypeString);
             dialogFragment.SetTargetFragment(this, CALENDAR_TYPE_DIALOG_REQUEST_CODE);
             dialogFragment.Show(fragmentTransaction, "dialog");
         }
+
+        public void GetNotesTypeResult(List<NotesTypeResponse> _notesTypeList)
+        {
+            this._notesTypeList = _notesTypeList;
+
+            List<NotesTypeResponse> selectedNotesList = _notesTypeList.Where(x => x.IsSelected == true).ToList();
+            if (selectedNotesList != null && selectedNotesList.Count != 0)
+            {
+                txt_calendar_type.Text = "Journal (" + selectedNotesList.Count + ")";
+                TextView txt_calendar_type_val = view.FindViewById<TextView>(
+                    Resource.Id.txt_calendar_type_val);
+                txt_calendar_type_val.Text = "Journal (" + selectedNotesList.Count + ")";
+            }
+        }
+
+
 
         private void Edt_to_date_Click(object sender, EventArgs e)
         {
@@ -404,7 +513,8 @@ namespace LucidX.Droid.Source.Fragments
                     else
                     {
                         toDateTime = time;
-                        txt_to_date.Text = time.ToShortDateString();
+                        string toDate = time.ToString(UtilityDroid.CALENDAR_DATE_FORMAT);
+                        txt_to_date.Text = toDate.Replace("-", "/");
                     }
                 }
                 catch (Exception ex)
@@ -420,19 +530,11 @@ namespace LucidX.Droid.Source.Fragments
             {
                 try
                 {
-                    if (time.Date < DateTime.Now.Date)
-                    {
-                        UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
-                            Resources.GetString(Resource.String.error_alert_title),
-                            Resources.GetString(Resource.String.alert_message_not_less_than_current_date),
-                            Resources.GetString(Resource.String.alert_cancel_btn),
-                            Resources.GetString(Resource.String.alert_ok_btn));
-                    }
-                    else
-                    {
+                    
                         fromDateTime = time;
-                        txt_from_date.Text = time.ToShortDateString();
-                    }
+                        string fromDate = time.ToString(UtilityDroid.CALENDAR_DATE_FORMAT);
+                        txt_from_date.Text = fromDate.Replace("-", "/");
+                    
                 }
                 catch (Exception ex)
                 {

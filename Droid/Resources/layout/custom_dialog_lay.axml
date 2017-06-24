@@ -51,7 +51,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/common_dialog_items_mar"
-        android:layout_weight=".30"
+        android:layout_weight=".50"
         android:text="Retour"
         android:visibility="visible" />
 
@@ -61,7 +61,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/submitBtn"
-        android:layout_weight=".30"
+        android:layout_weight=".50"
         android:text="Okay" />
   </LinearLayout>
 </LinearLayout>

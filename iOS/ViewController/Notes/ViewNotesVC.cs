@@ -31,8 +31,6 @@ namespace LucidX.iOS.Notes
 		DateTime StartDate;
 		DateTime EndDate;
 
-		bool isfirstTime;
-
 		public ViewNotesVC() : base("ViewNotesVC", null)
 		{
 		}
@@ -52,7 +50,6 @@ namespace LucidX.iOS.Notes
 		public override void ViewDidAppear(bool animated)
 		{
 			base.ViewDidAppear(animated);
-			isfirstTime = true;
 			GetEntityCodeList();
 		}
 
@@ -183,10 +180,7 @@ namespace LucidX.iOS.Notes
 			EndDate = StartDate.AddMonths(1).AddDays(-1);
 			IBToDateTxt.Text = EndDate.ToString("d");
 			IBFromDateTxt.Text = StartDate.ToString("d");
-			if (isfirstTime)
-			{
-				GetNotes();
-			}
+			GetNotes();
 		}
 
 		/// <summary>
@@ -195,7 +189,7 @@ namespace LucidX.iOS.Notes
 		void ConfigureView()
 		{
 			this.EdgesForExtendedLayout = UIRectEdge.None;
-			this.NavigationItem.Title = "";
+
 			var menuBtn = new UIBarButtonItem(UIImage.FromBundle("Menu"),
 											  UIBarButtonItemStyle.Plain,
 											  MenuClicked);
@@ -204,10 +198,10 @@ namespace LucidX.iOS.Notes
 			IBNotesTbl.RegisterNibForCellReuse(NotesCell.Nib, NotesCell.Key);
 			IBNotesTbl.TableFooterView = new UIView();
 			IBNotesTbl.EstimatedRowHeight = HeightConstants.CellHeight70;
-			this.NavigationItem.Title = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSNotesTitle","");
+			this.NavigationItem.Title = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSNotesTitle", "");
 			this.NavigationItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
 
-			var createBtn = new UIBarButtonItem(UIImage.FromBundle("Edit"),
+			var createBtn = new UIBarButtonItem(UIImage.FromBundle("Add"),
 											  UIBarButtonItemStyle.Plain,
 												EditClicked);
 			this.NavigationItem.RightBarButtonItem = createBtn;
@@ -271,10 +265,11 @@ namespace LucidX.iOS.Notes
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSFromDateEmpty", "LSErrorTitle"));
 					return false;
 				}
-				else if (textField == IBToDateTxt) { 
+				else if (textField == IBToDateTxt)
+				{
 					IBDateTimePicker.Date = IosUtils.Utility.ConvertToNSDate(EndDate);
 					IBDateTimePicker.MinimumDate = IosUtils.Utility.ConvertToNSDate(StartDate);
-				
+
 				}
 			}
 			else
@@ -316,6 +311,7 @@ namespace LucidX.iOS.Notes
 		void EditClicked(object sender, EventArgs e)
 		{
 			var createNotesVc = new CreateNotesVC();
+			createNotesVc.isEdit = false;
 			this.NavigationController.PushViewController(createNotesVc, true);
 		}
 
@@ -382,12 +378,10 @@ namespace LucidX.iOS.Notes
 		{
 			if (IosUtils.Utility.IsReachable())
 			{
-				//notes[indexPath.Row].Unread = false;
-				//markRead(notes[indexPath.Row].MailId);
-				//IBContntTbl.ReloadData();
-				//var detailsVC = new MailDetails.MailDetailsVC();
-				//detailsVC.mail = notes[indexPath.Row];
-				//this.NavigationController.PushViewController(detailsVC, true);
+				var createNotesVc = new CreateNotesVC();
+				createNotesVc.isEdit = true;
+				createNotesVc.notes = notes[indexPath.Row];
+				this.NavigationController.PushViewController(createNotesVc, true);
 			}
 		}
 

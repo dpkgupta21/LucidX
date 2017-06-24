@@ -12,6 +12,13 @@ using Activity = Android.App.Activity;
 using LucidX.Droid.Source.Picker;
 using LucidX.Droid.Source.Utilities;
 using LucidX.Droid.Source.Models;
+using Plugin.Connectivity;
+using LucidX.Droid.Source.CustomViews;
+using LucidX.Webservices;
+using LucidX.Droid.Source.SharedPreference;
+using LucidX.Droid.Source.Global;
+using LucidX.ResponseModels;
+using Newtonsoft.Json;
 
 namespace LucidX.Droid.Source.Fragments
 {
@@ -30,6 +37,11 @@ namespace LucidX.Droid.Source.Fragments
         /// </summary>
         private ListView listView;
         /// <summary>
+        /// The Orders list object
+        /// </summary>
+        private List<OrdersResponse> _ordersList;
+
+        /// <summary>
         /// The run list adapter
         /// </summary>
         private OrderAdapter mAdapter;
@@ -41,9 +53,12 @@ namespace LucidX.Droid.Source.Fragments
         private View view;
         private TextView txt_from_date;
         private TextView txt_to_date;
+        private TextView txt_no_orders;
 
         private DateTime fromDateTime = DateTime.Now;
         private DateTime toDateTime = DateTime.Now;
+
+        private SharedPreferencesManager mSharedPreferencesManager;
 
         #region "Functions"
         public static Fragment GetInstance()
@@ -66,6 +81,13 @@ namespace LucidX.Droid.Source.Fragments
 
             mActivity = Activity;
 
+            /// Shared Preference manager
+            mSharedPreferencesManager = UtilityDroid.GetInstance().
+                       GetSharedPreferenceManagerWithEncriptionEnabled(mActivity.ApplicationContext);
+
+            txt_no_orders = view.FindViewById<TextView>(
+                Resource.Id.txt_no_orders);
+
             txt_from_date = view.FindViewById<TextView>(
                 Resource.Id.txt_from_date);
             txt_from_date.Click += Edt_from_date_Click;
@@ -74,9 +96,39 @@ namespace LucidX.Droid.Source.Fragments
                 Resource.Id.txt_to_date);
             txt_to_date.Click += Edt_to_date_Click;
 
+            DateTime now = DateTime.Now;
+
+            DateTime startDate = new DateTime(now.Year, now.Month, 1);
+            string startDateString = startDate.ToString(UtilityDroid.CALENDAR_DATE_FORMAT);
+            txt_from_date.Text = startDateString.Replace("-", "/");
+
+            DateTime endDate = startDate.AddMonths(1).AddDays(-1);
+            string endDateString = endDate.ToString(UtilityDroid.CALENDAR_DATE_FORMAT);
+            txt_to_date.Text = endDateString.Replace("-", "/");
+
             ((HomeActivity)mActivity).SetTitle(GetString(Resource.String.order_title));
 
+            ImageView img_search = view.FindViewById<ImageView>(
+             Resource.Id.img_search);
+            img_search.Click += Img_search_Click;
+
             return view;
+        }
+
+        private void Img_search_Click(object sender, EventArgs e)
+        {
+            if (ValidateForm())
+            {
+                CallWebserviceForOrdersList();
+            }
+            else
+            {
+                UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
+                    Resources.GetString(Resource.String.error_alert_title),
+                    Resources.GetString(Resource.String.alert_message_fill_all_Details),
+                    Resources.GetString(Resource.String.alert_cancel_btn),
+                    Resources.GetString(Resource.String.alert_ok_btn));
+            }
         }
 
 
@@ -112,49 +164,49 @@ namespace LucidX.Droid.Source.Fragments
             base.OnActivityCreated(savedInstanceState);
 
             listView = view.FindViewById<ListView>(Resource.Id.listview_order);
-            InitailizeOrderListAdapter(GetOrderListModel());
             listView.ItemClick += ListView_ItemClick;
+
+            // call webservice for orders
+            CallWebserviceForOrdersList();
+
         }
 
         private void ListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             int pos = e.Position;
-            StartActivity(new Intent(mActivity, typeof(AddOrderFirstActivity)));
+
+            string orderObj = JsonConvert.SerializeObject(_ordersList[pos]);
+
+            Intent intent = new Intent(mActivity, typeof(AddOrderFirstActivity));
+            intent.PutExtra("orderObj", orderObj);
+            mActivity.StartActivity(intent);
+
             mActivity.OverridePendingTransition(Resource.Animation.animation_enter,
                         Resource.Animation.animation_leave);
         }
 
-        private List<OrderListModel> GetOrderListModel()
-        {
-            List<OrderListModel> orderList = new List<OrderListModel>();
-            for (int i = 0; i < 5; i++)
-            {
-                OrderListModel orderObj = new OrderListModel
-                {
-                    Customer = "Pankaj" + i,
-                    OrderDate = "2" + i + " March 2017",
-                    Cost = i + "000 $"
-                };
-                orderList.Add(orderObj);
-            }
-            return orderList;
-        }
 
         /// <summary>
         /// Sets Calendar event list in listview using adapter,
         /// In case of no events "No Events" will be displayed
         /// </summary>
         /// <param name="CalendarListObj">List of run</param>
-        private void InitailizeOrderListAdapter(List<OrderListModel> orderList)
+        private void InitailizeOrderListAdapter(List<OrdersResponse> orderList)
         {
             try
             {
                 if (orderList != null && orderList.Count > 0)
                 {
-
+                    listView.Visibility = ViewStates.Visible;
+                    txt_no_orders.Visibility = ViewStates.Gone;
                     mAdapter = new OrderAdapter(orderList, mActivity);
                     listView.Adapter = mAdapter;
 
+                }
+                else
+                {
+                    listView.Visibility = ViewStates.Gone;
+                    txt_no_orders.Visibility = ViewStates.Visible;
                 }
             }
             catch (Exception e)
@@ -179,7 +231,7 @@ namespace LucidX.Droid.Source.Fragments
                     else
                     {
                         toDateTime = time;
-                        txt_to_date.Text = time.ToShortDateString();
+                        txt_to_date.Text = Utils.Utilities.DateIntoWebserviceFormat(time);
                     }
                 }
                 catch (Exception ex)
@@ -195,26 +247,64 @@ namespace LucidX.Droid.Source.Fragments
             {
                 try
                 {
-                    if (time.Date < DateTime.Now.Date)
-                    {
-                        UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
-                            Resources.GetString(Resource.String.error_alert_title),
-                            Resources.GetString(Resource.String.alert_message_not_less_than_current_date),
-                            Resources.GetString(Resource.String.alert_cancel_btn),
-                            Resources.GetString(Resource.String.alert_ok_btn));
-                    }
-                    else
-                    {
-                        fromDateTime = time;
-                        txt_from_date.Text = time.ToShortDateString();
-                    }
+                    fromDateTime = time;
+                    txt_from_date.Text = Utils.Utilities.DateIntoWebserviceFormat(time);
                 }
                 catch (Exception ex)
                 {
+
                 }
             }, fromDateTime);
             frag.Show(Activity.FragmentManager, DatePickerFragment.TAG);
         }
+
+
+        private async void CallWebserviceForOrdersList()
+        {
+            try
+            {
+                if (CrossConnectivity.Current.IsConnected)
+                {
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                        mActivity.Resources.GetString(Resource.String.loading));
+
+                    _ordersList = await WebServiceMethods.GetOrders(mSharedPreferencesManager.GetString(ConstantsDroid.USER_ID_PREFERENCE, ""),
+                        txt_from_date.Text, txt_to_date.Text);
+
+                    InitailizeOrderListAdapter(_ordersList);
+
+                    CustomProgressDialog.HideProgressDialog();
+                }
+                else
+                {
+                    UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title),
+                        Resources.GetString(Resource.String.alert_message_no_network_connection),
+                        Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
+                }
+            }
+            catch (Exception ex)
+            {
+                CustomProgressDialog.HideProgressDialog();
+                UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title),
+                   Resources.GetString(Resource.String.alert_message_error),
+                   Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
+            }
+        }
+
+        private bool ValidateForm()
+        {
+            if (string.IsNullOrEmpty(txt_from_date.Text))
+            {
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txt_to_date.Text))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
 
         #endregion
     }

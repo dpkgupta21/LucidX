@@ -60,35 +60,34 @@
 
 
       <LucidX.Droid.Source.CustomViews.CustomTextView
-          android:id="@+id/txt_start_date_lbl"
+          android:id="@+id/txt_notes_header_lbl"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_below="@id/spin_account_code"
           android:layout_marginTop="10dp"
-          android:text="Start Date"
+          android:text="Notes Header"
           android:textColor="@color/black"
           android:textSize="16sp" />
 
-      <LucidX.Droid.Source.CustomViews.CustomTextView
-          android:id="@+id/txt_start_date_val"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_alignTop="@+id/txt_start_date_lbl"
-          android:layout_below="@id/spin_account_code"
-          android:layout_marginLeft="20dp"
-          android:layout_toRightOf="@+id/txt_start_date_lbl"
-          android:background="@drawable/edittextbg_boundary"
-          android:maxLines="1"
-          android:text=""
-          android:textColor="@color/black"
-          android:textSize="16sp" />
+      <LucidX.Droid.Source.CustomViews.CustomEditText
+         android:id="@+id/edt_notes_header_val"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/txt_notes_header_lbl"
+         android:layout_marginTop="2dp"
+         android:background="@drawable/edittextbg_boundary"
+         android:maxLines="1"
+         android:text=""
+         android:imeOptions="actionNext"
+         android:textColor="@color/black"
+         android:textSize="16sp" />
 
 
       <LucidX.Droid.Source.CustomViews.CustomTextView
           android:id="@+id/txt_notes_lbl"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_below="@id/txt_start_date_val"
+          android:layout_below="@id/edt_notes_header_val"
           android:layout_marginTop="10dp"
           android:text="Notes"
           android:textColor="@color/black"
@@ -116,6 +115,12 @@
           android:layout_below="@id/txt_notes_val"
           android:layout_marginTop="10dp"
           android:orientation="horizontal">
+        
+        <LucidX.Droid.Source.CustomViews.CustomRadioButton
+                   android:id="@+id/radio_btn_public"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Public" />
 
         <LucidX.Droid.Source.CustomViews.CustomRadioButton
             android:id="@+id/radio_btn_me_only"
@@ -126,14 +131,10 @@
         <LucidX.Droid.Source.CustomViews.CustomRadioButton
             android:id="@+id/radio_btn_select"
             android:layout_width="wrap_content"
+            android:enabled="false"
+            android:clickable="false"
             android:layout_height="wrap_content"
             android:text="Select" />
-
-        <LucidX.Droid.Source.CustomViews.CustomRadioButton
-            android:id="@+id/radio_btn_public"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Public" />
       </RadioGroup>
 
       <LucidX.Droid.Source.CustomViews.CustomTextView

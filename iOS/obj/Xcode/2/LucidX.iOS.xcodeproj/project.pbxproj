@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3638D9860000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928E5B5A0000000000000000 /* UIKit.framework */; };
+		AF16C04A0000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B074960000000000000000 /* MapKit.framework */; };
+		27F4A70E0000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D28DD20000000000000000 /* Foundation.framework */; };
+		1D32D6910000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5AF2C20000000000000000 /* CoreGraphics.framework */; };
+		655F1EA20000000000000000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25B783E0000000000000000 /* Assets.xcassets */; };
+		DE3D05660000000000000000 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B395F020000000000000000 /* Images.xcassets */; };
+		571AEC2A0000000000000000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF52C8A0000000000000000 /* LaunchScreen.storyboard */; };
+		48D6B9B20000000000000000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78EE0D60000000000000000 /* Main.storyboard */; };
+		C1B4A0760000000000000000 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9099CCE00000000000000000 /* LoginVC.xib */; };
+		3A92873A0000000000000000 /* SettingsVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902BB60A0000000000000000 /* SettingsVc.xib */; };
+		B3706DFE0000000000000000 /* MailDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896F63060000000000000000 /* MailDetailsCell.xib */; };
+		2C4E54C20000000000000000 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB41AFA0000000000000000 /* CalendarVC.xib */; };
+		A52C3B860000000000000000 /* DraftsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33D634360000000000000000 /* DraftsVC.xib */; };
+		1E0A224A0000000000000000 /* InvoiceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93C7FEA0000000000000000 /* InvoiceVC.xib */; };
+		96E8090E0000000000000000 /* SentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 505E99260000000000000000 /* SentVC.xib */; };
+		FC5EFD200000000000000000 /* TrashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D780B2620000000000000000 /* TrashVC.xib */; };
+		88A3D6960000000000000000 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10917C420000000000000000 /* MenuCell.xib */; };
+		181BD5A00000000000000000 /* MenuHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97B3957E0000000000000000 /* MenuHeader.xib */; };
+		7A5FA41E0000000000000000 /* InboxVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2CB9E0000000000000000 /* InboxVC.xib */; };
+		F33D8AE20000000000000000 /* MailDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C4E4DA0000000000000000 /* MailDetailsVC.xib */; };
+		6C1B71A60000000000000000 /* ViewNotesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B2B308E0000000000000000 /* ViewNotesVC.xib */; };
+		E4F9586A0000000000000000 /* NotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F7C7F60000000000000000 /* NotesCell.xib */; };
+		5DD73F2E0000000000000000 /* CreateNotesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40917520000000000000000 /* CreateNotesVC.xib */; };
+		D6B525F20000000000000000 /* CreateCalendarEventVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 259201BE0000000000000000 /* CreateCalendarEventVC.xib */; };
+		4F930CB60000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 994AAE5E0000000000000000 /* Info.plist */; };
+		C870F37A0000000000000000 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E7E16F60000000000000000 /* Entitlements.plist */; };
+		414EDA3E0000000000000000 /* MultiSelectionDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C45F5E0000000000000000 /* MultiSelectionDialog.xib */; };
+		BA2CC1020000000000000000 /* MailDetailsVC.h in Sources */ = {isa = PBXBuildFile; fileRef = E75BFDBA0000000000000000 /* MailDetailsVC.h */; };
+		330AA7C60000000000000000 /* MailDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 987F21EE0000000000000000 /* MailDetailsVC.m */; };
+		24C6754E0000000000000000 /* InboxVC.h in Sources */ = {isa = PBXBuildFile; fileRef = 51F5B2060000000000000000 /* InboxVC.h */; };
+		9DA45C120000000000000000 /* InboxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6BCFE0000000000000000 /* InboxVC.m */; };
+		168242D60000000000000000 /* TrashVC.h in Sources */ = {isa = PBXBuildFile; fileRef = CAD398CA0000000000000000 /* TrashVC.h */; };
+		F9F9DDE60000000000000000 /* TrashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D4A3C20000000000000000 /* TrashVC.m */; };
+		72D7C4AA0000000000000000 /* SentVC.h in Sources */ = {isa = PBXBuildFile; fileRef = 43B17F8E0000000000000000 /* SentVC.h */; };
+		EBB5AB6E0000000000000000 /* SentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB28A860000000000000000 /* SentVC.m */; };
+		649392320000000000000000 /* InvoiceVC.h in Sources */ = {isa = PBXBuildFile; fileRef = 356D4D160000000000000000 /* InvoiceVC.h */; };
+		DD7178F60000000000000000 /* InvoiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E690714A0000000000000000 /* InvoiceVC.m */; };
+		564F5FBA0000000000000000 /* DraftsVC.h in Sources */ = {isa = PBXBuildFile; fileRef = AE4B33DA0000000000000000 /* DraftsVC.h */; };
+		CF2D467E0000000000000000 /* DraftsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6E580E0000000000000000 /* DraftsVC.m */; };
+		C0E914060000000000000000 /* CalendarVC.h in Sources */ = {isa = PBXBuildFile; fileRef = 27291A9E0000000000000000 /* CalendarVC.h */; };
+		2B82C8520000000000000000 /* CalendarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D84C3ED20000000000000000 /* CalendarVC.m */; };
+		A460AF160000000000000000 /* MailDetailsCell.h in Sources */ = {isa = PBXBuildFile; fileRef = A00701620000000000000000 /* MailDetailsCell.h */; };
+		1D3E95DA0000000000000000 /* MailDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 512A25960000000000000000 /* MailDetailsCell.m */; };
+		B409D8460000000000000000 /* MultiSelectionDialog.h in Sources */ = {isa = PBXBuildFile; fileRef = 18E4E8260000000000000000 /* MultiSelectionDialog.h */; };
+		2CE7BF0A0000000000000000 /* MultiSelectionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = CA080C5A0000000000000000 /* MultiSelectionDialog.m */; };
+		A5C5A5CE0000000000000000 /* CreateCalendarEventVC.h in Sources */ = {isa = PBXBuildFile; fileRef = 91C2CEEA0000000000000000 /* CreateCalendarEventVC.h */; };
+		1EA38C920000000000000000 /* CreateCalendarEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E5F31E0000000000000000 /* CreateCalendarEventVC.m */; };
+		105F5A1A0000000000000000 /* CreateNotesVC.h in Sources */ = {isa = PBXBuildFile; fileRef = FC5C83360000000000000000 /* CreateNotesVC.h */; };
+		7AF90E660000000000000000 /* CreateNotesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBC3D9E20000000000000000 /* CreateNotesVC.m */; };
+		F3D6F52A0000000000000000 /* ViewNotesVC.h in Sources */ = {isa = PBXBuildFile; fileRef = DFD41E460000000000000000 /* ViewNotesVC.h */; };
+		E592C2B20000000000000000 /* ViewNotesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A1C0A60000000000000000 /* ViewNotesVC.m */; };
+		D74E903A0000000000000000 /* MenuHeader.h in Sources */ = {isa = PBXBuildFile; fileRef = 58B2050A0000000000000000 /* MenuHeader.h */; };
+		502C76FE0000000000000000 /* MenuHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7FA76A0000000000000000 /* MenuHeader.m */; };
+		41E844860000000000000000 /* NotesCell.h in Sources */ = {isa = PBXBuildFile; fileRef = D18FEBCE0000000000000000 /* NotesCell.h */; };
+		BAC62B4A0000000000000000 /* NotesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D8E2E0000000000000000 /* NotesCell.m */; };
+		33A4120E0000000000000000 /* MenuCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 4A6DD2920000000000000000 /* MenuCell.h */; };
+		AC81F8D20000000000000000 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B74F20000000000000000 /* MenuCell.m */; };
+		255FDF960000000000000000 /* ViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = C34BB9560000000000000000 /* ViewController.h */; };
+		171BAD1E0000000000000000 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB90F6C60000000000000000 /* ViewController.m */; };
+		8FF993E20000000000000000 /* SettingsVc.h in Sources */ = {isa = PBXBuildFile; fileRef = B50786DE0000000000000000 /* SettingsVc.h */; };
+		8D77AA600000000000000000 /* SettingsVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 746EDD8A0000000000000000 /* SettingsVc.m */; };
+		81B5616A0000000000000000 /* LoginVC.h in Sources */ = {isa = PBXBuildFile; fileRef = 2DE56DA20000000000000000 /* LoginVC.h */; };
+		FA93482E0000000000000000 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4CC44E0000000000000000 /* LoginVC.m */; };
+		73712EF20000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 1FA13B2A0000000000000000 /* AppDelegate.h */; };
+		652CFC7A0000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 662AAB120000000000000000 /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7605F66A0000000000000000 /* LucidX.iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "LucidX.iOS.app"; path = "LucidX.iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		928E5B5A0000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		19B074960000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		A0D28DD20000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		BD5AF2C20000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		D25B783E0000000000000000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Assets.xcassets"; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		4B395F020000000000000000 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images.xcassets"; path = "Images.xcassets"; sourceTree = "<group>"; };
+		3CF52C8A0000000000000000 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "LaunchScreen.storyboard"; path = "LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		A78EE0D60000000000000000 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Main.storyboard"; path = "Main.storyboard"; sourceTree = "<group>"; };
+		9099CCE00000000000000000 /* LoginVC.xib */ = {isa = PBXFileReference; name = "LoginVC.xib"; path = "ViewController/Login/LoginVC.xib"; sourceTree = "<group>"; };
+		902BB60A0000000000000000 /* SettingsVc.xib */ = {isa = PBXFileReference; name = "SettingsVc.xib"; path = "ViewController/Settings/SettingsVc.xib"; sourceTree = "<group>"; };
+		896F63060000000000000000 /* MailDetailsCell.xib */ = {isa = PBXFileReference; name = "MailDetailsCell.xib"; path = "CustomCells/Mail Details/MailDetailsCell.xib"; sourceTree = "<group>"; };
+		ACB41AFA0000000000000000 /* CalendarVC.xib */ = {isa = PBXFileReference; name = "CalendarVC.xib"; path = "ViewController/Calendar/CalendarVC.xib"; sourceTree = "<group>"; };
+		33D634360000000000000000 /* DraftsVC.xib */ = {isa = PBXFileReference; name = "DraftsVC.xib"; path = "ViewController/Drafts/DraftsVC.xib"; sourceTree = "<group>"; };
+		C93C7FEA0000000000000000 /* InvoiceVC.xib */ = {isa = PBXFileReference; name = "InvoiceVC.xib"; path = "ViewController/Invoice/InvoiceVC.xib"; sourceTree = "<group>"; };
+		505E99260000000000000000 /* SentVC.xib */ = {isa = PBXFileReference; name = "SentVC.xib"; path = "ViewController/Sent/SentVC.xib"; sourceTree = "<group>"; };
+		D780B2620000000000000000 /* TrashVC.xib */ = {isa = PBXFileReference; name = "TrashVC.xib"; path = "ViewController/Trash/TrashVC.xib"; sourceTree = "<group>"; };
+		10917C420000000000000000 /* MenuCell.xib */ = {isa = PBXFileReference; name = "MenuCell.xib"; path = "CustomCells/MenuCell/MenuCell.xib"; sourceTree = "<group>"; };
+		97B3957E0000000000000000 /* MenuHeader.xib */ = {isa = PBXFileReference; name = "MenuHeader.xib"; path = "CustomCells/MenuHader/MenuHeader.xib"; sourceTree = "<group>"; };
+		5EA2CB9E0000000000000000 /* InboxVC.xib */ = {isa = PBXFileReference; name = "InboxVC.xib"; path = "ViewController/Mail/Inbox/InboxVC.xib"; sourceTree = "<group>"; };
+		E5C4E4DA0000000000000000 /* MailDetailsVC.xib */ = {isa = PBXFileReference; name = "MailDetailsVC.xib"; path = "ViewController/Mail/MailDetails/MailDetailsVC.xib"; sourceTree = "<group>"; };
+		7B2B308E0000000000000000 /* ViewNotesVC.xib */ = {isa = PBXFileReference; name = "ViewNotesVC.xib"; path = "ViewController/Notes/ViewNotesVC.xib"; sourceTree = "<group>"; };
+		A5F7C7F60000000000000000 /* NotesCell.xib */ = {isa = PBXFileReference; name = "NotesCell.xib"; path = "CustomCells/NotesCell/NotesCell.xib"; sourceTree = "<group>"; };
+		F40917520000000000000000 /* CreateNotesVC.xib */ = {isa = PBXFileReference; name = "CreateNotesVC.xib"; path = "ViewController/Notes/CreateNotesVC.xib"; sourceTree = "<group>"; };
+		259201BE0000000000000000 /* CreateCalendarEventVC.xib */ = {isa = PBXFileReference; name = "CreateCalendarEventVC.xib"; path = "ViewController/Calendar/CreateCalendarEventVC.xib"; sourceTree = "<group>"; };
+		994AAE5E0000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		6E7E16F60000000000000000 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Entitlements.plist"; path = "Entitlements.plist"; sourceTree = "<group>"; };
+		C2802CE60000000000000000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "Base"; path = "Base.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3B5E13AA0000000000000000 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr"; path = "fr.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D0C45F5E0000000000000000 /* MultiSelectionDialog.xib */ = {isa = PBXFileReference; name = "MultiSelectionDialog.xib"; path = "MultiSelection/MultiSelectionDialog.xib"; sourceTree = "<group>"; };
+		E75BFDBA0000000000000000 /* MailDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MailDetailsVC.h"; path = "MailDetailsVC.h"; sourceTree = "<group>"; };
+		987F21EE0000000000000000 /* MailDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MailDetailsVC.m"; path = "MailDetailsVC.m"; sourceTree = "<group>"; };
+		51F5B2060000000000000000 /* InboxVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "InboxVC.h"; path = "InboxVC.h"; sourceTree = "<group>"; };
+		7BF6BCFE0000000000000000 /* InboxVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "InboxVC.m"; path = "InboxVC.m"; sourceTree = "<group>"; };
+		CAD398CA0000000000000000 /* TrashVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TrashVC.h"; path = "TrashVC.h"; sourceTree = "<group>"; };
+		F4D4A3C20000000000000000 /* TrashVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "TrashVC.m"; path = "TrashVC.m"; sourceTree = "<group>"; };
+		43B17F8E0000000000000000 /* SentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SentVC.h"; path = "SentVC.h"; sourceTree = "<group>"; };
+		6DB28A860000000000000000 /* SentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SentVC.m"; path = "SentVC.m"; sourceTree = "<group>"; };
+		356D4D160000000000000000 /* InvoiceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "InvoiceVC.h"; path = "InvoiceVC.h"; sourceTree = "<group>"; };
+		E690714A0000000000000000 /* InvoiceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "InvoiceVC.m"; path = "InvoiceVC.m"; sourceTree = "<group>"; };
+		AE4B33DA0000000000000000 /* DraftsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DraftsVC.h"; path = "DraftsVC.h"; sourceTree = "<group>"; };
+		5F6E580E0000000000000000 /* DraftsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "DraftsVC.m"; path = "DraftsVC.m"; sourceTree = "<group>"; };
+		27291A9E0000000000000000 /* CalendarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CalendarVC.h"; path = "CalendarVC.h"; sourceTree = "<group>"; };
+		D84C3ED20000000000000000 /* CalendarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CalendarVC.m"; path = "CalendarVC.m"; sourceTree = "<group>"; };
+		A00701620000000000000000 /* MailDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MailDetailsCell.h"; path = "MailDetailsCell.h"; sourceTree = "<group>"; };
+		512A25960000000000000000 /* MailDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MailDetailsCell.m"; path = "MailDetailsCell.m"; sourceTree = "<group>"; };
+		18E4E8260000000000000000 /* MultiSelectionDialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MultiSelectionDialog.h"; path = "MultiSelectionDialog.h"; sourceTree = "<group>"; };
+		CA080C5A0000000000000000 /* MultiSelectionDialog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MultiSelectionDialog.m"; path = "MultiSelectionDialog.m"; sourceTree = "<group>"; };
+		91C2CEEA0000000000000000 /* CreateCalendarEventVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CreateCalendarEventVC.h"; path = "CreateCalendarEventVC.h"; sourceTree = "<group>"; };
+		42E5F31E0000000000000000 /* CreateCalendarEventVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CreateCalendarEventVC.m"; path = "CreateCalendarEventVC.m"; sourceTree = "<group>"; };
+		FC5C83360000000000000000 /* CreateNotesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CreateNotesVC.h"; path = "CreateNotesVC.h"; sourceTree = "<group>"; };
+		BBC3D9E20000000000000000 /* CreateNotesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CreateNotesVC.m"; path = "CreateNotesVC.m"; sourceTree = "<group>"; };
+		DFD41E460000000000000000 /* ViewNotesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ViewNotesVC.h"; path = "ViewNotesVC.h"; sourceTree = "<group>"; };
+		34A1C0A60000000000000000 /* ViewNotesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ViewNotesVC.m"; path = "ViewNotesVC.m"; sourceTree = "<group>"; };
+		58B2050A0000000000000000 /* MenuHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MenuHeader.h"; path = "MenuHeader.h"; sourceTree = "<group>"; };
+		AD7FA76A0000000000000000 /* MenuHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MenuHeader.m"; path = "MenuHeader.m"; sourceTree = "<group>"; };
+		D18FEBCE0000000000000000 /* NotesCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NotesCell.h"; path = "NotesCell.h"; sourceTree = "<group>"; };
+		265D8E2E0000000000000000 /* NotesCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NotesCell.m"; path = "NotesCell.m"; sourceTree = "<group>"; };
+		4A6DD2920000000000000000 /* MenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MenuCell.h"; path = "MenuCell.h"; sourceTree = "<group>"; };
+		9F3B74F20000000000000000 /* MenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MenuCell.m"; path = "MenuCell.m"; sourceTree = "<group>"; };
+		C34BB9560000000000000000 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ViewController.h"; path = "ViewController.h"; sourceTree = "<group>"; };
+		FB90F6C60000000000000000 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ViewController.m"; path = "ViewController.m"; sourceTree = "<group>"; };
+		B50786DE0000000000000000 /* SettingsVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SettingsVc.h"; path = "SettingsVc.h"; sourceTree = "<group>"; };
+		746EDD8A0000000000000000 /* SettingsVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SettingsVc.m"; path = "SettingsVc.m"; sourceTree = "<group>"; };
+		2DE56DA20000000000000000 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LoginVC.h"; path = "LoginVC.h"; sourceTree = "<group>"; };
+		ED4CC44E0000000000000000 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "LoginVC.m"; path = "LoginVC.m"; sourceTree = "<group>"; };
+		1FA13B2A0000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		662AAB120000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C8B2FE880000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3638D9860000000000000000 /* UIKit.framework in Frameworks */,
+				AF16C04A0000000000000000 /* MapKit.framework in Frameworks */,
+				27F4A70E0000000000000000 /* Foundation.framework in Frameworks */,
+				1D32D6910000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E32BBCA0000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				1D26587B0000000000000000 /* LucidX.iOS */,
+				1007FAE00000000000000000 /* Frameworks */,
+				6C5D7CB40000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C5D7CB40000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7605F66A0000000000000000 /* LucidX.iOS.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		1007FAE00000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				928E5B5A0000000000000000 /* UIKit.framework */,
+				19B074960000000000000000 /* MapKit.framework */,
+				A0D28DD20000000000000000 /* Foundation.framework */,
+				BD5AF2C20000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		1D26587B0000000000000000 /* LucidX.iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1FA13B2A0000000000000000 /* AppDelegate.h */,
+				D25B783E0000000000000000 /* Assets.xcassets */,
+				27291A9E0000000000000000 /* CalendarVC.h */,
+				91C2CEEA0000000000000000 /* CreateCalendarEventVC.h */,
+				FC5C83360000000000000000 /* CreateNotesVC.h */,
+				AE4B33DA0000000000000000 /* DraftsVC.h */,
+				6E7E16F60000000000000000 /* Entitlements.plist */,
+				4B395F020000000000000000 /* Images.xcassets */,
+				51F5B2060000000000000000 /* InboxVC.h */,
+				994AAE5E0000000000000000 /* Info.plist */,
+				356D4D160000000000000000 /* InvoiceVC.h */,
+				3CF52C8A0000000000000000 /* LaunchScreen.storyboard */,
+				797BDA4F0000000000000000 /* Localizable.strings */,
+				2DE56DA20000000000000000 /* LoginVC.h */,
+				A00701620000000000000000 /* MailDetailsCell.h */,
+				E75BFDBA0000000000000000 /* MailDetailsVC.h */,
+				A78EE0D60000000000000000 /* Main.storyboard */,
+				4A6DD2920000000000000000 /* MenuCell.h */,
+				58B2050A0000000000000000 /* MenuHeader.h */,
+				18E4E8260000000000000000 /* MultiSelectionDialog.h */,
+				D18FEBCE0000000000000000 /* NotesCell.h */,
+				43B17F8E0000000000000000 /* SentVC.h */,
+				B50786DE0000000000000000 /* SettingsVc.h */,
+				CAD398CA0000000000000000 /* TrashVC.h */,
+				C34BB9560000000000000000 /* ViewController.h */,
+				DFD41E460000000000000000 /* ViewNotesVC.h */,
+				626679DA0000000000000000 /* CustomCells */,
+				90913AC40000000000000000 /* MultiSelection */,
+				A7A69B390000000000000000 /* Supporting Files */,
+				4B5119650000000000000000 /* ViewController */,
+			);
+			name = "LucidX.iOS";
+			sourceTree = "<group>";
+		};
+		4B5119650000000000000000 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1680A4E0000000000000000 /* Calendar */,
+				E6A82BAD0000000000000000 /* Drafts */,
+				FDBD8C220000000000000000 /* Invoice */,
+				5C27E8EF0000000000000000 /* Login */,
+				42FDAD810000000000000000 /* Mail */,
+				5A130DF60000000000000000 /* Notes */,
+				14D2EC970000000000000000 /* Sent */,
+				733D49640000000000000000 /* Settings */,
+				2BE84D0C0000000000000000 /* Trash */,
+			);
+			name = "ViewController";
+			sourceTree = "<group>";
+		};
+		5C27E8EF0000000000000000 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9099CCE00000000000000000 /* LoginVC.xib */,
+			);
+			name = "Login";
+			sourceTree = "<group>";
+		};
+		733D49640000000000000000 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				902BB60A0000000000000000 /* SettingsVc.xib */,
+			);
+			name = "Settings";
+			sourceTree = "<group>";
+		};
+		626679DA0000000000000000 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				8C6784D20000000000000000 /* Mail Details */,
+				A37CE5470000000000000000 /* MenuCell */,
+				BA9245BC0000000000000000 /* MenuHader */,
+				D1A7A6310000000000000000 /* NotesCell */,
+			);
+			name = "CustomCells";
+			sourceTree = "<group>";
+		};
+		8C6784D20000000000000000 /* Mail Details */ = {
+			isa = PBXGroup;
+			children = (
+				896F63060000000000000000 /* MailDetailsCell.xib */,
+			);
+			name = "Mail Details";
+			sourceTree = "<group>";
+		};
+		A1680A4E0000000000000000 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				ACB41AFA0000000000000000 /* CalendarVC.xib */,
+				259201BE0000000000000000 /* CreateCalendarEventVC.xib */,
+			);
+			name = "Calendar";
+			sourceTree = "<group>";
+		};
+		E6A82BAD0000000000000000 /* Drafts */ = {
+			isa = PBXGroup;
+			children = (
+				33D634360000000000000000 /* DraftsVC.xib */,
+			);
+			name = "Drafts";
+			sourceTree = "<group>";
+		};
+		FDBD8C220000000000000000 /* Invoice */ = {
+			isa = PBXGroup;
+			children = (
+				C93C7FEA0000000000000000 /* InvoiceVC.xib */,
+			);
+			name = "Invoice";
+			sourceTree = "<group>";
+		};
+		14D2EC970000000000000000 /* Sent */ = {
+			isa = PBXGroup;
+			children = (
+				505E99260000000000000000 /* SentVC.xib */,
+			);
+			name = "Sent";
+			sourceTree = "<group>";
+		};
+		2BE84D0C0000000000000000 /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				D780B2620000000000000000 /* TrashVC.xib */,
+			);
+			name = "Trash";
+			sourceTree = "<group>";
+		};
+		A37CE5470000000000000000 /* MenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				10917C420000000000000000 /* MenuCell.xib */,
+			);
+			name = "MenuCell";
+			sourceTree = "<group>";
+		};
+		BA9245BC0000000000000000 /* MenuHader */ = {
+			isa = PBXGroup;
+			children = (
+				97B3957E0000000000000000 /* MenuHeader.xib */,
+			);
+			name = "MenuHader";
+			sourceTree = "<group>";
+		};
+		42FDAD810000000000000000 /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				1567FFCE0000000000000000 /* Inbox */,
+				D74836E00000000000000000 /* MailDetails */,
+			);
+			name = "Mail";
+			sourceTree = "<group>";
+		};
+		1567FFCE0000000000000000 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				5EA2CB9E0000000000000000 /* InboxVC.xib */,
+			);
+			name = "Inbox";
+			sourceTree = "<group>";
+		};
+		D74836E00000000000000000 /* MailDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E5C4E4DA0000000000000000 /* MailDetailsVC.xib */,
+			);
+			name = "MailDetails";
+			sourceTree = "<group>";
+		};
+		5A130DF60000000000000000 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				F40917520000000000000000 /* CreateNotesVC.xib */,
+				7B2B308E0000000000000000 /* ViewNotesVC.xib */,
+			);
+			name = "Notes";
+			sourceTree = "<group>";
+		};
+		D1A7A6310000000000000000 /* NotesCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5F7C7F60000000000000000 /* NotesCell.xib */,
+			);
+			name = "NotesCell";
+			sourceTree = "<group>";
+		};
+		90913AC40000000000000000 /* MultiSelection */ = {
+			isa = PBXGroup;
+			children = (
+				D0C45F5E0000000000000000 /* MultiSelectionDialog.xib */,
+			);
+			name = "MultiSelection";
+			sourceTree = "<group>";
+		};
+		A7A69B390000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				662AAB120000000000000000 /* AppDelegate.m */,
+				D84C3ED20000000000000000 /* CalendarVC.m */,
+				42E5F31E0000000000000000 /* CreateCalendarEventVC.m */,
+				BBC3D9E20000000000000000 /* CreateNotesVC.m */,
+				5F6E580E0000000000000000 /* DraftsVC.m */,
+				7BF6BCFE0000000000000000 /* InboxVC.m */,
+				E690714A0000000000000000 /* InvoiceVC.m */,
+				ED4CC44E0000000000000000 /* LoginVC.m */,
+				512A25960000000000000000 /* MailDetailsCell.m */,
+				987F21EE0000000000000000 /* MailDetailsVC.m */,
+				9F3B74F20000000000000000 /* MenuCell.m */,
+				AD7FA76A0000000000000000 /* MenuHeader.m */,
+				CA080C5A0000000000000000 /* MultiSelectionDialog.m */,
+				265D8E2E0000000000000000 /* NotesCell.m */,
+				6DB28A860000000000000000 /* SentVC.m */,
+				746EDD8A0000000000000000 /* SettingsVc.m */,
+				F4D4A3C20000000000000000 /* TrashVC.m */,
+				FB90F6C60000000000000000 /* ViewController.m */,
+				34A1C0A60000000000000000 /* ViewNotesVC.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFF1DC6E0000000000000000 /* LucidX.iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5399CD470000000000000000 /* Build configuration list for PBXNativeTarget "LucidX.iOS" */;
+			buildPhases = (
+				D2D49C000000000000000000 /* Sources */,
+				C8B2FE880000000000000000 /* Frameworks */,
+				3286DCAD0000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LucidX.iOS";
+			productName = "LucidX.iOS";
+			productReference = 7605F66A0000000000000000 /* LucidX.iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C773C4E0000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3C846CD20000000000000000 /* Build configuration list for PBXProject "LucidX.iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				fr,
+			);
+			mainGroup = 3E32BBCA0000000000000000;
+			productRefGroup = 6C5D7CB40000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFF1DC6E0000000000000000 /* LucidX.iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3286DCAD0000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655F1EA20000000000000000 /* Assets.xcassets in Resources */,
+				DE3D05660000000000000000 /* Images.xcassets in Resources */,
+				571AEC2A0000000000000000 /* LaunchScreen.storyboard in Resources */,
+				48D6B9B20000000000000000 /* Main.storyboard in Resources */,
+				C1B4A0760000000000000000 /* LoginVC.xib in Resources */,
+				3A92873A0000000000000000 /* SettingsVc.xib in Resources */,
+				B3706DFE0000000000000000 /* MailDetailsCell.xib in Resources */,
+				2C4E54C20000000000000000 /* CalendarVC.xib in Resources */,
+				A52C3B860000000000000000 /* DraftsVC.xib in Resources */,
+				1E0A224A0000000000000000 /* InvoiceVC.xib in Resources */,
+				96E8090E0000000000000000 /* SentVC.xib in Resources */,
+				FC5EFD200000000000000000 /* TrashVC.xib in Resources */,
+				88A3D6960000000000000000 /* MenuCell.xib in Resources */,
+				181BD5A00000000000000000 /* MenuHeader.xib in Resources */,
+				7A5FA41E0000000000000000 /* InboxVC.xib in Resources */,
+				F33D8AE20000000000000000 /* MailDetailsVC.xib in Resources */,
+				6C1B71A60000000000000000 /* ViewNotesVC.xib in Resources */,
+				E4F9586A0000000000000000 /* NotesCell.xib in Resources */,
+				5DD73F2E0000000000000000 /* CreateNotesVC.xib in Resources */,
+				D6B525F20000000000000000 /* CreateCalendarEventVC.xib in Resources */,
+				4F930CB60000000000000000 /* Info.plist in Resources */,
+				C870F37A0000000000000000 /* Entitlements.plist in Resources */,
+				CFC6B0C60000000000000000 /* Localizable.strings in Resources */,
+				414EDA3E0000000000000000 /* MultiSelectionDialog.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2D49C000000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2CC1020000000000000000 /* MailDetailsVC.h in Sources */,
+				330AA7C60000000000000000 /* MailDetailsVC.m in Sources */,
+				24C6754E0000000000000000 /* InboxVC.h in Sources */,
+				9DA45C120000000000000000 /* InboxVC.m in Sources */,
+				168242D60000000000000000 /* TrashVC.h in Sources */,
+				F9F9DDE60000000000000000 /* TrashVC.m in Sources */,
+				72D7C4AA0000000000000000 /* SentVC.h in Sources */,
+				EBB5AB6E0000000000000000 /* SentVC.m in Sources */,
+				649392320000000000000000 /* InvoiceVC.h in Sources */,
+				DD7178F60000000000000000 /* InvoiceVC.m in Sources */,
+				564F5FBA0000000000000000 /* DraftsVC.h in Sources */,
+				CF2D467E0000000000000000 /* DraftsVC.m in Sources */,
+				C0E914060000000000000000 /* CalendarVC.h in Sources */,
+				2B82C8520000000000000000 /* CalendarVC.m in Sources */,
+				A460AF160000000000000000 /* MailDetailsCell.h in Sources */,
+				1D3E95DA0000000000000000 /* MailDetailsCell.m in Sources */,
+				B409D8460000000000000000 /* MultiSelectionDialog.h in Sources */,
+				2CE7BF0A0000000000000000 /* MultiSelectionDialog.m in Sources */,
+				A5C5A5CE0000000000000000 /* CreateCalendarEventVC.h in Sources */,
+				1EA38C920000000000000000 /* CreateCalendarEventVC.m in Sources */,
+				105F5A1A0000000000000000 /* CreateNotesVC.h in Sources */,
+				7AF90E660000000000000000 /* CreateNotesVC.m in Sources */,
+				F3D6F52A0000000000000000 /* ViewNotesVC.h in Sources */,
+				E592C2B20000000000000000 /* ViewNotesVC.m in Sources */,
+				D74E903A0000000000000000 /* MenuHeader.h in Sources */,
+				502C76FE0000000000000000 /* MenuHeader.m in Sources */,
+				41E844860000000000000000 /* NotesCell.h in Sources */,
+				BAC62B4A0000000000000000 /* NotesCell.m in Sources */,
+				33A4120E0000000000000000 /* MenuCell.h in Sources */,
+				AC81F8D20000000000000000 /* MenuCell.m in Sources */,
+				255FDF960000000000000000 /* ViewController.h in Sources */,
+				171BAD1E0000000000000000 /* ViewController.m in Sources */,
+				8FF993E20000000000000000 /* SettingsVc.h in Sources */,
+				8D77AA600000000000000000 /* SettingsVc.m in Sources */,
+				81B5616A0000000000000000 /* LoginVC.h in Sources */,
+				FA93482E0000000000000000 /* LoginVC.m in Sources */,
+				73712EF20000000000000000 /* AppDelegate.h in Sources */,
+				652CFC7A0000000000000000 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		797BDA4F0000000000000000 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2802CE60000000000000000 /* Base */,
+				3B5E13AA0000000000000000 /* fr */,
+			);
+			name = "Localizable.strings";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81E783920000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		73A3511A0000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "LucidX.iOS";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C846CD20000000000000000 /* Build configuration list for PBXProject "LucidX.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81E783920000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		5399CD470000000000000000 /* Build configuration list for PBXNativeTarget "LucidX.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73A3511A0000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C773C4E0000000000000000 /* Project object */;
+}

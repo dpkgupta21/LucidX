@@ -13,6 +13,8 @@ namespace LucidX.iOS.CustomCells
 
 		CrmNotesResponse Data;
 
+		CalendarEventResponse CalendarData;
+
 		protected NotesCell(IntPtr handle) : base(handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
@@ -21,6 +23,16 @@ namespace LucidX.iOS.CustomCells
 		public void ConfigureCell(CrmNotesResponse model)
 		{
 			Data = model;
+			IBDateTimeLbl.Text = Data.CreatedDate.ToString("dd-MMM");
+			IBNotesTitleLbl.Text = Data.NotesSubject;
+			IBTitleLbl.Text = Data.NotesSubject.ToCharArray()[0].ToString();
+			IBDescLbl.Text = Data.NotesDetail;
+			this.SelectionStyle = UITableViewCellSelectionStyle.None;
+		}
+
+		public void ConfigureCell(CalendarEventResponse model)
+		{
+			CalendarData = model;
 			IBDateTimeLbl.Text = Data.CreatedDate.ToString("dd-MMM");
 			IBNotesTitleLbl.Text = Data.NotesSubject;
 			IBTitleLbl.Text = Data.NotesSubject.ToCharArray()[0].ToString();

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+ 
+
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_above="@+id/linear_btn"
+      android:padding="10dp">
+
+    <LucidX.Droid.Source.CustomViews.CustomTextView
+        android:id="@+id/txt_order_date_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Date"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <LucidX.Droid.Source.CustomViews.CustomTextView
+        android:id="@+id/txt_order_date_val"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_order_date_lbl"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/edittextbg_boundary"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <Spinner
+        android:id="@+id/spin_customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_order_date_val"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/spinner_dropdown" />
+
+    <Spinner
+        android:id="@+id/spin_currency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spin_customer"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/spinner_dropdown" />
+
+
+    <LucidX.Droid.Source.CustomViews.CustomTextView
+        android:id="@+id/txt_order_name_lbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spin_currency"
+        android:layout_marginTop="15dp"
+        android:text="Order Name"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <LucidX.Droid.Source.CustomViews.CustomEditText
+        android:id="@+id/txt_order_val"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_order_name_lbl"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/edittextbg_boundary"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+  </RelativeLayout>
+
+  <LinearLayout
+      android:id="@+id/linear_btn"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:padding="10dp"
+      android:weightSum="2">
+
+
+    <LucidX.Droid.Source.CustomViews.CustomButton
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/btn_color_selector"
+        android:text="Next"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+  </LinearLayout>
+</RelativeLayout>

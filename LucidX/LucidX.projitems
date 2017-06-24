@@ -12,6 +12,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Constants\WebserviceConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AccountCodeAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AddCalendarEventsAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AccountOrdersAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\OrdersAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\CalendarEventsAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\DeleteEventsAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\DeleteNotesAPIParams.cs" />
@@ -25,7 +27,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\LoginAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\ShowNotesTypeAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\RefUsersAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\AccountOrdersResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\AccountCodesResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\OrdersResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\EntityCodesResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\CrmNotesResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\EmailCountResponse.cs" />
@@ -39,10 +43,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Webservices\WebServiceHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Webservices\WebServiceMethods.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\Utilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\PrivacyCode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\ActionType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
     <Folder Include="$(MSBuildThisFileDirectory)Webservices\" />
     <Folder Include="$(MSBuildThisFileDirectory)Utils\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Enums\" />
   </ItemGroup>
 </Project>

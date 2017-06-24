@@ -51,6 +51,10 @@ namespace LucidX.Webservices
                         {
                             loginInfo.Name = childNode.InnerText.ToString();
                         }
+                        else if (i == 2)
+                        {
+                            loginInfo.UserCompCode = childNode.InnerText.ToString();
+                        }
                         else if (i == 6)
                         {
                             loginInfo.UserEmail = childNode.InnerText.ToString();
@@ -175,31 +179,33 @@ namespace LucidX.Webservices
                 var response = await WebServiceHandler.GetWebserviceResult(WebserviceConstants.SHOW_INBOX_EMAILS_URL,
                     HttpMethod.Post, param) as FinalResponse;
 
-                List<EmailResponse> emailList = null;
+                List<EmailResponse> emailList = new List<EmailResponse>();
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     DataSet resultIds = response.ResultDs;
                     foreach (DataTable dt in resultIds.Tables)
                     {
-                        emailList = (from DataRow dr in dt.Rows
-                                     select new EmailResponse()
-                                     {
-                                         MailId = dr["MailId"].ToString(),
-                                         DisplayDate = dr["DisplayDate"].ToString(),
-                                         myGroup = dr["myGroup"].ToString(),
-                                         Received = dr["Received"].ToString(),
-                                         FolderName = dr["FolderName"].ToString(),
-                                         AccountCode = dr["AccountCode"].ToString(),
-                                         Sender = dr["Sender"].ToString(),
-                                         SenderName = dr["SenderName"].ToString(),
-                                         Subject = dr["Subject"].ToString(),
-                                         eMailTypeId = Convert.ToInt32(dr["eMailTypeId"]),
-                                         Unread = Convert.ToBoolean(dr["Unread"]),
-                                         Important = Convert.ToBoolean(dr["Important"]),
-                                         Attachment = Convert.ToInt32(dr["Attachment"]),
-                                         SenderEmail = dr["SenderEmail"].ToString()
-                                     }).ToList();
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            EmailResponse emailResponse = new EmailResponse();
+                            emailResponse.MailId = dt.Columns.Contains("MailId") ? dr["MailId"].ToString() : "";
+                            emailResponse.DisplayDate = dt.Columns.Contains("DisplayDate") ? dr["DisplayDate"].ToString() : "";
+                            emailResponse.myGroup = dt.Columns.Contains("myGroup") ? dr["myGroup"].ToString() : "";
+                            emailResponse.Received = dt.Columns.Contains("Received") ? dr["Received"].ToString() : "";
+                            emailResponse.FolderName = dt.Columns.Contains("FolderName") ? dr["FolderName"].ToString() : "";
+                            emailResponse.AccountCode = dt.Columns.Contains("AccountCode") ? dr["AccountCode"].ToString() : "";
+                            emailResponse.Sender = dt.Columns.Contains("Sender") ? dr["Sender"].ToString() : "";
+                            emailResponse.SenderName = dt.Columns.Contains("SenderName") ? dr["SenderName"].ToString() : "";
+                            emailResponse.Subject = dt.Columns.Contains("Subject") ? dr["Subject"].ToString() : "";
+                            emailResponse.eMailTypeId = dt.Columns.Contains("eMailTypeId") ? Convert.ToInt32(dr["eMailTypeId"]) : 0;
+                            emailResponse.Unread = dt.Columns.Contains("Unread") ? Convert.ToBoolean(dr["Unread"]) : false;
+                            emailResponse.Important = dt.Columns.Contains("Important") ? Convert.ToBoolean(dr["Important"]) : false;
+                            emailResponse.Attachment = dt.Columns.Contains("Attachment") ? Convert.ToInt32(dr["Attachment"]) : 0;
+                            emailResponse.SenderEmail = dt.Columns.Contains("SenderEmail") ? dr["SenderEmail"].ToString() : "";
+
+                            emailList.Add(emailResponse);
+                        }
                     }
                 }
 
@@ -398,7 +404,7 @@ namespace LucidX.Webservices
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     //int notesId = response.ResultDoc;
-                    return -1;
+                    return 1;
                 }
                 else
                 {
@@ -576,23 +582,23 @@ namespace LucidX.Webservices
                     foreach (DataTable dt in resultIds.Tables)
                     {
                         eventResponseList = (from DataRow dr in dt.Rows
-                                         select new CalendarEventResponse()
-                                         {
-                                             EntryId = dr["EntryId"].ToString(),
-                                             CompCode = dr["CompCode"].ToString(),
-                                             AccountCode = dr["AccountCode"].ToString(),
-                                             NotesTypeId = dr["NotesTypeId"].ToString(),
-                                             EntryTypeId =Convert.ToInt32( dr["EntryTypeId"].ToString()),
-                                             DateStart =Convert.ToDateTime( dr["DateStart"].ToString()),
-                                             DateEnd = Convert.ToDateTime(dr["DateEnd"].ToString()),
-                                             Subject = dr["Subject"].ToString(),
-                                             Details = dr["Details"].ToString(),
-                                             AssignedTo = dr["AssignedTo"].ToString(),
-                                             Completed = dr["Completed"].ToString(),
-                                             IsPublic = Convert.ToBoolean(dr["IsPublic"].ToString()),
-                                             AccountId = dr["Details"].ToString()
+                                             select new CalendarEventResponse()
+                                             {
+                                                 EntryId = dr["EntryId"].ToString(),
+                                                 CompCode = dr["CompCode"].ToString(),
+                                                 AccountCode = dr["AccountCode"].ToString(),
+                                                 NotesTypeId = dr["NotesTypeId"].ToString(),
+                                                 EntryTypeId = Convert.ToInt32(dr["EntryTypeId"].ToString()),
+                                                 DateStart = Convert.ToDateTime(dr["DateStart"].ToString()),
+                                                 DateEnd = Convert.ToDateTime(dr["DateEnd"].ToString()),
+                                                 Subject = dr["Subject"].ToString(),
+                                                 Details = dr["Details"].ToString(),
+                                                 AssignedTo = dr["AssignedTo"].ToString(),
+                                                 Completed = dr["Completed"].ToString(),
+                                                 IsPublic = Convert.ToBoolean(dr["IsPublic"].ToString()),
+                                                 AccountId = dr["Details"].ToString()
 
-                                         }).ToList();
+                                             }).ToList();
                     }
                 }
 
@@ -668,6 +674,114 @@ namespace LucidX.Webservices
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+
+
+
+        /// <summary>
+        /// Returns list of Orders
+        /// </summary>
+
+        /// <returns></returns>
+        public async static Task<List<OrdersResponse>> GetOrders(
+            string processedBy,
+            string startDate,
+            string endDate)
+        {
+            try
+            {
+                OrdersAPIParams param = new OrdersAPIParams
+                {
+                    startDate = startDate,
+                    endDate = endDate,
+                    processedBy = processedBy,
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+                };
+                var response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.GET_LEDGER_ORDERS, HttpMethod.Post, param)
+                    as FinalResponse;
+
+                List<OrdersResponse> orderResponseList = null;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    DataSet resultIds = response.ResultDs;
+                    foreach (DataTable dt in resultIds.Tables)
+                    {
+                        orderResponseList = (from DataRow dr in dt.Rows
+                                             select new OrdersResponse()
+                                             {
+                                                 CompCode = Convert.ToInt32(dr["CompCode"].ToString()),
+                                                 AccountCode = dr["AccountCode"].ToString(),
+                                                 AccountId = Convert.ToInt32(dr["AccountId"].ToString()),
+                                                 LineDescription = dr["LineDescription"].ToString(),
+                                                 JournalNo = Convert.ToInt32(dr["JournalNo"].ToString()),
+                                                 JournalLine = Convert.ToInt32(dr["JournalLine"].ToString()),
+                                                 TransactionReference = dr["TransactionReference"].ToString(),
+                                                 BaseAmount = Convert.ToDecimal(dr["BaseAmount"].ToString()),
+                                                 AccountName = dr["AccountName"].ToString(),
+                                                 isActualCurrency = Convert.ToBoolean(dr["isActualCurrency"].ToString()),
+                                                 TransDate = dr["TransDate"].ToString()
+                                             }).ToList();
+                    }
+                }
+
+                return orderResponseList;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// Returns list of account orders
+        /// </summary>
+
+        /// <returns></returns>
+        public async static Task<List<AccountOrdersResponse>> GetAccountForOrders()
+        {
+            try
+            {
+                AccountOrdersAPIParams param = new AccountOrdersAPIParams
+                {
+                    accountTypeID = 6,
+                    connectionName = WebserviceConstants.CONNECTION_NAME
+                };
+                var response = await WebServiceHandler.GetWebserviceResult(
+                    WebserviceConstants.GET_ACCOUNT_FOR_ORDERS, HttpMethod.Post, param)
+                    as FinalResponse;
+
+                List<AccountOrdersResponse> accountOrderResponseList = null;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    DataSet resultIds = response.ResultDs;
+                    foreach (DataTable dt in resultIds.Tables)
+                    {
+                        accountOrderResponseList = (from DataRow dr in dt.Rows
+                                                    select new AccountOrdersResponse()
+                                                    {
+                                                        CompCode = dr["CompCode"].ToString(),
+                                                        AccountCode = dr["AccountCode"].ToString(),
+                                                        AccountId = Convert.ToInt32(dr["AccountID"].ToString()),
+                                                        AccountName = dr["AccountName"].ToString(),
+                                                        StateID = Convert.ToInt32(dr["StateID"].ToString()),
+                                                        CountryCode = dr["CountryCode"].ToString(),
+                                                        City = dr["City"].ToString(),
+                                                        ContactPerson = dr["ContactPerson"].ToString(),
+                                                        Telephone = dr["Telephone"].ToString(),
+                                                    }).ToList();
+                    }
+                }
+
+                return accountOrderResponseList;
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
     }

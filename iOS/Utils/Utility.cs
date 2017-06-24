@@ -95,6 +95,11 @@ namespace IosUtils
 			textField.Layer.MasksToBounds = true;
 		}
 
+		public static void setcornerRadius(UIView vw)
+		{
+			vw.Layer.CornerRadius = Utility.cornerRadious;
+		}
+
 		/// <summary>
 		/// Add the shadow to view.
 		/// </summary>

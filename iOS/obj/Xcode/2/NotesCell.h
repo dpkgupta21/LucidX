@@ -10,18 +10,18 @@
 
 
 @interface NotesCell : UITableViewCell {
-	UILabel *_IBDateLbl;
-	UIButton *_IBEditBtn;
-	UILabel *_IBNameLbl;
-	UIButton *_IBViewBtn;
+	UILabel *_IBDateTimeLbl;
+	UILabel *_IBDescLbl;
+	UILabel *_IBNotesTitleLbl;
+	UILabel *_IBTitleLbl;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel *IBDateLbl;
+@property (nonatomic, retain) IBOutlet UILabel *IBDateTimeLbl;
 
-@property (nonatomic, retain) IBOutlet UIButton *IBEditBtn;
+@property (nonatomic, retain) IBOutlet UILabel *IBDescLbl;
 
-@property (nonatomic, retain) IBOutlet UILabel *IBNameLbl;
+@property (nonatomic, retain) IBOutlet UILabel *IBNotesTitleLbl;
 
-@property (nonatomic, retain) IBOutlet UIButton *IBViewBtn;
+@property (nonatomic, retain) IBOutlet UILabel *IBTitleLbl;
 
 @end

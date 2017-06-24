@@ -2,13 +2,13 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>/Users/DeepakGupta/Projects/Lucid Git/LucidX/Droid/obj/Debug/__library_projects__/Plugin.Connectivity/library_project_imports/res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\__library_projects__\Plugin.Connectivity\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
-    <ResolvedAssetDirectory>obj/Debug/__library_projects__/Plugin.Connectivity/library_project_imports/assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\Plugin.Connectivity\library_project_imports\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>/Users/DeepakGupta/Projects/Lucid Git/LucidX/Droid/obj/Debug/__library_projects__/Plugin.Connectivity.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\__library_projects__\Plugin.Connectivity.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

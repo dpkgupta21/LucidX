@@ -8,6 +8,7 @@ namespace LucidX.ResponseModels
     {
         public string UserId{ get; set; }
         public string Name { get; set; }
+        public string UserCompCode { get; set; }
         public string UserEmail { get; set; }
         public bool IsAuthenticate { get; set; }
 

@@ -9,4 +9,25 @@
 
 @implementation CalendarVC
 
+@synthesize IBAssignedDoneBar = _IBAssignedDoneBar;
+@synthesize IBAssignedDoneBtn = _IBAssignedDoneBtn;
+@synthesize IBAssignedToPicker = _IBAssignedToPicker;
+@synthesize IBAssignedToTxt = _IBAssignedToTxt;
+@synthesize IBCalendarTypeTxt = _IBCalendarTypeTxt;
+@synthesize IBContntTbl = _IBContntTbl;
+@synthesize IBDateTimeDoneBar = _IBDateTimeDoneBar;
+@synthesize IBDateTimeDoneBttn = _IBDateTimeDoneBttn;
+@synthesize IBDateTimePicker = _IBDateTimePicker;
+@synthesize IBEmptyLbl = _IBEmptyLbl;
+@synthesize IBFromDateTxt = _IBFromDateTxt;
+@synthesize IBSearchBtn = _IBSearchBtn;
+@synthesize IBToDateTxt = _IBToDateTxt;
+@synthesize IBToLbl = _IBToLbl;
+
+- (IBAction)IBAssignedDoneClicked:(id)sender {
+}
+
+- (IBAction)IBDateTimeDoneClicked:(id)sender {
+}
+
 @end

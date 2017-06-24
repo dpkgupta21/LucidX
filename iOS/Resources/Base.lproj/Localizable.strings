@@ -75,3 +75,8 @@
 "LSAccountCodeEmpty"="Select a account code";
 "LSFromDateEmpty"="Select a from date";
 "LSToDateEmpty"="Select a to date";
+"LSNotesHeaderTitle"="Notes Header";
+"LSNotesDetailsTitle"="Notes";
+"LSPublicTitle"=" Public";
+"LSMeTitle"=" Me Only";
+"LSSelectTitle"=" Select";

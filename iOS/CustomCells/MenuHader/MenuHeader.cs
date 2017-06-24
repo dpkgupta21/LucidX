@@ -26,12 +26,13 @@ namespace LucidX.iOS
 			IBTitleLbl.Text = Title;
 			this.Tag = section;
 			IsSelected = expnaded;
+			IBDropImg.Highlighted = expnaded;
 		}
 
 		partial void IBHeaderClicked(Foundation.NSObject sender)
 		{
 			IsSelected = !IsSelected;
-			IBDropImg.Image = IsSelected ? UIImage.FromBundle("") : UIImage.FromBundle("");
+			IBDropImg.Highlighted = IsSelected;
 			if (Clicked != null)
 			{
 				Clicked(this, IsSelected);

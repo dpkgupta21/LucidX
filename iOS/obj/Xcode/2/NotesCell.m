@@ -9,9 +9,9 @@
 
 @implementation NotesCell
 
-@synthesize IBDateLbl = _IBDateLbl;
-@synthesize IBEditBtn = _IBEditBtn;
-@synthesize IBNameLbl = _IBNameLbl;
-@synthesize IBViewBtn = _IBViewBtn;
+@synthesize IBDateTimeLbl = _IBDateTimeLbl;
+@synthesize IBDescLbl = _IBDescLbl;
+@synthesize IBNotesTitleLbl = _IBNotesTitleLbl;
+@synthesize IBTitleLbl = _IBTitleLbl;
 
 @end

@@ -105,7 +105,7 @@ namespace LucidX.Droid.Source.Fragments
                 searchView.QueryTextChange += (sender, args) =>
                 {
                     string search = args.NewText;
-
+                    mAdapter.GetFilteredList(search);
                     //if (string.IsNullOrEmpty(search))
                     //{
                     //    adapter.ResetSearch();

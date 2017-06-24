@@ -30,7 +30,9 @@
   <string name="alert_ok_btn">Ok</string>
   <string name="alert_message_not_less_than_current_date">Cannot less than current date</string>
   <string name="alert_message_not_less_than_from_date">Cannot less than from date</string>
-
+  <string name="alert_message_fill_all_Details">Please fill all details</string>
+  <string name="alert_message_delete_notes_confirmation">Do you want to delete?</string>
+  
   <!--Side menu options -->
   <string name="menu_inbox">Inbox</string>
   <string name="menu_draft">Draft</string>
@@ -58,6 +60,8 @@
   
   <!--Progress dialog title or message -->
   <string name="loading">Loading...</string>
+  <string name="saving_message">Saving...</string>
+  <string name="processing_message">Processing...</string>
 
 
   <!-- Login Screen-->

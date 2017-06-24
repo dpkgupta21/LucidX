@@ -197,6 +197,32 @@
     <ImageAsset Include="Resources\Images.xcassets\DataBaseSelected.imageset\database-active%403x.png" />
     <ImageAsset Include="Resources\Images.xcassets\DataBaseUnSelected.imageset\radio%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\DataBaseUnSelected.imageset\radio%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Search.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Search.imageset\search.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Search.imageset\search%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Search.imageset\search%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Add.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Add.imageset\add.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Add.imageset\add%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Add.imageset\add%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Delete.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Delete.imageset\delete.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Delete.imageset\delete%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Delete.imageset\delete%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\RadioUnselect.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\RadioSelect.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\RadioUnselect.imageset\radio-button-off.png" />
+    <ImageAsset Include="Resources\Images.xcassets\RadioUnselect.imageset\radio-button-off%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\RadioSelect.imageset\radio-button-on.png" />
+    <ImageAsset Include="Resources\Images.xcassets\RadioSelect.imageset\radio-button-on%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\DropArrow.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\SideArrow.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\DropArrow.imageset\arrow-drop-down.png" />
+    <ImageAsset Include="Resources\Images.xcassets\DropArrow.imageset\arrow-drop-down%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\DropArrow.imageset\arrow-drop-down%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\SideArrow.imageset\arrow-drop-down.png" />
+    <ImageAsset Include="Resources\Images.xcassets\SideArrow.imageset\arrow-drop-down%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\SideArrow.imageset\arrow-drop-down%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -240,6 +266,14 @@
     <Folder Include="ViewController\Mail\Inbox\" />
     <Folder Include="ViewController\Mail\MailDetails\" />
     <Folder Include="CustomCells\NotesCell\" />
+    <Folder Include="Resources\Images.xcassets\Search.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Add.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Delete.imageset\" />
+    <Folder Include="Resources\Images.xcassets\RadioUnselect.imageset\" />
+    <Folder Include="Resources\Images.xcassets\RadioSelect.imageset\" />
+    <Folder Include="Resources\Images.xcassets\DropArrow.imageset\" />
+    <Folder Include="Resources\Images.xcassets\SideArrow.imageset\" />
+    <Folder Include="MultiSelection\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -259,6 +293,8 @@
     <InterfaceDefinition Include="ViewController\Notes\ViewNotesVC.xib" />
     <InterfaceDefinition Include="CustomCells\NotesCell\NotesCell.xib" />
     <InterfaceDefinition Include="ViewController\Notes\CreateNotesVC.xib" />
+    <InterfaceDefinition Include="ViewController\Calendar\CreateCalendarEventVC.xib" />
+    <InterfaceDefinition Include="MultiSelection\MultiSelectionDialog.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -335,6 +371,15 @@
     <Compile Include="ViewController\Notes\CreateNotesVC.cs" />
     <Compile Include="ViewController\Notes\CreateNotesVC.designer.cs">
       <DependentUpon>CreateNotesVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Calendar\CreateCalendarEventVC.cs" />
+    <Compile Include="ViewController\Calendar\CreateCalendarEventVC.designer.cs">
+      <DependentUpon>CreateCalendarEventVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickerModels\UserRefPicker.cs" />
+    <Compile Include="MultiSelection\MultiSelectionDialog.cs" />
+    <Compile Include="MultiSelection\MultiSelectionDialog.designer.cs">
+      <DependentUpon>MultiSelectionDialog.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

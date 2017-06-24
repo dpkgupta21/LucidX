@@ -32,6 +32,8 @@ namespace LucidX.Constants
         public const string GET_CALENDAR_EVENTS= "ModDataGridsSvc/ShowCrmNotes?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
         public const string SAVE_CALENDAR_EVENTS = "ModDataGridsSvc/SaveCrmNotes?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
         public const string DELETE_EVENTS_URL = "ModDataGridsSvc/DeleteCrmNotes?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string GET_LEDGER_ORDERS = "ModDataGridsSvc/ShowLedgerOrders?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
+        public const string GET_ACCOUNT_FOR_ORDERS = "ModDataGridsSvc/ShowAccountsForOrders?token=NixpkcMC4gKP3OIQA8hBJqv1ByZ4c+ffMYLb5mfDwFeWEQ7XEReLXA==";
 
     }
 }

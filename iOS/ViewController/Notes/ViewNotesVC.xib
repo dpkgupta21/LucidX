@@ -96,7 +96,7 @@
                         <constraint firstAttribute="height" constant="30" id="civ-S2-8ms"/>
                         <constraint firstAttribute="width" secondItem="m1D-Nm-mjG" secondAttribute="height" id="xcJ-f3-VEf"/>
                     </constraints>
-                    <state key="normal" image="Refresh"/>
+                    <state key="normal" image="Search"/>
                     <connections>
                         <action selector="IBSearchBtnClicked:" destination="-1" eventType="touchUpInside" id="fst-B0-bkc"/>
                     </connections>
@@ -230,6 +230,6 @@
         </toolbar>
     </objects>
     <resources>
-        <image name="Refresh" width="24" height="24"/>
+        <image name="Search" width="32" height="32"/>
     </resources>
 </document>

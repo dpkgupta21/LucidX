@@ -4,6 +4,7 @@ using Android.App;
 using Object = Java.Lang.Object;
 using System.Collections.Generic;
 using LucidX.ResponseModels;
+using LucidX.Droid.Source.Utilities;
 
 namespace LucidX.Droid.Source.Adapters
 {
@@ -12,14 +13,16 @@ namespace LucidX.Droid.Source.Adapters
         private LayoutInflater mLayoutInflater;
         private List<CrmNotesResponse> notesList;
         private Activity mActivity;
+        private List<CrmNotesResponse> filteredList;
 
 
         private class ViewHolder : Object
         {
             public TextView txt_notes_date { get; set; }
             public TextView txt_notes { get; set; }
-     
-
+            public TextView txt_img_lbl { get; set; }
+            
+            public TextView txt_notes_detail { get; set; }
         }
 
         public NotesListAdapter(List<CrmNotesResponse> notesList, Activity mActivity)
@@ -28,6 +31,8 @@ namespace LucidX.Droid.Source.Adapters
                  .GetSystemService(Activity.LayoutInflaterService);
             this.notesList = notesList;
             this.mActivity = mActivity;
+            filteredList = new List<CrmNotesResponse>();
+            filteredList.AddRange(notesList);
         }
 
 
@@ -38,7 +43,6 @@ namespace LucidX.Droid.Source.Adapters
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-
             ViewHolder holder = null;
             int type = GetItemViewType(position);
             if (convertView == null)
@@ -51,8 +55,10 @@ namespace LucidX.Droid.Source.Adapters
                     (Resource.Id.txt_notes_date);
                 holder.txt_notes = convertView.FindViewById<TextView>
                     (Resource.Id.txt_notes);
-              
-
+                holder.txt_notes_detail = convertView.FindViewById<TextView>
+                   (Resource.Id.txt_notes_detail);
+                holder.txt_img_lbl = convertView.FindViewById<TextView>
+                 (Resource.Id.txt_img_lbl);
                 convertView.Tag = holder;
             }
             else
@@ -60,9 +66,11 @@ namespace LucidX.Droid.Source.Adapters
                 holder = (ViewHolder)convertView.Tag;
             }
 
-            holder.txt_notes.Text = notesList[position].NotesHeader;
-            holder.txt_notes_date.Text = notesList[position].CreatedDate.ToShortDateString();
-
+            holder.txt_notes.Text = notesList[position].NotesSubject;
+            string date= notesList[position].CreatedDate.ToString(UtilityDroid.DISPLAY_DATE_FORMAT);
+            holder.txt_notes_date.Text = date;
+            holder.txt_notes_detail.Text = notesList[position].NotesDetail;
+            holder.txt_img_lbl.Text= notesList[position].NotesSubject.Substring(0, 1);
 
             return convertView;
         }
@@ -83,6 +91,27 @@ namespace LucidX.Droid.Source.Adapters
             }
         }
 
+        public void GetFilteredList(string text)
+        {
+            notesList.Clear();
+            if (text.Length == 0)
+            {
+                notesList.AddRange(filteredList);
+            }
+            else
+            {
+                foreach (CrmNotesResponse notesResponseDTO in filteredList)
+                {
+                    if (notesResponseDTO.NotesSubject.ToUpper()
+                            .Contains(text.ToUpper()))
+                    {
+                        notesList.Add(notesResponseDTO);
+                    }
+                }
+            }
+
+            NotifyDataSetChanged();
+        }
     }
 }
 

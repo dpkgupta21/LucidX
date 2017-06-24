@@ -7,7 +7,9 @@ namespace LucidX.Droid.Source.CustomSpinner.Model
         public string Id { get; set; }
         public string TEXT { get; set; }
         public bool STATE { get; set; }
+        public string EXTRA_TEXT { get; set; }
 
-      
+
+
     }
 }

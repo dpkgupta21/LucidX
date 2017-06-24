@@ -100,7 +100,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            android:padding="5dp"
+            android:background="@drawable/edittextbg_boundary"
+            android:padding="3dp"
+            android:layout_marginLeft="10dp"
             android:src="@android:drawable/ic_menu_search" />
 
     </RelativeLayout>

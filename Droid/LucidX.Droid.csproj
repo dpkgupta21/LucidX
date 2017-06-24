@@ -18,7 +18,6 @@
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <AndroidTlsProvider></AndroidTlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,8 +40,14 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>False</DebugSymbols>
@@ -57,7 +62,13 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
@@ -83,7 +94,13 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <DebugSymbols>True</DebugSymbols>
@@ -97,8 +114,14 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     <Debugger>Xamarin</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -173,11 +196,11 @@
     <Compile Include="Source\Adapters\InboxAdapter.cs" />
     <Compile Include="Source\Adapters\InfiniteScrollListener.cs" />
     <Compile Include="Source\Adapters\AddOrderAdapter.cs" />
+    <Compile Include="Source\Adapters\CalendarEventListAdapter.cs" />
     <Compile Include="Source\Adapters\SideMenuListExpandableAdapter.cs" />
     <Compile Include="Source\Adapters\NotesListAdapter.cs" />
     <Compile Include="Source\Adapters\OrderAdapter.cs" />
     <Compile Include="Source\Adapters\MenuAdapter.cs" />
-    <Compile Include="Source\Adapters\CalendarListExpandableAdapter.cs" />
     <Compile Include="Source\CustomSpinner\Adapter\SpinnerAdapter.cs" />
     <Compile Include="Source\CustomSpinner\Model\SpinnerItemModel.cs" />
     <Compile Include="Source\CustomViews\CustomCheckBox.cs" />
@@ -189,6 +212,7 @@
     <Compile Include="Source\CustomViews\CustomTextView.cs" />
     <Compile Include="Source\CustomDialogFragment\Adapter\CheckboxDialogAdapter.cs" />
     <Compile Include="Source\CustomDialogFragment\CustomDialogFrag.cs" />
+    <Compile Include="Source\Fragments\AddOrderFirstFragment.cs" />
     <Compile Include="Source\Fragments\UserListDialogFrag.cs" />
     <Compile Include="Source\Fragments\OrderAddDialogFrag.cs" />
     <Compile Include="Source\Fragments\NotesListFragment.cs" />
@@ -199,7 +223,6 @@
     <Compile Include="Source\Models\ChildMenuModel.cs" />
     <Compile Include="Source\Models\OrderAddModel.cs" />
     <Compile Include="Source\Models\NotesListModel.cs" />
-    <Compile Include="Source\Models\OrderListModel.cs" />
     <Compile Include="Source\Models\GroupMenuModel.cs" />
     <Compile Include="Source\Models\UserListModel.cs" />
     <Compile Include="Source\Models\SideMenuModel.cs" />
@@ -290,6 +313,9 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\spinner_row_item_lay.axml" />
     <AndroidResource Include="Resources\layout\activity_compose_email.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_first_order.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

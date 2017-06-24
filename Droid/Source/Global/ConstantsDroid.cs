@@ -45,7 +45,7 @@ namespace LucidX.Droid.Source.Global
         public static string LANG_ENGLISH_CODE = "English";
 
         public static string LANG_FRENCH_CODE = "French";
-        
+
         /// <summary>
         /// Shared Preference keys
         /// </summary>
@@ -59,6 +59,14 @@ namespace LucidX.Droid.Source.Global
         public static string EMAIL_ID_PREFERENCE = "EmailId";
         public static string EMAIL_COUNT_OBJECT_PREFERENCE = "EmailCountObject";
         public static string LOGIN_RESPONSE_OBJECT_PREFERENCE = "LoginResponseObject";
+
+
+
+        public const int ADD_NOTES_REQUEST_CODE = 1001;
+        public const int NOTES_LIST_REQUEST_CODE = 1002;
+        public const int CALENDAR_LIST_REQUEST_CODE = 1003;
+        public const int ADD_CALENDAR_EVENT_REQUEST_CODE = 1004;
+
 
 
 

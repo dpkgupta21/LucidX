@@ -5,6 +5,8 @@ using Foundation;
 using UIKit;
 using Xamarin.SWRevealViewController;
 using LucidX.iOS.CustomCells;
+using LucidX.iOS.Notes;
+using LucidX.iOS.Calendar;
 
 namespace LucidX.iOS
 {
@@ -12,7 +14,7 @@ namespace LucidX.iOS
 	{
 		public SWRevealViewController revealVC;
 
-		Calendar.CalendarVC calendarVc;
+		CalendarVC calendarVc;
 		public Inbox.InboxVC inboxVc;
 		public Notes.ViewNotesVC notesVC;
 		bool isfirstTime;
@@ -126,8 +128,8 @@ namespace LucidX.iOS
 		#region TableView Delegate and data source methods
 
 		List<int> RowsCount = new List<int> { 4, 2, 5, 4, 0 };
-		bool IsExpanded;
-		int SelectedSection;
+		bool IsExpanded = true;
+		int SelectedSection = 0;
 		List<string> SectionTitle = new List<string>();
 		List<List<string>> RowsTitle = new List<List<string>>() { new List<string>(),
 			new List<string> (),
@@ -151,11 +153,13 @@ namespace LucidX.iOS
 			if (section == SelectedSection)
 			{
 				header.Configure(SectionTitle[(int)section], (int)section, IsExpanded);
+
 			}
 			else
 			{
-				header.Configure(SectionTitle[(int)section], (int)section);
+				header.Configure(SectionTitle[(int)section], (int)section, false);
 			}
+
 
 			header.Clicked -= Header_Clicked;
 			header.Clicked += Header_Clicked;
@@ -172,7 +176,7 @@ namespace LucidX.iOS
 		public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
 			var cell = tableView.DequeueReusableCell(MenuCell.Key) as MenuCell;
-			cell.ConfigureCell(RowsTitle[indexPath.Section][indexPath.Row], null, 0,indexPath == selectedIndex);
+			cell.ConfigureCell(RowsTitle[indexPath.Section][indexPath.Row], null, 0, indexPath == selectedIndex);
 			return cell;
 		}
 
@@ -197,10 +201,7 @@ namespace LucidX.iOS
 			var vw = sender as MenuHeader;
 			IsExpanded = e;
 			SelectedSection = (int)vw.Tag;
-			UIView.Animate(0.5, () =>
-			{
-				this.IBContntTbl.ReloadData();
-			});
+			this.IBContntTbl.ReloadData();
 		}
 
 		[Export("tableView:didSelectRowAtIndexPath:")]
@@ -238,7 +239,12 @@ namespace LucidX.iOS
 			}
 			else if (indexPath.Section == 1)
 			{
-
+				if (indexPath.Row == 0) {
+					if (calendarVc == null) {
+						calendarVc = new CalendarVC();
+					}
+					ShowVC(calendarVc);
+				}
 			}
 			else if (indexPath.Section == 2)
 			{
@@ -258,15 +264,37 @@ namespace LucidX.iOS
 				}
 				else if (indexPath.Row == 1)
 				{
-
+					if (notesVC == null)
+					{
+						notesVC = new Notes.ViewNotesVC();
+						notesVC.revealVC = revealVC;
+					}
+					ShowVC(notesVC);
 				}
 				else if (indexPath.Row == 2)
 				{
-
+					if (notesVC != null)
+					{
+						var createNotesVc = new CreateNotesVC();
+						notesVC.NavigationController.PushViewController(createNotesVc, true);
+						revealVC.RevealToggleAnimated(true);
+					}else if (notesVC == null)
+					{
+						notesVC = new Notes.ViewNotesVC();
+						notesVC.revealVC = revealVC;
+						ShowVC(notesVC);
+						var createNotesVc = new CreateNotesVC();
+						notesVC.NavigationController.PushViewController(createNotesVc, true);
+					}
 				}
 				else if (indexPath.Row == 3)
 				{
-
+					if (notesVC == null)
+					{
+						notesVC = new Notes.ViewNotesVC();
+						notesVC.revealVC = revealVC;
+					}
+					ShowVC(notesVC);
 				}
 
 			}

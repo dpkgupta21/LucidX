@@ -4,13 +4,14 @@ using Android.App;
 using Object = Java.Lang.Object;
 using LucidX.Droid.Source.Models;
 using System.Collections.Generic;
+using LucidX.ResponseModels;
 
 namespace LucidX.Droid.Source.Adapters
 {
-    public class OrderAdapter : BaseAdapter<OrderListModel>
+    public class OrderAdapter : BaseAdapter<OrdersResponse>
     {
         private LayoutInflater mLayoutInflater;
-        private List<OrderListModel> orderList;
+        private List<OrdersResponse> orderList;
         private Activity mActivity;
 
 
@@ -22,7 +23,7 @@ namespace LucidX.Droid.Source.Adapters
 
         }
 
-        public OrderAdapter(List<OrderListModel> orderList, Activity mActivity)
+        public OrderAdapter(List<OrdersResponse> orderList, Activity mActivity)
         {
             mLayoutInflater = (LayoutInflater)mActivity
                  .GetSystemService(Activity.LayoutInflaterService);
@@ -61,6 +62,10 @@ namespace LucidX.Droid.Source.Adapters
                 holder = (ViewHolder)convertView.Tag;
             }
 
+            holder.txt_customer.Text = orderList[position].AccountName;
+            holder.txt_cost.Text = "Amount: "+orderList[position].BaseAmount + "";
+            holder.txt_order_date.Text=  Utils.Utilities.ShowDateInFormat(orderList[position].TransDate);
+
             return convertView;
         }
 
@@ -72,7 +77,7 @@ namespace LucidX.Droid.Source.Adapters
             }
         }
 
-        public override OrderListModel this[int position]
+        public override OrdersResponse this[int position]
         {
             get
             {
