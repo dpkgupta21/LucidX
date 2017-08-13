@@ -39,7 +39,7 @@ namespace LucidX.Droid.Source.Fragments
         /// <summary>
         /// The Orders list object
         /// </summary>
-        private List<OrdersResponse> _ordersList;
+        private List<LedgerOrder> ledgerOrderList;
 
         /// <summary>
         /// The run list adapter
@@ -131,6 +131,7 @@ namespace LucidX.Droid.Source.Fragments
             }
         }
 
+    
 
 
 
@@ -151,7 +152,8 @@ namespace LucidX.Droid.Source.Fragments
             {
                 case Resource.Id.menu_add:
                     // Show Add event screen
-                    mActivity.StartActivity(new Intent(mActivity, typeof(AddOrderFirstActivity)));
+                    Intent intent = new Intent(mActivity, typeof(AddOrderFirstActivity));
+                    mActivity.StartActivityForResult(intent, ConstantsDroid.ORDERS_LIST_REQUEST_CODE);
                     mActivity.OverridePendingTransition(Resource.Animation.animation_enter,
                                 Resource.Animation.animation_leave);
                     break;
@@ -175,9 +177,10 @@ namespace LucidX.Droid.Source.Fragments
         {
             int pos = e.Position;
 
-            string orderObj = JsonConvert.SerializeObject(_ordersList[pos]);
+            string orderObj = JsonConvert.SerializeObject(ledgerOrderList[pos]);
 
             Intent intent = new Intent(mActivity, typeof(AddOrderFirstActivity));
+            intent.PutExtra("isEdit", true);
             intent.PutExtra("orderObj", orderObj);
             mActivity.StartActivity(intent);
 
@@ -191,15 +194,15 @@ namespace LucidX.Droid.Source.Fragments
         /// In case of no events "No Events" will be displayed
         /// </summary>
         /// <param name="CalendarListObj">List of run</param>
-        private void InitailizeOrderListAdapter(List<OrdersResponse> orderList)
+        private void InitailizeOrderListAdapter(List<LedgerOrder> ledgerOrderList)
         {
             try
             {
-                if (orderList != null && orderList.Count > 0)
+                if (ledgerOrderList != null && ledgerOrderList.Count > 0)
                 {
                     listView.Visibility = ViewStates.Visible;
                     txt_no_orders.Visibility = ViewStates.Gone;
-                    mAdapter = new OrderAdapter(orderList, mActivity);
+                    mAdapter = new OrderAdapter(ledgerOrderList, mActivity);
                     listView.Adapter = mAdapter;
 
                 }
@@ -238,7 +241,7 @@ namespace LucidX.Droid.Source.Fragments
                 {
                 }
             }, toDateTime);
-            frag.Show(Activity.FragmentManager, DatePickerFragment.TAG);
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
         private void Edt_from_date_Click(object sender, EventArgs e)
@@ -255,11 +258,11 @@ namespace LucidX.Droid.Source.Fragments
 
                 }
             }, fromDateTime);
-            frag.Show(Activity.FragmentManager, DatePickerFragment.TAG);
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
 
-        private async void CallWebserviceForOrdersList()
+        public async void CallWebserviceForOrdersList()
         {
             try
             {
@@ -268,10 +271,10 @@ namespace LucidX.Droid.Source.Fragments
                     CustomProgressDialog.ShowProgDialog(mActivity,
                         mActivity.Resources.GetString(Resource.String.loading));
 
-                    _ordersList = await WebServiceMethods.GetOrders(mSharedPreferencesManager.GetString(ConstantsDroid.USER_ID_PREFERENCE, ""),
+                    ledgerOrderList = await WebServiceMethods.GetOrders(mSharedPreferencesManager.GetString(ConstantsDroid.USER_ID_PREFERENCE, ""),
                         txt_from_date.Text, txt_to_date.Text);
 
-                    InitailizeOrderListAdapter(_ordersList);
+                    InitailizeOrderListAdapter(ledgerOrderList);
 
                     CustomProgressDialog.HideProgressDialog();
                 }

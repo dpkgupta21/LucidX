@@ -90,7 +90,10 @@ namespace LucidX.Droid.Source.Adapters
                 }
 
                 holder.txt_img_lbl.Text = string.IsNullOrEmpty(dto.SenderName) ? "" : dto.SenderName.Substring(0, 1);
-            }catch(Exception e)
+
+
+            }
+            catch(Exception e)
             {
 
             }

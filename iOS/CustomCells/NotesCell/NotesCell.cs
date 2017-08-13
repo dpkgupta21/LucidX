@@ -33,10 +33,10 @@ namespace LucidX.iOS.CustomCells
 		public void ConfigureCell(CalendarEventResponse model)
 		{
 			CalendarData = model;
-			IBDateTimeLbl.Text = Data.CreatedDate.ToString("dd-MMM");
-			IBNotesTitleLbl.Text = Data.NotesSubject;
-			IBTitleLbl.Text = Data.NotesSubject.ToCharArray()[0].ToString();
-			IBDescLbl.Text = Data.NotesDetail;
+			IBDateTimeLbl.Text = CalendarData.DateStart.ToString("dd-MMM HH:mm");
+			IBNotesTitleLbl.Text = CalendarData.Subject;
+			IBTitleLbl.Text = CalendarData.Subject.ToCharArray()[0].ToString();
+			IBDescLbl.Text = CalendarData.Details;
 			this.SelectionStyle = UITableViewCellSelectionStyle.None;
 		}
 

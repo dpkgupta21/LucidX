@@ -32,6 +32,8 @@
   <string name="alert_message_not_less_than_from_date">Cannot less than from date</string>
   <string name="alert_message_fill_all_Details">Please fill all details</string>
   <string name="alert_message_delete_notes_confirmation">Do you want to delete?</string>
+  <string name="alert_message_fill_all_details">Please fill all details</string>
+  <string name="alert_message_atleast_add_one_order">Please add atlease one order</string>
   
   <!--Side menu options -->
   <string name="menu_inbox">Inbox</string>
@@ -88,4 +90,7 @@
   <!-- Add Event Screen-->
   <string name="save_btn">Save</string>
   <string name="cancel_btn">Cancel</string>
+
+  <!-- Add Ledger Order Item Screen-->
+  <string name="ledger_order_item_title">Ledger Order Item</string>
 </resources>

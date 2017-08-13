@@ -77,6 +77,14 @@
       <LogicalName>NotesCell.nib</LogicalName>
       <Optimize>false</Optimize>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/OrderListCell.nib">
+      <LogicalName>OrderListCell.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/OrderListVC.nib">
+      <LogicalName>OrderListVC.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/ibtool-link/SentVC.nib">
       <LogicalName>SentVC.nib</LogicalName>
       <Optimize>false</Optimize>

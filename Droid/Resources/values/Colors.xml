@@ -51,11 +51,19 @@
   <!-- Inbox SCREEN COLOR -->
   <color name="label_value_color">#8e8e8e</color>
   <color name="label_color">#222222</color>
-  <color name="seperator_vehicle">#a7a7aa</color>
+  <color name="seperator_vehicle">#ffffff</color>
 
   <!-- Calendar SCREEN COLOR -->
   <color name="background_gray">#eeeeee</color>
   <color name="gray_text_color">#000000</color>
+  
+  
 
+  <!-- List name icon alernate COLOR -->
+  <color name="even_row_color">#00a7e4</color>
+  <color name="odd_row_color">#191d20</color>
+  <color name="light_gray_header_color">#eeeeee</color>
+  <color name="dark_gray_color">#A9A9A9</color>
+  <color name="light_blue_color">#b7ddf5</color>
 
 </resources>

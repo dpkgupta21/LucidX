@@ -10,6 +10,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Constants\WebserviceConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\LedgerOrderItemsAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\ShowTaxRatesAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RequestModels\ShowUserCurrencyAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AccountCodeAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AddCalendarEventsAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\AccountOrdersAPIParams.cs" />
@@ -27,9 +30,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\LoginAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\ShowNotesTypeAPIParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestModels\RefUsersAPIParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\ShowTaxRatesResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\LedgerOrder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\LedgerOrderItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\LedgerOrderItemsResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\ShowUserCurrencyResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\AccountOrdersResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\AccountCodesResponse.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\OrdersResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\EntityCodesResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\CrmNotesResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\EmailCountResponse.cs" />
@@ -39,17 +46,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\LoginResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\NotesTypeResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\RefUsersResponse.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ResponseModels\ResultDoc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\ResultDoc.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Webservices\WebServiceHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Webservices\WebServiceMethods.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\Utilities.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Enums\PrivacyCode.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Enums\ActionType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enum.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
     <Folder Include="$(MSBuildThisFileDirectory)Webservices\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Utils\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Enums\" />
   </ItemGroup>
 </Project>

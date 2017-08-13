@@ -6,6 +6,7 @@ namespace LucidX.RequestModels
     public class AccountOrdersAPIParams
     {
         public int accountTypeID { get; set; }
+        public int compCode { get; set; }
         public string connectionName { get; set; }
     }
 }

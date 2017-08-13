@@ -80,8 +80,11 @@ namespace LucidX.Droid
 		public partial class Array
 		{
 			
-			// aapt resource value: 0x7f0d0008
-			public const int calendar_child_menu_array = 2131558408;
+			// aapt resource value: 0x7f0d0009
+			public const int calendar_child_menu_array = 2131558409;
+			
+			// aapt resource value: 0x7f0d000a
+			public const int calendar_child_menu_icon_array = 2131558410;
 			
 			// aapt resource value: 0x7f0d0002
 			public const int calendar_entries = 2131558402;
@@ -101,20 +104,29 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f0d0007
 			public const int mail_child_menu_array = 2131558407;
 			
-			// aapt resource value: 0x7f0d000b
-			public const int menu_array = 2131558411;
+			// aapt resource value: 0x7f0d0008
+			public const int mail_child_menu_icon_array = 2131558408;
+			
+			// aapt resource value: 0x7f0d000f
+			public const int menu_array = 2131558415;
 			
 			// aapt resource value: 0x7f0d0005
 			public const int menu_icon_array = 2131558405;
 			
+			// aapt resource value: 0x7f0d0010
+			public const int menu_label_array = 2131558416;
+			
+			// aapt resource value: 0x7f0d000d
+			public const int notes_child_menu_array = 2131558413;
+			
+			// aapt resource value: 0x7f0d000e
+			public const int notes_child_menu_icon_array = 2131558414;
+			
+			// aapt resource value: 0x7f0d000b
+			public const int order_child_menu_array = 2131558411;
+			
 			// aapt resource value: 0x7f0d000c
-			public const int menu_label_array = 2131558412;
-			
-			// aapt resource value: 0x7f0d000a
-			public const int notes_child_menu_array = 2131558410;
-			
-			// aapt resource value: 0x7f0d0009
-			public const int order_child_menu_array = 2131558409;
+			public const int order_child_menu_icon_array = 2131558412;
 			
 			// aapt resource value: 0x7f0d0001
 			public const int user_entries = 2131558401;
@@ -878,35 +890,35 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f0b003d
 			public const int ColorPrimaryDark = 2131427389;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int abc_background_cache_hint_selector_material_dark = 2131427424;
+			// aapt resource value: 0x7f0b0064
+			public const int abc_background_cache_hint_selector_material_dark = 2131427428;
 			
-			// aapt resource value: 0x7f0b0061
-			public const int abc_background_cache_hint_selector_material_light = 2131427425;
+			// aapt resource value: 0x7f0b0065
+			public const int abc_background_cache_hint_selector_material_light = 2131427429;
 			
-			// aapt resource value: 0x7f0b0062
-			public const int abc_btn_colored_borderless_text_material = 2131427426;
+			// aapt resource value: 0x7f0b0066
+			public const int abc_btn_colored_borderless_text_material = 2131427430;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int abc_color_highlight_material = 2131427427;
+			// aapt resource value: 0x7f0b0067
+			public const int abc_color_highlight_material = 2131427431;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int abc_input_method_navigation_guard = 2131427328;
 			
-			// aapt resource value: 0x7f0b0064
-			public const int abc_primary_text_disable_only_material_dark = 2131427428;
-			
-			// aapt resource value: 0x7f0b0065
-			public const int abc_primary_text_disable_only_material_light = 2131427429;
-			
-			// aapt resource value: 0x7f0b0066
-			public const int abc_primary_text_material_dark = 2131427430;
-			
-			// aapt resource value: 0x7f0b0067
-			public const int abc_primary_text_material_light = 2131427431;
-			
 			// aapt resource value: 0x7f0b0068
-			public const int abc_search_url_text = 2131427432;
+			public const int abc_primary_text_disable_only_material_dark = 2131427432;
+			
+			// aapt resource value: 0x7f0b0069
+			public const int abc_primary_text_disable_only_material_light = 2131427433;
+			
+			// aapt resource value: 0x7f0b006a
+			public const int abc_primary_text_material_dark = 2131427434;
+			
+			// aapt resource value: 0x7f0b006b
+			public const int abc_primary_text_material_light = 2131427435;
+			
+			// aapt resource value: 0x7f0b006c
+			public const int abc_search_url_text = 2131427436;
 			
 			// aapt resource value: 0x7f0b0001
 			public const int abc_search_url_text_normal = 2131427329;
@@ -917,32 +929,32 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f0b0003
 			public const int abc_search_url_text_selected = 2131427331;
 			
-			// aapt resource value: 0x7f0b0069
-			public const int abc_secondary_text_material_dark = 2131427433;
-			
-			// aapt resource value: 0x7f0b006a
-			public const int abc_secondary_text_material_light = 2131427434;
-			
-			// aapt resource value: 0x7f0b006b
-			public const int abc_tint_btn_checkable = 2131427435;
-			
-			// aapt resource value: 0x7f0b006c
-			public const int abc_tint_default = 2131427436;
-			
 			// aapt resource value: 0x7f0b006d
-			public const int abc_tint_edittext = 2131427437;
+			public const int abc_secondary_text_material_dark = 2131427437;
 			
 			// aapt resource value: 0x7f0b006e
-			public const int abc_tint_seek_thumb = 2131427438;
+			public const int abc_secondary_text_material_light = 2131427438;
 			
 			// aapt resource value: 0x7f0b006f
-			public const int abc_tint_spinner = 2131427439;
+			public const int abc_tint_btn_checkable = 2131427439;
 			
 			// aapt resource value: 0x7f0b0070
-			public const int abc_tint_switch_thumb = 2131427440;
+			public const int abc_tint_default = 2131427440;
 			
 			// aapt resource value: 0x7f0b0071
-			public const int abc_tint_switch_track = 2131427441;
+			public const int abc_tint_edittext = 2131427441;
+			
+			// aapt resource value: 0x7f0b0072
+			public const int abc_tint_seek_thumb = 2131427442;
+			
+			// aapt resource value: 0x7f0b0073
+			public const int abc_tint_spinner = 2131427443;
+			
+			// aapt resource value: 0x7f0b0074
+			public const int abc_tint_switch_thumb = 2131427444;
+			
+			// aapt resource value: 0x7f0b0075
+			public const int abc_tint_switch_track = 2131427445;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int accent_material_dark = 2131427332;
@@ -1058,6 +1070,9 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f0b004e
 			public const int et_text_hint_color = 2131427406;
 			
+			// aapt resource value: 0x7f0b0060
+			public const int even_row_color = 2131427424;
+			
 			// aapt resource value: 0x7f0b0016
 			public const int foreground_material_dark = 2131427350;
 			
@@ -1087,6 +1102,12 @@ namespace LucidX.Droid
 			
 			// aapt resource value: 0x7f0b005b
 			public const int label_value_color = 2131427419;
+			
+			// aapt resource value: 0x7f0b0063
+			public const int light_blue_color = 2131427427;
+			
+			// aapt resource value: 0x7f0b0062
+			public const int light_gray_header_color = 2131427426;
 			
 			// aapt resource value: 0x7f0b0055
 			public const int login_lbl_color = 2131427413;
@@ -1126,6 +1147,9 @@ namespace LucidX.Droid
 			
 			// aapt resource value: 0x7f0b0027
 			public const int material_grey_900 = 2131427367;
+			
+			// aapt resource value: 0x7f0b0061
+			public const int odd_row_color = 2131427425;
 			
 			// aapt resource value: 0x7f0b0028
 			public const int primary_dark_material_dark = 2131427368;
@@ -1187,11 +1211,11 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f0b0037
 			public const int switch_thumb_disabled_material_light = 2131427383;
 			
-			// aapt resource value: 0x7f0b0072
-			public const int switch_thumb_material_dark = 2131427442;
+			// aapt resource value: 0x7f0b0076
+			public const int switch_thumb_material_dark = 2131427446;
 			
-			// aapt resource value: 0x7f0b0073
-			public const int switch_thumb_material_light = 2131427443;
+			// aapt resource value: 0x7f0b0077
+			public const int switch_thumb_material_light = 2131427447;
 			
 			// aapt resource value: 0x7f0b0038
 			public const int switch_thumb_normal_material_dark = 2131427384;
@@ -1455,6 +1479,9 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f060064
 			public const int btn_text_size = 2131099748;
 			
+			// aapt resource value: 0x7f06006f
+			public const int button_in_order_size = 2131099759;
+			
 			// aapt resource value: 0x7f060065
 			public const int common_dialog_image_text_text_size = 2131099749;
 			
@@ -1499,6 +1526,12 @@ namespace LucidX.Droid
 			
 			// aapt resource value: 0x7f06006a
 			public const int group_text_size = 2131099754;
+			
+			// aapt resource value: 0x7f06006e
+			public const int header_order_date_size = 2131099758;
+			
+			// aapt resource value: 0x7f06006d
+			public const int header_order_item_size = 2131099757;
 			
 			// aapt resource value: 0x7f06004d
 			public const int highlight_alpha_material_colored = 2131099725;
@@ -1820,109 +1853,154 @@ namespace LucidX.Droid
 			public const int abc_vector_test = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int attachment = 2130837587;
+			public const int add_event = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int attchment = 2130837588;
+			public const int add_icon = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int background = 2130837589;
+			public const int add_notes = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int btn_blue_color_selected = 2130837590;
+			public const int add_order = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int btn_blue_color_selector = 2130837591;
+			public const int attachment = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int btn_blue_color_unselected = 2130837592;
+			public const int attchment = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int btn_color_selected = 2130837593;
+			public const int background = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int btn_color_selector = 2130837594;
+			public const int btn_blue_color_selected = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int btn_color_unselected = 2130837595;
+			public const int btn_blue_color_selector = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int calendar = 2130837596;
+			public const int btn_blue_color_unselected = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int circle_shape = 2130837597;
+			public const int btn_color_selected = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int circle_white_shape = 2130837598;
+			public const int btn_color_selector = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int delet = 2130837599;
+			public const int btn_color_unselected = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int dialog_rounded = 2130837600;
+			public const int calendar = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int draft = 2130837601;
+			public const int calendar_list = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int edittextbg = 2130837602;
+			public const int circle_shape = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int edittextbg_boundary = 2130837603;
+			public const int circle_white_shape = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int forward_mail = 2130837604;
+			public const int delet = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int inbox = 2130837605;
+			public const int delete_notes = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int invoice = 2130837606;
+			public const int delete_order = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int language = 2130837607;
+			public const int dialog_rounded = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int logo = 2130837608;
+			public const int draft = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int more = 2130837609;
+			public const int edit_notes = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int new_mail = 2130837610;
-			
-			// aapt resource value: 0x7f020075
-			public const int notification_template_icon_bg = 2130837621;
+			public const int edit_order = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int password = 2130837611;
+			public const int edittextbg = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int refresh = 2130837612;
+			public const int edittextbg_boundary = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int reply_icon = 2130837613;
+			public const int edittextbg_disabled = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int search = 2130837614;
+			public const int event_list = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int sent = 2130837615;
+			public const int forward_mail = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int spinner_dropdown = 2130837616;
+			public const int inbox = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int TextSelectorBg = 2130837617;
+			public const int invoice = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int TextviewSelector = 2130837618;
+			public const int language = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int trash = 2130837619;
+			public const int logo = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int user_icon = 2130837620;
+			public const int more = 2130837620;
+			
+			// aapt resource value: 0x7f020075
+			public const int new_mail = 2130837621;
+			
+			// aapt resource value: 0x7f020076
+			public const int notes_list = 2130837622;
+			
+			// aapt resource value: 0x7f020084
+			public const int notification_template_icon_bg = 2130837636;
+			
+			// aapt resource value: 0x7f020077
+			public const int order_list = 2130837623;
+			
+			// aapt resource value: 0x7f020078
+			public const int password = 2130837624;
+			
+			// aapt resource value: 0x7f020079
+			public const int raft = 2130837625;
+			
+			// aapt resource value: 0x7f02007a
+			public const int refresh = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public const int reply_icon = 2130837627;
+			
+			// aapt resource value: 0x7f02007c
+			public const int rounded_black_boundary = 2130837628;
+			
+			// aapt resource value: 0x7f02007d
+			public const int search = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int sent = 2130837630;
+			
+			// aapt resource value: 0x7f02007f
+			public const int spinner_dropdown = 2130837631;
+			
+			// aapt resource value: 0x7f020080
+			public const int TextSelectorBg = 2130837632;
+			
+			// aapt resource value: 0x7f020081
+			public const int TextviewSelector = 2130837633;
+			
+			// aapt resource value: 0x7f020082
+			public const int trash = 2130837634;
+			
+			// aapt resource value: 0x7f020083
+			public const int user_icon = 2130837635;
 			
 			static Drawable()
 			{
@@ -1937,11 +2015,11 @@ namespace LucidX.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070085
-			public const int LocalWebView = 2131165317;
+			// aapt resource value: 0x7f070087
+			public const int LocalWebView = 2131165319;
 			
-			// aapt resource value: 0x7f0700fc
-			public const int action0 = 2131165436;
+			// aapt resource value: 0x7f07010b
+			public const int action0 = 2131165451;
 			
 			// aapt resource value: 0x7f070046
 			public const int action_bar = 2131165254;
@@ -1967,8 +2045,8 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070047
 			public const int action_context_bar = 2131165255;
 			
-			// aapt resource value: 0x7f070100
-			public const int action_divider = 2131165440;
+			// aapt resource value: 0x7f07010f
+			public const int action_divider = 2131165455;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -1988,8 +2066,8 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070028
 			public const int activity_chooser_view_content = 2131165224;
 			
-			// aapt resource value: 0x7f0700dd
-			public const int adContainer = 2131165405;
+			// aapt resource value: 0x7f0700e5
+			public const int adContainer = 2131165413;
 			
 			// aapt resource value: 0x7f070014
 			public const int add = 2131165204;
@@ -2009,20 +2087,20 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070023
 			public const int bottom = 2131165219;
 			
-			// aapt resource value: 0x7f07007b
-			public const int btn_add_order = 2131165307;
+			// aapt resource value: 0x7f07007c
+			public const int btn_add_order = 2131165308;
 			
 			// aapt resource value: 0x7f070068
 			public const int btn_cancel = 2131165288;
 			
-			// aapt resource value: 0x7f0700a5
-			public const int btn_login = 2131165349;
+			// aapt resource value: 0x7f0700a7
+			public const int btn_login = 2131165351;
 			
-			// aapt resource value: 0x7f07007c
-			public const int btn_next = 2131165308;
+			// aapt resource value: 0x7f07007d
+			public const int btn_next = 2131165309;
 			
-			// aapt resource value: 0x7f070084
-			public const int btn_ok = 2131165316;
+			// aapt resource value: 0x7f070086
+			public const int btn_ok = 2131165318;
 			
 			// aapt resource value: 0x7f070067
 			public const int btn_save = 2131165287;
@@ -2030,26 +2108,26 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f07002f
 			public const int buttonPanel = 2131165231;
 			
-			// aapt resource value: 0x7f0700b8
-			public const int cancelBtn = 2131165368;
+			// aapt resource value: 0x7f0700ba
+			public const int cancelBtn = 2131165370;
 			
-			// aapt resource value: 0x7f0700fd
-			public const int cancel_action = 2131165437;
+			// aapt resource value: 0x7f07010c
+			public const int cancel_action = 2131165452;
 			
 			// aapt resource value: 0x7f07003d
 			public const int checkbox = 2131165245;
 			
-			// aapt resource value: 0x7f0700ad
-			public const int child_horizontal_seperator = 2131165357;
+			// aapt resource value: 0x7f0700af
+			public const int child_horizontal_seperator = 2131165359;
 			
-			// aapt resource value: 0x7f0700a4
-			public const int chk_remember_me = 2131165348;
+			// aapt resource value: 0x7f0700a6
+			public const int chk_remember_me = 2131165350;
 			
-			// aapt resource value: 0x7f0700c1
-			public const int chk_user = 2131165377;
+			// aapt resource value: 0x7f0700c5
+			public const int chk_user = 2131165381;
 			
-			// aapt resource value: 0x7f070103
-			public const int chronometer = 2131165443;
+			// aapt resource value: 0x7f070112
+			public const int chronometer = 2131165458;
 			
 			// aapt resource value: 0x7f07001f
 			public const int collapseActionView = 2131165215;
@@ -2072,44 +2150,47 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f07000d
 			public const int disableHome = 2131165197;
 			
-			// aapt resource value: 0x7f070094
-			public const int drawer_layout = 2131165332;
+			// aapt resource value: 0x7f070096
+			public const int drawer_layout = 2131165334;
 			
 			// aapt resource value: 0x7f070048
 			public const int edit_query = 2131165256;
 			
-			// aapt resource value: 0x7f0700c0
-			public const int edt_amount_val = 2131165376;
+			// aapt resource value: 0x7f0700d5
+			public const int edt_account_address = 2131165397;
+			
+			// aapt resource value: 0x7f0700c4
+			public const int edt_amount_val = 2131165380;
+			
+			// aapt resource value: 0x7f0700d1
+			public const int edt_currency_val = 2131165393;
+			
+			// aapt resource value: 0x7f070085
+			public const int edt_gross_val = 2131165317;
+			
+			// aapt resource value: 0x7f0700be
+			public const int edt_item_desc_val = 2131165374;
 			
 			// aapt resource value: 0x7f070083
-			public const int edt_gross_val = 2131165315;
-			
-			// aapt resource value: 0x7f0700bc
-			public const int edt_item_desc_val = 2131165372;
-			
-			// aapt resource value: 0x7f070081
-			public const int edt_net_val = 2131165313;
+			public const int edt_net_val = 2131165315;
 			
 			// aapt resource value: 0x7f07006f
 			public const int edt_notes_header_val = 2131165295;
 			
+			// aapt resource value: 0x7f07009f
+			public const int edt_password = 2131165343;
+			
 			// aapt resource value: 0x7f07009d
-			public const int edt_password = 2131165341;
+			public const int edt_username = 2131165341;
 			
-			// aapt resource value: 0x7f0700be
-			public const int edt_revenue_account_val = 2131165374;
-			
-			// aapt resource value: 0x7f07009b
-			public const int edt_username = 2131165339;
-			
-			// aapt resource value: 0x7f07007f
-			public const int edt_vat_val = 2131165311;
+			// aapt resource value: 0x7f070081
+			public const int edt_vat_val = 2131165313;
 			
 			// aapt resource value: 0x7f07001c
 			public const int end = 2131165212;
 			
-			// aapt resource value: 0x7f070108
-			public const int end_padder = 2131165448;
+			// aapt resource value: 0x7f070117
+			public const int end_padder = 2131165463;
 			
 			// aapt resource value: 0x7f070029
 			public const int expand_activities_button = 2131165225;
@@ -2117,20 +2198,20 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f07003c
 			public const int expanded_menu = 2131165244;
 			
-			// aapt resource value: 0x7f07008f
-			public const int footer = 2131165327;
+			// aapt resource value: 0x7f070091
+			public const int footer = 2131165329;
 			
 			// aapt resource value: 0x7f070069
 			public const int frame_container = 2131165289;
 			
+			// aapt resource value: 0x7f0700b2
+			public const int group_bottom_horizontal_seperator = 2131165362;
+			
 			// aapt resource value: 0x7f0700b0
-			public const int group_bottom_horizontal_seperator = 2131165360;
+			public const int group_top_horizontal_seperator = 2131165360;
 			
-			// aapt resource value: 0x7f0700ae
-			public const int group_top_horizontal_seperator = 2131165358;
-			
-			// aapt resource value: 0x7f070087
-			public const int header = 2131165319;
+			// aapt resource value: 0x7f070089
+			public const int header = 2131165321;
 			
 			// aapt resource value: 0x7f070005
 			public const int home = 2131165189;
@@ -2138,23 +2219,23 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f07000e
 			public const int homeAsUp = 2131165198;
 			
-			// aapt resource value: 0x7f070089
-			public const int horizontal_first = 2131165321;
+			// aapt resource value: 0x7f07008b
+			public const int horizontal_first = 2131165323;
 			
-			// aapt resource value: 0x7f0700b5
-			public const int horizontal_line = 2131165365;
+			// aapt resource value: 0x7f0700b7
+			public const int horizontal_line = 2131165367;
 			
-			// aapt resource value: 0x7f0700c5
-			public const int horizontal_line_first = 2131165381;
+			// aapt resource value: 0x7f0700c9
+			public const int horizontal_line_first = 2131165385;
 			
-			// aapt resource value: 0x7f0700c7
-			public const int horizontal_line_second = 2131165383;
+			// aapt resource value: 0x7f0700cb
+			public const int horizontal_line_second = 2131165387;
 			
-			// aapt resource value: 0x7f070090
-			public const int horizontal_second = 2131165328;
+			// aapt resource value: 0x7f070092
+			public const int horizontal_second = 2131165330;
 			
-			// aapt resource value: 0x7f0700e7
-			public const int horizontal_seperator = 2131165415;
+			// aapt resource value: 0x7f0700ef
+			public const int horizontal_seperator = 2131165423;
 			
 			// aapt resource value: 0x7f07002d
 			public const int icon = 2131165229;
@@ -2165,62 +2246,59 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f07002a
 			public const int image = 2131165226;
 			
-			// aapt resource value: 0x7f0700f0
-			public const int img_attachment_icon = 2131165424;
+			// aapt resource value: 0x7f0700fd
+			public const int img_attachment_icon = 2131165437;
 			
-			// aapt resource value: 0x7f0700ac
-			public const int img_delete = 2131165356;
+			// aapt resource value: 0x7f0700ae
+			public const int img_delete = 2131165358;
 			
-			// aapt resource value: 0x7f0700e6
-			public const int img_down_btn = 2131165414;
+			// aapt resource value: 0x7f0700ee
+			public const int img_down_btn = 2131165422;
 			
-			// aapt resource value: 0x7f0700e8
-			public const int img_edit = 2131165416;
+			// aapt resource value: 0x7f070109
+			public const int img_icon = 2131165449;
 			
-			// aapt resource value: 0x7f0700fa
-			public const int img_icon = 2131165434;
+			// aapt resource value: 0x7f070099
+			public const int img_logo = 2131165337;
 			
-			// aapt resource value: 0x7f070097
-			public const int img_logo = 2131165335;
+			// aapt resource value: 0x7f07008f
+			public const int img_more_icon = 2131165327;
 			
-			// aapt resource value: 0x7f07008d
-			public const int img_more_icon = 2131165325;
+			// aapt resource value: 0x7f07008e
+			public const int img_reply_icon = 2131165326;
 			
-			// aapt resource value: 0x7f07008c
-			public const int img_reply_icon = 2131165324;
+			// aapt resource value: 0x7f0700e0
+			public const int img_return = 2131165408;
 			
-			// aapt resource value: 0x7f0700d8
-			public const int img_return = 2131165400;
+			// aapt resource value: 0x7f0700d9
+			public const int img_search = 2131165401;
 			
-			// aapt resource value: 0x7f0700d1
-			public const int img_search = 2131165393;
+			// aapt resource value: 0x7f0700b3
+			public const int img_submenu_icon = 2131165363;
 			
-			// aapt resource value: 0x7f0700b1
-			public const int img_submenu_icon = 2131165361;
+			// aapt resource value: 0x7f0700c6
+			public const int img_user = 2131165382;
 			
-			// aapt resource value: 0x7f0700c2
-			public const int img_user = 2131165378;
-			
-			// aapt resource value: 0x7f070107
-			public const int info = 2131165447;
+			// aapt resource value: 0x7f070116
+			public const int info = 2131165462;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
 			
-			// aapt resource value: 0x7f070086
-			public const int layout_main = 2131165318;
+			// aapt resource value: 0x7f070088
+			public const int layout_main = 2131165320;
 			
-			// aapt resource value: 0x7f070109
-			public const int left_drawer = 2131165449;
+			// aapt resource value: 0x7f070118
+			public const int left_drawer = 2131165464;
 			
-			// aapt resource value: 0x7f070101
-			public const int line1 = 2131165441;
+			// aapt resource value: 0x7f070110
+			public const int line1 = 2131165456;
 			
-			// aapt resource value: 0x7f070105
-			public const int line3 = 2131165445;
+			// aapt resource value: 0x7f070114
+			public const int line3 = 2131165460;
 			
-			// aapt resource value: 0x7f0700f9
-			public const int linear = 2131165433;
+			// aapt resource value: 0x7f070108
+			public const int linear = 2131165448;
 			
 			// aapt resource value: 0x7f070056
 			public const int linear_btn = 2131165270;
@@ -2228,23 +2306,23 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f07005e
 			public const int linear_end_date_layout = 2131165278;
 			
-			// aapt resource value: 0x7f070096
-			public const int linear_header = 2131165334;
+			// aapt resource value: 0x7f070098
+			public const int linear_header = 2131165336;
 			
-			// aapt resource value: 0x7f070099
-			public const int linear_layout = 2131165337;
+			// aapt resource value: 0x7f07009b
+			public const int linear_layout = 2131165339;
+			
+			// aapt resource value: 0x7f070079
+			public const int linear_layout_btn = 2131165305;
 			
 			// aapt resource value: 0x7f070078
-			public const int linear_layout_btn = 2131165304;
-			
-			// aapt resource value: 0x7f070077
-			public const int linear_lisview = 2131165303;
+			public const int linear_lisview = 2131165304;
 			
 			// aapt resource value: 0x7f070059
 			public const int linear_start_date_layout = 2131165273;
 			
-			// aapt resource value: 0x7f0700ce
-			public const int linear_user_and_type = 2131165390;
+			// aapt resource value: 0x7f0700d6
+			public const int linear_user_and_type = 2131165398;
 			
 			// aapt resource value: 0x7f07000a
 			public const int listMode = 2131165194;
@@ -2252,32 +2330,32 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f07002c
 			public const int list_item = 2131165228;
 			
-			// aapt resource value: 0x7f070079
-			public const int listview = 2131165305;
+			// aapt resource value: 0x7f07007a
+			public const int listview = 2131165306;
 			
-			// aapt resource value: 0x7f0700e1
-			public const int listview_order = 2131165409;
-			
-			// aapt resource value: 0x7f0700ff
-			public const int media_actions = 2131165439;
-			
-			// aapt resource value: 0x7f07010d
-			public const int menu_add = 2131165453;
-			
-			// aapt resource value: 0x7f07010b
-			public const int menu_delete = 2131165451;
-			
-			// aapt resource value: 0x7f07010f
-			public const int menu_new_mail = 2131165455;
+			// aapt resource value: 0x7f0700e9
+			public const int listview_order = 2131165417;
 			
 			// aapt resource value: 0x7f07010e
-			public const int menu_refresh = 2131165454;
+			public const int media_actions = 2131165454;
 			
-			// aapt resource value: 0x7f07010c
-			public const int menu_search = 2131165452;
+			// aapt resource value: 0x7f07011c
+			public const int menu_add = 2131165468;
 			
-			// aapt resource value: 0x7f0700b6
-			public const int messageTV = 2131165366;
+			// aapt resource value: 0x7f07011a
+			public const int menu_delete = 2131165466;
+			
+			// aapt resource value: 0x7f07011e
+			public const int menu_new_mail = 2131165470;
+			
+			// aapt resource value: 0x7f07011d
+			public const int menu_refresh = 2131165469;
+			
+			// aapt resource value: 0x7f07011b
+			public const int menu_search = 2131165467;
+			
+			// aapt resource value: 0x7f0700b8
+			public const int messageTV = 2131165368;
 			
 			// aapt resource value: 0x7f07001d
 			public const int middle = 2131165213;
@@ -2297,8 +2375,8 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070031
 			public const int parentPanel = 2131165233;
 			
-			// aapt resource value: 0x7f0700a7
-			public const int parent_container = 2131165351;
+			// aapt resource value: 0x7f0700a9
+			public const int parent_container = 2131165353;
 			
 			// aapt resource value: 0x7f070006
 			public const int progress_circular = 2131165190;
@@ -2309,17 +2387,17 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f07003f
 			public const int radio = 2131165247;
 			
-			// aapt resource value: 0x7f0700a1
-			public const int radio_btn_db_demo = 2131165345;
+			// aapt resource value: 0x7f0700a3
+			public const int radio_btn_db_demo = 2131165347;
+			
+			// aapt resource value: 0x7f0700a4
+			public const int radio_btn_db_hq = 2131165348;
+			
+			// aapt resource value: 0x7f0700a5
+			public const int radio_btn_db_lucid = 2131165349;
 			
 			// aapt resource value: 0x7f0700a2
-			public const int radio_btn_db_hq = 2131165346;
-			
-			// aapt resource value: 0x7f0700a3
-			public const int radio_btn_db_lucid = 2131165347;
-			
-			// aapt resource value: 0x7f0700a0
-			public const int radio_btn_db_saas = 2131165344;
+			public const int radio_btn_db_saas = 2131165346;
 			
 			// aapt resource value: 0x7f070074
 			public const int radio_btn_me_only = 2131165300;
@@ -2333,41 +2411,50 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070072
 			public const int radio_group = 2131165298;
 			
-			// aapt resource value: 0x7f0700de
-			public const int refresher = 2131165406;
+			// aapt resource value: 0x7f0700e6
+			public const int refresher = 2131165414;
 			
-			// aapt resource value: 0x7f070095
-			public const int relative = 2131165333;
+			// aapt resource value: 0x7f070097
+			public const int relative = 2131165335;
 			
-			// aapt resource value: 0x7f0700a8
-			public const int relative_container = 2131165352;
+			// aapt resource value: 0x7f0700f0
+			public const int relative_account_name = 2131165424;
 			
-			// aapt resource value: 0x7f0700cf
-			public const int relative_date_layout = 2131165391;
+			// aapt resource value: 0x7f0700f3
+			public const int relative_btn = 2131165427;
 			
-			// aapt resource value: 0x7f0700ed
-			public const int relative_email = 2131165421;
+			// aapt resource value: 0x7f0700aa
+			public const int relative_container = 2131165354;
 			
-			// aapt resource value: 0x7f0700d0
-			public const int relative_first = 2131165392;
+			// aapt resource value: 0x7f0700d7
+			public const int relative_date_layout = 2131165399;
 			
-			// aapt resource value: 0x7f0700e4
-			public const int relative_group = 2131165412;
+			// aapt resource value: 0x7f0700fa
+			public const int relative_email = 2131165434;
+			
+			// aapt resource value: 0x7f0700d8
+			public const int relative_first = 2131165400;
 			
 			// aapt resource value: 0x7f0700ec
-			public const int relative_item = 2131165420;
+			public const int relative_group = 2131165420;
 			
-			// aapt resource value: 0x7f07007d
-			public const int relative_layout = 2131165309;
+			// aapt resource value: 0x7f0700f9
+			public const int relative_item = 2131165433;
 			
-			// aapt resource value: 0x7f0700db
-			public const int relative_second = 2131165403;
+			// aapt resource value: 0x7f07007f
+			public const int relative_layout = 2131165311;
 			
-			// aapt resource value: 0x7f0700d5
-			public const int relative_selected_layout = 2131165397;
+			// aapt resource value: 0x7f070102
+			public const int relative_order_and_date = 2131165442;
 			
-			// aapt resource value: 0x7f0700df
-			public const int rvCompaign = 2131165407;
+			// aapt resource value: 0x7f0700e3
+			public const int relative_second = 2131165411;
+			
+			// aapt resource value: 0x7f0700dd
+			public const int relative_selected_layout = 2131165405;
+			
+			// aapt resource value: 0x7f0700e7
+			public const int rvCompaign = 2131165415;
 			
 			// aapt resource value: 0x7f070016
 			public const int screen = 2131165206;
@@ -2380,6 +2467,9 @@ namespace LucidX.Droid
 			
 			// aapt resource value: 0x7f070037
 			public const int scrollView = 2131165239;
+			
+			// aapt resource value: 0x7f07007e
+			public const int scroll_view = 2131165310;
 			
 			// aapt resource value: 0x7f07004a
 			public const int search_badge = 2131165258;
@@ -2435,23 +2525,26 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070058
 			public const int spin_calendar_type = 2131165272;
 			
-			// aapt resource value: 0x7f0700cb
-			public const int spin_currency = 2131165387;
-			
 			// aapt resource value: 0x7f07006b
 			public const int spin_current_entity = 2131165291;
 			
-			// aapt resource value: 0x7f0700ca
-			public const int spin_customer = 2131165386;
+			// aapt resource value: 0x7f0700cf
+			public const int spin_customer = 2131165391;
 			
-			// aapt resource value: 0x7f07009f
-			public const int spin_language = 2131165343;
+			// aapt resource value: 0x7f0700a1
+			public const int spin_language = 2131165345;
+			
+			// aapt resource value: 0x7f0700c0
+			public const int spin_revenue_account_val = 2131165376;
+			
+			// aapt resource value: 0x7f0700c2
+			public const int spin_tax_rates_val = 2131165378;
 			
 			// aapt resource value: 0x7f070057
 			public const int spin_users = 2131165271;
 			
-			// aapt resource value: 0x7f07010a
-			public const int spinnerItemTV = 2131165450;
+			// aapt resource value: 0x7f070119
+			public const int spinnerItemTV = 2131165465;
 			
 			// aapt resource value: 0x7f070008
 			public const int split_action_bar = 2131165192;
@@ -2465,14 +2558,14 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070019
 			public const int src_over = 2131165209;
 			
-			// aapt resource value: 0x7f0700fe
-			public const int status_bar_latest_event_content = 2131165438;
+			// aapt resource value: 0x7f07010d
+			public const int status_bar_latest_event_content = 2131165453;
 			
 			// aapt resource value: 0x7f070040
 			public const int submenuarrow = 2131165248;
 			
-			// aapt resource value: 0x7f0700b7
-			public const int submitBtn = 2131165367;
+			// aapt resource value: 0x7f0700b9
+			public const int submitBtn = 2131165369;
 			
 			// aapt resource value: 0x7f070051
 			public const int submit_area = 2131165265;
@@ -2480,23 +2573,23 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f07000c
 			public const int tabMode = 2131165196;
 			
-			// aapt resource value: 0x7f070106
-			public const int text = 2131165446;
+			// aapt resource value: 0x7f070115
+			public const int text = 2131165461;
 			
-			// aapt resource value: 0x7f070104
-			public const int text2 = 2131165444;
+			// aapt resource value: 0x7f070113
+			public const int text2 = 2131165459;
 			
 			// aapt resource value: 0x7f070038
 			public const int textSpacerNoButtons = 2131165240;
 			
-			// aapt resource value: 0x7f070102
-			public const int time = 2131165442;
+			// aapt resource value: 0x7f070111
+			public const int time = 2131165457;
 			
 			// aapt resource value: 0x7f07002e
 			public const int title = 2131165230;
 			
-			// aapt resource value: 0x7f0700b4
-			public const int titleTV = 2131165364;
+			// aapt resource value: 0x7f0700b6
+			public const int titleTV = 2131165366;
 			
 			// aapt resource value: 0x7f070033
 			public const int title_template = 2131165235;
@@ -2507,38 +2600,53 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070032
 			public const int topPanel = 2131165234;
 			
-			// aapt resource value: 0x7f0700e0
-			public const int tvRefresh = 2131165408;
+			// aapt resource value: 0x7f0700e8
+			public const int tvRefresh = 2131165416;
+			
+			// aapt resource value: 0x7f0700d4
+			public const int txt_account_address_lbl = 2131165396;
 			
 			// aapt resource value: 0x7f07006c
 			public const int txt_account_code = 2131165292;
 			
-			// aapt resource value: 0x7f0700eb
-			public const int txt_amount = 2131165419;
+			// aapt resource value: 0x7f0700f2
+			public const int txt_account_name = 2131165426;
 			
-			// aapt resource value: 0x7f0700bf
-			public const int txt_amount_lbl = 2131165375;
+			// aapt resource value: 0x7f0700f1
+			public const int txt_account_name_lbl = 2131165425;
 			
-			// aapt resource value: 0x7f0700af
-			public const int txt_calendar_date_val = 2131165359;
+			// aapt resource value: 0x7f0700c3
+			public const int txt_amount_lbl = 2131165379;
+			
+			// aapt resource value: 0x7f0700f6
+			public const int txt_base_amount = 2131165430;
+			
+			// aapt resource value: 0x7f0700f5
+			public const int txt_base_amount_lbl = 2131165429;
+			
+			// aapt resource value: 0x7f0700b1
+			public const int txt_calendar_date_val = 2131165361;
 			
 			// aapt resource value: 0x7f070076
 			public const int txt_calendar_type = 2131165302;
 			
-			// aapt resource value: 0x7f0700d9
-			public const int txt_calendar_type_lbl = 2131165401;
+			// aapt resource value: 0x7f0700e1
+			public const int txt_calendar_type_lbl = 2131165409;
 			
-			// aapt resource value: 0x7f0700da
-			public const int txt_calendar_type_val = 2131165402;
+			// aapt resource value: 0x7f0700e2
+			public const int txt_calendar_type_val = 2131165410;
 			
-			// aapt resource value: 0x7f0700a6
-			public const int txt_copyright = 2131165350;
+			// aapt resource value: 0x7f0700a8
+			public const int txt_copyright = 2131165352;
 			
-			// aapt resource value: 0x7f0700f7
-			public const int txt_cost = 2131165431;
+			// aapt resource value: 0x7f070106
+			public const int txt_cost = 2131165446;
 			
-			// aapt resource value: 0x7f0700f6
-			public const int txt_customer = 2131165430;
+			// aapt resource value: 0x7f070105
+			public const int txt_cost_lbl = 2131165445;
+			
+			// aapt resource value: 0x7f0700d0
+			public const int txt_currency_lbl = 2131165392;
 			
 			// aapt resource value: 0x7f070065
 			public const int txt_description_lbl = 2131165285;
@@ -2546,17 +2654,17 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070066
 			public const int txt_description_val = 2131165286;
 			
-			// aapt resource value: 0x7f0700ba
-			public const int txt_dialog_title = 2131165370;
+			// aapt resource value: 0x7f0700bc
+			public const int txt_dialog_title = 2131165372;
 			
-			// aapt resource value: 0x7f0700ef
-			public const int txt_email_address = 2131165423;
+			// aapt resource value: 0x7f0700fc
+			public const int txt_email_address = 2131165436;
 			
-			// aapt resource value: 0x7f0700f1
-			public const int txt_email_detail = 2131165425;
+			// aapt resource value: 0x7f0700fe
+			public const int txt_email_detail = 2131165438;
 			
-			// aapt resource value: 0x7f0700ee
-			public const int txt_email_time = 2131165422;
+			// aapt resource value: 0x7f0700fb
+			public const int txt_email_time = 2131165435;
 			
 			// aapt resource value: 0x7f07005f
 			public const int txt_end_date_lbl = 2131165279;
@@ -2573,77 +2681,77 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f07006a
 			public const int txt_entity_code = 2131165290;
 			
-			// aapt resource value: 0x7f0700aa
-			public const int txt_event_date_time = 2131165354;
+			// aapt resource value: 0x7f0700ac
+			public const int txt_event_date_time = 2131165356;
+			
+			// aapt resource value: 0x7f0700ad
+			public const int txt_event_detail = 2131165357;
 			
 			// aapt resource value: 0x7f0700ab
-			public const int txt_event_detail = 2131165355;
+			public const int txt_event_name = 2131165355;
 			
-			// aapt resource value: 0x7f0700a9
-			public const int txt_event_name = 2131165353;
+			// aapt resource value: 0x7f0700da
+			public const int txt_from_date = 2131165402;
 			
-			// aapt resource value: 0x7f0700d2
-			public const int txt_from_date = 2131165394;
+			// aapt resource value: 0x7f070084
+			public const int txt_gross_lbl = 2131165316;
 			
-			// aapt resource value: 0x7f070082
-			public const int txt_gross_lbl = 2131165314;
+			// aapt resource value: 0x7f07009a
+			public const int txt_heading = 2131165338;
 			
-			// aapt resource value: 0x7f070098
-			public const int txt_heading = 2131165336;
+			// aapt resource value: 0x7f07008c
+			public const int txt_img_lbl = 2131165324;
 			
 			// aapt resource value: 0x7f07008a
-			public const int txt_img_lbl = 2131165322;
+			public const int txt_inbox_lbl = 2131165322;
 			
-			// aapt resource value: 0x7f070088
-			public const int txt_inbox_lbl = 2131165320;
-			
-			// aapt resource value: 0x7f0700bb
-			public const int txt_item_desc_lbl = 2131165371;
-			
-			// aapt resource value: 0x7f0700e9
-			public const int txt_item_description = 2131165417;
-			
-			// aapt resource value: 0x7f07009e
-			public const int txt_language = 2131165342;
-			
-			// aapt resource value: 0x7f0700c6
-			public const int txt_mail_lbl = 2131165382;
-			
-			// aapt resource value: 0x7f0700fb
-			public const int txt_menu_counter = 2131165435;
-			
-			// aapt resource value: 0x7f0700f8
-			public const int txt_menu_label_header = 2131165432;
-			
-			// aapt resource value: 0x7f0700e5
-			public const int txt_menu_name = 2131165413;
-			
-			// aapt resource value: 0x7f0700b9
-			public const int txt_name = 2131165369;
-			
-			// aapt resource value: 0x7f070080
-			public const int txt_net_lbl = 2131165312;
-			
-			// aapt resource value: 0x7f0700dc
-			public const int txt_no_events = 2131165404;
-			
-			// aapt resource value: 0x7f07007a
-			public const int txt_no_list = 2131165306;
-			
-			// aapt resource value: 0x7f0700e2
-			public const int txt_no_notes = 2131165410;
-			
-			// aapt resource value: 0x7f0700e3
-			public const int txt_no_orders = 2131165411;
-			
-			// aapt resource value: 0x7f0700f2
-			public const int txt_notes = 2131165426;
-			
-			// aapt resource value: 0x7f0700f3
-			public const int txt_notes_date = 2131165427;
+			// aapt resource value: 0x7f0700bd
+			public const int txt_item_desc_lbl = 2131165373;
 			
 			// aapt resource value: 0x7f0700f4
-			public const int txt_notes_detail = 2131165428;
+			public const int txt_item_description = 2131165428;
+			
+			// aapt resource value: 0x7f0700a0
+			public const int txt_language = 2131165344;
+			
+			// aapt resource value: 0x7f0700ca
+			public const int txt_mail_lbl = 2131165386;
+			
+			// aapt resource value: 0x7f07010a
+			public const int txt_menu_counter = 2131165450;
+			
+			// aapt resource value: 0x7f070107
+			public const int txt_menu_label_header = 2131165447;
+			
+			// aapt resource value: 0x7f0700ed
+			public const int txt_menu_name = 2131165421;
+			
+			// aapt resource value: 0x7f0700bb
+			public const int txt_name = 2131165371;
+			
+			// aapt resource value: 0x7f070082
+			public const int txt_net_lbl = 2131165314;
+			
+			// aapt resource value: 0x7f0700e4
+			public const int txt_no_events = 2131165412;
+			
+			// aapt resource value: 0x7f07007b
+			public const int txt_no_list = 2131165307;
+			
+			// aapt resource value: 0x7f0700ea
+			public const int txt_no_notes = 2131165418;
+			
+			// aapt resource value: 0x7f0700eb
+			public const int txt_no_orders = 2131165419;
+			
+			// aapt resource value: 0x7f0700ff
+			public const int txt_notes = 2131165439;
+			
+			// aapt resource value: 0x7f070100
+			public const int txt_notes_date = 2131165440;
+			
+			// aapt resource value: 0x7f070101
+			public const int txt_notes_detail = 2131165441;
 			
 			// aapt resource value: 0x7f07006e
 			public const int txt_notes_header_lbl = 2131165294;
@@ -2654,41 +2762,47 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070071
 			public const int txt_notes_val = 2131165297;
 			
-			// aapt resource value: 0x7f0700f5
-			public const int txt_order_date = 2131165429;
-			
-			// aapt resource value: 0x7f0700c8
-			public const int txt_order_date_lbl = 2131165384;
-			
-			// aapt resource value: 0x7f0700c9
-			public const int txt_order_date_val = 2131165385;
+			// aapt resource value: 0x7f070103
+			public const int txt_order_date = 2131165443;
 			
 			// aapt resource value: 0x7f0700cc
-			public const int txt_order_name_lbl = 2131165388;
+			public const int txt_order_date_lbl = 2131165388;
 			
 			// aapt resource value: 0x7f0700cd
-			public const int txt_order_val = 2131165389;
+			public const int txt_order_date_val = 2131165389;
 			
-			// aapt resource value: 0x7f07009c
-			public const int txt_password = 2131165340;
+			// aapt resource value: 0x7f070104
+			public const int txt_order_name = 2131165444;
 			
-			// aapt resource value: 0x7f070091
-			public const int txt_reply = 2131165329;
+			// aapt resource value: 0x7f0700d2
+			public const int txt_order_name_lbl = 2131165394;
 			
-			// aapt resource value: 0x7f070092
-			public const int txt_reply_all = 2131165330;
+			// aapt resource value: 0x7f0700d3
+			public const int txt_order_name_val = 2131165395;
+			
+			// aapt resource value: 0x7f070077
+			public const int txt_page_number_lbl = 2131165303;
+			
+			// aapt resource value: 0x7f07009e
+			public const int txt_password = 2131165342;
 			
 			// aapt resource value: 0x7f070093
-			public const int txt_reply_forward = 2131165331;
+			public const int txt_reply = 2131165331;
 			
-			// aapt resource value: 0x7f0700ea
-			public const int txt_revenue_account = 2131165418;
+			// aapt resource value: 0x7f070094
+			public const int txt_reply_all = 2131165332;
 			
-			// aapt resource value: 0x7f0700bd
-			public const int txt_revenue_account_lbl = 2131165373;
+			// aapt resource value: 0x7f070095
+			public const int txt_reply_forward = 2131165333;
 			
-			// aapt resource value: 0x7f07008b
-			public const int txt_sender_name = 2131165323;
+			// aapt resource value: 0x7f0700bf
+			public const int txt_revenue_account_lbl = 2131165375;
+			
+			// aapt resource value: 0x7f0700ce
+			public const int txt_select_account_lbl = 2131165390;
+			
+			// aapt resource value: 0x7f07008d
+			public const int txt_sender_name = 2131165325;
 			
 			// aapt resource value: 0x7f07005a
 			public const int txt_start_date_lbl = 2131165274;
@@ -2708,35 +2822,44 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070064
 			public const int txt_subject_val = 2131165284;
 			
-			// aapt resource value: 0x7f0700b3
-			public const int txt_submenu_count = 2131165363;
+			// aapt resource value: 0x7f0700b5
+			public const int txt_submenu_count = 2131165365;
 			
-			// aapt resource value: 0x7f0700b2
-			public const int txt_submenu_name = 2131165362;
+			// aapt resource value: 0x7f0700b4
+			public const int txt_submenu_name = 2131165364;
 			
-			// aapt resource value: 0x7f0700d4
-			public const int txt_to_date = 2131165396;
+			// aapt resource value: 0x7f0700f8
+			public const int txt_tax_amount = 2131165432;
 			
-			// aapt resource value: 0x7f0700d3
-			public const int txt_to_lbl = 2131165395;
+			// aapt resource value: 0x7f0700f7
+			public const int txt_tax_amount_lbl = 2131165431;
 			
-			// aapt resource value: 0x7f0700d6
-			public const int txt_user_calendar_lbl = 2131165398;
+			// aapt resource value: 0x7f0700c1
+			public const int txt_tax_rates_lbl = 2131165377;
 			
-			// aapt resource value: 0x7f0700d7
-			public const int txt_user_calendar_val = 2131165399;
+			// aapt resource value: 0x7f0700dc
+			public const int txt_to_date = 2131165404;
 			
-			// aapt resource value: 0x7f0700c4
-			public const int txt_user_email = 2131165380;
+			// aapt resource value: 0x7f0700db
+			public const int txt_to_lbl = 2131165403;
 			
-			// aapt resource value: 0x7f0700c3
-			public const int txt_user_name = 2131165379;
+			// aapt resource value: 0x7f0700de
+			public const int txt_user_calendar_lbl = 2131165406;
 			
-			// aapt resource value: 0x7f07009a
-			public const int txt_username = 2131165338;
+			// aapt resource value: 0x7f0700df
+			public const int txt_user_calendar_val = 2131165407;
 			
-			// aapt resource value: 0x7f07007e
-			public const int txt_vat_lbl = 2131165310;
+			// aapt resource value: 0x7f0700c8
+			public const int txt_user_email = 2131165384;
+			
+			// aapt resource value: 0x7f0700c7
+			public const int txt_user_name = 2131165383;
+			
+			// aapt resource value: 0x7f07009c
+			public const int txt_username = 2131165340;
+			
+			// aapt resource value: 0x7f070080
+			public const int txt_vat_lbl = 2131165312;
 			
 			// aapt resource value: 0x7f070009
 			public const int up = 2131165193;
@@ -2744,8 +2867,8 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f070013
 			public const int useLogo = 2131165203;
 			
-			// aapt resource value: 0x7f07008e
-			public const int webview = 2131165326;
+			// aapt resource value: 0x7f070090
+			public const int webview = 2131165328;
 			
 			// aapt resource value: 0x7f070022
 			public const int withText = 2131165218;
@@ -3166,6 +3289,9 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f080036
 			public const int alert_cancel_btn = 2131230774;
 			
+			// aapt resource value: 0x7f08003d
+			public const int alert_message_atleast_add_one_order = 2131230781;
+			
 			// aapt resource value: 0x7f08003b
 			public const int alert_message_delete_notes_confirmation = 2131230779;
 			
@@ -3177,6 +3303,9 @@ namespace LucidX.Droid
 			
 			// aapt resource value: 0x7f08003a
 			public const int alert_message_fill_all_Details = 2131230778;
+			
+			// aapt resource value: 0x7f08003c
+			public const int alert_message_fill_all_details = 2131230780;
 			
 			// aapt resource value: 0x7f080033
 			public const int alert_message_invalid_credentials = 2131230771;
@@ -3196,32 +3325,32 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f080021
 			public const int app_name = 2131230753;
 			
-			// aapt resource value: 0x7f08005b
-			public const int btn_sign_in_lbl = 2131230811;
+			// aapt resource value: 0x7f08005d
+			public const int btn_sign_in_lbl = 2131230813;
 			
 			// aapt resource value: 0x7f080029
 			public const int calendar_title = 2131230761;
 			
-			// aapt resource value: 0x7f080065
-			public const int cancel_btn = 2131230821;
+			// aapt resource value: 0x7f080067
+			public const int cancel_btn = 2131230823;
 			
 			// aapt resource value: 0x7f080023
 			public const int close_drawer = 2131230755;
 			
-			// aapt resource value: 0x7f08005d
-			public const int copyright_lbl = 2131230813;
-			
 			// aapt resource value: 0x7f08005f
-			public const int db_demo = 2131230815;
-			
-			// aapt resource value: 0x7f080060
-			public const int db_hq = 2131230816;
+			public const int copyright_lbl = 2131230815;
 			
 			// aapt resource value: 0x7f080061
-			public const int db_lucid = 2131230817;
+			public const int db_demo = 2131230817;
 			
-			// aapt resource value: 0x7f08005e
-			public const int db_saas = 2131230814;
+			// aapt resource value: 0x7f080062
+			public const int db_hq = 2131230818;
+			
+			// aapt resource value: 0x7f080063
+			public const int db_lucid = 2131230819;
+			
+			// aapt resource value: 0x7f080060
+			public const int db_saas = 2131230816;
 			
 			// aapt resource value: 0x7f080027
 			public const int draft_title = 2131230759;
@@ -3238,83 +3367,86 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f080031
 			public const int error_alert_title = 2131230769;
 			
-			// aapt resource value: 0x7f08005a
-			public const int heading = 2131230810;
+			// aapt resource value: 0x7f08005c
+			public const int heading = 2131230812;
 			
 			// aapt resource value: 0x7f080024
 			public const int inbox_title = 2131230756;
 			
-			// aapt resource value: 0x7f080057
-			public const int language_lbl = 2131230807;
+			// aapt resource value: 0x7f080059
+			public const int language_lbl = 2131230809;
 			
-			// aapt resource value: 0x7f080052
-			public const int loading = 2131230802;
+			// aapt resource value: 0x7f080068
+			public const int ledger_order_item_title = 2131230824;
 			
-			// aapt resource value: 0x7f08004b
-			public const int menu_calendar_add = 2131230795;
-			
-			// aapt resource value: 0x7f08004f
-			public const int menu_calendar_lbl = 2131230799;
-			
-			// aapt resource value: 0x7f080040
-			public const int menu_calendar_list = 2131230784;
-			
-			// aapt resource value: 0x7f08003d
-			public const int menu_draft = 2131230781;
-			
-			// aapt resource value: 0x7f08003c
-			public const int menu_inbox = 2131230780;
+			// aapt resource value: 0x7f080054
+			public const int loading = 2131230804;
 			
 			// aapt resource value: 0x7f08004d
-			public const int menu_logout = 2131230797;
-			
-			// aapt resource value: 0x7f08004e
-			public const int menu_mail_lbl = 2131230798;
-			
-			// aapt resource value: 0x7f08004c
-			public const int menu_notes = 2131230796;
-			
-			// aapt resource value: 0x7f080047
-			public const int menu_notes_amend = 2131230791;
-			
-			// aapt resource value: 0x7f080049
-			public const int menu_notes_convert = 2131230793;
-			
-			// aapt resource value: 0x7f080048
-			public const int menu_notes_create = 2131230792;
-			
-			// aapt resource value: 0x7f08004a
-			public const int menu_notes_delete = 2131230794;
+			public const int menu_calendar_add = 2131230797;
 			
 			// aapt resource value: 0x7f080051
-			public const int menu_notes_lbl = 2131230801;
-			
-			// aapt resource value: 0x7f080046
-			public const int menu_notes_view = 2131230790;
+			public const int menu_calendar_lbl = 2131230801;
 			
 			// aapt resource value: 0x7f080042
-			public const int menu_order_amend = 2131230786;
-			
-			// aapt resource value: 0x7f080044
-			public const int menu_order_convert = 2131230788;
-			
-			// aapt resource value: 0x7f080043
-			public const int menu_order_create = 2131230787;
-			
-			// aapt resource value: 0x7f080045
-			public const int menu_order_delete = 2131230789;
-			
-			// aapt resource value: 0x7f080050
-			public const int menu_order_lbl = 2131230800;
-			
-			// aapt resource value: 0x7f080041
-			public const int menu_order_view = 2131230785;
-			
-			// aapt resource value: 0x7f08003e
-			public const int menu_sent = 2131230782;
+			public const int menu_calendar_list = 2131230786;
 			
 			// aapt resource value: 0x7f08003f
-			public const int menu_trash = 2131230783;
+			public const int menu_draft = 2131230783;
+			
+			// aapt resource value: 0x7f08003e
+			public const int menu_inbox = 2131230782;
+			
+			// aapt resource value: 0x7f08004f
+			public const int menu_logout = 2131230799;
+			
+			// aapt resource value: 0x7f080050
+			public const int menu_mail_lbl = 2131230800;
+			
+			// aapt resource value: 0x7f08004e
+			public const int menu_notes = 2131230798;
+			
+			// aapt resource value: 0x7f080049
+			public const int menu_notes_amend = 2131230793;
+			
+			// aapt resource value: 0x7f08004b
+			public const int menu_notes_convert = 2131230795;
+			
+			// aapt resource value: 0x7f08004a
+			public const int menu_notes_create = 2131230794;
+			
+			// aapt resource value: 0x7f08004c
+			public const int menu_notes_delete = 2131230796;
+			
+			// aapt resource value: 0x7f080053
+			public const int menu_notes_lbl = 2131230803;
+			
+			// aapt resource value: 0x7f080048
+			public const int menu_notes_view = 2131230792;
+			
+			// aapt resource value: 0x7f080044
+			public const int menu_order_amend = 2131230788;
+			
+			// aapt resource value: 0x7f080046
+			public const int menu_order_convert = 2131230790;
+			
+			// aapt resource value: 0x7f080045
+			public const int menu_order_create = 2131230789;
+			
+			// aapt resource value: 0x7f080047
+			public const int menu_order_delete = 2131230791;
+			
+			// aapt resource value: 0x7f080052
+			public const int menu_order_lbl = 2131230802;
+			
+			// aapt resource value: 0x7f080043
+			public const int menu_order_view = 2131230787;
+			
+			// aapt resource value: 0x7f080040
+			public const int menu_sent = 2131230784;
+			
+			// aapt resource value: 0x7f080041
+			public const int menu_trash = 2131230785;
 			
 			// aapt resource value: 0x7f08002e
 			public const int notes_title = 2131230766;
@@ -3325,35 +3457,35 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f08002c
 			public const int order_title = 2131230764;
 			
-			// aapt resource value: 0x7f080059
-			public const int password_hint = 2131230809;
+			// aapt resource value: 0x7f08005b
+			public const int password_hint = 2131230811;
+			
+			// aapt resource value: 0x7f080058
+			public const int password_lbl = 2131230808;
 			
 			// aapt resource value: 0x7f080056
-			public const int password_lbl = 2131230806;
+			public const int processing_message = 2131230806;
 			
-			// aapt resource value: 0x7f080054
-			public const int processing_message = 2131230804;
+			// aapt resource value: 0x7f08005e
+			public const int remember_me = 2131230814;
 			
-			// aapt resource value: 0x7f08005c
-			public const int remember_me = 2131230812;
+			// aapt resource value: 0x7f080066
+			public const int save_btn = 2131230822;
 			
-			// aapt resource value: 0x7f080064
-			public const int save_btn = 2131230820;
-			
-			// aapt resource value: 0x7f080053
-			public const int saving_message = 2131230803;
+			// aapt resource value: 0x7f080055
+			public const int saving_message = 2131230805;
 			
 			// aapt resource value: 0x7f080013
 			public const int search_menu_title = 2131230739;
 			
-			// aapt resource value: 0x7f080062
-			public const int select_calendar_type = 2131230818;
+			// aapt resource value: 0x7f080064
+			public const int select_calendar_type = 2131230820;
 			
 			// aapt resource value: 0x7f080026
 			public const int sent_title = 2131230758;
 			
-			// aapt resource value: 0x7f080063
-			public const int spin_prompt_user_list_from = 2131230819;
+			// aapt resource value: 0x7f080065
+			public const int spin_prompt_user_list_from = 2131230821;
 			
 			// aapt resource value: 0x7f080014
 			public const int status_bar_notification_info_overflow = 2131230740;
@@ -3361,11 +3493,11 @@ namespace LucidX.Droid
 			// aapt resource value: 0x7f080028
 			public const int trash_title = 2131230760;
 			
-			// aapt resource value: 0x7f080058
-			public const int username_hint = 2131230808;
+			// aapt resource value: 0x7f08005a
+			public const int username_hint = 2131230810;
 			
-			// aapt resource value: 0x7f080055
-			public const int username_lbl = 2131230805;
+			// aapt resource value: 0x7f080057
+			public const int username_lbl = 2131230807;
 			
 			static String()
 			{

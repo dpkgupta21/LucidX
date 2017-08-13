@@ -15,6 +15,10 @@ namespace LucidX.iOS
 		public SWRevealViewController revealVC;
 
 		CalendarVC calendarVc;
+		Orders.OrderListVC orderVc;
+		
+
+
 		public Inbox.InboxVC inboxVc;
 		public Notes.ViewNotesVC notesVC;
 		bool isfirstTime;
@@ -82,28 +86,56 @@ namespace LucidX.iOS
 			SectionTitle.Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Notes", ""));
 			SectionTitle.Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Logout", ""));
 
-
 			RowsTitle[0].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInbox", ""));
+			RowsImgs[0].Add(UIImage.FromBundle("Inbox"));
+
 			RowsTitle[0].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSDrafts", ""));
+			RowsImgs[0].Add(UIImage.FromBundle("Drafts"));
+
 			RowsTitle[0].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSSent", ""));
+			RowsImgs[0].Add(UIImage.FromBundle("Sent"));
+
 			RowsTitle[0].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSTrash", ""));
+			RowsImgs[0].Add(UIImage.FromBundle("Trash"));
 
 			RowsTitle[1].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("List", ""));
+			RowsImgs[1].Add(UIImage.FromBundle("Calendar"));
+
 			RowsTitle[1].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Add", ""));
+			RowsImgs[1].Add(UIImage.FromBundle("CalendarAdd"));
+
 
 			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("View Order", ""));
+			RowsImgs[2].Add(UIImage.FromBundle("Orders"));
+
 			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Amend Order", ""));
+			RowsImgs[2].Add(UIImage.FromBundle("OrderAmend"));
+			
 			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Create Order", ""));
+			RowsImgs[2].Add(UIImage.FromBundle("OrderAdd"));
+			
 			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Convert Order", ""));
+			RowsImgs[2].Add(UIImage.FromBundle("OrderConvert"));
+			
 			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Delete Order", ""));
+			RowsImgs[2].Add(UIImage.FromBundle("Trash"));
+
 
 			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("View Notes", ""));
+			RowsImgs[3].Add(UIImage.FromBundle("Notes"));
+			
 			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Amend Notes", ""));
+			RowsImgs[3].Add(UIImage.FromBundle("NotesAmend"));
+			
 			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Create Notes", ""));
+			RowsImgs[3].Add(UIImage.FromBundle("NotesAdd"));
+			
 			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Delete Notes", ""));
-
-			RowsTitle[4].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Delete Notes", ""));
-
+			RowsImgs[3].Add(UIImage.FromBundle("NotesDelete"));
+			
+			RowsTitle[4].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Log Out", ""));
+			RowsImgs[4].Add(UIImage.FromBundle("Logout"));
+			
 			IBContntTbl.ReloadData();
 		}
 
@@ -138,6 +170,13 @@ namespace LucidX.iOS
 			new List<string> (),
 		};
 
+		List<List<UIImage>> RowsImgs = new List<List<UIImage>>() { new List<UIImage>(),
+			new List<UIImage> (),
+			new List<UIImage> (),
+			new List<UIImage> (),
+			new List<UIImage> (),
+		};
+
 		[Export("numberOfSectionsInTableView:")]
 		public nint NumberOfSections(UITableView tableView)
 		{
@@ -149,6 +188,7 @@ namespace LucidX.iOS
 		public UIView GetViewForHeader(UITableView tableView, nint section)
 		{
 			var header = MenuHeader.Create();
+			header.BackgroundColor = IosUtils.IosColorConstant.ThemeDarkBlue;
 			header.Frame = new CGRect(0, 0, tableView.Bounds.Width, 70);
 			if (section == SelectedSection)
 			{
@@ -176,7 +216,7 @@ namespace LucidX.iOS
 		public UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
 			var cell = tableView.DequeueReusableCell(MenuCell.Key) as MenuCell;
-			cell.ConfigureCell(RowsTitle[indexPath.Section][indexPath.Row], null, 0, indexPath == selectedIndex);
+			cell.ConfigureCell(RowsTitle[indexPath.Section][indexPath.Row], RowsImgs[indexPath.Section][indexPath.Row], 0, indexPath == selectedIndex);
 			return cell;
 		}
 
@@ -193,7 +233,7 @@ namespace LucidX.iOS
 		[Export("tableView:heightForRowAtIndexPath:")]
 		public nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
 		{
-			return UITableView.AutomaticDimension;
+			return 40;
 		}
 
 		void Header_Clicked(object sender, bool e)
@@ -243,12 +283,39 @@ namespace LucidX.iOS
 					if (calendarVc == null) {
 						calendarVc = new CalendarVC();
 					}
+					calendarVc.revealVC = revealVC;
 					ShowVC(calendarVc);
+				}else if (indexPath.Row == 1)
+				{
+					// add calendar event
+					if (calendarVc != null)
+					{
+						var createNotesVc = new CreateCalendarEventVC();
+						calendarVc.NavigationController.PushViewController(createNotesVc, true);
+						revealVC.RevealToggleAnimated(true);
+					}
+					else if (notesVC == null)
+					{
+						calendarVc = new CalendarVC();
+						calendarVc.revealVC = revealVC;
+						ShowVC(calendarVc);
+						var createNotesVc = new CreateCalendarEventVC();
+						calendarVc.NavigationController.PushViewController(createNotesVc, true);
+					}
 				}
 			}
 			else if (indexPath.Section == 2)
 			{
+				if (indexPath.Row == 0)
+				{
+					if (orderVc == null)
+					{
+						orderVc = new Orders.OrderListVC();
+						orderVc.revealVC = revealVC;
+					}
+					ShowVC(orderVc);
 
+				}
 			}
 			else if (indexPath.Section == 3)
 			{

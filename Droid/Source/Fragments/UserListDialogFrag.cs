@@ -65,11 +65,11 @@ namespace LucidX.Droid.Source.CustomDialogFragment
             {
                 OrderAddModel model = new OrderAddModel();
                 model.ItemDescription = mView.FindViewById<EditText>(Resource.Id.edt_item_desc_val).Text;
-                model.RevenueAccount = mView.FindViewById<EditText>(Resource.Id.edt_revenue_account_val).Text;
+             
                 model.Amount = mView.FindViewById<EditText>(Resource.Id.edt_amount_val).Text;
                 model.Vat = mView.FindViewById<EditText>(Resource.Id.edt_vat_val).Text;
 
-                ((AddOrderSecondActivity)mActivity).Add(model);
+                //((AddOrderSecondActivity)mActivity).Add(model);
                 Dismiss();
 
                

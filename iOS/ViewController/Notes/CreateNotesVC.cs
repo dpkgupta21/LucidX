@@ -11,6 +11,7 @@ using LucidX.iOS.PickerModels;
 using LucidX.RequestModels;
 using System.Threading.Tasks;
 using LucidX.Enums;
+using LucidX.Constants;
 
 namespace LucidX.iOS.Notes
 {
@@ -214,7 +215,7 @@ namespace LucidX.iOS.Notes
 						notesDetail = IBNotesDetailsTxt.Text,
 						notesHeader = IBNotesHeaderTxt.Text,
 						privacyId = privacy,
-						connectionName = "DEMOConneection",
+						connectionName = WebserviceConstants.CONNECTION_NAME,
 						userId = Settings.UserId,
 						notesId = notes != null ? notes.NotesId : "0",
 						notesDetail_Add = "",
@@ -284,10 +285,35 @@ namespace LucidX.iOS.Notes
 
 		#region IBAction Methods
 
-		void DeleteClicked(object sender, EventArgs e)
+		async void DeleteClicked(object sender, EventArgs e)
 		{
-			//var createNotesVc = new CreateNotesVC();
-			//this.NavigationController.PushViewController(createNotesVc, true);
+			if (IosUtils.Utility.IsReachable())
+			{
+				IosUtils.Utility.showProgressHud("");
+				try
+				{
+					if (isEdit && notes != null)
+					{
+						var res = await WebServiceMethods.DeleteCrmNotes(notes.NotesId);
+						IosUtils.Utility.hideProgressHud();
+						if (res)
+						{
+							this.NavigationController.PopViewController(true);
+						}
+						else
+						{
+							IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+															  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					IosUtils.Utility.hideProgressHud();
+					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+													   ex.Message);
+				}
+			}
 		}
 
 		partial void IBAccountDoneClicked(Foundation.NSObject sender)
@@ -301,7 +327,6 @@ namespace LucidX.iOS.Notes
 			EntityCode = entityModel.selectedModel;
 			GetAccountCodeList();
 			selectedTextFeild.EndEditing(true);
-
 		}
 
 

@@ -40,4 +40,8 @@
   <!-- Spinner item text-->
   <dimen name="spinner_item_text">17sp</dimen>
   
+  <!--Order items in list -->
+  <dimen name="header_order_item_size">16sp</dimen>
+  <dimen name="header_order_date_size">12sp</dimen>
+  <dimen name="button_in_order_size">18sp</dimen>
 </resources>

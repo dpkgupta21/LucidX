@@ -6,6 +6,7 @@ using Object = Java.Lang.Object;
 using LucidX.Droid.Source.Models;
 using System.Collections.Generic;
 using LucidX.ResponseModels;
+using Android.Content.Res;
 
 namespace LucidX.Droid.Source.Adapters
 {
@@ -96,6 +97,12 @@ namespace LucidX.Droid.Source.Adapters
                 ChildMenuModel submenu = submenuList[childPosition];
                 holder.txt_submenu_name.Tag = groupPosition + ":" + childPosition;
                 holder.txt_submenu_name.Text = submenu.submenuName;
+
+                Resources resources = mActivity.Resources;
+                int resourceId = resources.GetIdentifier(submenu.submenuIcon, "drawable",
+                   mActivity.PackageName);
+
+                holder.img_submenu_icon.SetImageResource(resourceId);
 
                 if (groupPosition == selectedGroupPosition
                     && childPosition== selectedChildPosition)

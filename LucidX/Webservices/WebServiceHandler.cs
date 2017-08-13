@@ -43,7 +43,9 @@ namespace LucidX.Webservices
         /// <param name="Request_Params">This is parameter which we send over server</param>
         /// <returns>Returns result of calling webservice in T type</returns>
 		public async static Task<object> GetWebserviceResult(string Webservice_Method_Name,
-		                                                     HttpMethod Method_Type, object Request_Params)
+		                                                     HttpMethod Method_Type, 
+                                                             object Request_Params,
+                                                             bool isXmlAlready= false)
         {
 			object ParseResponse = null;
             try
@@ -69,9 +71,16 @@ namespace LucidX.Webservices
                     }
                     else if (Method_Type == HttpMethod.Post)
                     {
-
-						var json = Utils.Utilities.ToXML(Request_Params);
-                        var content = new StringContent(json, Encoding.UTF8, "application/xml");
+                        string requestXML = "";
+                        if (isXmlAlready)
+                        {
+                            requestXML = Request_Params.ToString();
+                        }
+                        else {
+                            requestXML = Utils.Utilities.ToXML(Request_Params);
+                        }
+						
+                        var content = new StringContent(requestXML, Encoding.UTF8, "application/xml");
                         Response = await Client.PostAsync(Uri, content);
                     }
                     else if (Method_Type == HttpMethod.Delete)
@@ -92,7 +101,7 @@ namespace LucidX.Webservices
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message.ToString());
+                Console.WriteLine(ex.StackTrace);
             }
 
             return ParseResponse;

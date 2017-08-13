@@ -17,6 +17,7 @@ using Android.Text;
 using LucidX.Droid.Source.CustomViews;
 using Android.Support.V7.App;
 using Android.Graphics;
+using System.Threading.Tasks;
 
 namespace LucidX.Droid.Source.Activities
 {
@@ -32,6 +33,10 @@ namespace LucidX.Droid.Source.Activities
         private Activity mActivity;
 
         private SharedPreferencesManager mSharedPreferencesManager;
+
+        private EmailResponse emailResponseObj;
+
+        private int emailTypeId;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -49,10 +54,12 @@ namespace LucidX.Droid.Source.Activities
 
             try
             {
+              
                 Init();
 
+                emailTypeId = Intent.GetIntExtra("emailTypeId", -1);
                 string emailResonseString = Intent.GetStringExtra("emailResponseString");
-                EmailResponse emailResponseObj = JsonConvert.DeserializeObject<EmailResponse>(emailResonseString);
+                emailResponseObj = JsonConvert.DeserializeObject<EmailResponse>(emailResonseString);
 
                 TextView txt_subject_val = FindViewById<TextView>(Resource.Id.txt_subject_val);
                 TextView txt_img_lbl = FindViewById<TextView>(Resource.Id.txt_img_lbl);
@@ -126,6 +133,13 @@ namespace LucidX.Droid.Source.Activities
                 case Android.Resource.Id.Home:
                     Finish();
                     break;
+                case Resource.Id.menu_delete:
+                    ShowAlertDialog(Resources.GetString(Resource.String.error_alert_title),
+                        GetString(Resource.String.alert_message_delete_notes_confirmation),
+                        GetString(Resource.String.alert_cancel_btn),
+                        GetString(Resource.String.alert_ok_btn)
+                        );
+                    break;
 
             }
             return true;
@@ -158,7 +172,7 @@ namespace LucidX.Droid.Source.Activities
                     {
                         CustomProgressDialog.HideProgressDialog();
                         UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title),
-                               Resources.GetString(Resource.String.alert_message_enter_username_and_password),
+                               Resources.GetString(Resource.String.alert_message_error),
                                Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
 
                     }
@@ -180,7 +194,93 @@ namespace LucidX.Droid.Source.Activities
             }
         }
 
-       
+
+        private async Task<bool> DeleteEmails()
+        {
+            try
+            {
+                if (CrossConnectivity.Current.IsConnected)
+                {
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                           GetString(Resource.String.processing_message));
+                    bool isDelete = await WebServiceMethods.DeleteEmail(emailResponseObj.MailId,
+                    mSharedPreferencesManager.GetString(ConstantsDroid.USER_ID_PREFERENCE, ""));
+                    CustomProgressDialog.HideProgressDialog();
+                    return isDelete;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CustomProgressDialog.HideProgressDialog();
+
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Show Alert Dialog
+        /// </summary>
+        /// <param name="activity">Activity instance</param>
+        /// <param name="title">title of alert dialog</param>
+        /// <param name="messsage">message to show alert dialog</param>
+        /// <returns>Dialog</returns>
+        public Dialog ShowAlertDialog(string title, string messsage,
+            string positivebtn, string negativeBtn)
+        {
+            try
+            {
+
+                Dialog dialog = null;
+                dialog = new CustomDialog().CreateDialog(mActivity,
+                                title,
+                                messsage,
+                                negativeBtn, positivebtn,
+                                   new EventHandler(async delegate (Object o, EventArgs a)
+                                   {
+
+                                       if (dialog != null)
+                                       {
+                                           dialog.Dismiss();
+                                           dialog = null;
+                                       }
+                                       bool isDeleted = await DeleteEmails();
+                                       if (isDeleted)
+                                       {
+
+                                           CallBackScreen();
+                                       }
+                                   }),
+                                 new EventHandler(delegate (Object o, EventArgs a)
+                                 {
+                                     if (dialog != null)
+                                     {
+                                         dialog.Dismiss();
+                                         dialog = null;
+                                     }
+                                 }),
+                              true, true);
+
+                dialog.SetCancelable(true);
+                dialog.Show();
+                return dialog;
+
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+
+        private void CallBackScreen()
+        {
+            Intent returnIntent = new Intent();
+            returnIntent.PutExtra("emailTypeId", emailTypeId);
+            SetResult(Result.Ok, returnIntent);
+            Finish();
+        }
     }
 
 }

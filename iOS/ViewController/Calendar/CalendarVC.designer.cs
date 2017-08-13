@@ -1,152 +1,139 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
-// actions declared in your storyboard file.
-// Manual changes to this file will not be maintained.
+// This file has been generated automatically by Xamarin Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
 //
 using Foundation;
-using System;
 using System.CodeDom.Compiler;
 
 namespace LucidX.iOS.Calendar
 {
-    [Register ("CalendarVC")]
-    partial class CalendarVC
-    {
-        [Outlet]
-        UIKit.UIToolbar IBAssignedDoneBar { get; set; }
+	[Register ("CalendarVC")]
+	partial class CalendarVC
+	{
+		[Outlet]
+		UIKit.UIToolbar IBAssignedDoneBar { get; set; }
 
+		[Outlet]
+		UIKit.UIBarButtonItem IBAssignedDoneBtn { get; set; }
 
-        [Outlet]
-        UIKit.UIBarButtonItem IBAssignedDoneBtn { get; set; }
+		[Outlet]
+		UIKit.UIPickerView IBAssignedToPicker { get; set; }
 
+		[Outlet]
+		UIKit.UITextField IBAssignedToTxt { get; set; }
 
-        [Outlet]
-        UIKit.UIPickerView IBAssignedToPicker { get; set; }
+		[Outlet]
+		UIKit.UITextField IBCalendarTypeTxt { get; set; }
 
+		[Outlet]
+		UIKit.UITableView IBContntTbl { get; set; }
 
-        [Outlet]
-        UIKit.UITextField IBAssignedToTxt { get; set; }
+		[Outlet]
+		UIKit.UIToolbar IBDateTimeDoneBar { get; set; }
 
+		[Outlet]
+		UIKit.UIBarButtonItem IBDateTimeDoneBttn { get; set; }
 
-        [Outlet]
-        UIKit.UITextField IBCalendarTypeTxt { get; set; }
+		[Outlet]
+		UIKit.UIDatePicker IBDateTimePicker { get; set; }
 
+		[Outlet]
+		UIKit.UILabel IBEmptyLbl { get; set; }
 
-        [Outlet]
-        UIKit.UITableView IBContntTbl { get; set; }
+		[Outlet]
+		UIKit.UITextField IBFromDateTxt { get; set; }
 
+		[Outlet]
+		UIKit.UIButton IBSearchBtn { get; set; }
 
-        [Outlet]
-        UIKit.UIToolbar IBDateTimeDoneBar { get; set; }
+		[Outlet]
+		UIKit.UITextField IBToDateTxt { get; set; }
 
+		[Outlet]
+		UIKit.UILabel IBToLbl { get; set; }
 
-        [Outlet]
-        UIKit.UIBarButtonItem IBDateTimeDoneBttn { get; set; }
+		[Action ("IBAssignedDoneClicked:")]
+		partial void IBAssignedDoneClicked (Foundation.NSObject sender);
 
+		[Action ("IBDateTimeDoneClicked:")]
+		partial void IBDateTimeDoneClicked (Foundation.NSObject sender);
 
-        [Outlet]
-        UIKit.UIDatePicker IBDateTimePicker { get; set; }
+		[Action ("SearchClicked:")]
+		partial void SearchClicked (Foundation.NSObject sender);
+		
+		void ReleaseDesignerOutlets ()
+		{
+			if (IBAssignedDoneBar != null) {
+				IBAssignedDoneBar.Dispose ();
+				IBAssignedDoneBar = null;
+			}
 
+			if (IBAssignedDoneBtn != null) {
+				IBAssignedDoneBtn.Dispose ();
+				IBAssignedDoneBtn = null;
+			}
 
-        [Outlet]
-        UIKit.UILabel IBEmptyLbl { get; set; }
+			if (IBAssignedToPicker != null) {
+				IBAssignedToPicker.Dispose ();
+				IBAssignedToPicker = null;
+			}
 
+			if (IBAssignedToTxt != null) {
+				IBAssignedToTxt.Dispose ();
+				IBAssignedToTxt = null;
+			}
 
-        [Outlet]
-        UIKit.UITextField IBFromDateTxt { get; set; }
+			if (IBCalendarTypeTxt != null) {
+				IBCalendarTypeTxt.Dispose ();
+				IBCalendarTypeTxt = null;
+			}
 
+			if (IBContntTbl != null) {
+				IBContntTbl.Dispose ();
+				IBContntTbl = null;
+			}
 
-        [Outlet]
-        UIKit.UIButton IBSearchBtn { get; set; }
+			if (IBDateTimeDoneBar != null) {
+				IBDateTimeDoneBar.Dispose ();
+				IBDateTimeDoneBar = null;
+			}
 
+			if (IBDateTimeDoneBttn != null) {
+				IBDateTimeDoneBttn.Dispose ();
+				IBDateTimeDoneBttn = null;
+			}
 
-        [Outlet]
-        UIKit.UITextField IBToDateTxt { get; set; }
+			if (IBDateTimePicker != null) {
+				IBDateTimePicker.Dispose ();
+				IBDateTimePicker = null;
+			}
 
+			if (IBEmptyLbl != null) {
+				IBEmptyLbl.Dispose ();
+				IBEmptyLbl = null;
+			}
 
-        [Outlet]
-        UIKit.UILabel IBToLbl { get; set; }
+			if (IBFromDateTxt != null) {
+				IBFromDateTxt.Dispose ();
+				IBFromDateTxt = null;
+			}
 
+			if (IBSearchBtn != null) {
+				IBSearchBtn.Dispose ();
+				IBSearchBtn = null;
+			}
 
-        [Action ("IBAssignedDoneClicked:")]
-        partial void IBAssignedDoneClicked (Foundation.NSObject sender);
+			if (IBToDateTxt != null) {
+				IBToDateTxt.Dispose ();
+				IBToDateTxt = null;
+			}
 
-
-        [Action ("IBDateTimeDoneClicked:")]
-        partial void IBDateTimeDoneClicked (Foundation.NSObject sender);
-
-        void ReleaseDesignerOutlets ()
-        {
-            if (IBAssignedDoneBar != null) {
-                IBAssignedDoneBar.Dispose ();
-                IBAssignedDoneBar = null;
-            }
-
-            if (IBAssignedDoneBtn != null) {
-                IBAssignedDoneBtn.Dispose ();
-                IBAssignedDoneBtn = null;
-            }
-
-            if (IBAssignedToPicker != null) {
-                IBAssignedToPicker.Dispose ();
-                IBAssignedToPicker = null;
-            }
-
-            if (IBAssignedToTxt != null) {
-                IBAssignedToTxt.Dispose ();
-                IBAssignedToTxt = null;
-            }
-
-            if (IBCalendarTypeTxt != null) {
-                IBCalendarTypeTxt.Dispose ();
-                IBCalendarTypeTxt = null;
-            }
-
-            if (IBContntTbl != null) {
-                IBContntTbl.Dispose ();
-                IBContntTbl = null;
-            }
-
-            if (IBDateTimeDoneBar != null) {
-                IBDateTimeDoneBar.Dispose ();
-                IBDateTimeDoneBar = null;
-            }
-
-            if (IBDateTimeDoneBttn != null) {
-                IBDateTimeDoneBttn.Dispose ();
-                IBDateTimeDoneBttn = null;
-            }
-
-            if (IBDateTimePicker != null) {
-                IBDateTimePicker.Dispose ();
-                IBDateTimePicker = null;
-            }
-
-            if (IBEmptyLbl != null) {
-                IBEmptyLbl.Dispose ();
-                IBEmptyLbl = null;
-            }
-
-            if (IBFromDateTxt != null) {
-                IBFromDateTxt.Dispose ();
-                IBFromDateTxt = null;
-            }
-
-            if (IBSearchBtn != null) {
-                IBSearchBtn.Dispose ();
-                IBSearchBtn = null;
-            }
-
-            if (IBToDateTxt != null) {
-                IBToDateTxt.Dispose ();
-                IBToDateTxt = null;
-            }
-
-            if (IBToLbl != null) {
-                IBToLbl.Dispose ();
-                IBToLbl = null;
-            }
-        }
-    }
+			if (IBToLbl != null) {
+				IBToLbl.Dispose ();
+				IBToLbl = null;
+			}
+		}
+	}
 }

@@ -1,3 +1,0 @@
-/Users/DeepakGupta/Projects/Lucid Git/LucidX/Droid/obj/Debug/MonoAndroid,Version=v7.1.AssemblyAttribute.cs
-/Users/DeepakGupta/Projects/Lucid Git/LucidX/Droid/obj/Debug/LucidX.Droid.dll
-/Users/DeepakGupta/Projects/Lucid Git/LucidX/Droid/obj/Debug/LucidX.Droid.pdb

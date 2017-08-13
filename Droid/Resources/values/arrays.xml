@@ -88,9 +88,22 @@
     <item>@string/menu_sent</item>
     <item>@string/menu_trash</item>
   </string-array>
+  
+  <string-array name="mail_child_menu_icon_array">
+    <item>inbox</item>
+    <item>draft</item>
+    <item>sent</item>
+    <item>trash</item>
+  </string-array>
+  
 <string-array name="calendar_child_menu_array">
     <item>@string/menu_calendar_list</item>
     <item>@string/menu_calendar_add</item>
+  </string-array>
+  
+  <string-array name="calendar_child_menu_icon_array">
+    <item>calendar_list</item>
+    <item>add_event</item>
   </string-array>
   
   <string-array name="order_child_menu_array">
@@ -101,11 +114,26 @@
      <item>@string/menu_order_delete</item>
   </string-array>
     
+	<string-array name="order_child_menu_icon_array">
+      <item>order_list</item>
+     <item>add_order</item>
+     <item>add_order</item>
+     <item>add_order</item>
+	  <item>delete_order</item>
+  </string-array>
+  
     <string-array name="notes_child_menu_array">
     <item>@string/menu_notes_view</item>
     <item>@string/menu_notes_amend</item>
     <item>@string/menu_notes_create</item>
     <item>@string/menu_notes_delete</item>
+  </string-array>
+  
+  <string-array name="notes_child_menu_icon_array">
+     <item>notes_list</item>
+     <item>edit_notes</item>
+     <item>add_notes</item>
+     <item>delete_notes</item>
   </string-array>
     
   <string-array name="menu_array">

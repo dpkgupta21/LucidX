@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -80,6 +79,9 @@
                         <constraint firstAttribute="width" secondItem="r7T-E4-ojA" secondAttribute="height" id="pal-6x-CKl"/>
                     </constraints>
                     <state key="normal" image="Search"/>
+                    <connections>
+                        <action selector="SearchClicked:" destination="-1" eventType="touchUpInside" id="9eo-tI-gsr"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUJ-Cm-jag">
                     <rect key="frame" x="131.5" y="84" width="19" height="30"/>
@@ -91,6 +93,10 @@
                     <rect key="frame" x="8" y="122" width="304" height="358"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="17V-9h-rsy"/>
+                        <outlet property="delegate" destination="-1" id="Ypc-Mb-gDS"/>
+                    </connections>
                 </tableView>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Notes Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTF-ye-jwR">
                     <rect key="frame" x="8" y="294" width="304" height="21"/>

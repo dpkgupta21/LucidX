@@ -8,8 +8,6 @@
   <application android:label="LucidX" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon">
     <activity android:icon="@mipmap/icon" android:label="LucidX" android:screenOrientation="portrait" android:theme="@style/AppTheme" android:name="md58865ece7961d87d6fdb04c7d0933046e.ComposeEmailActivity" />
     <activity android:icon="@mipmap/icon" android:label="LucidX" android:screenOrientation="portrait" android:theme="@style/AppTheme" android:name="md58865ece7961d87d6fdb04c7d0933046e.AddNotesActivity" />
-    <activity android:icon="@mipmap/icon" android:label="LucidX" android:screenOrientation="portrait" android:theme="@style/AppTheme" android:name="md58865ece7961d87d6fdb04c7d0933046e.AddOrderThirdActivity" />
-    <activity android:icon="@mipmap/icon" android:label="LucidX" android:screenOrientation="portrait" android:theme="@style/AppTheme" android:name="md58865ece7961d87d6fdb04c7d0933046e.AddOrderSecondActivity" />
     <activity android:icon="@mipmap/icon" android:label="LucidX" android:screenOrientation="portrait" android:theme="@style/AppTheme" android:name="md58865ece7961d87d6fdb04c7d0933046e.AddOrderFirstActivity" />
     <activity android:icon="@mipmap/icon" android:label="LucidX" android:screenOrientation="portrait" android:theme="@style/AppTheme" android:name="md58865ece7961d87d6fdb04c7d0933046e.AddCalendarEventActivity" />
     <activity android:icon="@mipmap/icon" android:label="LucidX" android:screenOrientation="portrait" android:theme="@style/AppTheme" android:name="md58865ece7961d87d6fdb04c7d0933046e.EmailDetailActivity" />

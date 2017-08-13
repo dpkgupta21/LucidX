@@ -4,7 +4,7 @@ namespace LucidX.ResponseModels
 {
     public class AccountOrdersResponse
     {
-        public string CompCode { get; set; }
+        public int CompCode { get; set; }
         public string AccountCode { get; set; }
         public int AccountId { get; set; }
         public string AccountName { get; set; }

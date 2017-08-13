@@ -513,15 +513,15 @@ namespace LucidX.Droid.Source.Fragments
                     else
                     {
                         toDateTime = time;
-                        string toDate = time.ToString(UtilityDroid.CALENDAR_DATE_FORMAT);
-                        txt_to_date.Text = toDate.Replace("-", "/");
+                        string toDate = Utils.Utilities.DateIntoWebserviceFormat(time);
+                        txt_to_date.Text = toDate;
                     }
                 }
                 catch (Exception ex)
                 {
                 }
             }, toDateTime);
-            frag.Show(Activity.FragmentManager, DatePickerFragment.TAG);
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
         private void Edt_from_date_Click(object sender, EventArgs e)
@@ -530,17 +530,17 @@ namespace LucidX.Droid.Source.Fragments
             {
                 try
                 {
-                    
-                        fromDateTime = time;
-                        string fromDate = time.ToString(UtilityDroid.CALENDAR_DATE_FORMAT);
-                        txt_from_date.Text = fromDate.Replace("-", "/");
-                    
+
+                    fromDateTime = time;
+                    string fromDate = Utils.Utilities.DateIntoWebserviceFormat(time);
+                    txt_from_date.Text = fromDate;
+
                 }
                 catch (Exception ex)
                 {
                 }
             }, fromDateTime);
-            frag.Show(Activity.FragmentManager, DatePickerFragment.TAG);
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
         #endregion

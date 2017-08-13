@@ -66,7 +66,9 @@ namespace LucidX.Droid.Source.Global
         public const int NOTES_LIST_REQUEST_CODE = 1002;
         public const int CALENDAR_LIST_REQUEST_CODE = 1003;
         public const int ADD_CALENDAR_EVENT_REQUEST_CODE = 1004;
-
+        public const int ORDERS_LIST_REQUEST_CODE = 1005;
+        public const int ADD_ORDER_REQUEST_CODE = 1006;
+        public const int EMAIL_DETAIL_REQUEST_CODE = 10007;
 
 
 

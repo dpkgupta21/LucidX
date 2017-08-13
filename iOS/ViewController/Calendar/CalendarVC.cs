@@ -13,7 +13,7 @@ using LucidX.iOS.CustomCells;
 
 namespace LucidX.iOS.Calendar
 {
-	public partial class CalendarVC : UIViewController, IUITextFieldDelegate
+	public partial class CalendarVC : UIViewController, IUITextFieldDelegate,IUITableViewDelegate,IUITableViewDataSource
 	{
 		public CalendarVC() : base("CalendarVC", null)
 		{
@@ -39,6 +39,7 @@ namespace LucidX.iOS.Calendar
 		{
 			base.ViewDidLoad();
 			ConfigureView();
+			GetValues();
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
@@ -51,8 +52,7 @@ namespace LucidX.iOS.Calendar
 		public override void ViewDidAppear(bool animated)
 		{
 			base.ViewDidAppear(animated);
-
-			GetValues();
+			getEvents();
 		}
 		#region Helping Methods
 		/// <summary>
@@ -68,10 +68,11 @@ namespace LucidX.iOS.Calendar
 			this.NavigationItem.LeftBarButtonItem = menuBtn;
 			IBContntTbl.RegisterNibForCellReuse(NotesCell.Nib, NotesCell.Key);
 			IBContntTbl.TableFooterView = new UIView();
+			IBContntTbl.EstimatedRowHeight = 50;
 
 			IBAssignedToTxt.InputView = IBAssignedToPicker;
 			IBAssignedToTxt.InputAccessoryView = IBAssignedDoneBar;
-
+			this.NavigationItem.BackBarButtonItem = new UIBarButtonItem("", UIBarButtonItemStyle.Plain, null, null);
 			var createBtn = new UIBarButtonItem(UIImage.FromBundle("Add"),
 											  UIBarButtonItemStyle.Plain,
 												EditClicked);
@@ -95,7 +96,7 @@ namespace LucidX.iOS.Calendar
 		{
 			try
 			{
-				if (CrossConnectivity.Current.IsConnected)
+				if (IosUtils.Utility.IsReachable())
 				{
 					IosUtils.Utility.showProgressHud("");
 
@@ -128,8 +129,8 @@ namespace LucidX.iOS.Calendar
 			DateTime now = DateTime.Now;
 			StartDate = new DateTime(now.Year, now.Month, 1);
 			EndDate = StartDate.AddMonths(1).AddDays(-1);
-			IBToDateTxt.Text = EndDate.ToString("d");
-			IBFromDateTxt.Text = StartDate.ToString("d");
+			IBToDateTxt.Text = EndDate.ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
+			IBFromDateTxt.Text = StartDate.ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
 			getEvents();
 		}
 
@@ -143,30 +144,34 @@ namespace LucidX.iOS.Calendar
 				IBCalendarTypeTxt.Text = "Journal (" + _selectedNotesList.Count + ")";
 			}
 			SelectedTypes = string.Empty;
-			foreach (var e in _selectedNotesList) {
+			foreach (var e in _selectedNotesList)
+			{
 				SelectedTypes += e.NotesTypeId + ",";
 			}
+			SelectedTypes = SelectedTypes.Substring(0, SelectedTypes.Length - 1);
 		}
 
 		public async void getEvents()
 		{
 			try
 			{
-				if (CrossConnectivity.Current.IsConnected)
+				if (IosUtils.Utility.IsReachable())
 				{
 					IosUtils.Utility.showProgressHud("");
 
 					var res = await WebServiceMethods.GetCalendarEvents(selectedUser.UserID,
-					                                              SelectedTypes,
-					                                              StartDate.ToString("d"),
-					                                              EndDate.ToString("d")
-					                                             );
+																  SelectedTypes,
+					                                                    StartDate.ToString(Utils.Utilities.CALENDAR_DATE_FORMAT),
+																  EndDate.ToString(Utils.Utilities.CALENDAR_DATE_FORMAT)
+																 );
 					if (res != null && res.Count > 0)
 					{
 						Events = res;
 						IBEmptyLbl.Hidden = true;
+						IBContntTbl.ReloadData();
 					}
-					else {
+					else
+					{
 						IBEmptyLbl.Hidden = false;
 					}
 
@@ -183,6 +188,12 @@ namespace LucidX.iOS.Calendar
 		#endregion
 
 		#region IBAction Methods
+
+		partial void SearchClicked(Foundation.NSObject sender)
+		{
+			getEvents();
+		}
+
 
 		void EditClicked(object sender, EventArgs e)
 		{
@@ -212,7 +223,8 @@ namespace LucidX.iOS.Calendar
 			{
 				EndDate = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date);
 			}
-			selectedFeild.Text = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date).ToString("d");
+			selectedFeild.Text = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date).ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
+			selectedFeild.EndEditing(true);
 		}
 
 		[Export("textFieldDidEndEditing:")]
@@ -307,10 +319,10 @@ namespace LucidX.iOS.Calendar
 		{
 			if (IosUtils.Utility.IsReachable())
 			{
-				//var createNotesVc = new CreateNotesVC();
-				//createNotesVc.isEdit = true;
-				//createNotesVc.notes = notes[indexPath.Row];
-				//this.NavigationController.PushViewController(createNotesVc, true);
+				var createNotesVc = new CreateCalendarEventVC();
+				createNotesVc.isEdit = true;
+				createNotesVc.Event = Events[indexPath.Row];
+				this.NavigationController.PushViewController(createNotesVc, true);
 			}
 		}
 

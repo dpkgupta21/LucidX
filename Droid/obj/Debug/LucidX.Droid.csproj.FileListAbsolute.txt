@@ -1,4 +1,3 @@
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\LucidX.Droid.csprojResolveAssemblyReference.cache
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\LucidX.Droid.dll
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\LucidX.Droid.pdb
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\com.educide.lucidx.apk
@@ -56,6 +55,7 @@ G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\activity_add_no
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\individual_item_notes.xml
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\spinner_row_item_lay.xml
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\activity_compose_email.xml
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\fragment_add_first_order.xml
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\activity_login.xml
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\values\strings.xml
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\mipmap-hdpi\icon.png
@@ -150,6 +150,52 @@ G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\child_submenu_v
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable\dialog_rounded.xml
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\R.cs.flag
 G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\uploadflags.txt
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\LucidX.Droid.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\Java.Interop.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\Microsoft.CSharp.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\Mono.Android.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\Mono.CSharp.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\Mono.Data.Tds.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\mscorlib.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.ComponentModel.Composition.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Core.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Data.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.IdentityModel.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Net.Http.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Numerics.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Runtime.Serialization.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Runtime.Serialization.Primitives.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.ServiceModel.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.ServiceModel.Internals.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Transactions.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Xml.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Xml.Linq.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Java.Interop.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\LucidX.Droid.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Mono.Android.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Mono.CSharp.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Mono.Data.Tds.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\mscorlib.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Plugin.Connectivity.Abstractions.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Plugin.Connectivity.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.ComponentModel.Composition.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Core.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Data.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.IdentityModel.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Net.Http.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Numerics.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Runtime.Serialization.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.ServiceModel.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Transactions.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Xml.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\LucidX.Droid.csprojResolveAssemblyReference.cache
+G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\LucidX.Droid.dll.mdb
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\LucidX.Droid.dll
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\LucidX.Droid.pdb
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\com.educide.lucidx.apk
@@ -207,6 +253,7 @@ E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\activity_ad
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\individual_item_notes.xml
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\spinner_row_item_lay.xml
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\activity_compose_email.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\fragment_add_first_order.xml
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\activity_login.xml
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\values\strings.xml
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\mipmap-hdpi\icon.png
@@ -299,98 +346,87 @@ E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable\btn_blue_
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\group_menu_view.xml
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\child_submenu_view.xml
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable\dialog_rounded.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\values-sw320dp\dimens.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\values-sw320dp-hdpi\dimens.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\add_event.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\add_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\add_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\calendar_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\draft.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\inbox.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\notes_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\order_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\sent.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\trash.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\add_event.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\add_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\add_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\background.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\calendar_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\inbox.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\notes_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\order_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\raft.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\sent.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\trash.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\add_event.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\add_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\add_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\calendar_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\draft.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\inbox.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\notes_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\order_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\sent.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\trash.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xhdpi\add_event.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xhdpi\add_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xhdpi\add_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xhdpi\calendar_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xhdpi\notes_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xhdpi\order_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\add_event.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\add_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\add_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\calendar_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\notes_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\order_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\calendar_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\order_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\notes_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\add_event.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\add_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\add_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable\rounded_black_boundary.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable\edittextbg_disabled.xml
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\delete_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\delete_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\add_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-hdpi\edit_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\add_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\delete_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\delete_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\draft.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-ldpi\edit_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\add_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\delete_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\delete_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-mdpi\edit_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xhdpi\add_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xhdpi\delete_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xhdpi\delete_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xhdpi\edit_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\add_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\delete_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\delete_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\event_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxhdpi\edit_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\add_icon.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\delete_order.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\delete_notes.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\event_list.png
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\res\drawable-xxxhdpi\edit_order.png
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\R.cs.flag
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\uploadflags.txt
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\LucidX.Droid.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\Java.Interop.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\Microsoft.CSharp.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\Mono.Android.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\Mono.CSharp.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\Mono.Data.Tds.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\mscorlib.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.ComponentModel.Composition.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.Core.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.Data.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.IdentityModel.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.Net.Http.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.Numerics.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.Runtime.Serialization.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.Runtime.Serialization.Primitives.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.ServiceModel.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.ServiceModel.Internals.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.Transactions.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.Xml.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\System.Xml.Linq.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Java.Interop.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\LucidX.Droid.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Mono.Android.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Mono.CSharp.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Mono.Data.Tds.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\mscorlib.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Plugin.Connectivity.Abstractions.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Plugin.Connectivity.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.ComponentModel.Composition.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Core.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Data.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.IdentityModel.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Net.Http.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Numerics.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Runtime.Serialization.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.ServiceModel.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Transactions.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Xml.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
-E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\LucidX.Droid.csprojResolveAssemblyReference.cache
 E:\Project contents\Edu\LucidX_Git\LucidX\Droid\obj\Debug\LucidX.Droid.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\LucidX.Droid.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\Java.Interop.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\Microsoft.CSharp.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\Mono.Android.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\Mono.CSharp.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\Mono.Data.Tds.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\mscorlib.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.ComponentModel.Composition.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Core.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Data.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.IdentityModel.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Net.Http.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Numerics.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Runtime.Serialization.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Runtime.Serialization.Primitives.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.ServiceModel.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.ServiceModel.Internals.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Transactions.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Xml.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\System.Xml.Linq.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Java.Interop.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\LucidX.Droid.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Mono.Android.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Mono.CSharp.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Mono.Data.Tds.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\mscorlib.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Plugin.Connectivity.Abstractions.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\Plugin.Connectivity.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.ComponentModel.Composition.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Core.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Data.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.IdentityModel.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Net.Http.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Numerics.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Runtime.Serialization.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.ServiceModel.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Transactions.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Xml.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\res\layout\fragment_add_first_order.xml
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\obj\Debug\LucidX.Droid.dll.mdb
-G:\XamarinWorkspace\LucidX_Git\LucidX\Droid\bin\Debug\LucidX.Droid.dll.mdb
+E:\Project contents\Edu\LucidX_Git\LucidX\Droid\bin\Debug\LucidX.Droid.dll.mdb

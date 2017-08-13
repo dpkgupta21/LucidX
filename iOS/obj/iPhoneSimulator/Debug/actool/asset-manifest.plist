@@ -6,23 +6,118 @@
 	<dict>
 		<key>output-files</key>
 		<array>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon29x29.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon29x29@2x.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon29x29@3x.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon40x40@2x.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon40x40@3x.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon57x57.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon57x57@2x.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon60x60@2x.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon60x60@3x.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon29x29~ipad.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon29x29@2x~ipad.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon40x40~ipad.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon40x40@2x~ipad.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon50x50~ipad.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon50x50@2x~ipad.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon72x72~ipad.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon72x72@2x~ipad.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon76x76~ipad.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon76x76@2x~ipad.png</string>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon83.5x83.5@2x~ipad.png</string>
 			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/bundle/Assets.car</string>
 			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/obj/iPhoneSimulator/Debug/actool/partial-info.plist</string>
 		</array>
 	</dict>
+	<key>com.apple.actool.document.notices</key>
+	<array>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][iphone][57x57][][][1x]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Assets.xcassets</string>
+			<key>message</key>
+			<string>57x57 app icons only apply to iPhone apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][iphone][57x57][][][2x]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Assets.xcassets</string>
+			<key>message</key>
+			<string>57x57@2x app icons only apply to iPhone apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][50x50][][][1x]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Assets.xcassets</string>
+			<key>message</key>
+			<string>50x50 iPad spotlight icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][50x50][][][2x]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Assets.xcassets</string>
+			<key>message</key>
+			<string>50x50 iPad spotlight icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][72x72][][][1x]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Assets.xcassets</string>
+			<key>message</key>
+			<string>72x72 app icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][72x72][][][2x]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Assets.xcassets</string>
+			<key>message</key>
+			<string>72x72@2x app icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+	</array>
 	<key>com.apple.actool.document.warnings</key>
 	<array>
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
+				<string>./Trash.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
 			</array>
 			<key>catalog</key>
 			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
 			<key>message</key>
-			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
+			<string>The image set "Trash" has an unassigned child.</string>
 			<key>type</key>
-			<string>Missing Content</string>
+			<string>Ambiguous Content</string>
 		</dict>
 		<dict>
 			<key>affected-items</key>
@@ -51,6 +146,114 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
+				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Sent" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Inbox.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Inbox" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Logo" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Calendar.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Calendar" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Drafts.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Drafts" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Invoice.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Invoice" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Drafts.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Drafts" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Inbox.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Inbox" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
 				<string>./DataBaseSelected.imageset/[universal][][][1x][][][][][][]</string>
 			</array>
 			<key>catalog</key>
@@ -59,6 +262,66 @@
 			<string>The file "database-active.png" for the image set "DataBaseSelected" does not exist.</string>
 			<key>type</key>
 			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Trash.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Trash" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Calendar.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Calendar" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Invoice.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Invoice" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Logo" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Sent" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
 		</dict>
 	</array>
 </dict>

@@ -237,33 +237,38 @@ namespace LucidX.Droid.Source.Activities
                 groupMenuModel.menuName = groupMenuNames[i];
                 List<ChildMenuModel> childMenuList = new List<ChildMenuModel>();
                 string[] childMenuNames = null;
+				string[] childMenuIcons = null;
                 if (groupMenuNames[i].Equals(GetString(Resource.String.menu_mail_lbl)))
                 {
                     childMenuNames = Resources.GetStringArray(Resource.Array.mail_child_menu_array);
-
+					childMenuIcons = Resources.GetStringArray(Resource.Array.mail_child_menu_icon_array);
 
                 }
                 else if (groupMenuNames[i].Equals(GetString(Resource.String.menu_calendar_lbl)))
                 {
                     childMenuNames = Resources.GetStringArray(Resource.Array.calendar_child_menu_array);
+					childMenuIcons = Resources.GetStringArray(Resource.Array.calendar_child_menu_icon_array);
 
 
                 }
                 else if (groupMenuNames[i].Equals(GetString(Resource.String.menu_order_lbl)))
                 {
                     childMenuNames = Resources.GetStringArray(Resource.Array.order_child_menu_array);
+					childMenuIcons = Resources.GetStringArray(Resource.Array.order_child_menu_icon_array);
 
 
                 }
                 else if (groupMenuNames[i].Equals(GetString(Resource.String.menu_notes_lbl)))
                 {
                     childMenuNames = Resources.GetStringArray(Resource.Array.notes_child_menu_array);
+					childMenuIcons = Resources.GetStringArray(Resource.Array.notes_child_menu_icon_array);
 
 
                 }
                 else
                 {
                     childMenuNames = new string[0];
+					childMenuIcons = new string[0];
                 }
                 if (childMenuNames != null)
                 {
@@ -271,6 +276,7 @@ namespace LucidX.Droid.Source.Activities
                     {
                         ChildMenuModel childMenuModel = new ChildMenuModel();
                         childMenuModel.submenuName = childMenuNames[j];
+						childMenuModel.submenuIcon = childMenuIcons[j];
                         childMenuList.Add(childMenuModel);
                     }
                     groupMenuModel.submenuList = childMenuList;
@@ -468,7 +474,8 @@ namespace LucidX.Droid.Source.Activities
                             break;
                         //For Add Order Screen     
                         case 2:
-                            StartActivity(new Intent(this, typeof(AddOrderFirstActivity)));
+                            intent = new Intent(mActivity, typeof(AddOrderFirstActivity));                         
+                            StartActivityForResult(intent, ConstantsDroid.ADD_ORDER_REQUEST_CODE);
                             OverridePendingTransition(Resource.Animation.animation_enter,
                                         Resource.Animation.animation_leave);
                             break;
@@ -579,6 +586,19 @@ namespace LucidX.Droid.Source.Activities
 
                         ShowScreen(3, 0);
                         break;
+                    case ConstantsDroid.EMAIL_DETAIL_REQUEST_CODE:
+
+                        var frag0 = SupportFragmentManager.FindFragmentById(Resource.Id.frame_container);
+                        int emailType = data.GetIntExtra("emailTypeId", -1);
+                    
+                        if (emailType != -1)
+                        {
+                            if (frag0 is InboxFragment)
+                            {
+                                ((InboxFragment)frag0).CallViewInboxEmailsWebservice(emailType);
+                            }
+                        }
+                        break;
 
                     case ConstantsDroid.NOTES_LIST_REQUEST_CODE:
 
@@ -599,6 +619,19 @@ namespace LucidX.Droid.Source.Activities
                         if (frag1 is CalendarFragment)
                         {
                             ((CalendarFragment)frag1).CallCalendarEventsWebservice();
+                        }
+                        break;
+                    case ConstantsDroid.ADD_ORDER_REQUEST_CODE:
+
+                        ShowScreen(2, 0);
+                        break;
+
+                    case ConstantsDroid.ORDERS_LIST_REQUEST_CODE:
+
+                        var frag2 = SupportFragmentManager.FindFragmentById(Resource.Id.frame_container);
+                        if (frag2 is OrderListFragment)
+                        {
+                            ((OrderListFragment)frag2).CallWebserviceForOrdersList();
                         }
                         break;
                 }

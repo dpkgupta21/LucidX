@@ -39,6 +39,7 @@ namespace LucidX.iOS.Notes
 		{
 			base.ViewDidLoad();
 			ConfigureView();
+			GetEntityCodeList();
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -50,7 +51,7 @@ namespace LucidX.iOS.Notes
 		public override void ViewDidAppear(bool animated)
 		{
 			base.ViewDidAppear(animated);
-			GetEntityCodeList();
+			GetNotes();
 		}
 
 
@@ -178,8 +179,8 @@ namespace LucidX.iOS.Notes
 			DateTime now = DateTime.Now;
 			StartDate = new DateTime(now.Year, now.Month, 1);
 			EndDate = StartDate.AddMonths(1).AddDays(-1);
-			IBToDateTxt.Text = EndDate.ToString("d");
-			IBFromDateTxt.Text = StartDate.ToString("d");
+			IBToDateTxt.Text = EndDate.ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
+			IBFromDateTxt.Text = StartDate.ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
 			GetNotes();
 		}
 
@@ -283,6 +284,7 @@ namespace LucidX.iOS.Notes
 
 		#region IBAction Methods
 
+
 		void MenuClicked(object sender, EventArgs e)
 		{
 			revealVC.RevealToggleAnimated(true);
@@ -325,7 +327,7 @@ namespace LucidX.iOS.Notes
 
 		partial void IBDateTimeDoneClicked(Foundation.NSObject sender)
 		{
-			selectedTextFeild.Text = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date).ToString("d");
+			selectedTextFeild.Text = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date).ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
 			if (selectedTextFeild == IBFromDateTxt)
 			{
 				StartDate = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date);

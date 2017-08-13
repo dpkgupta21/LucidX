@@ -524,7 +524,7 @@ namespace LucidX.Droid.Source.Fragments
                 {
                 }
             }, toDateTime);
-            frag.Show(Activity.FragmentManager, DatePickerFragment.TAG);
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
         private void Edt_from_date_Click(object sender, EventArgs e)
@@ -542,7 +542,7 @@ namespace LucidX.Droid.Source.Fragments
                 {
                 }
             }, fromDateTime);
-            frag.Show(Activity.FragmentManager, DatePickerFragment.TAG);
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
         #endregion

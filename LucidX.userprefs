@@ -1,13 +1,8 @@
 ﻿<Properties StartupConfiguration="{9C0D831C-F1F4-4627-8740-6F6EA7DEF97B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController/Settings/SettingsVc.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController/Orders/AddOrder/AddOrderFirst/AddOrderFirstVC.cs">
     <Files>
-      <File FileName="iOS/ViewController/Calendar/CalendarVC.cs" Line="192" Column="35" />
-      <File FileName="iOS/ViewController/Notes/ViewNotesVC.cs" Line="322" Column="4" />
-      <File FileName="LucidX/Webservices/WebServiceMethods.cs" Line="558" Column="60" />
-      <File FileName="iOS/CustomCells/NotesCell/NotesCell.cs" Line="40" Column="61" />
-      <File FileName="iOS/Resources/Base.lproj/Localizable.strings" Line="63" Column="12" />
-      <File FileName="iOS/ViewController/Calendar/CreateCalendarEventVC.cs" Line="5" Column="11" />
-      <File FileName="iOS/ViewController/Settings/SettingsVc.cs" Line="17" Column="8" />
+      <File FileName="iOS/ViewController/Orders/BaseAddOrderVC.cs" Line="18" Column="70" />
+      <File FileName="iOS/ViewController/Orders/AddOrder/AddOrderFirst/AddOrderFirstVC.cs" Line="7" Column="55" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -17,6 +12,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.LucidX.Droid PreferredExecutionTarget="Android.SelectDevice" />
   <MonoDevelop.Ide.ItemProperties.LucidX.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.86675EF0-19D9-42BA-809D-EFB9D5EE0766" />
   <MultiItemStartupConfigurations />
 </Properties>

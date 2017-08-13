@@ -1,11 +1,12 @@
 using System;
-using Android.App;
+using Android.Support.V4.App;
 using Android.OS;
 using Android.Widget;
+using Android.App;
 
 namespace LucidX.Droid.Source.Picker
 {
-    public class DatePickerFragment : DialogFragment,
+    public class DatePickerFragment : Android.Support.V4.App.DialogFragment,
                                    DatePickerDialog.IOnDateSetListener
     {
         // TAG can be any string of your choice.

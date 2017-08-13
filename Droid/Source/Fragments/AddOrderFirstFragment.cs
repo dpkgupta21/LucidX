@@ -9,10 +9,13 @@ using Android.Widget;
 using LucidX.Droid.Source.CustomSpinner.Model;
 using System.Collections.Generic;
 using LucidX.Droid.Source.CustomSpinner.Adapter;
-using Android.Graphics;
-//using Android.Support.V4.App;
 using Activity = Android.App.Activity;
-using Android.App;
+using Android.Support.V4.App;
+using LucidX.ResponseModels;
+using LucidX.Droid.Source.Activities;
+using Plugin.Connectivity;
+using LucidX.Droid.Source.CustomViews;
+using LucidX.Webservices;
 
 namespace LucidX.Droid.Source.Fragments
 {
@@ -26,38 +29,52 @@ namespace LucidX.Droid.Source.Fragments
         private Android.Support.V7.Widget.Toolbar toolbar;
         private Activity mActivity;
         private SharedPreferencesManager mSharedPreferencesManager;
+
+        private View view;
         private TextView txt_order_date_val;
+        private TextView txt_order_name_val;
+        private EditText edt_currency;
+        private EditText edt_account_address;
         private DateTime orderDateTime = DateTime.Now;
 
-        private Spinner spin_customer;
-        private SpinnerItemModel _selectedCustomerItem;
-        private SpinnerAdapter _customerSpinnerAdapter;
-        private List<SpinnerItemModel> _customerSpinnerItemModelList;
+        private Spinner spin_account_code;
+        private SpinnerItemModel _selectedAccountCodeItem;
+        private SpinnerAdapter _accountCodeSpinnerAdapter;
+        private List<SpinnerItemModel> _accountCodeSpinnerItemModelList;
+        private int _selectedAccountCodeItemPosition;
 
-        private Spinner spin_currency;
-        private SpinnerItemModel _selectedCurrencyItem;
-        private SpinnerAdapter _currencySpinnerAdapter;
-        private List<SpinnerItemModel> _currencySpinnerItemModelList;
-        private View view;
 
-        public static Fragment GetInstance()
+        private LedgerOrder ledgerOrderObj;
+
+        private List<AccountOrdersResponse> accountOrderResponseList = null;
+        private AccountOrdersResponse accountOrderResponseObj = null;
+
+        private bool isEdit;
+
+        public static Fragment GetInstance(bool isEdit)
         {
             AddOrderFirstFragment fragment = new AddOrderFirstFragment();
+            Bundle b = new Bundle();
+            b.PutBoolean("isEdit", isEdit);
+            fragment.Arguments = b;
             return fragment;
         }
+
 
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-          
+
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             // Use this to return your custom view for this Fragment
             view = inflater.Inflate(Resource.Layout.fragment_add_first_order, container, false);
-           
+
             mActivity = Activity;
+            ledgerOrderObj = ((AddOrderFirstActivity)mActivity).LedgerOrderObj;
+            isEdit = Arguments.GetBoolean("isEdit", false);
 
             /// Shared Preference manager
             mSharedPreferencesManager = UtilityDroid.GetInstance().
@@ -69,76 +86,96 @@ namespace LucidX.Droid.Source.Fragments
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
+
+            Init();
+
+            ShowInEditMode();
+
         }
+
         /// <summary>
         /// Init this instance.
         /// </summary>
         private void Init()
-        {
-            // Init toolbar     
-
+        {   
+            txt_order_name_val = view.FindViewById<TextView>(Resource.Id.txt_order_name_val);
             txt_order_date_val = view.FindViewById<TextView>(Resource.Id.txt_order_date_val);
             txt_order_date_val.Click += Txt_order_date_val_Click;
 
             Button btn_next = view.FindViewById<Button>(Resource.Id.btn_next);
             btn_next.Click += Btn_next_Click;
 
-            spin_customer = view.FindViewById<Spinner>(Resource.Id.spin_customer);
+            spin_account_code = view.FindViewById<Spinner>(Resource.Id.spin_customer);
 
-            spin_currency = view.FindViewById<Spinner>(Resource.Id.spin_currency);
-
-
-            // Set Customer in spinner;
-            InitCustomerSpinnerValues();
-            SetCustomerSpinnerAdapter();
-
-            // Set Currency in spinner
-            InitCurrencySpinnerValues();
-            SetCurrencySpinnerAdapter();
-
-            // Initialize listener for spinner
-            InitializeListeners();
+            edt_currency = view.FindViewById<EditText>(Resource.Id.edt_currency_val);
+            edt_account_address = view.FindViewById<EditText>(Resource.Id.edt_account_address);
         }
 
-        public void ApplyFontForToolbarTitle()
+        private void ShowInEditMode()
         {
-            for (int i = 0; i < toolbar.ChildCount; i++)
+            if (ledgerOrderObj != null)
             {
-                View view = toolbar.GetChildAt(i);
-                if (view is TextView)
-                {
-                    TextView tv = (TextView)view;
-                    Typeface titleFont = Typeface.
-                       CreateFromAsset(mActivity.Assets, "Fonts/century-gothic.ttf");
-                    if (tv.Text.Equals(toolbar.Title))
-                    {
-                        tv.Typeface = titleFont;
-                        break;
-                    }
-                }
-            }
-        }
+                txt_order_date_val.Text = Utils.Utilities.ShowDateInFormat(ledgerOrderObj.TransDate);
+                txt_order_name_val.Text = !string.IsNullOrEmpty(ledgerOrderObj.TransactionReference) ?
+                    ledgerOrderObj.TransactionReference : "";
 
+                // Set selected Account order in spinner;
+                InitAccountOrderSpinnerValues(ledgerOrderObj.AccountCode);
+            }
+            else
+            {
+                txt_order_date_val.Text = Utils.Utilities.ShowCurrentDateInFormat();
+
+                // Set Account order in spinner;
+                InitAccountOrderSpinnerValues(null);
+            }
+
+        }
 
         /// <summary>
         /// Init values for Customerspinner
         /// </summary>
-        private void InitCustomerSpinnerValues()
+        private async void InitAccountOrderSpinnerValues(string accountCode)
         {
-            string[] items = Resources.GetStringArray(Resource.Array.customer_entries);
-
-            _customerSpinnerItemModelList = new List<SpinnerItemModel>();
-
-            for (int i = 0; i < items.Length; i++)
+            try
             {
-                SpinnerItemModel item = new SpinnerItemModel
+                //string[] items = Resources.GetStringArray(Resource.Array.customer_entries);
+                if (CrossConnectivity.Current.IsConnected)
                 {
-                    Id = (i + 1) + "",
-                    TEXT = items[i] + "",
-                    STATE = false
-                };
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                        mActivity.Resources.GetString(Resource.String.loading));
 
-                _customerSpinnerItemModelList.Add(item);
+                    accountOrderResponseList = await WebServiceMethods.GetAccountForOrders();
+
+                    CustomProgressDialog.HideProgressDialog();
+                }
+                _accountCodeSpinnerItemModelList = new List<SpinnerItemModel>();
+
+                for (int i = 0; i < accountOrderResponseList.Count; i++)
+                {
+                    SpinnerItemModel item = new SpinnerItemModel
+                    {
+                        Id = (i + 1) + "",
+                        TEXT = accountOrderResponseList[i].AccountName,
+                        STATE = false,
+                        EXTRA_TEXT = accountOrderResponseList[i].AccountId + ""
+                    };
+
+                    if (!string.IsNullOrEmpty(accountCode))
+                    {
+                        if (accountOrderResponseList[i].AccountCode == accountCode)
+                        {
+                            _selectedAccountCodeItemPosition = i;
+                        }
+                    }
+                    _accountCodeSpinnerItemModelList.Add(item);
+                }
+                SetCustomerSpinnerAdapter();
+            }
+            catch (Exception e)
+            {
+                CustomProgressDialog.HideProgressDialog();
+                UtilityDroid.PrintLog(Tag, e.StackTrace.ToString(), Global.ConstantsDroid.LogType.ERROR);
             }
         }
 
@@ -150,42 +187,13 @@ namespace LucidX.Droid.Source.Fragments
         /// </summary>
         private void SetCustomerSpinnerAdapter()
         {
-            _customerSpinnerAdapter = new SpinnerAdapter(mActivity, Resource.Layout.spinner_row_item_lay,
-                   _customerSpinnerItemModelList);
-            spin_customer.Adapter = _customerSpinnerAdapter;
-        }
+            _accountCodeSpinnerAdapter = new SpinnerAdapter(mActivity, Resource.Layout.spinner_row_item_lay,
+                   _accountCodeSpinnerItemModelList);
+            spin_account_code.Adapter = _accountCodeSpinnerAdapter;
+            spin_account_code.SetSelection(_selectedAccountCodeItemPosition);
 
-
-
-        /// <summary>
-        /// Init values for Currency spinner
-        /// </summary>
-        private void InitCurrencySpinnerValues()
-        {
-            string[] items = Resources.GetStringArray(Resource.Array.currency_entries);
-
-            _currencySpinnerItemModelList = new List<SpinnerItemModel>();
-
-            for (int i = 0; i < items.Length; i++)
-            {
-                SpinnerItemModel item = new SpinnerItemModel
-                {
-                    Id = (i + 1) + "",
-                    TEXT = items[i] + "",
-                    STATE = false
-                };
-                _currencySpinnerItemModelList.Add(item);
-            }
-        }
-
-        /// <summary>
-        /// Set Currency spinner adapter
-        /// </summary>
-        private void SetCurrencySpinnerAdapter()
-        {
-            _currencySpinnerAdapter = new SpinnerAdapter(mActivity, Resource.Layout.spinner_row_item_lay,
-                   _currencySpinnerItemModelList);
-            spin_currency.Adapter = _currencySpinnerAdapter;
+            // Initialize listener for spinner
+            InitializeListeners();
         }
 
 
@@ -193,70 +201,112 @@ namespace LucidX.Droid.Source.Fragments
         private void InitializeListeners()
         {
             // Customer Spinner
-            spin_customer.ItemSelected += (sender, args) =>
+            spin_account_code.ItemSelected += (sender, args) =>
             {
-                _selectedCustomerItem = _customerSpinnerItemModelList[args.Position];
+                _selectedAccountCodeItem = _accountCodeSpinnerItemModelList[args.Position];
 
-                _customerSpinnerItemModelList[args.Position].STATE = true;
+                accountOrderResponseObj = accountOrderResponseList[args.Position];
+
+                _accountCodeSpinnerItemModelList[args.Position].STATE = true;
                 // update spinner item list state
-                for (int i = 0; i < _customerSpinnerItemModelList.Count; i++)
+                for (int i = 0; i < _accountCodeSpinnerItemModelList.Count; i++)
                 {
                     if (i == args.Position)
                     {
-                        _customerSpinnerItemModelList[i].STATE = true;
+                        _accountCodeSpinnerItemModelList[i].STATE = true;
                     }
                     else
                     {
-                        _customerSpinnerItemModelList[i].STATE = false;
+                        _accountCodeSpinnerItemModelList[i].STATE = false;
                     }
                 }
-                _customerSpinnerAdapter.NotifyDataSetChanged();
-            };
+                _accountCodeSpinnerAdapter.NotifyDataSetChanged();
 
+                // Show Account address 
+                ShowAccountAddress();
 
-            // User Spinner
-            spin_currency.ItemSelected += (sender, args) =>
-            {
-                _selectedCurrencyItem = _currencySpinnerItemModelList[args.Position];
-                _currencySpinnerItemModelList[args.Position].STATE = true;
-                // update spinner item list state
-                for (int i = 0; i < _currencySpinnerItemModelList.Count; i++)
-                {
-                    if (i == args.Position)
-                    {
-                        _currencySpinnerItemModelList[i].STATE = true;
-                    }
-                    else
-                    {
-                        _currencySpinnerItemModelList[i].STATE = false;
-                    }
-                }
-                _currencySpinnerAdapter.NotifyDataSetChanged();
+                // Call User Currency from here
+                ShowUserCurrency(accountOrderResponseObj.CountryCode);
             };
         }
 
+        private void ShowAccountAddress()
+        {
+            if (accountOrderResponseObj != null && !string.IsNullOrEmpty(accountOrderResponseObj.City))
+            {
+                edt_account_address.Text = accountOrderResponseObj.ContactPerson + "\n" +
+                    accountOrderResponseObj.Telephone
+                    + "\n" + accountOrderResponseObj.City;
+            }
+        }
+
+
+        private async void ShowUserCurrency(string countryCode)
+        {
+            try
+            {
+                ShowUserCurrencyResponse userCurrencyResponseObj = null;
+                if (CrossConnectivity.Current.IsConnected)
+                {
+                    CustomProgressDialog.ShowProgDialog(mActivity,
+                        mActivity.Resources.GetString(Resource.String.loading));
+
+                    userCurrencyResponseObj = await WebServiceMethods.GetUserCurrencyFromCountryCode(countryCode);
+
+                    if (userCurrencyResponseObj != null && !string.IsNullOrEmpty(userCurrencyResponseObj.CurrencyName))
+                    {
+                        edt_currency.Text = userCurrencyResponseObj.CurrencyName;
+                    }
+                    CustomProgressDialog.HideProgressDialog();
+
+                }
+            }
+            catch (Exception e)
+            {
+                CustomProgressDialog.HideProgressDialog();
+                UtilityDroid.PrintLog(Tag, e.StackTrace.ToString(), Global.ConstantsDroid.LogType.ERROR);
+            }
+        }
 
 
 
         private void Btn_next_Click(object sender, EventArgs e)
         {
-            //StartActivity(new Intent(this, typeof(AddOrderSecondActivity)));
-            //OverridePendingTransition(Resource.Animation.animation_enter,
-            //            Resource.Animation.animation_leave);
+            try {
+                if (ValidateForm())
+                {
+                    ledgerOrderObj.TransDate = Utils.Utilities.GetDateForWebserviceTransDate(txt_order_date_val.Text.Trim());
+                    ledgerOrderObj.TransactionReference = txt_order_name_val.Text.Trim();
+                    ledgerOrderObj.AccountId = accountOrderResponseObj.AccountId;
+                    ledgerOrderObj.AccountCode = accountOrderResponseObj.AccountCode;
+                    ledgerOrderObj.CompCode = accountOrderResponseObj.CompCode;
+                    ledgerOrderObj.CountryCode = accountOrderResponseObj.CountryCode;
+                    ((AddOrderFirstActivity)mActivity).LedgerOrderObj = ledgerOrderObj;
+
+                    DisplayFragment();
+                }
+                else
+                {
+
+                    UtilityDroid.GetInstance().ShowAlertDialog(mActivity, Resources.GetString(Resource.String.error_alert_title),
+                           Resources.GetString(Resource.String.alert_message_fill_all_details),
+                           Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
+                }
+
+            }catch(Exception ex)
+            {
+
+            }
         }
 
-        //public override bool OnOptionsItemSelected(IMenuItem item)
-        //{
-        //    switch (item.ItemId)
-        //    {
-        //        case Android.Resource.Id.Home:
-        //            Finish();
-        //            break;
-
-        //    }
-        //    return true;
-        //}
-
+        private void DisplayFragment()
+        {
+            Fragment fragment = AddOrderSecondFragment.GetInstance();
+            FragmentTransaction ft = FragmentManager.BeginTransaction();
+            ft.Replace(Resource.Id.frame_container, fragment, fragment.Class.Name);
+            ft.AddToBackStack(null);
+            ft.Commit();
+        }
 
         /// <summary>
         /// Shows Date picker for start Date time
@@ -269,19 +319,19 @@ namespace LucidX.Droid.Source.Fragments
             {
                 try
                 {
-                    if (date.Date < DateTime.Now.Date)
-                    {
-                        UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
-                            Resources.GetString(Resource.String.error_alert_title),
-                            Resources.GetString(Resource.String.alert_message_not_less_than_current_date),
-                            Resources.GetString(Resource.String.alert_cancel_btn),
-                            Resources.GetString(Resource.String.alert_ok_btn));
-                    }
-                    else
-                    {
-                        orderDateTime = date;
-                        txt_order_date_val.Text = date.ToShortDateString();
-                    }
+                    //if (date.Date < DateTime.Now.Date)
+                    //{
+                    //    UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
+                    //        Resources.GetString(Resource.String.error_alert_title),
+                    //        Resources.GetString(Resource.String.alert_message_not_less_than_current_date),
+                    //        Resources.GetString(Resource.String.alert_cancel_btn),
+                    //        Resources.GetString(Resource.String.alert_ok_btn));
+                    //}
+                    //else
+                    //{
+                    orderDateTime = date;
+                    txt_order_date_val.Text = Utils.Utilities.DateIntoWebserviceFormat(date);
+                    //  }
                 }
                 catch (Exception ex)
                 {
@@ -291,7 +341,20 @@ namespace LucidX.Droid.Source.Fragments
         }
 
 
+        private bool ValidateForm()
+        {
 
+            if (string.IsNullOrEmpty(txt_order_date_val.Text))
+            {
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txt_order_name_val.Text))
+            {
+                return false;
+            }
+
+            return true;
+        }
 
     }
 

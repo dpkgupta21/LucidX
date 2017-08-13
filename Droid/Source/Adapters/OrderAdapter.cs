@@ -8,26 +8,27 @@ using LucidX.ResponseModels;
 
 namespace LucidX.Droid.Source.Adapters
 {
-    public class OrderAdapter : BaseAdapter<OrdersResponse>
+    public class OrderAdapter : BaseAdapter<LedgerOrder>
     {
         private LayoutInflater mLayoutInflater;
-        private List<OrdersResponse> orderList;
+        private List<LedgerOrder> ledgerOrderList;
         private Activity mActivity;
 
 
         private class ViewHolder : Object
         {
             public TextView txt_order_date { get; set; }
-            public TextView txt_customer { get; set; }
+            public TextView txt_order_name { get; set; }
             public TextView txt_cost { get; set; }
+            public TextView txt_account_name { get; set; }
 
         }
 
-        public OrderAdapter(List<OrdersResponse> orderList, Activity mActivity)
+        public OrderAdapter(List<LedgerOrder> ledgerOrderList, Activity mActivity)
         {
             mLayoutInflater = (LayoutInflater)mActivity
                  .GetSystemService(Activity.LayoutInflaterService);
-            this.orderList = orderList;
+            this.ledgerOrderList = ledgerOrderList;
             this.mActivity = mActivity;
         }
 
@@ -50,10 +51,12 @@ namespace LucidX.Droid.Source.Adapters
                     parent, false);
                 holder.txt_order_date = convertView.FindViewById<TextView>
                     (Resource.Id.txt_order_date);
-                holder.txt_customer = convertView.FindViewById<TextView>
-                    (Resource.Id.txt_customer);
+                holder.txt_order_name = convertView.FindViewById<TextView>
+                    (Resource.Id.txt_order_name);
                 holder.txt_cost = convertView.FindViewById<TextView>
                    (Resource.Id.txt_cost);
+                holder.txt_account_name = convertView.FindViewById<TextView>
+                   (Resource.Id.txt_account_name);
 
                 convertView.Tag = holder;
             }
@@ -62,9 +65,10 @@ namespace LucidX.Droid.Source.Adapters
                 holder = (ViewHolder)convertView.Tag;
             }
 
-            holder.txt_customer.Text = orderList[position].AccountName;
-            holder.txt_cost.Text = "Amount: "+orderList[position].BaseAmount + "";
-            holder.txt_order_date.Text=  Utils.Utilities.ShowDateInFormat(orderList[position].TransDate);
+            holder.txt_order_name.Text = ledgerOrderList[position].TransactionReference;
+            holder.txt_cost.Text = string.Format("{0:F2}", ledgerOrderList[position].CompleteTotal) + "";
+            holder.txt_order_date.Text=  Utils.Utilities.ShowDateInFormat(ledgerOrderList[position].TransDate);
+            holder.txt_account_name.Text = ledgerOrderList[position].AccountName;
 
             return convertView;
         }
@@ -73,15 +77,15 @@ namespace LucidX.Droid.Source.Adapters
         {
             get
             {
-                return orderList.Count;
+                return ledgerOrderList.Count;
             }
         }
 
-        public override OrdersResponse this[int position]
+        public override LedgerOrder this[int position]
         {
             get
             {
-                return orderList[position];
+                return ledgerOrderList[position];
             }
         }
 

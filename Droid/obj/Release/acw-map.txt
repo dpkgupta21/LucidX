@@ -10,6 +10,18 @@ LucidX.Droid.Source.Picker.TimePickerFragment, LucidX.Droid;md56fa0afcbacf26428a
 LucidX.Droid.Source.Picker.TimePickerFragment, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56fa0afcbacf26428a5f07259d16e8bba.TimePickerFragment
 LucidX.Droid.Source.Picker.TimePickerFragment;md56fa0afcbacf26428a5f07259d16e8bba.TimePickerFragment
 lucidx.droid.source.picker.TimePickerFragment;md56fa0afcbacf26428a5f07259d16e8bba.TimePickerFragment
+LucidX.Droid.Source.Fragments.AddOrderFirstFragment, LucidX.Droid;md56aa094d52557c22741911164d845806f.AddOrderFirstFragment
+LucidX.Droid.Source.Fragments.AddOrderFirstFragment, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56aa094d52557c22741911164d845806f.AddOrderFirstFragment
+LucidX.Droid.Source.Fragments.AddOrderFirstFragment;md56aa094d52557c22741911164d845806f.AddOrderFirstFragment
+lucidx.droid.source.fragments.AddOrderFirstFragment;md56aa094d52557c22741911164d845806f.AddOrderFirstFragment
+LucidX.Droid.Source.Fragments.AddOrderSecondFragment, LucidX.Droid;md56aa094d52557c22741911164d845806f.AddOrderSecondFragment
+LucidX.Droid.Source.Fragments.AddOrderSecondFragment, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56aa094d52557c22741911164d845806f.AddOrderSecondFragment
+LucidX.Droid.Source.Fragments.AddOrderSecondFragment;md56aa094d52557c22741911164d845806f.AddOrderSecondFragment
+lucidx.droid.source.fragments.AddOrderSecondFragment;md56aa094d52557c22741911164d845806f.AddOrderSecondFragment
+LucidX.Droid.Source.Fragments.AddOrderThirdFragment, LucidX.Droid;md56aa094d52557c22741911164d845806f.AddOrderThirdFragment
+LucidX.Droid.Source.Fragments.AddOrderThirdFragment, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56aa094d52557c22741911164d845806f.AddOrderThirdFragment
+LucidX.Droid.Source.Fragments.AddOrderThirdFragment;md56aa094d52557c22741911164d845806f.AddOrderThirdFragment
+lucidx.droid.source.fragments.AddOrderThirdFragment;md56aa094d52557c22741911164d845806f.AddOrderThirdFragment
 LucidX.Droid.Source.Fragments.NotesListFragment, LucidX.Droid;md56aa094d52557c22741911164d845806f.NotesListFragment
 LucidX.Droid.Source.Fragments.NotesListFragment, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56aa094d52557c22741911164d845806f.NotesListFragment
 LucidX.Droid.Source.Fragments.NotesListFragment;md56aa094d52557c22741911164d845806f.NotesListFragment
@@ -142,14 +154,6 @@ LucidX.Droid.Source.Activities.AddNotesActivity, LucidX.Droid;md58865ece7961d87d
 LucidX.Droid.Source.Activities.AddNotesActivity, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md58865ece7961d87d6fdb04c7d0933046e.AddNotesActivity
 LucidX.Droid.Source.Activities.AddNotesActivity;md58865ece7961d87d6fdb04c7d0933046e.AddNotesActivity
 lucidx.droid.source.activities.AddNotesActivity;md58865ece7961d87d6fdb04c7d0933046e.AddNotesActivity
-LucidX.Droid.Source.Activities.AddOrderThirdActivity, LucidX.Droid;md58865ece7961d87d6fdb04c7d0933046e.AddOrderThirdActivity
-LucidX.Droid.Source.Activities.AddOrderThirdActivity, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md58865ece7961d87d6fdb04c7d0933046e.AddOrderThirdActivity
-LucidX.Droid.Source.Activities.AddOrderThirdActivity;md58865ece7961d87d6fdb04c7d0933046e.AddOrderThirdActivity
-lucidx.droid.source.activities.AddOrderThirdActivity;md58865ece7961d87d6fdb04c7d0933046e.AddOrderThirdActivity
-LucidX.Droid.Source.Activities.AddOrderSecondActivity, LucidX.Droid;md58865ece7961d87d6fdb04c7d0933046e.AddOrderSecondActivity
-LucidX.Droid.Source.Activities.AddOrderSecondActivity, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md58865ece7961d87d6fdb04c7d0933046e.AddOrderSecondActivity
-LucidX.Droid.Source.Activities.AddOrderSecondActivity;md58865ece7961d87d6fdb04c7d0933046e.AddOrderSecondActivity
-lucidx.droid.source.activities.AddOrderSecondActivity;md58865ece7961d87d6fdb04c7d0933046e.AddOrderSecondActivity
 LucidX.Droid.Source.Activities.AddOrderFirstActivity, LucidX.Droid;md58865ece7961d87d6fdb04c7d0933046e.AddOrderFirstActivity
 LucidX.Droid.Source.Activities.AddOrderFirstActivity, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md58865ece7961d87d6fdb04c7d0933046e.AddOrderFirstActivity
 LucidX.Droid.Source.Activities.AddOrderFirstActivity;md58865ece7961d87d6fdb04c7d0933046e.AddOrderFirstActivity

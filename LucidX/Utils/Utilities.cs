@@ -11,8 +11,10 @@ namespace LucidX.Utils
     {
         public const string CALENDAR_DATE_FORMAT = "yyyy-MM-dd";
         public const string RECEIVED_DATE_FORMAT_FROM_WEBSERVICE = "yyyyMMdd";
+        public const string CALENDAR_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm";
 
-        public class Utf8StringWriter : StringWriter
+
+		public class Utf8StringWriter : StringWriter
         {
             public override Encoding Encoding => Encoding.UTF8;
         }
@@ -66,7 +68,13 @@ namespace LucidX.Utils
 
         public static DateTime FormatStringIntoDateTime(string dateString)
         {
-            return DateTime.ParseExact(dateString, RECEIVED_DATE_FORMAT_FROM_WEBSERVICE, CultureInfo.InvariantCulture);
+            try
+            {
+                return DateTime.ParseExact(dateString, RECEIVED_DATE_FORMAT_FROM_WEBSERVICE, CultureInfo.InvariantCulture);
+            }catch(Exception ex)
+            {
+                return DateTime.Now;
+            }
         }
 
         public static string ShowDateInFormat(string dateString)
@@ -74,6 +82,16 @@ namespace LucidX.Utils
             return DateIntoWebserviceFormat(FormatStringIntoDateTime(dateString));
         }
 
+        public static string ShowCurrentDateInFormat()
+        {
+            return DateIntoWebserviceFormat(DateTime.Now);
+        }
+
+        public static string GetDateForWebserviceTransDate(string dateString)
+        {
+            DateTime dateTime=  DateTime.ParseExact(dateString, CALENDAR_DATE_FORMAT, CultureInfo.InvariantCulture);
+            return dateTime.ToString(RECEIVED_DATE_FORMAT_FROM_WEBSERVICE);
+        }
 
     }
 }

@@ -75,7 +75,7 @@ namespace LucidX.Droid.Source.Fragments
             HasOptionsMenu = true;
             mActivity = Activity;
 
-          
+
             string title = Arguments.GetString("title");
             ((HomeActivity)mActivity).SetTitle(title);
 
@@ -182,7 +182,7 @@ namespace LucidX.Droid.Source.Fragments
                         Resources.GetString(Resource.String.alert_cancel_btn), Resources.GetString(Resource.String.alert_ok_btn));
                 }
 
-                refresher.Refreshing= false;
+                refresher.Refreshing = false;
             }
             catch (Exception ex)
             {
@@ -262,7 +262,8 @@ namespace LucidX.Droid.Source.Fragments
 
                 Intent intent = new Intent(mActivity, typeof(EmailDetailActivity));
                 intent.PutExtra("emailResponseString", emailResponseString);
-                StartActivity(intent);             
+                intent.PutExtra("emailTypeId", emailTypeId);
+                StartActivityForResult(intent, ConstantsDroid.EMAIL_DETAIL_REQUEST_CODE);
             }
             catch (Exception)
             {
@@ -270,7 +271,31 @@ namespace LucidX.Droid.Source.Fragments
             }
         }
 
+        public void CallViewInboxEmailsWebservice(int emailTypeId)
+        {
+            try
+            {
 
+                if (CrossConnectivity.Current.IsConnected)
+                {
+                    GetInboxList(emailTypeId);
+                }
+
+                else
+                {
+                    UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
+                        Resources.GetString(Resource.String.error_alert_title),
+                        Resources.GetString(Resource.String.alert_message_no_network_connection),
+                        Resources.GetString(Resource.String.alert_cancel_btn),
+                        Resources.GetString(Resource.String.alert_ok_btn));
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
         public void OnClick(View v)
         {
 

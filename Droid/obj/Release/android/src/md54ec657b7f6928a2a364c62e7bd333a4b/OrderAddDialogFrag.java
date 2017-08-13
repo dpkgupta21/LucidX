@@ -24,6 +24,13 @@ public class OrderAddDialogFrag
 			mono.android.TypeManager.Activate ("LucidX.Droid.Source.CustomDialogFragment.OrderAddDialogFrag, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
+	public OrderAddDialogFrag (md56aa094d52557c22741911164d845806f.AddOrderSecondFragment p0) throws java.lang.Throwable
+	{
+		super ();
+		if (getClass () == OrderAddDialogFrag.class)
+			mono.android.TypeManager.Activate ("LucidX.Droid.Source.CustomDialogFragment.OrderAddDialogFrag, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "LucidX.Droid.Source.Fragments.AddOrderSecondFragment, LucidX.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", this, new java.lang.Object[] { p0 });
+	}
+
 
 	public android.view.View onCreateView (android.view.LayoutInflater p0, android.view.ViewGroup p1, android.os.Bundle p2)
 	{

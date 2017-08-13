@@ -123,7 +123,6 @@
     <ImageAsset Include="Resources\Images.xcassets\User.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Password.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Language.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\Logo.imageset\logo.png" />
     <ImageAsset Include="Resources\Images.xcassets\Language.imageset\language-icon.png" />
     <ImageAsset Include="Resources\Images.xcassets\User.imageset\user-icon.png" />
     <ImageAsset Include="Resources\Images.xcassets\Password.imageset\password-icon.png" />
@@ -153,7 +152,6 @@
     <ImageAsset Include="Resources\Images.xcassets\Drafts.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Invoice.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Calendar.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\Calendar.imageset\calendr%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\LineMenu.imageset\menu.png" />
     <ImageAsset Include="Resources\Images.xcassets\LineMenu.imageset\menu%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\LineMenu.imageset\menu%403x.png" />
@@ -170,17 +168,9 @@
     <ImageAsset Include="Resources\Images.xcassets\Forward.imageset\forward%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\Forward.imageset\forward%403x.png" />
     <ImageAsset Include="Resources\Images.xcassets\Inbox.imageset\Inbox.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Inbox.imageset\Inbox%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Inbox.imageset\Inbox%403x.png" />
     <ImageAsset Include="Resources\Images.xcassets\Trash.imageset\trash.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Trash.imageset\trash%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Trash.imageset\trash%403x.png" />
     <ImageAsset Include="Resources\Images.xcassets\Sent.imageset\sent.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Sent.imageset\sent%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Sent.imageset\sent%403x.png" />
     <ImageAsset Include="Resources\Images.xcassets\Drafts.imageset\draft.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Drafts.imageset\draft%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Drafts.imageset\draft%403x.png" />
     <ImageAsset Include="Resources\Images.xcassets\Invoice.imageset\Invoice.png" />
     <ImageAsset Include="Resources\Images.xcassets\Refresh.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Edit.imageset\Contents.json" />
@@ -223,6 +213,46 @@
     <ImageAsset Include="Resources\Images.xcassets\SideArrow.imageset\arrow-drop-down.png" />
     <ImageAsset Include="Resources\Images.xcassets\SideArrow.imageset\arrow-drop-down%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\SideArrow.imageset\arrow-drop-down%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-57x57%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-57x57%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small-50x50%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small-50x50%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-72x72%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-72x72%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Logo.imageset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Logo.imageset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Logo.imageset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\CalendarAdd.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Notes.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Notes.imageset\notes_list.png" />
+    <ImageAsset Include="Resources\Images.xcassets\NotesAdd.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\NotesAdd.imageset\add_notes.png" />
+    <ImageAsset Include="Resources\Images.xcassets\CalendarAdd.imageset\add_event.png" />
+    <ImageAsset Include="Resources\Images.xcassets\NotesAmend.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\NotesAmend.imageset\add_notes.png" />
+    <ImageAsset Include="Resources\Images.xcassets\NotesDelete.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\NotesDelete.imageset\trash.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Orders.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Orders.imageset\order_list.png" />
+    <ImageAsset Include="Resources\Images.xcassets\OrderAmend.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\OrderConvert.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\OrderAdd.imageset\add_order.png" />
+    <ImageAsset Include="Resources\Images.xcassets\OrderAdd.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Logout.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\OrderConvert.imageset\order_list.png" />
+    <ImageAsset Include="Resources\Images.xcassets\OrderAmend.imageset\add_order.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Calendar.imageset\calendar.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -274,6 +304,22 @@
     <Folder Include="Resources\Images.xcassets\DropArrow.imageset\" />
     <Folder Include="Resources\Images.xcassets\SideArrow.imageset\" />
     <Folder Include="MultiSelection\" />
+    <Folder Include="Resources\Images.xcassets\CalendarAdd.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Notes.imageset\" />
+    <Folder Include="Resources\Images.xcassets\NotesAdd.imageset\" />
+    <Folder Include="Resources\Images.xcassets\NotesAmend.imageset\" />
+    <Folder Include="Resources\Images.xcassets\NotesDelete.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Orders.imageset\" />
+    <Folder Include="Resources\Images.xcassets\OrderAmend.imageset\" />
+    <Folder Include="Resources\Images.xcassets\OrderConvert.imageset\" />
+    <Folder Include="Resources\Images.xcassets\OrderAdd.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Logout.imageset\" />
+    <Folder Include="ViewController\Orders\" />
+    <Folder Include="CustomCells\OrderCell\" />
+    <Folder Include="ViewController\Orders\AddOrder\" />
+    <Folder Include="ViewController\Orders\AddOrder\AddOrderFirst\" />
+    <Folder Include="ViewController\Orders\AddOrder\AddOrderSecond\" />
+    <Folder Include="ViewController\Orders\AddOrder\AddOrderThird\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -295,6 +341,12 @@
     <InterfaceDefinition Include="ViewController\Notes\CreateNotesVC.xib" />
     <InterfaceDefinition Include="ViewController\Calendar\CreateCalendarEventVC.xib" />
     <InterfaceDefinition Include="MultiSelection\MultiSelectionDialog.xib" />
+    <InterfaceDefinition Include="ViewController\Orders\OrderListVC.xib" />
+    <InterfaceDefinition Include="CustomCells\OrderCell\OrderListCell.xib" />
+    <InterfaceDefinition Include="ViewController\Orders\AddOrderVC.xib" />
+    <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderFirst\AddOrderFirstVC.xib" />
+    <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderSecond.xib" />
+    <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderThird\AddOrderThird.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -380,6 +432,32 @@
     <Compile Include="MultiSelection\MultiSelectionDialog.cs" />
     <Compile Include="MultiSelection\MultiSelectionDialog.designer.cs">
       <DependentUpon>MultiSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickerModels\EventTypePickerModel.cs" />
+    <Compile Include="ViewController\Orders\OrderListVC.cs" />
+    <Compile Include="ViewController\Orders\OrderListVC.designer.cs">
+      <DependentUpon>OrderListVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCells\OrderCell\OrderListCell.cs" />
+    <Compile Include="CustomCells\OrderCell\OrderListCell.designer.cs">
+      <DependentUpon>OrderListCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Orders\AddOrderVC.cs" />
+    <Compile Include="ViewController\Orders\AddOrderVC.designer.cs">
+      <DependentUpon>AddOrderVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Orders\BaseAddOrderVC.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderFirst\AddOrderFirstVC.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderFirst\AddOrderFirstVC.designer.cs">
+      <DependentUpon>AddOrderFirstVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderSecond.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderSecond.designer.cs">
+      <DependentUpon>AddOrderSecond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderThird\AddOrderThird.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderThird\AddOrderThird.designer.cs">
+      <DependentUpon>AddOrderThird.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

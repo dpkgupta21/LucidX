@@ -211,8 +211,8 @@ namespace LucidX.Droid.Source.Activities
                             accCode = "1718904",
                             notesTypeId = _selectedCalendarTypeItem.EXTRA_TEXT,
                             entryTypeId = 0,
-                            startDate = txt_start_date_val.Text + " "+txt_start_time_val.Text,
-                            endDate = txt_end_date_val.Text +" "+ txt_end_time_val.Text,
+                            startDate = txt_start_date_val.Text + " " + txt_start_time_val.Text,
+                            endDate = txt_end_date_val.Text + " " + txt_end_time_val.Text,
                             subject = txt_subject_val.Text,
                             details = txt_description_val.Text,
                             assignedTo = _selectedUsersItem.EXTRA_TEXT,
@@ -602,25 +602,16 @@ namespace LucidX.Droid.Source.Activities
             {
                 try
                 {
-                    if (date.Date < DateTime.Now.Date)
-                    {
-                        UtilityDroid.GetInstance().ShowAlertDialog(mActivity,
-                            Resources.GetString(Resource.String.error_alert_title),
-                            Resources.GetString(Resource.String.alert_message_not_less_than_current_date),
-                            Resources.GetString(Resource.String.alert_cancel_btn),
-                            Resources.GetString(Resource.String.alert_ok_btn));
-                    }
-                    else
-                    {
-                        startDateTime = date;
-                        txt_start_date_val.Text = date.ToShortDateString();
-                    }
+
+                    startDateTime = date;
+                    txt_start_date_val.Text = Utils.Utilities.DateIntoWebserviceFormat(date);
+
                 }
                 catch (Exception ex)
                 {
                 }
             }, startDateTime);
-            frag.Show(FragmentManager, DatePickerFragment.TAG);
+            frag.Show(SupportFragmentManager, DatePickerFragment.TAG);
         }
 
 
@@ -646,14 +637,14 @@ namespace LucidX.Droid.Source.Activities
                     else
                     {
                         endDateTime = date;
-                        txt_end_date_val.Text = date.ToShortDateString();
+                        txt_end_date_val.Text = Utils.Utilities.DateIntoWebserviceFormat(date);
                     }
                 }
                 catch (Exception ex)
                 {
                 }
             }, endDateTime);
-            frag.Show(FragmentManager, DatePickerFragment.TAG);
+            frag.Show(SupportFragmentManager, DatePickerFragment.TAG);
         }
 
         private void Txt_end_time_val_Click(object sender, EventArgs e)
