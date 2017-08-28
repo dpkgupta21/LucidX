@@ -61,9 +61,9 @@ namespace LucidX.iOS.Notes
 		void ConfigureView()
 		{
 			SetupLanguageString();
-			IosUtils.Utility.setBorderColor(IBNotesDetailsTxt);
-			IosUtils.Utility.setcornerRadius(IBSaveBtn);
-			IosUtils.Utility.setcornerRadius(IBCancelBtn);
+			IosUtils.IosUtility.setBorderColor(IBNotesDetailsTxt);
+			IosUtils.IosUtility.setcornerRadius(IBSaveBtn);
+			IosUtils.IosUtility.setcornerRadius(IBCancelBtn);
 			this.EdgesForExtendedLayout = UIRectEdge.None;
 
 			ScrollVw.Delegate = this;
@@ -122,9 +122,9 @@ namespace LucidX.iOS.Notes
 
 		async void GetEntityCodeList()
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				try
 				{
 					var res = await WebServiceMethods.GetEntityCode();
@@ -142,15 +142,15 @@ namespace LucidX.iOS.Notes
 					}
 					else
 					{
-						IosUtils.Utility.hideProgressHud();
-						IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+						IosUtils.IosUtility.hideProgressHud();
+						IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
 					}
 				}
 				catch (Exception e)
 				{
-					IosUtils.Utility.hideProgressHud();
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.hideProgressHud();
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   e.Message);
 				}
 
@@ -164,9 +164,9 @@ namespace LucidX.iOS.Notes
 		async void GetAccountCodeList()
 		{
 
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				try
 				{
 					var res = await WebServiceMethods.GetAccountCodes(EntityCode.CompCode);
@@ -180,19 +180,19 @@ namespace LucidX.iOS.Notes
 							IBAccountCodePicker.Model = accountModel;
 							IBAccountCodeTxt.Text = AccountCode.AccountCode;
 						});
-						IosUtils.Utility.hideProgressHud();
+						IosUtils.IosUtility.hideProgressHud();
 					}
 					else
 					{
-						IosUtils.Utility.hideProgressHud();
-						IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+						IosUtils.IosUtility.hideProgressHud();
+						IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
 					}
 				}
 				catch (Exception e)
 				{
-					IosUtils.Utility.hideProgressHud();
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"), e.Message);
+					IosUtils.IosUtility.hideProgressHud();
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"), e.Message);
 				}
 
 			}
@@ -202,9 +202,9 @@ namespace LucidX.iOS.Notes
 		async Task SaveNotes()
 		{
 
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				try
 				{
 					AddNotesAPIParams prams = new AddNotesAPIParams()
@@ -224,21 +224,21 @@ namespace LucidX.iOS.Notes
 					};
 
 					var res = await WebServiceMethods.AddCrmNotes(prams);
-					IosUtils.Utility.hideProgressHud();
+					IosUtils.IosUtility.hideProgressHud();
 					if (res == 1)
 					{
 						this.NavigationController.PopViewController(true);
 					}
 					else
 					{
-						IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+						IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
 					}
 				}
 				catch (Exception e)
 				{
-					IosUtils.Utility.hideProgressHud();
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.hideProgressHud();
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   e.Message);
 				}
 
@@ -255,20 +255,20 @@ namespace LucidX.iOS.Notes
 				selectedTextFeild = textField;
 				if (textField == IBAccountCodeTxt && string.IsNullOrEmpty(IBEntityTxt.Text))
 				{
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSEntityCodeEmpty", "LSErrorTitle"));
 					return false;
 				}
 				else if (textField != IBEntityTxt && (string.IsNullOrEmpty(IBEntityTxt.Text) || string.IsNullOrEmpty(IBAccountCodeTxt.Text)))
 				{
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 														   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSBlankMsg", "LSErrorTitle"));
 					return false;
 				}
 			}
 			else
 			{
-				IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+				IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSReloadMsg", "LSErrorTitle"));
 				return false;
 			}
@@ -287,30 +287,30 @@ namespace LucidX.iOS.Notes
 
 		async void DeleteClicked(object sender, EventArgs e)
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				try
 				{
 					if (isEdit && notes != null)
 					{
 						var res = await WebServiceMethods.DeleteCrmNotes(notes.NotesId);
-						IosUtils.Utility.hideProgressHud();
+						IosUtils.IosUtility.hideProgressHud();
 						if (res)
 						{
 							this.NavigationController.PopViewController(true);
 						}
 						else
 						{
-							IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+							IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 															  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
 						}
 					}
 				}
 				catch (Exception ex)
 				{
-					IosUtils.Utility.hideProgressHud();
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.hideProgressHud();
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   ex.Message);
 				}
 			}
@@ -344,7 +344,7 @@ namespace LucidX.iOS.Notes
 				string.IsNullOrEmpty(IBNotesDetailsTxt.Text)
 			  )
 			{
-				IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+				IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSBlankMsg", "LSErrorTitle"));
 
 

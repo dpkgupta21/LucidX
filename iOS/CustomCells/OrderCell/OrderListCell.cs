@@ -26,7 +26,7 @@ namespace LucidX.iOS.OrderCell
 			IBNameLbl.Text = data.TransactionReference;
 			IBTitleLbl.Text = data.AccountName;
 			IBCostValueLbl.Text = data.CompleteTotal.ToString();
-			IBDateLbl.Text = data.DueDate;
+			IBDateLbl.Text = data.TransDate;
 		} 
 	}
 }

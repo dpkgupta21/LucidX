@@ -253,6 +253,10 @@
     <ImageAsset Include="Resources\Images.xcassets\OrderConvert.imageset\order_list.png" />
     <ImageAsset Include="Resources\Images.xcassets\OrderAmend.imageset\add_order.png" />
     <ImageAsset Include="Resources\Images.xcassets\Calendar.imageset\calendar.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Back.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Back.imageset\if_icon-ios7-arrow-back_211686 %282%29.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Back.imageset\if_icon-ios7-arrow-back_211686 %281%29.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Back.imageset\if_icon-ios7-arrow-back_211686.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -320,6 +324,8 @@
     <Folder Include="ViewController\Orders\AddOrder\AddOrderFirst\" />
     <Folder Include="ViewController\Orders\AddOrder\AddOrderSecond\" />
     <Folder Include="ViewController\Orders\AddOrder\AddOrderThird\" />
+    <Folder Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\" />
+    <Folder Include="Resources\Images.xcassets\Back.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -347,6 +353,8 @@
     <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderFirst\AddOrderFirstVC.xib" />
     <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderSecond.xib" />
     <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderThird\AddOrderThird.xib" />
+    <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderItemController.xib" />
+    <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\AddOrderSecondTVCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -360,7 +368,7 @@
     <Compile Include="ViewController\Login\LoginVC.designer.cs" />
     <Compile Include="Utils\IosColorConstant.cs" />
     <Compile Include="Utils\LocalizedString.cs" />
-    <Compile Include="Utils\Utility.cs" />
+    <Compile Include="Utils\IosUtility.cs" />
     <Compile Include="Utils\Settings.cs" />
     <Compile Include="PickerModels\PickerModel.cs" />
     <Compile Include="ViewController\Settings\SettingsVc.cs" />
@@ -459,6 +467,15 @@
     <Compile Include="ViewController\Orders\AddOrder\AddOrderThird\AddOrderThird.designer.cs">
       <DependentUpon>AddOrderThird.cs</DependentUpon>
     </Compile>
+    <Compile Include="PickerModels\AccountOrderPickerModel.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderItemController.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderItemController.designer.cs">
+      <DependentUpon>AddOrderItemController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickerModels\RevenueAccountPickerModel.cs" />
+    <Compile Include="PickerModels\TaxTypePickerModel.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\AddOrderSecondTVCell.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\AddOrderSecondTVCell.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Base.lproj\Localizable.strings" />

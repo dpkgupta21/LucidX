@@ -67,9 +67,9 @@ namespace LucidX.iOS.Calendar
 		{
 			this.EdgesForExtendedLayout = UIRectEdge.None;
 			this.NavigationItem.Title = IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSCalendar", "");
-			IosUtils.Utility.setBorderColor(IBDetailsTxt);
-			IosUtils.Utility.setcornerRadius(IBSaveBtn);
-			IosUtils.Utility.setcornerRadius(IBCancelBtn);
+			IosUtils.IosUtility.setBorderColor(IBDetailsTxt);
+			IosUtils.IosUtility.setcornerRadius(IBSaveBtn);
+			IosUtils.IosUtility.setcornerRadius(IBCancelBtn);
 
 			IBAssignedToTxt.InputView = IBAssignedToPicker;
 			IBAssignedToTxt.InputAccessoryView = IBAssignedToDoneBar;
@@ -108,9 +108,9 @@ namespace LucidX.iOS.Calendar
 		{
 			try
 			{
-				if (IosUtils.Utility.IsReachable())
+				if (IosUtils.IosUtility.IsReachable())
 				{
-					IosUtils.Utility.showProgressHud("");
+					IosUtils.IosUtility.showProgressHud("");
 
 					responseList = await WebServiceMethods.ShowRefUsers();
 
@@ -132,21 +132,21 @@ namespace LucidX.iOS.Calendar
 						IBEventTypePicker.Model = eventPickerModel;
 					}
 
-					IosUtils.Utility.hideProgressHud();
+					IosUtils.IosUtility.hideProgressHud();
 					SetDateTime();
 				}
 			}
 			catch (Exception e)
 			{
-				IosUtils.Utility.hideProgressHud();
+				IosUtils.IosUtility.hideProgressHud();
 			}
 		}
 
 		async void AddCalendarEvent()
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				try
 				{
 					AddCalendarEventsAPIParams prams = new AddCalendarEventsAPIParams()
@@ -169,21 +169,21 @@ namespace LucidX.iOS.Calendar
 					};
 
 					var res = await WebServiceMethods.AddCalendarEvents(prams);
-					IosUtils.Utility.hideProgressHud();
+					IosUtils.IosUtility.hideProgressHud();
 					if (res)
 					{
 						this.NavigationController.PopViewController(true);
 					}
 					else
 					{
-						IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+						IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
 					}
 				}
 				catch (Exception e)
 				{
-					IosUtils.Utility.hideProgressHud();
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.hideProgressHud();
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   e.Message);
 				}
 
@@ -203,9 +203,9 @@ namespace LucidX.iOS.Calendar
 		#region IBAction Methods
 		async void DeleteClicked(object sender, EventArgs e)
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				try
 				{
 					if (isEdit && Event != null)
@@ -213,22 +213,22 @@ namespace LucidX.iOS.Calendar
 						var res = await WebServiceMethods.DeleteEvents(Event.EntryId);
 
 					
-					IosUtils.Utility.hideProgressHud();
+					IosUtils.IosUtility.hideProgressHud();
 					if (res)
 					{
 						this.NavigationController.PopViewController(true);
 					}
 					else
 					{
-						IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+						IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
 					}
 					}
 				}
 				catch (Exception ex)
 				{
-					IosUtils.Utility.hideProgressHud();
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.hideProgressHud();
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   ex.Message);
 				}
 			}
@@ -250,7 +250,7 @@ namespace LucidX.iOS.Calendar
 				string.IsNullOrEmpty(IBToDateTxt.Text)
 			  )
 			{
-				IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+				IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSBlankMsg", "LSErrorTitle"));
 
 
@@ -272,14 +272,14 @@ namespace LucidX.iOS.Calendar
 		}
 		partial void IBDateTimeDoneClicked(Foundation.NSObject sender)
 		{
-			selectedFeild.Text = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date).ToLocalTime().ToString("g");
+			selectedFeild.Text = IosUtils.IosUtility.ConvertToDateTime(IBDateTimePicker.Date).ToLocalTime().ToString("g");
 			if (selectedFeild == IBFromDateTxt)
 			{
-				StartDate = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date);
+				StartDate = IosUtils.IosUtility.ConvertToDateTime(IBDateTimePicker.Date);
 			}
 			else
 			{
-				EndDate = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date);
+				EndDate = IosUtils.IosUtility.ConvertToDateTime(IBDateTimePicker.Date);
 			}
 			selectedFeild.EndEditing(true);
 
@@ -303,26 +303,26 @@ namespace LucidX.iOS.Calendar
 			{
 				if (textField == IBToDateTxt && string.IsNullOrEmpty(IBFromDateTxt.Text))
 				{
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 														   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSFromDateEmpty", "LSErrorTitle"));
 					return false;
 				}
 				else if (textField == IBFromDateTxt)
 				{
-					IBDateTimePicker.Date = IosUtils.Utility.ConvertToNSDate(StartDate);
+					IBDateTimePicker.Date = IosUtils.IosUtility.ConvertToNSDate(StartDate);
 					IBDateTimePicker.MinimumDate = NSDate.DistantPast; //IosUtils.Utility.ConvertToNSDate(new DateTime(2001, 1, 1, 0, 0, 0));
 				}
 				else if (textField == IBToDateTxt && string.IsNullOrEmpty(IBFromDateTxt.Text))
 				{
 
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSFromDateEmpty", "LSErrorTitle"));
 					return false;
 				}
 				else if (textField == IBToDateTxt)
 				{
-					IBDateTimePicker.Date = IosUtils.Utility.ConvertToNSDate(EndDate);
-					IBDateTimePicker.MinimumDate = IosUtils.Utility.ConvertToNSDate(StartDate);
+					IBDateTimePicker.Date = IosUtils.IosUtility.ConvertToNSDate(EndDate);
+					IBDateTimePicker.MinimumDate = IosUtils.IosUtility.ConvertToNSDate(StartDate);
 
 				}
 

@@ -16,7 +16,7 @@ namespace LucidX.iOS
 
 		CalendarVC calendarVc;
 		Orders.OrderListVC orderVc;
-		
+
 
 
 		public Inbox.InboxVC inboxVc;
@@ -110,32 +110,32 @@ namespace LucidX.iOS
 
 			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Amend Order", ""));
 			RowsImgs[2].Add(UIImage.FromBundle("OrderAmend"));
-			
+
 			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Create Order", ""));
 			RowsImgs[2].Add(UIImage.FromBundle("OrderAdd"));
-			
+
 			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Convert Order", ""));
 			RowsImgs[2].Add(UIImage.FromBundle("OrderConvert"));
-			
+
 			RowsTitle[2].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Delete Order", ""));
 			RowsImgs[2].Add(UIImage.FromBundle("Trash"));
 
 
 			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("View Notes", ""));
 			RowsImgs[3].Add(UIImage.FromBundle("Notes"));
-			
+
 			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Amend Notes", ""));
 			RowsImgs[3].Add(UIImage.FromBundle("NotesAmend"));
-			
+
 			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Create Notes", ""));
 			RowsImgs[3].Add(UIImage.FromBundle("NotesAdd"));
-			
+
 			RowsTitle[3].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Delete Notes", ""));
 			RowsImgs[3].Add(UIImage.FromBundle("NotesDelete"));
-			
+
 			RowsTitle[4].Add(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Log Out", ""));
 			RowsImgs[4].Add(UIImage.FromBundle("Logout"));
-			
+
 			IBContntTbl.ReloadData();
 		}
 
@@ -190,14 +190,21 @@ namespace LucidX.iOS
 			var header = MenuHeader.Create();
 			header.BackgroundColor = IosUtils.IosColorConstant.ThemeDarkBlue;
 			header.Frame = new CGRect(0, 0, tableView.Bounds.Width, 70);
-			if (section == SelectedSection)
+			if (section == SectionTitle.Count - 1)
 			{
-				header.Configure(SectionTitle[(int)section], (int)section, IsExpanded);
-
+				header.Configure(SectionTitle[(int)section], (int)section, false, true);
 			}
 			else
 			{
-				header.Configure(SectionTitle[(int)section], (int)section, false);
+				if (section == SelectedSection)
+				{
+					header.Configure(SectionTitle[(int)section], (int)section, IsExpanded);
+
+				}
+				else
+				{
+					header.Configure(SectionTitle[(int)section], (int)section, false);
+				}
 			}
 
 
@@ -241,6 +248,9 @@ namespace LucidX.iOS
 			var vw = sender as MenuHeader;
 			IsExpanded = e;
 			SelectedSection = (int)vw.Tag;
+			if (SelectedSection == SectionTitle.Count - 1) { 
+				//TODO Logout
+			}
 			this.IBContntTbl.ReloadData();
 		}
 
@@ -279,13 +289,16 @@ namespace LucidX.iOS
 			}
 			else if (indexPath.Section == 1)
 			{
-				if (indexPath.Row == 0) {
-					if (calendarVc == null) {
+				if (indexPath.Row == 0)
+				{
+					if (calendarVc == null)
+					{
 						calendarVc = new CalendarVC();
 					}
 					calendarVc.revealVC = revealVC;
 					ShowVC(calendarVc);
-				}else if (indexPath.Row == 1)
+				}
+				else if (indexPath.Row == 1)
 				{
 					// add calendar event
 					if (calendarVc != null)
@@ -345,7 +358,8 @@ namespace LucidX.iOS
 						var createNotesVc = new CreateNotesVC();
 						notesVC.NavigationController.PushViewController(createNotesVc, true);
 						revealVC.RevealToggleAnimated(true);
-					}else if (notesVC == null)
+					}
+					else if (notesVC == null)
 					{
 						notesVC = new Notes.ViewNotesVC();
 						notesVC.revealVC = revealVC;

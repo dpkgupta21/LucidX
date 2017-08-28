@@ -43,15 +43,15 @@ namespace MailDetails
 		/// </summary>
 		async void GetDetails()
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				var desc = await WebServiceMethods.EmailDetail(mail.MailId, IosUtils.Settings.UserId);
 				if (desc != null)
 				{
 					IBContnTxt.AttributedText = GetAttributedStringFromHtml(desc);
 				}
-				IosUtils.Utility.hideProgressHud();
+				IosUtils.IosUtility.hideProgressHud();
 			}
 		}
 

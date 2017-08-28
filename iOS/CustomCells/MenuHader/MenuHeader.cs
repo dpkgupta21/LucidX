@@ -22,11 +22,12 @@ namespace LucidX.iOS
 		}
 
 
-		public void Configure(string Title, int section, bool expnaded = false) {
+		public void Configure(string Title, int section, bool expnaded = false, bool Hide = false) {
 			IBTitleLbl.Text = Title;
 			this.Tag = section;
 			IsSelected = expnaded;
 			IBDropImg.Highlighted = expnaded;
+			IBDropImg.Hidden = Hide;
 		}
 
 		partial void IBHeaderClicked(Foundation.NSObject sender)

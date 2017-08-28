@@ -110,30 +110,6 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./Trash.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Trash" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./DataBaseSelected.imageset/[universal][][][1x][][][][][][]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The file "database-active.png" for the image set "DataBaseSelected" does not exist.</string>
-			<key>type</key>
-			<string>Missing Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
 				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
 			</array>
 			<key>catalog</key>
@@ -142,66 +118,6 @@
 			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
 			<key>type</key>
 			<string>Missing Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Sent" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Inbox.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Inbox" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Logo" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Calendar.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Calendar" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Drafts.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Drafts" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
 		</dict>
 		<dict>
 			<key>affected-items</key>
@@ -230,12 +146,108 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
+				<string>./Calendar.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Calendar" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Trash.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Trash" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./DataBaseSelected.imageset/[universal][][][1x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "database-active.png" for the image set "DataBaseSelected" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Logo" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
 				<string>./Inbox.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
 			</array>
 			<key>catalog</key>
 			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
 			<key>message</key>
 			<string>The image set "Inbox" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Sent" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Logo" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Sent" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Drafts.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Drafts" has an unassigned child.</string>
 			<key>type</key>
 			<string>Ambiguous Content</string>
 		</dict>
@@ -262,6 +274,18 @@
 			<string>The file "database-active.png" for the image set "DataBaseSelected" does not exist.</string>
 			<key>type</key>
 			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Inbox.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Inbox" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
 		</dict>
 		<dict>
 			<key>affected-items</key>
@@ -296,30 +320,6 @@
 			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
 			<key>message</key>
 			<string>The image set "Invoice" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Logo" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Sent" has an unassigned child.</string>
 			<key>type</key>
 			<string>Ambiguous Content</string>
 		</dict>

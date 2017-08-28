@@ -1,14 +1,20 @@
 ﻿<Properties StartupConfiguration="{9C0D831C-F1F4-4627-8740-6F6EA7DEF97B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController/Orders/AddOrder/AddOrderFirst/AddOrderFirstVC.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController/Orders/AddOrderVC.cs">
     <Files>
-      <File FileName="iOS/ViewController/Orders/BaseAddOrderVC.cs" Line="18" Column="70" />
-      <File FileName="iOS/ViewController/Orders/AddOrder/AddOrderFirst/AddOrderFirstVC.cs" Line="7" Column="55" />
+      <File FileName="iOS/ViewController/Orders/AddOrder/AddOrderFirst/AddOrderFirstVC.cs" Line="61" Column="5" />
+      <File FileName="iOS/ViewController/Orders/AddOrder/AddOrderSecond/AddOrderSecond.cs" Line="26" Column="1" />
+      <File FileName="iOS/ViewController/Orders/AddOrder/AddOrderSecond/Cells/AddOrderSecondTVCell.cs" Line="50" Column="18" />
+      <File FileName="iOS/ViewController/Orders/AddOrderVC.cs" Line="78" Column="30" />
+      <File FileName="iOS/ViewController/Orders/AddOrder/AddOrderSecond/AddOrderItemController.cs" Line="62" Column="17" />
+      <File FileName="iOS/ViewController/Orders/OrderListVC.cs" Line="125" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/DeepakGupta/Projects/LucidX/iOS/ViewController/Login/LoginVC.cs" line="41" column="53" />
+      <Breakpoint file="/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/ViewController/Orders/AddOrder/AddOrderSecond/AddOrderItemController.cs" relfile="iOS/ViewController/Orders/AddOrder/AddOrderSecond/AddOrderItemController.cs" line="155" column="1" />
+      <Breakpoint file="/Users/DeepakGupta/Projects/Lucid Git/LucidX/iOS/ViewController/Orders/AddOrder/AddOrderSecond/AddOrderItemController.cs" relfile="iOS/ViewController/Orders/AddOrder/AddOrderSecond/AddOrderItemController.cs" line="111" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

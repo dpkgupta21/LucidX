@@ -78,9 +78,9 @@ namespace Inbox
 
 		async void GetData()
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				var res = await WebServiceMethods.InboxEmails(IosUtils.Settings.UserId, mailTypeId);
 				if (res != null)
 				{
@@ -91,7 +91,7 @@ namespace Inbox
 
 				}
 				IBContntTbl.ReloadData();
-				IosUtils.Utility.hideProgressHud();
+				IosUtils.IosUtility.hideProgressHud();
 			}
 		}
 
@@ -174,7 +174,7 @@ namespace Inbox
 		[Export("tableView:didSelectRowAtIndexPath:")]
 		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
 				mails[indexPath.Row].Unread = false;
 				markRead(mails[indexPath.Row].MailId);
