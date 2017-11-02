@@ -96,9 +96,9 @@ namespace LucidX.iOS.Calendar
 		{
 			try
 			{
-				if (IosUtils.Utility.IsReachable())
+				if (IosUtils.IosUtility.IsReachable())
 				{
-					IosUtils.Utility.showProgressHud("");
+					IosUtils.IosUtility.showProgressHud("");
 
 					responseList = await WebServiceMethods.ShowRefUsers();
 
@@ -114,13 +114,13 @@ namespace LucidX.iOS.Calendar
 
 					GetNotesTypeResult(_notesTypeList);
 
-					IosUtils.Utility.hideProgressHud();
+					IosUtils.IosUtility.hideProgressHud();
 					SetDateTime();
 				}
 			}
 			catch (Exception e)
 			{
-				IosUtils.Utility.hideProgressHud();
+				IosUtils.IosUtility.hideProgressHud();
 			}
 		}
 
@@ -155,9 +155,9 @@ namespace LucidX.iOS.Calendar
 		{
 			try
 			{
-				if (IosUtils.Utility.IsReachable())
+				if (IosUtils.IosUtility.IsReachable())
 				{
-					IosUtils.Utility.showProgressHud("");
+					IosUtils.IosUtility.showProgressHud("");
 
 					var res = await WebServiceMethods.GetCalendarEvents(selectedUser.UserID,
 																  SelectedTypes,
@@ -175,12 +175,12 @@ namespace LucidX.iOS.Calendar
 						IBEmptyLbl.Hidden = false;
 					}
 
-					IosUtils.Utility.hideProgressHud();
+					IosUtils.IosUtility.hideProgressHud();
 				}
 			}
 			catch (Exception e)
 			{
-				IosUtils.Utility.hideProgressHud();
+				IosUtils.IosUtility.hideProgressHud();
 			}
 
 		}
@@ -217,13 +217,13 @@ namespace LucidX.iOS.Calendar
 		{
 			if (selectedFeild == IBFromDateTxt)
 			{
-				StartDate = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date);
+				StartDate = IosUtils.IosUtility.ConvertToDateTime(IBDateTimePicker.Date);
 			}
 			else
 			{
-				EndDate = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date);
+				EndDate = IosUtils.IosUtility.ConvertToDateTime(IBDateTimePicker.Date);
 			}
-			selectedFeild.Text = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date).ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
+			selectedFeild.Text = IosUtils.IosUtility.ConvertToDateTime(IBDateTimePicker.Date).ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
 			selectedFeild.EndEditing(true);
 		}
 
@@ -250,26 +250,26 @@ namespace LucidX.iOS.Calendar
 				}
 				else if (textField == IBToDateTxt && string.IsNullOrEmpty(IBFromDateTxt.Text))
 				{
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 														   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSFromDateEmpty", "LSErrorTitle"));
 					return false;
 				}
 				else if (textField == IBFromDateTxt)
 				{
-					IBDateTimePicker.Date = IosUtils.Utility.ConvertToNSDate(StartDate);
+					IBDateTimePicker.Date = IosUtils.IosUtility.ConvertToNSDate(StartDate);
 					IBDateTimePicker.MinimumDate = NSDate.DistantPast; //IosUtils.Utility.ConvertToNSDate(new DateTime(2001, 1, 1, 0, 0, 0));
 				}
 				else if (textField == IBToDateTxt && string.IsNullOrEmpty(IBFromDateTxt.Text))
 				{
 
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSFromDateEmpty", "LSErrorTitle"));
 					return false;
 				}
 				else if (textField == IBToDateTxt)
 				{
-					IBDateTimePicker.Date = IosUtils.Utility.ConvertToNSDate(EndDate);
-					IBDateTimePicker.MinimumDate = IosUtils.Utility.ConvertToNSDate(StartDate);
+					IBDateTimePicker.Date = IosUtils.IosUtility.ConvertToNSDate(EndDate);
+					IBDateTimePicker.MinimumDate = IosUtils.IosUtility.ConvertToNSDate(StartDate);
 
 				}
 
@@ -317,7 +317,7 @@ namespace LucidX.iOS.Calendar
 		[Export("tableView:didSelectRowAtIndexPath:")]
 		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
 				var createNotesVc = new CreateCalendarEventVC();
 				createNotesVc.isEdit = true;

@@ -59,9 +59,9 @@ namespace LucidX.iOS.Notes
 
 		async void GetNotes()
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				try
 				{
 					var res = await WebServiceMethods.ShowNotes(EntityCode.CompCode, AccountCode.AccountCode, IBFromDateTxt.Text, IBToDateTxt.Text);
@@ -81,7 +81,7 @@ namespace LucidX.iOS.Notes
 							}
 							else
 							{
-								IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+								IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 																	  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
 							}
 							IBNotesTbl.ReloadData();
@@ -89,18 +89,18 @@ namespace LucidX.iOS.Notes
 				}
 				catch (Exception e)
 				{
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"), e.Message);
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"), e.Message);
 
 				}
-				IosUtils.Utility.hideProgressHud();
+				IosUtils.IosUtility.hideProgressHud();
 			}
 		}
 
 		async void GetEntityCodeList()
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				try
 				{
 					var res = await WebServiceMethods.GetEntityCode();
@@ -119,15 +119,15 @@ namespace LucidX.iOS.Notes
 					}
 					else
 					{
-						IosUtils.Utility.hideProgressHud();
-						IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+						IosUtils.IosUtility.hideProgressHud();
+						IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
 					}
 				}
 				catch (Exception e)
 				{
-					IosUtils.Utility.hideProgressHud();
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.hideProgressHud();
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   e.Message);
 				}
 
@@ -139,9 +139,9 @@ namespace LucidX.iOS.Notes
 		async void GetAccountCodeList()
 		{
 
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				try
 				{
 					var res = await WebServiceMethods.GetAccountCodes(EntityCode.CompCode);
@@ -159,15 +159,15 @@ namespace LucidX.iOS.Notes
 					}
 					else
 					{
-						IosUtils.Utility.hideProgressHud();
-						IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+						IosUtils.IosUtility.hideProgressHud();
+						IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
 					}
 				}
 				catch (Exception e)
 				{
-					IosUtils.Utility.hideProgressHud();
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"), e.Message);
+					IosUtils.IosUtility.hideProgressHud();
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"), e.Message);
 				}
 
 			}
@@ -244,38 +244,38 @@ namespace LucidX.iOS.Notes
 				selectedTextFeild = textField;
 				if (textField == IBAccountCodeTxt && string.IsNullOrEmpty(IBEntityTxt.Text))
 				{
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSEntityCodeEmpty", "LSErrorTitle"));
 					return false;
 				}
 				else if (textField == IBFromDateTxt && string.IsNullOrEmpty(IBAccountCodeTxt.Text))
 				{
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSAccountCodeEmpty", "LSErrorTitle"));
 					return false;
 				}
 				else if (textField == IBFromDateTxt)
 				{
-					IBDateTimePicker.Date = IosUtils.Utility.ConvertToNSDate(StartDate);
+					IBDateTimePicker.Date = IosUtils.IosUtility.ConvertToNSDate(StartDate);
 					IBDateTimePicker.MinimumDate = NSDate.DistantPast; //IosUtils.Utility.ConvertToNSDate(new DateTime(2001, 1, 1, 0, 0, 0));
 				}
 				else if (textField == IBToDateTxt && string.IsNullOrEmpty(IBFromDateTxt.Text))
 				{
 
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSFromDateEmpty", "LSErrorTitle"));
 					return false;
 				}
 				else if (textField == IBToDateTxt)
 				{
-					IBDateTimePicker.Date = IosUtils.Utility.ConvertToNSDate(EndDate);
-					IBDateTimePicker.MinimumDate = IosUtils.Utility.ConvertToNSDate(StartDate);
+					IBDateTimePicker.Date = IosUtils.IosUtility.ConvertToNSDate(EndDate);
+					IBDateTimePicker.MinimumDate = IosUtils.IosUtility.ConvertToNSDate(StartDate);
 
 				}
 			}
 			else
 			{
-				IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+				IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSReloadMsg", "LSErrorTitle"));
 				return false;
 			}
@@ -298,7 +298,7 @@ namespace LucidX.iOS.Notes
 			   string.IsNullOrEmpty(IBToDateTxt.Text)
 			  )
 			{
-				IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+				IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 													   IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSBlankMsg", "LSErrorTitle"));
 
 
@@ -327,14 +327,14 @@ namespace LucidX.iOS.Notes
 
 		partial void IBDateTimeDoneClicked(Foundation.NSObject sender)
 		{
-			selectedTextFeild.Text = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date).ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
+			selectedTextFeild.Text = IosUtils.IosUtility.ConvertToDateTime(IBDateTimePicker.Date).ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
 			if (selectedTextFeild == IBFromDateTxt)
 			{
-				StartDate = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date);
+				StartDate = IosUtils.IosUtility.ConvertToDateTime(IBDateTimePicker.Date);
 			}
 			else
 			{
-				EndDate = IosUtils.Utility.ConvertToDateTime(IBDateTimePicker.Date);
+				EndDate = IosUtils.IosUtility.ConvertToDateTime(IBDateTimePicker.Date);
 			}
 			selectedTextFeild.EndEditing(true);
 		}
@@ -378,7 +378,7 @@ namespace LucidX.iOS.Notes
 		[Export("tableView:didSelectRowAtIndexPath:")]
 		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
 				var createNotesVc = new CreateNotesVC();
 				createNotesVc.isEdit = true;

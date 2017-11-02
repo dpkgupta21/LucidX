@@ -13,14 +13,23 @@ namespace LucidX.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			// Perform any additional setup after loading the view, typically from a nib.
+			ConfigureView();
 		}
 
-		public override void DidReceiveMemoryWarning()
-		{
-			base.DidReceiveMemoryWarning();
-			// Release any cached data, images, etc that aren't in use.
+		void ConfigureView() {
+			IosUtils.IosUtility.setcornerRadius(BtnSave);
+			IosUtils.IosUtility.setcornerRadius(BtnCancel);
 		}
+
+		partial void BtnCancelClicked(Foundation.NSObject sender) { 
+		
+		}
+
+		partial void BtnSaveClicked(Foundation.NSObject sender) { 
+		
+		
+		}
+
 	}
 }
 

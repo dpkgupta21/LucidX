@@ -80,11 +80,11 @@ namespace LucidX.iOS
 			{
 				IosUtils.Settings.RemoveLoginInfo();
 			}
-			if (IosUtils.Utility.IsReachable())
+			if (IosUtils.IosUtility.IsReachable())
 			{
-				IosUtils.Utility.showProgressHud("");
+				IosUtils.IosUtility.showProgressHud("");
 				var loginResponse = await WebServiceMethods.Login(IBUsernameTxt.Text, IBPasswordTxt.Text);
-				IosUtils.Utility.hideProgressHud();
+				IosUtils.IosUtility.hideProgressHud();
 				if (loginResponse != null)
 				{
 					if (loginResponse.IsAuthenticate)
@@ -97,7 +97,7 @@ namespace LucidX.iOS
 					}
 					else
 					{
-						IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", ""),
+						IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", ""),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInvalidCredentialError", ""));
 
 					}
@@ -106,7 +106,7 @@ namespace LucidX.iOS
 				{
 					//AppDelegate.GetSharedInstance().showHomeScreen();
 
-					IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", ""),
+					IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", ""),
 														  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSInvalidCredentialError", ""));
 
 				}
@@ -140,7 +140,7 @@ namespace LucidX.iOS
 			}
 			else
 			{
-				IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "")
+				IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "")
 												   , msg);
 			}
 		}
@@ -151,14 +151,14 @@ namespace LucidX.iOS
 		public bool ShouldBeginEditing(UITextField textField)
 		{
 
-			IosUtils.Utility.scrollViewToCenterOfScreen(IBScrollVw, this.View);
+			IosUtils.IosUtility.scrollViewToCenterOfScreen(IBScrollVw, this.View);
 			return true;
 		}
 
 		[Export("textFieldShouldReturn:")]
 		public bool ShouldReturn(UITextField textField)
 		{
-			IosUtils.Utility.scrollViewToZero(IBScrollVw);
+			IosUtils.IosUtility.scrollViewToZero(IBScrollVw);
 			textField.EndEditing(true);
 			return true;
 		}
@@ -188,7 +188,7 @@ namespace LucidX.iOS
 
 			}
 			SetupLanguageString();
-			IosUtils.Utility.scrollViewToZero(IBScrollVw);
+			IosUtils.IosUtility.scrollViewToZero(IBScrollVw);
 			IBLanguageTxt.EndEditing(true);
 		}
 

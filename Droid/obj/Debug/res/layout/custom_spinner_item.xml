@@ -1,1 +1,0 @@
-<LucidX.Droid.Source.CustomViews.CustomTextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="left" android:padding="2dp" android:id="@+id/txt_name" android:textColor="@color/dropdown" android:textSize="@dimen/spinner_item_text" xmlns:android="http://schemas.android.com/apk/res/android" />

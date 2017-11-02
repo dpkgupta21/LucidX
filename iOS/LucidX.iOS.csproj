@@ -21,8 +21,6 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <IOSDebuggerPort>10472</IOSDebuggerPort>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
@@ -37,8 +35,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
@@ -54,8 +50,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -74,8 +68,6 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
-    <MtouchUseSGen>true</MtouchUseSGen>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
@@ -320,6 +312,7 @@
     <Folder Include="ViewController\Orders\AddOrder\AddOrderFirst\" />
     <Folder Include="ViewController\Orders\AddOrder\AddOrderSecond\" />
     <Folder Include="ViewController\Orders\AddOrder\AddOrderThird\" />
+    <Folder Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -347,6 +340,8 @@
     <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderFirst\AddOrderFirstVC.xib" />
     <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderSecond.xib" />
     <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderThird\AddOrderThird.xib" />
+    <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderItemController.xib" />
+    <InterfaceDefinition Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\AddOrderSecondTVCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -360,7 +355,7 @@
     <Compile Include="ViewController\Login\LoginVC.designer.cs" />
     <Compile Include="Utils\IosColorConstant.cs" />
     <Compile Include="Utils\LocalizedString.cs" />
-    <Compile Include="Utils\Utility.cs" />
+    <Compile Include="Utils\IosUtility.cs" />
     <Compile Include="Utils\Settings.cs" />
     <Compile Include="PickerModels\PickerModel.cs" />
     <Compile Include="ViewController\Settings\SettingsVc.cs" />
@@ -458,6 +453,15 @@
     <Compile Include="ViewController\Orders\AddOrder\AddOrderThird\AddOrderThird.cs" />
     <Compile Include="ViewController\Orders\AddOrder\AddOrderThird\AddOrderThird.designer.cs">
       <DependentUpon>AddOrderThird.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickerModels\AccountOrderPickerModel.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderItemController.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderItemController.designer.cs">
+      <DependentUpon>AddOrderItemController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\AddOrderSecondTVCell.cs" />
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\AddOrderSecondTVCell.designer.cs">
+      <DependentUpon>AddOrderSecondTVCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

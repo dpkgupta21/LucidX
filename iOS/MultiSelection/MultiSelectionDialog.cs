@@ -24,9 +24,9 @@ namespace LucidX.iOS
 
 		public void Configure(List<NotesTypeResponse> types,String Title)
 		{
-			IosUtils.Utility.setcornerRadius(this.ContntVw);
-			IosUtils.Utility.setcornerRadius(this.IBSaveBtn);
-			IosUtils.Utility.setcornerRadius(this.IBCancelBtn);
+			IosUtils.IosUtility.setcornerRadius(this.ContntVw);
+			IosUtils.IosUtility.setcornerRadius(this.IBSaveBtn);
+			IosUtils.IosUtility.setcornerRadius(this.IBCancelBtn);
 
 			IBTtitleLbl.Text = Title;
 			Data = types;

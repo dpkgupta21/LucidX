@@ -83,7 +83,7 @@ namespace LucidX.iOS.Orders
 
 			var createBtn = new UIBarButtonItem(UIImage.FromBundle("Add"),
 											  UIBarButtonItemStyle.Plain,
-												EditClicked);
+												AddClicked);
 			this.NavigationItem.RightBarButtonItem = createBtn;
 
 
@@ -105,21 +105,21 @@ namespace LucidX.iOS.Orders
 		{
 			try
 			{
-				if (Utility.IsReachable())
+				if (IosUtility.IsReachable())
 				{
-					Utility.showProgressHud("");
+					IosUtility.showProgressHud("");
 
 					ledgerOrderList = await WebServiceMethods.GetOrders(Settings.UserId,
 																		IBStartDateTxt.Text, IBEndDateTxt.Text);
 
 					IBContntTbl.ReloadData();
-					Utility.hideProgressHud();
+					IosUtility.hideProgressHud();
 				}
 			}
 			catch (Exception ex)
 			{
-				Utility.hideProgressHud();
-				IosUtils.Utility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
+				IosUtility.hideProgressHud();
+				IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
 															  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSUnknownError", "LSErrorTitle"));
 			}
 		}
@@ -149,26 +149,25 @@ namespace LucidX.iOS.Orders
 		}
 
 
-		void EditClicked(object sender, EventArgs e)
+		void AddClicked(object sender, EventArgs e)
 		{
-			//var createNotesVc = new CreateNotesVC();
-			//createNotesVc.isEdit = false;
-			//this.NavigationController.PushViewController(createNotesVc, true);
+			var VC = new AddOrderVC();
+			this.NavigationController.PushViewController(VC,true);
 		}
 
 		partial void DoneClicked(Foundation.NSObject sender)
 		{
 
-			selectedField.Text = IosUtils.Utility.ConvertToDateTime(IBDatePicker.Date).
+			selectedField.Text = IosUtils.IosUtility.ConvertToDateTime(IBDatePicker.Date).
 				ToString(Utils.Utilities.CALENDAR_DATE_FORMAT).
 				Replace("-", "/");
 			if (selectedField == IBStartDateTxt)
 			{
-				StartDate = IosUtils.Utility.ConvertToDateTime(IBDatePicker.Date);
+				StartDate = IosUtils.IosUtility.ConvertToDateTime(IBDatePicker.Date);
 			}
 			else
 			{
-				EndDate = IosUtils.Utility.ConvertToDateTime(IBDatePicker.Date);
+				EndDate = IosUtils.IosUtility.ConvertToDateTime(IBDatePicker.Date);
 			}
 			this.View.EndEditing(true);
 		}
