@@ -1,11 +1,3 @@
-/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/ibtool/_BundleResourceWithLogicalName.items
-/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/_PartialAppManifest.items
-/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/_BundleResourceWithLogicalName.items
-/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/coremlc/_PartialAppManifest.items
-/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/coremlc/_BundleResourceWithLogicalName.items
-/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/
-/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/Base.lproj/Localizable.strings
-/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/fr.lproj/Localizable.strings
 /Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/LucidX.iOS.csprojResolveAssemblyReference.cache
 /Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/LucidX.iOS.csproj.CoreCompileInputs.cache
 /Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/LucidX.iOS.exe
@@ -23,3 +15,11 @@
 /Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/bin/iPhoneSimulator/Debug/Plugin.Settings.Abstractions.xml
 /Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/bin/iPhoneSimulator/Debug/Plugin.Settings.xml
 /Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/LucidX.iOS.pdb
+/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.4/ibtool/_BundleResourceWithLogicalName.items
+/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.4/actool/_PartialAppManifest.items
+/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.4/actool/_BundleResourceWithLogicalName.items
+/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.4/coremlc/_PartialAppManifest.items
+/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.4/coremlc/_BundleResourceWithLogicalName.items
+/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.4/optimized/
+/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.4/optimized/Base.lproj/Localizable.strings
+/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.4/optimized/fr.lproj/Localizable.strings

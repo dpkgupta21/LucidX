@@ -122,78 +122,6 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./DataBaseSelected.imageset/[universal][][][1x][][][][][][]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The file "database-active.png" for the image set "DataBaseSelected" does not exist.</string>
-			<key>type</key>
-			<string>Missing Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Trash.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Trash" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Drafts.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Drafts" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
-			<key>type</key>
-			<string>Missing Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Logo" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The image set "Sent" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
 				<string>./Calendar.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
 			</array>
 			<key>catalog</key>
@@ -206,18 +134,6 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
-			<key>message</key>
-			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
-			<key>type</key>
-			<string>Missing Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
 				<string>./DataBaseSelected.imageset/[universal][][][1x][][][][][][]</string>
 			</array>
 			<key>catalog</key>
@@ -242,6 +158,18 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
+				<string>./Trash.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Trash" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
 				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
 			</array>
 			<key>catalog</key>
@@ -254,12 +182,24 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./Trash.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
 			</array>
 			<key>catalog</key>
 			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
 			<key>message</key>
-			<string>The image set "Trash" has an unassigned child.</string>
+			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Sent" has an unassigned child.</string>
 			<key>type</key>
 			<string>Ambiguous Content</string>
 		</dict>
@@ -291,6 +231,30 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
+				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Logo" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./DataBaseSelected.imageset/[universal][][][1x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "database-active.png" for the image set "DataBaseSelected" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
 				<string>./Invoice.imageset/(null)[2d][Invoice.png]</string>
 				<string>./Invoice.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
 			</array>
@@ -316,6 +280,30 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
+				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Drafts.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Drafts" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
 				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
 			</array>
 			<key>catalog</key>
@@ -334,6 +322,18 @@
 			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
 			<key>message</key>
 			<string>The image set "Calendar" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Trash.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Trash" has an unassigned child.</string>
 			<key>type</key>
 			<string>Ambiguous Content</string>
 		</dict>

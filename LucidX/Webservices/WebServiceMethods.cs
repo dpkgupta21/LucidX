@@ -182,7 +182,7 @@ namespace LucidX.Webservices
                 var response = await WebServiceHandler.GetWebserviceResult(WebserviceConstants.SHOW_INBOX_EMAILS_URL,
                     HttpMethod.Post, param) as FinalResponse;
 
-             
+
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -262,7 +262,7 @@ namespace LucidX.Webservices
                 EmailDetailsAPIParams deleteEmailApiParam = new EmailDetailsAPIParams
                 {
                     MailID = emailId,
-                    uid= uId,
+                    uid = uId,
                     connectionName = WebserviceConstants.CONNECTION_NAME
                 };
 
@@ -776,7 +776,7 @@ namespace LucidX.Webservices
                                 Convert.ToDecimal(dr["CompleteTotal"].ToString()) : 0;
 
                             ledgerOrderResponseList.Add(ledgerOrderResponse);
-                     
+
                         }
                     }
                 }
@@ -823,18 +823,18 @@ namespace LucidX.Webservices
                                 AccountOrdersResponse accountOrderResponse = new AccountOrdersResponse();
                                 accountOrderResponse.CompCode = dr["CompCode"] != DBNull.Value ?
                                     Convert.ToInt32(dr["CompCode"].ToString()) : 0;
-                                accountOrderResponse.AccountCode = dr["AccountCode"] != DBNull.Value ? 
+                                accountOrderResponse.AccountCode = dr["AccountCode"] != DBNull.Value ?
                                     dr["AccountCode"].ToString() : "";
-                                accountOrderResponse.AccountId = dr["AccountID"] != DBNull.Value ? 
+                                accountOrderResponse.AccountId = dr["AccountID"] != DBNull.Value ?
                                     Convert.ToInt32(dr["AccountID"].ToString()) : 0;
                                 accountOrderResponse.AccountName = dr["AccountName"] != DBNull.Value ?
                                     dr["AccountName"].ToString() : "";
                                 accountOrderResponse.StateID = dr["StateID"] != DBNull.Value ? Convert.ToInt32(dr["StateID"].ToString()) : 0;
-                                accountOrderResponse.CountryCode = dr["CountryCode"] != DBNull.Value ? 
+                                accountOrderResponse.CountryCode = dr["CountryCode"] != DBNull.Value ?
                                     dr["CountryCode"].ToString() : "";
                                 accountOrderResponse.City = dr["City"] != DBNull.Value ?
                                     dr["City"].ToString() : "";
-                                accountOrderResponse.ContactPerson = dr["ContactPerson"] != DBNull.Value ? 
+                                accountOrderResponse.ContactPerson = dr["ContactPerson"] != DBNull.Value ?
                                     dr["ContactPerson"].ToString() : "";
                                 accountOrderResponse.Telephone = dr["Telephone"] != DBNull.Value ?
                                     dr["Telephone"].ToString() : "";
@@ -890,15 +890,15 @@ namespace LucidX.Webservices
                                 ShowUserCurrencyResponse userCurrencyResponse = new ShowUserCurrencyResponse();
                                 userCurrencyResponse.CountryCode = dr["CountryCode"] != DBNull.Value ?
                                     dr["CountryCode"].ToString() : "";
-                                userCurrencyResponse.CurrencyCode = dr["CurrencyCode"] != DBNull.Value ? 
+                                userCurrencyResponse.CurrencyCode = dr["CurrencyCode"] != DBNull.Value ?
                                     dr["CurrencyCode"].ToString() : "";
                                 userCurrencyResponse.CurrencyCodeID = dr["CurrencyCodeID"] != DBNull.Value ?
                                     Convert.ToInt32(dr["CurrencyCodeID"].ToString()) : 0;
-                                userCurrencyResponse.CurrencyUnit = dr["CurrencyUnit"] != DBNull.Value ? 
+                                userCurrencyResponse.CurrencyUnit = dr["CurrencyUnit"] != DBNull.Value ?
                                     dr["CurrencyUnit"].ToString() : "";
-                                userCurrencyResponse.RSS_Data = dr["RSS_Data"] != DBNull.Value ? 
+                                userCurrencyResponse.RSS_Data = dr["RSS_Data"] != DBNull.Value ?
                                     Convert.ToBoolean(dr["RSS_Data"].ToString()) : false;
-                                userCurrencyResponse.CurrencyName = dr["CurrencyName"] != DBNull.Value ? 
+                                userCurrencyResponse.CurrencyName = dr["CurrencyName"] != DBNull.Value ?
                                     dr["CurrencyName"].ToString() : "";
 
                                 userCurrencyResponseList.Add(userCurrencyResponse);
@@ -911,7 +911,7 @@ namespace LucidX.Webservices
                     }
                 }
 
-                return userCurrencyResponseList[0];
+                return userCurrencyResponseList.Count == 0 ? null : userCurrencyResponseList[0];
             }
             catch (Exception ex)
             {
@@ -956,7 +956,7 @@ namespace LucidX.Webservices
                         xRoot)).Deserialize(reader);
                     int numOfPersons = result.Count;
                 }
-               
+
 
                 return result;
             }

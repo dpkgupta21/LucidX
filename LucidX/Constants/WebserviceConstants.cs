@@ -9,7 +9,7 @@ namespace LucidX.Constants
         public const string CONNECTION_NAME = "DEMOConneection";
 
         public const string TOKEN = "CE708CEA-65A6-40D4-B51F-C05ED6B10D58";
-        public const string URL = "http://elucidateapi.azurewebsites.net/api/";
+        public const string URL = "https://www.elucidate-5.software:8443/API/";
 
         public const int INBOX_EMAIL_TYPE_ID = 1;
         public const int DRAFT_EMAIL_TYPE_ID = 2;
