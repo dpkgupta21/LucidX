@@ -9,92 +9,88 @@ using System.CodeDom.Compiler;
 
 namespace LucidX.iOS
 {
-	[Register ("AddOrderThird")]
-	partial class AddOrderThird
-	{
-		[Outlet]
-		UIKit.UIButton BtnCancel { get; set; }
+    [Register("AddOrderThird")]
+    partial class AddOrderThird
+    {
+        [Outlet]
+        UIKit.UIButton BtnCancel { get; set; }
 
-		[Outlet]
-		UIKit.UIButton BtnSave { get; set; }
+        [Outlet]
+        UIKit.UIButton BtnSave { get; set; }
 
-<<<<<<< HEAD
-=======
-		[Outlet]
-		UIKit.UILabel LblGross { get; set; }
+        [Outlet]
+        UIKit.UILabel LblGross { get; set; }
 
-		[Outlet]
-		UIKit.UILabel LblNet { get; set; }
+        [Outlet]
+        UIKit.UILabel LblNet { get; set; }
 
-		[Outlet]
-		UIKit.UILabel LblVat { get; set; }
+        [Outlet]
+        UIKit.UILabel LblVat { get; set; }
 
-		[Outlet]
-		UIKit.UITextField TxtGross { get; set; }
+        [Outlet]
+        UIKit.UITextField TxtGross { get; set; }
 
-		[Outlet]
-		UIKit.UITextField TxtNet { get; set; }
+        [Outlet]
+        UIKit.UITextField TxtNet { get; set; }
 
-		[Outlet]
-		UIKit.UITextField txtVat { get; set; }
+        [Outlet]
+        UIKit.UITextField txtVat { get; set; }
 
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
-		[Action ("BtnCancelClicked:")]
-		partial void BtnCancelClicked (Foundation.NSObject sender);
+        [Action("BtnCancelClicked:")]
+        partial void BtnCancelClicked(Foundation.NSObject sender);
 
-		[Action ("BtnSaveClicked:")]
-		partial void BtnSaveClicked (Foundation.NSObject sender);
-		
-		void ReleaseDesignerOutlets ()
-		{
-<<<<<<< HEAD
-			if (BtnSave != null) {
-				BtnSave.Dispose ();
-				BtnSave = null;
-=======
-			if (LblVat != null) {
-				LblVat.Dispose ();
-				LblVat = null;
-			}
+        [Action("BtnSaveClicked:")]
+        partial void BtnSaveClicked(Foundation.NSObject sender);
 
-			if (txtVat != null) {
-				txtVat.Dispose ();
-				txtVat = null;
-			}
+        void ReleaseDesignerOutlets()
+        {
+            if (LblVat != null)
+            {
+                LblVat.Dispose();
+                LblVat = null;
+            }
 
-			if (LblNet != null) {
-				LblNet.Dispose ();
-				LblNet = null;
-			}
+            if (txtVat != null)
+            {
+                txtVat.Dispose();
+                txtVat = null;
+            }
 
-			if (TxtNet != null) {
-				TxtNet.Dispose ();
-				TxtNet = null;
-			}
+            if (LblNet != null)
+            {
+                LblNet.Dispose();
+                LblNet = null;
+            }
 
-			if (LblGross != null) {
-				LblGross.Dispose ();
-				LblGross = null;
-			}
+            if (TxtNet != null)
+            {
+                TxtNet.Dispose();
+                TxtNet = null;
+            }
 
-			if (TxtGross != null) {
-				TxtGross.Dispose ();
-				TxtGross = null;
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
-			}
+            if (LblGross != null)
+            {
+                LblGross.Dispose();
+                LblGross = null;
+            }
 
-			if (BtnCancel != null) {
-				BtnCancel.Dispose ();
-				BtnCancel = null;
-			}
-<<<<<<< HEAD
-=======
+            if (TxtGross != null)
+            {
+                TxtGross.Dispose();
+                TxtGross = null;
+            }
 
-			if (BtnSave != null) {
-				BtnSave.Dispose ();
-				BtnSave = null;
-			}
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
-		}
-	}
+            if (BtnCancel != null)
+            {
+                BtnCancel.Dispose();
+                BtnCancel = null;
+            }
+
+            if (BtnSave != null)
+            {
+                BtnSave.Dispose();
+                BtnSave = null;
+            }
+        }
+    }
 }

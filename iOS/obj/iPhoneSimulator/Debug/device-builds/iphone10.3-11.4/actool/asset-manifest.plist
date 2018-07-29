@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.actool.compilation-results</key>
+	<dict>
+		<key>output-files</key>
+		<array>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon29x29.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon29x29@2x.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon29x29@3x.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon40x40@2x.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon40x40@3x.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon57x57.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon57x57@2x.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon60x60@2x.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon60x60@3x.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon29x29~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon29x29@2x~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon40x40~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon40x40@2x~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon50x50~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon50x50@2x~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon72x72~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon72x72@2x~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon76x76~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon76x76@2x~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/AppIcon83.5x83.5@2x~ipad.png</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/bundle/Assets.car</string>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/partial-info.plist</string>
+		</array>
+	</dict>
+	<key>com.apple.actool.document.notices</key>
+	<array>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][iphone][57x57][][][1x][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>57x57 app icons only apply to iPhone apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][iphone][57x57][][][2x][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>57x57@2x app icons only apply to iPhone apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][50x50][][][1x][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>50x50 iPad spotlight icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][50x50][][][2x][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>50x50 iPad spotlight icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][72x72][][][1x][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>72x72 app icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][72x72][][][2x][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>72x72@2x app icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+	</array>
+	<key>com.apple.actool.document.warnings</key>
+	<array>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>A 1024x1024 app store icon is required for iOS apps</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./DataBaseSelected.imageset/[universal][][][1x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "database-active.png" for the image set "DataBaseSelected" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Trash.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Trash" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Drafts.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Drafts" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Logo" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Sent" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Calendar.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Calendar" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Background.imageset/[universal][][][3x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "Iphone6+7+@3x.jpg" for the image set "Background" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./DataBaseSelected.imageset/[universal][][][1x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "database-active.png" for the image set "DataBaseSelected" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Drafts.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Drafts" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Logo.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Logo" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Trash.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Trash" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Inbox.imageset/(null)[2d][Inbox.png]</string>
+				<string>./Inbox.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Inbox" has 2 unassigned children.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Inbox.imageset/[universal][][][1x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "inbox.png" for the image set "Inbox" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Invoice.imageset/(null)[2d][Invoice.png]</string>
+				<string>./Invoice.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Invoice" has 2 unassigned children.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Invoice.imageset/[universal][][][1x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The file "invoice.png" for the image set "Invoice" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Sent.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Sent" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Calendar.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/akashdeepkaushik/Projects/LucidX/LucidX/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/actool/cloned-assets/Resources/Images.xcassets</string>
+			<key>message</key>
+			<string>The image set "Calendar" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+	</array>
+</dict>
+</plist>

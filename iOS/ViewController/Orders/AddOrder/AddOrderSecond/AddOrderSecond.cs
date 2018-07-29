@@ -19,31 +19,6 @@ namespace LucidX.iOS
 		{
 			base.ViewDidLoad();
 			ConfigureView();
-<<<<<<< HEAD
-		}
-
-
-		void ConfigureView() {
-			ContntTbl.RegisterNibForCellReuse(OrderListCell.Nib, OrderListCell.Key);
-			ContntTbl.TableFooterView = new UIView();
-			ContntTbl.EstimatedRowHeight = HeightConstants.CellHeight70;
-			IosUtility.setcornerRadius(BtnAdd);
-			IosUtility.setcornerRadius(BtnNext);
-
-		}
-
-
-		partial void BtnAddClicked(Foundation.NSObject sender) {
-			
-			var addItemVC = new AddOrderItemController();
-			addItemVC.ModalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
-			//addItemVC.conte
-			this.PresentViewController(addItemVC, true, null);
-		}
-
-
-		partial void BtnNextClicked(Foundation.NSObject sender) {
-=======
 		}
 
 		void ConfigureView()
@@ -75,14 +50,11 @@ namespace LucidX.iOS
 
 		partial void BtnNextClicked(Foundation.NSObject sender)
 		{
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 			SuperVC.index++;
 			SuperVC.ChangePage();
 		}
 
 
-<<<<<<< HEAD
-=======
 		void AddItemVC_ItemAdded(object sender, EventArgs e)
 		{
 			try
@@ -160,10 +132,6 @@ namespace LucidX.iOS
 		}
 
 		#endregion
-
-
-
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
-	}
+       	}
 }
 

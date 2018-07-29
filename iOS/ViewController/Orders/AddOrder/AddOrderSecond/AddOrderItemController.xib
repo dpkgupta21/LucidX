@@ -14,10 +14,7 @@
                 <outlet property="AmountDoneBar" destination="ytu-oe-2IP" id="MkC-Vo-PWx"/>
                 <outlet property="AmountDoneBtn" destination="PUb-YD-GTL" id="f1N-lX-ewX"/>
                 <outlet property="BtnCancel" destination="2WE-CI-Vlx" id="Shu-Gk-8K1"/>
-<<<<<<< HEAD
-=======
                 <outlet property="BtnClose" destination="YCI-0W-V5c" id="Y0x-vE-3zE"/>
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                 <outlet property="BtnDelete" destination="DZH-jY-Mln" id="ML6-bj-MlR"/>
                 <outlet property="BtnOk" destination="47f-lf-qe5" id="7cv-rK-Qce"/>
                 <outlet property="BtnRevenueDone" destination="d8f-80-c4b" id="R7S-ry-6ca"/>
@@ -59,11 +56,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Line Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5we-Br-ajU">
-<<<<<<< HEAD
-                                                    <rect key="frame" x="0.0" y="0.0" width="261" height="30"/>
-=======
                                                     <rect key="frame" x="43" y="0.0" width="218" height="30"/>
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -78,17 +71,6 @@
                                                         <action selector="BtnDeleteClicked:" destination="-1" eventType="touchUpInside" id="Wke-QN-MPP"/>
                                                     </connections>
                                                 </button>
-<<<<<<< HEAD
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="5we-Br-ajU" firstAttribute="leading" secondItem="FsT-bz-A3p" secondAttribute="leading" id="7zy-UZ-OKk"/>
-                                                <constraint firstItem="DZH-jY-Mln" firstAttribute="top" secondItem="FsT-bz-A3p" secondAttribute="top" id="9Dk-Og-xPl"/>
-                                                <constraint firstItem="DZH-jY-Mln" firstAttribute="leading" secondItem="5we-Br-ajU" secondAttribute="trailing" constant="8" id="JR0-ky-6Xg"/>
-                                                <constraint firstAttribute="height" constant="30" id="Lh3-hE-2hH"/>
-                                                <constraint firstItem="5we-Br-ajU" firstAttribute="top" secondItem="FsT-bz-A3p" secondAttribute="top" id="Sak-7I-Ko9"/>
-                                                <constraint firstAttribute="bottom" secondItem="5we-Br-ajU" secondAttribute="bottom" id="f2T-Do-6h0"/>
-=======
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-0W-V5c">
                                                     <rect key="frame" x="5" y="0.0" width="30" height="30"/>
                                                     <constraints>
@@ -114,7 +96,6 @@
                                                 <constraint firstItem="YCI-0W-V5c" firstAttribute="leading" secondItem="FsT-bz-A3p" secondAttribute="leading" constant="5" id="Y7F-3O-gbe"/>
                                                 <constraint firstAttribute="bottom" secondItem="5we-Br-ajU" secondAttribute="bottom" id="f2T-Do-6h0"/>
                                                 <constraint firstAttribute="bottom" secondItem="YCI-0W-V5c" secondAttribute="bottom" id="p76-QS-nv2"/>
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                                                 <constraint firstAttribute="bottom" secondItem="DZH-jY-Mln" secondAttribute="bottom" id="rI3-j0-ULr"/>
                                                 <constraint firstAttribute="trailing" secondItem="DZH-jY-Mln" secondAttribute="trailing" constant="5" id="zfN-rQ-PzS"/>
                                             </constraints>
@@ -184,10 +165,6 @@
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q36-6Z-C30">
                                             <rect key="frame" x="8" y="293" width="288" height="30"/>
-<<<<<<< HEAD
-                                            <color key="backgroundColor" red="0.92538958790000003" green="0.92554813619999998" blue="0.92537957429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>

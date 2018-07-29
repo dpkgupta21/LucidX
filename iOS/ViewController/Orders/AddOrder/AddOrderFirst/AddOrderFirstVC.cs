@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-=======
 using System.Linq;
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 using Foundation;
 using IosUtils;
 using LucidX.ResponseModels;
@@ -46,12 +43,6 @@ namespace LucidX.iOS
 			TxtOrderDate.InputView = IBDatePicker;
 			IBDatePicker.Date = NSDate.Now;
 			TxtOrderDate.InputAccessoryView = IBDateDoneBar;
-<<<<<<< HEAD
-			TxtOrderDate.Text = DateTime.Now.ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
-			TxtSelectAcoountTilte.InputView = IBAccountPicker;
-			TxtSelectAcoountTilte.InputAccessoryView = IBAccountDoneBar;
-			//Scrollvw.UserInteractionEnabled = false;
-=======
 
 			TxtSelectAcoountTilte.InputView = IBAccountPicker;
 			TxtSelectAcoountTilte.InputAccessoryView = IBAccountDoneBar;
@@ -68,8 +59,6 @@ namespace LucidX.iOS
 			{
 				TxtOrderDate.Text = DateTime.Now.ToString(Utils.Utilities.CALENDAR_DATE_FORMAT);
 			}
-
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 			GetAccountCodes();
 		}
 
@@ -87,9 +76,6 @@ namespace LucidX.iOS
 					IosUtility.hideProgressHud();
 					if (accountOrderResponseList != null && accountOrderResponseList.Count > 0)
 					{
-<<<<<<< HEAD
-						PickerModel = new AccountOrderPickerModel(accountOrderResponseList, TxtSelectAcoountTilte, accountOrderResponseList[0]);
-=======
 						var temp = accountOrderResponseList.Where(a => a.AccountId == SuperVC.LedgerOrderObj.AccountId).FirstOrDefault();
 						SelectedAccount = temp;
 
@@ -98,7 +84,6 @@ namespace LucidX.iOS
 							SelectedAccount = accountOrderResponseList[0];
 						}
 						PickerModel = new AccountOrderPickerModel(accountOrderResponseList, TxtSelectAcoountTilte, SelectedAccount);
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 						IBAccountPicker.Model = PickerModel;
 						ShowAccountAddress();
 						ShowUserCurrency();
@@ -201,22 +186,6 @@ namespace LucidX.iOS
 
 		partial void BtnNextClicked(Foundation.NSObject sender)
 		{
-<<<<<<< HEAD
-			//if (!ValidateForm())
-			//{
-			//	IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
-			//										  IosUtils.LocalizedString.sharedInstance.GetLocalizedString("Please enter all details", "LSErrorTitle"));
-			//	return;
-			//}
-			//SelectedAccount = PickerModel.selectedModel;
-			//SuperVC.LedgerOrderObj.AccountCode = SelectedAccount.AccountCode;
-			//SuperVC.LedgerOrderObj.AccountId = SelectedAccount.AccountId;
-			//SuperVC.LedgerOrderObj.AccountName = SelectedAccount.AccountName;
-			//SuperVC.LedgerOrderObj.CountryCode = SelectedAccount.CountryCode;
-			//SuperVC.LedgerOrderObj.TransactionReference = TxtOrderName.Text;
-			//SuperVC.LedgerOrderObj.TransDate = TxtOrderDate.Text;
-			//SuperVC.LedgerOrderObj.CompCode = SelectedAccount.CompCode;
-=======
 			if (!ValidateForm())
 			{
 				IosUtils.IosUtility.showAlertWithInfo(IosUtils.LocalizedString.sharedInstance.GetLocalizedString("LSErrorTitle", "LSErrorTitle"),
@@ -231,7 +200,6 @@ namespace LucidX.iOS
 			SuperVC.LedgerOrderObj.TransactionReference = TxtOrderName.Text;
 			SuperVC.LedgerOrderObj.TransDate = TxtOrderDate.Text;
 			SuperVC.LedgerOrderObj.CompCode = SelectedAccount.CompCode;
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 
 			SuperVC.index++;
 			SuperVC.ChangePage();
@@ -239,4 +207,3 @@ namespace LucidX.iOS
 
 	}
 }
-

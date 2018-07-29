@@ -1,25 +1,5 @@
 ﻿<Properties StartupConfiguration="{9C0D831C-F1F4-4627-8740-6F6EA7DEF97B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewController/Orders/AddOrderVC.cs">
-    <Files>
-      <File FileName="iOS/ViewController/Orders/AddOrderVC.cs" Line="1" Column="1" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="LucidX" expanded="True">
-            <Node name="LucidX.iOS" expanded="True">
-              <Node name="References" expanded="True" />
-              <Node name="ViewController" expanded="True">
-                <Node name="Orders" expanded="True">
-                  <Node name="AddOrderVC.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

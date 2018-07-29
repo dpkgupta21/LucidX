@@ -79,10 +79,6 @@
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnX-sm-y4e">
                                     <rect key="frame" x="8" y="162" width="304" height="30"/>
-<<<<<<< HEAD
-                                    <color key="backgroundColor" red="0.92538958790000003" green="0.92554813619999998" blue="0.92537957429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -107,11 +103,7 @@
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7O-iF-mk8">
                                     <rect key="frame" x="8" y="290" width="304" height="60"/>
-<<<<<<< HEAD
-                                    <color key="backgroundColor" red="0.92538958787918091" green="0.92554813623428345" blue="0.92537957429885864" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
                                     <color key="backgroundColor" red="0.98028594255447388" green="0.98045331239700317" blue="0.98027533292770386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="YWY-EK-vZu"/>
                                     </constraints>

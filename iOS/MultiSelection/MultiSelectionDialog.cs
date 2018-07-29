@@ -23,13 +23,8 @@ namespace LucidX.iOS
 		}
 
 		public void Configure(List<NotesTypeResponse> types,String Title)
-<<<<<<< HEAD
 		{
 			IosUtils.IosUtility.setcornerRadius(this.ContntVw);
-=======
-		{
-			IosUtils.IosUtility.setcornerRadius(this.ContntVw);
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 			IosUtils.IosUtility.setcornerRadius(this.IBSaveBtn);
 			IosUtils.IosUtility.setcornerRadius(this.IBCancelBtn);
 

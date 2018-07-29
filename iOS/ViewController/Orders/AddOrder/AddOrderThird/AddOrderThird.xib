@@ -13,15 +13,12 @@
             <connections>
                 <outlet property="BtnCancel" destination="V5g-dO-49E" id="p4d-yO-HWW"/>
                 <outlet property="BtnSave" destination="Kz7-06-u2z" id="bFT-T8-jhq"/>
-<<<<<<< HEAD
-=======
                 <outlet property="LblGross" destination="xal-x6-cNP" id="rz5-zG-S2V"/>
                 <outlet property="LblNet" destination="98Q-mL-JwE" id="ZQL-pt-kfl"/>
                 <outlet property="LblVat" destination="0rW-97-5IP" id="QXS-Te-SK4"/>
                 <outlet property="TxtGross" destination="2u2-gJ-PQ3" id="uMK-qp-bA5"/>
                 <outlet property="TxtNet" destination="3w5-RA-Ljd" id="78h-9a-fft"/>
                 <outlet property="txtVat" destination="BdN-mp-fzg" id="vUW-Rg-jV4"/>
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
             </connections>
         </placeholder>
@@ -68,11 +65,7 @@
                         <constraint firstItem="V5g-dO-49E" firstAttribute="top" secondItem="Sjf-76-T4Z" secondAttribute="top" constant="5" id="sEI-XW-jZe"/>
                     </constraints>
                 </view>
-<<<<<<< HEAD
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rW-97-5IP">
-=======
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rW-97-5IP">
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                     <rect key="frame" x="16" y="8" width="288" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
@@ -80,19 +73,13 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BdN-mp-fzg">
                     <rect key="frame" x="16" y="34" width="288" height="30"/>
-<<<<<<< HEAD
-                    <color key="backgroundColor" red="0.92538958790000003" green="0.92554813619999998" blue="0.92537957429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
+
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-<<<<<<< HEAD
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98Q-mL-JwE">
-=======
+
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98Q-mL-JwE">
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                     <rect key="frame" x="16" y="70" width="288" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
@@ -100,19 +87,13 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3w5-RA-Ljd">
                     <rect key="frame" x="16" y="96" width="288" height="30"/>
-<<<<<<< HEAD
-                    <color key="backgroundColor" red="0.92538958790000003" green="0.92554813619999998" blue="0.92537957429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
+
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-<<<<<<< HEAD
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xal-x6-cNP">
-=======
+
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gross" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xal-x6-cNP">
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                     <rect key="frame" x="16" y="134" width="288" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
@@ -120,10 +101,6 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2u2-gJ-PQ3">
                     <rect key="frame" x="16" y="160" width="288" height="30"/>
-<<<<<<< HEAD
-                    <color key="backgroundColor" red="0.92538958790000003" green="0.92554813619999998" blue="0.92537957429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>

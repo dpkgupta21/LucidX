@@ -10,31 +10,21 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
-<<<<<<< HEAD
 
-using Foundation;
-using UIKit;
-
-namespace LucidX.iOS.ViewController.Orders.AddOrder.AddOrderSecond.Cells
-=======
 using Foundation;
 using LucidX.ResponseModels;
 using UIKit;
 
 namespace LucidX.iOS
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 {
     public partial class AddOrderSecondTVCell : UITableViewCell
     {
         public static readonly NSString Key = new NSString("AddOrderSecondTVCell");
         public static readonly UINib Nib;
-<<<<<<< HEAD
-=======
 		int Index;
 		public EventHandler EditClicked;
 		public EventHandler DeleteClicked;
 		
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 
         static AddOrderSecondTVCell()
         {
@@ -45,9 +35,6 @@ namespace LucidX.iOS
         {
             // Note: this .ctor should not contain any initialization logic.
         }
-<<<<<<< HEAD
-    }
-=======
 
 		public void configure(LedgerOrderItem data,int index)
 		{
@@ -72,5 +59,4 @@ namespace LucidX.iOS
 		}
 
 	}
->>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 }
