@@ -7,7 +7,11 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
+<<<<<<< HEAD
 namespace LucidX.iOS.ViewController.Orders.AddOrder.AddOrderSecond.Cells
+=======
+namespace LucidX.iOS
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 {
 	[Register ("AddOrderSecondTVCell")]
 	partial class AddOrderSecondTVCell

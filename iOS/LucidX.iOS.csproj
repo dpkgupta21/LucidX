@@ -104,7 +104,7 @@
       <HintPath>..\packages\Xamarin.SWRevealViewController.2.3.0\lib\Xamarin.iOS\Xamarin.SWRevealViewController.dll</HintPath>
     </Reference>
     <Reference Include="TPKeyboardAvoiding">
-      <HintPath>..\Components\TPKeyboardAvoiding-1.2.11.0\lib\ios-unified\TPKeyboardAvoiding.dll</HintPath>
+      <HintPath>..\packages\TPKeyBoard\TPKeyboardAvoiding.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +245,10 @@
     <ImageAsset Include="Resources\Images.xcassets\OrderConvert.imageset\order_list.png" />
     <ImageAsset Include="Resources\Images.xcassets\OrderAmend.imageset\add_order.png" />
     <ImageAsset Include="Resources\Images.xcassets\Calendar.imageset\calendar.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Back.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Back.imageset\if_icon-ios7-arrow-back_211686 %282%29.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Back.imageset\if_icon-ios7-arrow-back_211686 %281%29.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Back.imageset\if_icon-ios7-arrow-back_211686.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -459,20 +463,14 @@
     <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\AddOrderItemController.designer.cs">
       <DependentUpon>AddOrderItemController.cs</DependentUpon>
     </Compile>
+    <Compile Include="PickerModels\RevenueAccountPickerModel.cs" />
+    <Compile Include="PickerModels\TaxTypePickerModel.cs" />
     <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\AddOrderSecondTVCell.cs" />
-    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\AddOrderSecondTVCell.designer.cs">
-      <DependentUpon>AddOrderSecondTVCell.cs</DependentUpon>
-    </Compile>
+    <Compile Include="ViewController\Orders\AddOrder\AddOrderSecond\Cells\AddOrderSecondTVCell.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
     <BundleResource Include="Resources\fr.lproj\Localizable.strings" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="TPKeyboardAvoiding">
-      <Version>1.2.11.0</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="..\LucidX\LucidX.projitems" Label="Shared" Condition="Exists('..\LucidX\LucidX.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -13,14 +13,23 @@ namespace LucidX.iOS
 	partial class AddOrderVC
 	{
 		[Outlet]
+<<<<<<< HEAD
+=======
+		UIKit.UIButton BtnPre { get; set; }
+
+		[Outlet]
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 		UIKit.UIView ContentVw { get; set; }
 
 		[Outlet]
 		UIKit.UILabel LblPageCount { get; set; }
 
+<<<<<<< HEAD
 		[Action ("BtnNextClicked:")]
 		partial void BtnNextClicked (Foundation.NSObject sender);
 
+=======
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 		[Action ("BtnPreClicked:")]
 		partial void BtnPreClicked (Foundation.NSObject sender);
 		
@@ -35,6 +44,14 @@ namespace LucidX.iOS
 				LblPageCount.Dispose ();
 				LblPageCount = null;
 			}
+<<<<<<< HEAD
+=======
+
+			if (BtnPre != null) {
+				BtnPre.Dispose ();
+				BtnPre = null;
+			}
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 		}
 	}
 }

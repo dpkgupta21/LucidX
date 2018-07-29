@@ -22,6 +22,12 @@ namespace LucidX.iOS
 		UIKit.UIButton BtnCancel { get; set; }
 
 		[Outlet]
+<<<<<<< HEAD
+=======
+		UIKit.UIButton BtnClose { get; set; }
+
+		[Outlet]
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 		UIKit.UIButton BtnDelete { get; set; }
 
 		[Outlet]
@@ -87,6 +93,12 @@ namespace LucidX.iOS
 		[Action ("AmountEditingEnded:")]
 		partial void AmountEditingEnded (Foundation.NSObject sender);
 
+<<<<<<< HEAD
+=======
+		[Action ("BtnCloseClicked:")]
+		partial void BtnCloseClicked (Foundation.NSObject sender);
+
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 		[Action ("BtnDeleteClicked:")]
 		partial void BtnDeleteClicked (Foundation.NSObject sender);
 
@@ -110,6 +122,7 @@ namespace LucidX.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
+<<<<<<< HEAD
 			if (ScrollVw != null) {
 				ScrollVw.Dispose ();
 				ScrollVw = null;
@@ -118,6 +131,26 @@ namespace LucidX.iOS
 			if (LblTitle != null) {
 				LblTitle.Dispose ();
 				LblTitle = null;
+=======
+			if (BtnClose != null) {
+				BtnClose.Dispose ();
+				BtnClose = null;
+			}
+
+			if (AmountDoneBar != null) {
+				AmountDoneBar.Dispose ();
+				AmountDoneBar = null;
+			}
+
+			if (AmountDoneBtn != null) {
+				AmountDoneBtn.Dispose ();
+				AmountDoneBtn = null;
+			}
+
+			if (BtnCancel != null) {
+				BtnCancel.Dispose ();
+				BtnCancel = null;
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 			}
 
 			if (BtnDelete != null) {
@@ -125,31 +158,61 @@ namespace LucidX.iOS
 				BtnDelete = null;
 			}
 
+<<<<<<< HEAD
+=======
+			if (BtnOk != null) {
+				BtnOk.Dispose ();
+				BtnOk = null;
+			}
+
+			if (BtnRevenueDone != null) {
+				BtnRevenueDone.Dispose ();
+				BtnRevenueDone = null;
+			}
+
+			if (BtnTaxDone != null) {
+				BtnTaxDone.Dispose ();
+				BtnTaxDone = null;
+			}
+
+			if (LblAmount != null) {
+				LblAmount.Dispose ();
+				LblAmount = null;
+			}
+
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 			if (LblDescription != null) {
 				LblDescription.Dispose ();
 				LblDescription = null;
 			}
 
+<<<<<<< HEAD
 			if (TxtDescription != null) {
 				TxtDescription.Dispose ();
 				TxtDescription = null;
 			}
 
+=======
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 			if (LblRevenue != null) {
 				LblRevenue.Dispose ();
 				LblRevenue = null;
 			}
 
+<<<<<<< HEAD
 			if (TxtRevenue != null) {
 				TxtRevenue.Dispose ();
 				TxtRevenue = null;
 			}
 
+=======
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 			if (LblTaxType != null) {
 				LblTaxType.Dispose ();
 				LblTaxType = null;
 			}
 
+<<<<<<< HEAD
 			if (TxtTaxType != null) {
 				TxtTaxType.Dispose ();
 				TxtTaxType = null;
@@ -163,6 +226,11 @@ namespace LucidX.iOS
 			if (TxtAmount != null) {
 				TxtAmount.Dispose ();
 				TxtAmount = null;
+=======
+			if (LblTitle != null) {
+				LblTitle.Dispose ();
+				LblTitle = null;
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 			}
 
 			if (LblVat != null) {
@@ -170,6 +238,7 @@ namespace LucidX.iOS
 				LblVat = null;
 			}
 
+<<<<<<< HEAD
 			if (TxtVat != null) {
 				TxtVat.Dispose ();
 				TxtVat = null;
@@ -193,6 +262,26 @@ namespace LucidX.iOS
 			if (BtnRevenueDone != null) {
 				BtnRevenueDone.Dispose ();
 				BtnRevenueDone = null;
+=======
+			if (RevenueDoneBar != null) {
+				RevenueDoneBar.Dispose ();
+				RevenueDoneBar = null;
+			}
+
+			if (RevenuePicker != null) {
+				RevenuePicker.Dispose ();
+				RevenuePicker = null;
+			}
+
+			if (ScrollVw != null) {
+				ScrollVw.Dispose ();
+				ScrollVw = null;
+			}
+
+			if (TaxtTypePicker != null) {
+				TaxtTypePicker.Dispose ();
+				TaxtTypePicker = null;
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 			}
 
 			if (TaxTypeDoneBar != null) {
@@ -200,6 +289,7 @@ namespace LucidX.iOS
 				TaxTypeDoneBar = null;
 			}
 
+<<<<<<< HEAD
 			if (BtnTaxDone != null) {
 				BtnTaxDone.Dispose ();
 				BtnTaxDone = null;
@@ -223,6 +313,31 @@ namespace LucidX.iOS
 			if (TaxtTypePicker != null) {
 				TaxtTypePicker.Dispose ();
 				TaxtTypePicker = null;
+=======
+			if (TxtAmount != null) {
+				TxtAmount.Dispose ();
+				TxtAmount = null;
+			}
+
+			if (TxtDescription != null) {
+				TxtDescription.Dispose ();
+				TxtDescription = null;
+			}
+
+			if (TxtRevenue != null) {
+				TxtRevenue.Dispose ();
+				TxtRevenue = null;
+			}
+
+			if (TxtTaxType != null) {
+				TxtTaxType.Dispose ();
+				TxtTaxType = null;
+			}
+
+			if (TxtVat != null) {
+				TxtVat.Dispose ();
+				TxtVat = null;
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 			}
 		}
 	}

@@ -18,6 +18,7 @@ namespace LucidX.iOS
 		public static readonly UINib Nib = UINib.FromName("MenuHeader", NSBundle.MainBundle);
 
 		public static MenuHeader Create() {
+<<<<<<< HEAD
 			return Nib.Instantiate(null, null)[0] as MenuHeader;
 		}
 
@@ -30,6 +31,20 @@ namespace LucidX.iOS
 			IBDropImg.Hidden = Hide;
 		}
 
+=======
+			return Nib.Instantiate(null, null)[0] as MenuHeader;
+		}
+
+
+		public void Configure(string Title, int section, bool expnaded = false, bool Hide = false) {
+			IBTitleLbl.Text = Title;
+			this.Tag = section;
+			IsSelected = expnaded;
+			IBDropImg.Highlighted = expnaded;
+			IBDropImg.Hidden = Hide;
+		}
+
+>>>>>>> 90563ad437153d848b6e26c760a9f4acf76903c7
 		partial void IBHeaderClicked(Foundation.NSObject sender)
 		{
 			IsSelected = !IsSelected;

@@ -227,13 +227,9 @@ namespace LucidX.iOS.Orders
 		[Export("tableView:didSelectRowAtIndexPath:")]
 		public void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
-			//if (IosUtils.Utility.IsReachable())
-			//{
-			//	var createNotesVc = new CreateNotesVC();
-			//	createNotesVc.isEdit = true;
-			//	createNotesVc.notes = notes[indexPath.Row];
-			//	this.NavigationController.PushViewController(createNotesVc, true);
-			//}
+			var VC = new AddOrderVC();
+			VC.LedgerOrderObj = ledgerOrderList[indexPath.Row];
+			this.NavigationController.PushViewController(VC, true);
 		}
 
 
